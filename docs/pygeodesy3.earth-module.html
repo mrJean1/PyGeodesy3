@@ -1,0 +1,2154 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygeodesy3.earth</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygeodesy3-module.html">Package&nbsp;pygeodesy3</a> ::
+        Package&nbsp;earth
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pygeodesy3.earth-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package earth</h1><p class="nomargin-top"></p>
+<p>Classes and functions to model the earth by datum, bi- or triaxial 
+  ellipsoid or sphere.</p>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        23.12.18
+      </p>
+</div><!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.earth.datums-module.html" onclick="show_private();">pygeodesy3.earth.datums</a></strong>: <em class="summary">Datums and transformations thereof.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.earth.ecef-module.html" onclick="show_private();">pygeodesy3.earth.ecef</a></strong>: <em class="summary"><i>Geocentric</i> Earth-Centered, Earth-Fixed (ECEF) coordinates.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.earth.ellipsoids-module.html" onclick="show_private();">pygeodesy3.earth.ellipsoids</a></strong>: <em class="summary">Ellipsoidal and spherical earth models.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.earth.trf-module.html" onclick="show_private();">pygeodesy3.earth.trf</a></strong>: <em class="summary"><i>Veness</i>' Terrestrial Reference Frames (TRF).</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.earth.triaxials-module.html" onclick="show_private();">pygeodesy3.earth.triaxials</a></strong>: <em class="summary">Triaxal ellipsoid classes <i>ordered</i> <a 
+        href="pygeodesy3.earth.triaxials.Triaxial-class.html" 
+        class="link">Triaxial</a> and <i>unordered</i> <a 
+        href="pygeodesy3.earth.triaxials.Triaxial_-class.html" 
+        class="link">Triaxial_</a> and Jacobi conformal projections <a 
+        href="pygeodesy3.earth.triaxials.JacobiConformal-class.html" 
+        class="link">JacobiConformal</a> and <a 
+        href="pygeodesy3.earth.triaxials.JacobiConformalSpherical-class.html"
+        class="link">JacobiConformalSpherical</a>, transcoded from 
+        <i>Charles Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1JacobiConformal.html#details"
+        target="_top">JacobiConformal</a> to pure Python and miscellaneous 
+        classes <a 
+        href="pygeodesy3.earth.triaxials.BetaOmega2Tuple-class.html" 
+        class="link">BetaOmega2Tuple</a>, <a 
+        href="pygeodesy3.earth.triaxials.BetaOmega3Tuple-class.html" 
+        class="link">BetaOmega3Tuple</a>, <a 
+        href="pygeodesy3.earth.triaxials.Jacobi2Tuple-class.html" 
+        class="link">Jacobi2Tuple</a> and <a 
+        href="pygeodesy3.earth.triaxials.TriaxialError-class.html" 
+        class="link">TriaxialError</a>.</em>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.BetaOmega2Tuple-class.html" class="summary-name">BetaOmega2Tuple</a><br />
+      2-Tuple <code>(beta, omega)</code> with <i>ellipsoidal</i> lat- and
+        longitude <code>beta</code> and <code>omega</code> both in <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a> (or <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a>).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.BetaOmega3Tuple-class.html" class="summary-name">BetaOmega3Tuple</a><br />
+      3-Tuple <code>(beta, omega, height)</code> with <i>ellipsoidal</i> 
+        lat- and longitude <code>beta</code> and <code>omega</code> both in
+        <a href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a> (or <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a>) and the <code>height</code>, rather the 
+        (signed) <i>distance</i> to the triaxial's surface (measured along 
+        the radial line to the triaxial's center) in <code>meter</code>, 
+        conventionally.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ellipsoids.Circle4Tuple-class.html" class="summary-name">Circle4Tuple</a><br />
+      4-Tuple <code>(radius, height, lat, beta)</code> of the 
+        <code>radius</code> and <code>height</code>, both conventionally in
+        <code>meter</code> of a parallel <i>circle of latitude</i> at 
+        (geodetic) latitude <code>lat</code> and the <i>parametric (or 
+        reduced) auxiliary latitude</i> <code>beta</code>, both in 
+        <code>degrees90</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ellipsoids.Curvature2Tuple-class.html" class="summary-name">Curvature2Tuple</a><br />
+      2-Tuple <code>(meridional, prime_vertical)</code> of radii of 
+        curvature, both in <code>meter</code>, conventionally.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.datums.Datum-class.html" class="summary-name">Datum</a><br />
+      Ellipsoid and transform parameters for an earth model.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.Ecef9Tuple-class.html" class="summary-name">Ecef9Tuple</a><br />
+      9-Tuple <code>(x, y, z, lat, lon, height, C, M, datum)</code> with 
+        <i>geocentric</i> <code>x</code>, <code>y</code> and <code>z</code>
+        plus <i>geodetic</i> <code>lat</code>, <code>lon</code> and 
+        <code>height</code>, case <code>C</code> (see the 
+        <code>Ecef*.reverse</code> methods) and optionally, the rotation 
+        matrix <code>M</code> (<a 
+        href="pygeodesy3.earth.ecef.EcefMatrix-class.html" 
+        class="link">EcefMatrix</a>) and <code>datum</code>, with 
+        <code>lat</code> and <code>lon</code> in <code>degrees</code> and 
+        <code>x</code>, <code>y</code>, <code>z</code> and 
+        <code>height</code> in <code>meter</code>, conventionally.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefError-class.html" class="summary-name">EcefError</a><br />
+      An ECEF or <code>Ecef*</code> related issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefFarrell21-class.html" class="summary-name">EcefFarrell21</a><br />
+      Conversion between geodetic and geocentric, <i>Earth-Centered, 
+        Earth-Fixed</i> (ECEF) coordinates based on <i>Jay A. Farrell</i>'s
+        <a href="https://Books.Google.com/books?id=fW4foWASY6wC" 
+        target="_top">Table 2.1</a>, page 29.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefFarrell22-class.html" class="summary-name">EcefFarrell22</a><br />
+      Conversion between geodetic and geocentric, <i>Earth-Centered, 
+        Earth-Fixed</i> (ECEF) coordinates based on <i>Jay A. Farrell</i>'s
+        <a href="https://Books.Google.com/books?id=fW4foWASY6wC" 
+        target="_top">Table 2.2</a>, page 30.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefKarney-class.html" class="summary-name">EcefKarney</a><br />
+      Conversion between geodetic and geocentric, <i>Earth-Centered, 
+        Earth-Fixed</i> (ECEF) coordinates transcoded from <i>Karney</i>'s 
+        C++ <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Geocentric.html"
+        target="_top">Geocentric</a> methods.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefMatrix-class.html" class="summary-name">EcefMatrix</a><br />
+      A rotation matrix known as <i>East-North-Up (ENU) to ECEF</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefSudano-class.html" class="summary-name">EcefSudano</a><br />
+      Conversion between geodetic and geocentric, <i>Earth-Centered, 
+        Earth-Fixed</i> (ECEF) coordinates based on <i>John J. Sudano</i>'s
+        <a href="https://www.ResearchGate.net/publication/3709199" 
+        target="_top">paper</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefVeness-class.html" class="summary-name">EcefVeness</a><br />
+      Conversion between geodetic and geocentric, <i>Earth-Centered, 
+        Earth-Fixed</i> (ECEF) coordinates transcoded from <i>Chris 
+        Veness</i>' JavaScript classes <a 
+        href="https://www.Movable-Type.co.UK/scripts/geodesy/docs/latlon-ellipsoidal.js.html"
+        target="_top">LatLonEllipsoidal, Cartesian</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ecef.EcefYou-class.html" class="summary-name">EcefYou</a><br />
+      Conversion between geodetic and geocentric, <i>Earth-Centered, 
+        Earth-Fixed</i> (ECEF) coordinates using <i>Rey-Jer You</i>'s <a 
+        href="https://www.ResearchGate.net/publication/240359424" 
+        target="_top">transformation</a> for <i>non-prolate</i> ellipsoids.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" class="summary-name">Ellipsoid</a><br />
+      Ellipsoid with <i>equatorial</i> and <i>polar</i> radii, 
+        <i>flattening</i>, <i>inverse flattening</i> and other, often used,
+        <i>cached</i> attributes, supporting <i>oblate</i> and 
+        <i>prolate</i> ellipsoidal and <i>spherical</i> earth models.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" class="summary-name">Ellipsoid2</a><br />
+      An <a href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+        class="link">Ellipsoid</a> specified by <i>equatorial</i> radius 
+        and <i>flattening</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.Helmert7Tuple-class.html" class="summary-name">Helmert7Tuple</a><br />
+      7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of Helmert 
+        transform parameters with translations <code>tx</code>, 
+        <code>ty</code> and <code>tz</code> in <code>millimeter</code>, 
+        scale <code>s</code> in <code>ppb</code> and rotations 
+        <code>sx</code>, <code>sy</code> and <code>sz</code> in 
+        <code>milliarcseconds</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.Jacobi2Tuple-class.html" class="summary-name">Jacobi2Tuple</a><br />
+      2-Tuple <code>(x, y)</code> with a Jacobi Conformal <code>x</code> 
+        and <code>y</code> projection, both in <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a> (or <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a>).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.JacobiConformal-class.html" class="summary-name">JacobiConformal</a><br />
+      This is a conformal projection of a triaxial ellipsoid to a plane 
+        in which the <code>X</code> and <code>Y</code> grid lines are 
+        straight.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.JacobiConformalSpherical-class.html" class="summary-name">JacobiConformalSpherical</a><br />
+      An alternate, <i>spherical</i> <a 
+        href="pygeodesy3.earth.triaxials.JacobiConformal-class.html" 
+        class="link">JacobiConformal</a> projection.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.RefFrame-class.html" class="summary-name">RefFrame</a><br />
+      Terrestrial Reference Frame (TRF) parameters.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.datums.Transform-class.html" class="summary-name">Transform</a><br />
+      Helmert transformation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.Triaxial-class.html" class="summary-name">Triaxial</a><br />
+      <i>Ordered</i> triaxial ellipsoid.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.TriaxialError-class.html" class="summary-name">TriaxialError</a><br />
+      Raised for <a href="pygeodesy3.earth.triaxials.Triaxial-class.html"
+        class="link">Triaxial</a> issues.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.triaxials.Triaxial_-class.html" class="summary-name">Triaxial_</a><br />
+      <i>Unordered</i> triaxial ellipsoid and base class.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" class="summary-name">a_f2Tuple</a><br />
+      2-Tuple <code>(a, f)</code> specifying an ellipsoid by 
+        <i>equatorial</i> radius <code>a</code> in <code>meter</code> and 
+        scalar <i>flattening</i> <code>f</code>.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2e" class="summary-sig-name">a_b2e</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>e</code>, the <i>1st eccentricity</i> for a given 
+      <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2e2" class="summary-sig-name">a_b2e2</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>e2</code>, the <i>1st eccentricity squared</i> for a 
+      given <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2e22" class="summary-sig-name">a_b2e22</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>e22</code>, the <i>2nd eccentricity squared</i> for a 
+      given <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2e32" class="summary-sig-name">a_b2e32</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>e32</code>, the <i>3rd eccentricity squared</i> for a 
+      given <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2f" class="summary-sig-name">a_b2f</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>f</code>, the <i>flattening</i> for a given 
+      <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2f2" class="summary-sig-name">a_b2f2</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>f2</code>, the <i>2nd flattening</i> for a given 
+      <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2f_" class="summary-sig-name">a_b2f_</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>f_</code>, the <i>inverse flattening</i> for a given 
+      <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_b2n" class="summary-sig-name">a_b2n</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">b</span>)</span><br />
+      Return <code>n</code>, the <i>3rd flattening</i> for a given 
+      <i>equatorial</i> and <i>polar</i> radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_f2b" class="summary-sig-name">a_f2b</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>b</code>, the <i>polar</i> radius for a given 
+      <i>equatorial</i> radius and <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#a_f_2b" class="summary-sig-name">a_f_2b</a>(<span class="summary-sig-arg">a</span>,
+        <span class="summary-sig-arg">f_</span>)</span><br />
+      Return <code>b</code>, the <i>polar</i> radius for a given 
+      <i>equatorial</i> radius and <i>inverse flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#b_f2a" class="summary-sig-name">b_f2a</a>(<span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>a</code>, the <i>equatorial</i> radius for a given 
+      <i>polar</i> radius and <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#b_f_2a" class="summary-sig-name">b_f_2a</a>(<span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">f_</span>)</span><br />
+      Return <code>a</code>, the <i>equatorial</i> radius for a given 
+      <i>polar</i> radius and <i>inverse flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#date2epoch" class="summary-sig-name">date2epoch</a>(<span class="summary-sig-arg">year</span>,
+        <span class="summary-sig-arg">month</span>,
+        <span class="summary-sig-arg">day</span>)</span><br />
+      Return the reference frame <code>epoch</code> for a calendar day.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#e22f" class="summary-sig-name">e22f</a>(<span class="summary-sig-arg">e2</span>)</span><br />
+      Return <code>f</code>, the <i>flattening</i> for a given <i>1st 
+      eccentricity squared</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#e2f" class="summary-sig-name">e2f</a>(<span class="summary-sig-arg">e</span>)</span><br />
+      Return <code>f</code>, the <i>flattening</i> for a given <i>1st 
+      eccentricity</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#epoch2date" class="summary-sig-name">epoch2date</a>(<span class="summary-sig-arg">epoch</span>)</span><br />
+      Return the date for a reference frame <code>epoch</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#f2e2" class="summary-sig-name">f2e2</a>(<span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>e2</code>, the <i>1st eccentricity squared</i> for a 
+      given <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#f2e22" class="summary-sig-name">f2e22</a>(<span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>e22</code>, the <i>2nd eccentricity squared</i> for a 
+      given <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#f2e32" class="summary-sig-name">f2e32</a>(<span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>e32</code>, the <i>3rd eccentricity squared</i> for a 
+      given <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#f2f2" class="summary-sig-name">f2f2</a>(<span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>f2</code>, the <i>2nd flattening</i> for a given 
+      <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#f2f_" class="summary-sig-name">f2f_</a>(<span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>f_</code>, the <i>inverse flattening</i> for a given 
+      <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#f2n" class="summary-sig-name">f2n</a>(<span class="summary-sig-arg">f</span>)</span><br />
+      Return <code>n</code>, the <i>3rd flattening</i> for a given 
+      <i>flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#f_2f" class="summary-sig-name">f_2f</a>(<span class="summary-sig-arg">f_</span>)</span><br />
+      Return <code>f</code>, the <i>flattening</i> for a given <i>inverse 
+      flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#hartzell4" class="summary-sig-name">hartzell4</a>(<span class="summary-sig-arg">pov</span>,
+        <span class="summary-sig-arg">los</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">tri_biax</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Compute the intersection of a tri-/biaxial ellipsoid and a 
+      Line-Of-Sight from a Point-Of-View outside.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#n2e2" class="summary-sig-name">n2e2</a>(<span class="summary-sig-arg">n</span>)</span><br />
+      Return <code>e2</code>, the <i>1st eccentricity squared</i> for a 
+      given <i>3rd flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#n2f" class="summary-sig-name">n2f</a>(<span class="summary-sig-arg">n</span>)</span><br />
+      Return <code>f</code>, the <i>flattening</i> for a given <i>3rd 
+      flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#n2f_" class="summary-sig-name">n2f_</a>(<span class="summary-sig-arg">n</span>)</span><br />
+      Return <code>f_</code>, the <i>inverse flattening</i> for a given 
+      <i>3rd flattening</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#trfXform" class="summary-sig-name">trfXform</a>(<span class="summary-sig-arg">reframe1</span>,
+        <span class="summary-sig-arg">reframe2</span>,
+        <span class="summary-sig-arg">epoch</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">xform</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">rates</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Define a new Terrestrial Reference Frame (TRF) conversion.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__getattr__"></a><span class="summary-name">__getattr__</span> = <code title="_lazy_import_as(__name__)">_lazy_import_as(__name__)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth-module.html#Datums" class="summary-name">Datums</a> = <code title="Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipsoids.Airy1830, tra\
+nsform=Transforms.OSGB36),
+Datums.WGS84: Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transfor\
+m=Transforms.WGS84),
+Datums.Sphere: Datum(name='Sphere', ellipsoid=Ellipsoids.Sphere, trans\
+form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth-module.html#Ellipsoids" class="summary-name">Ellipsoids</a> = <code title="Ellipsoids.Sphere: Ellipsoid(name='Sphere', a=6371008.771415, b=637100\
+8.771415, f_=0, f=0, f2=0, n=0, e=0, e2=0, e21=1, e22=0, e32=0, A=6371\
+008.771415, L=10007557.17611675, R1=6371008.771415, R2=6371008.771415,\
+ R3=6371008.771415, Rbiaxial=6371008.771415, Rtriaxial=6371008.771415)\
+,
+Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451\
+8, f_=298.25722356, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.081\
+81919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A\
+...">Ellipsoids.Sphere: Ellipsoid(name='Sphere', a=637<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="RefFrames"></a><span class="summary-name">RefFrames</span> = <code title=""></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth-module.html#Transforms" class="summary-name">Transforms</a> = <code title="Transforms.OSGB36: Transform(name='OSGB36', tx=-446.448, ty=125.157, t\
+z=-542.06, rx=-0, ry=-0, rz=-0, s=20.4894, s1=1.00002, sx=-0.1502, sy=\
+-0.247, sz=-0.8421),
+Transforms.WGS84: Transform(name='WGS84', tx=0, ty=0, tz=0, rx=0, ry=0\
+, rz=0, s=0, s1=1, sx=0, sy=0, sz=0),
+Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
+, ry=0, rz=0, s=0, s1=1, sx=0, sy=0, sz=0)">Transforms.OSGB36: Transform(name='OSGB36', tx=-4<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Triaxials"></a><span class="summary-name">Triaxials</span> = <code title=""></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="a_b2e"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2e</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e</code>, the <i>1st eccentricity</i> for a given 
+  <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>unsigned</i>, (1st) eccentricity (<code>float</code> or 
+          <code>0</code>), <i class="math">sqrt(1 - (b / a)**2)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is always <i>non-negative</i> and <code>0</code> for 
+        <i>near-spherical</i> ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_b2e2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2e2</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e2</code>, the <i>1st eccentricity squared</i> for a 
+  given <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, (1st) eccentricity <i>squared</i> 
+          (<code>float</code> or <code>0</code>), <i class="math">1 - (b / 
+          a)**2</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_b2e22"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2e22</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e22</code>, the <i>2nd eccentricity squared</i> for a 
+  given <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 2nd eccentricity <i>squared</i> 
+          (<code>float</code> or <code>0</code>), <i class="math">(a / 
+          b)**2 - 1</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_b2e32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2e32</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e32</code>, the <i>3rd eccentricity squared</i> for a 
+  given <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 3rd eccentricity <i>squared</i> 
+          (<code>float</code> or <code>0</code>), <i class="math">(a**2 - 
+          b**2) / (a**2 + b**2)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_b2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2f</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f</code>, the <i>flattening</i> for a given 
+  <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The flattening (<code>scalar</code> or <code>0</code>), <i 
+          class="math">(a - b) / a</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_b2f2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2f2</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f2</code>, the <i>2nd flattening</i> for a given 
+  <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 2nd flattening (<code>scalar</code> or 
+          <code>0</code>), <i class="math">(a - b) / b</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_b2f_"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2f_</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f_</code>, the <i>inverse flattening</i> for a given 
+  <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The inverse flattening (<code>scalar</code> or <code>0</code>), 
+          <i class="math">a / (a - b)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_b2n"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_b2n</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">b</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>n</code>, the <i>3rd flattening</i> for a given 
+  <i>equatorial</i> and <i>polar</i> radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 3rd flattening (<code>scalar</code> or 
+          <code>0</code>), <i class="math">(a - b) / (a + b)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="a_f2b"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_f2b</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>b</code>, the <i>polar</i> radius for a given 
+  <i>equatorial</i> radius and <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The polar radius (<code>float</code>), <i class="math">a * (1 - 
+          f)</i>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="a_f_2b"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">a_f_2b</span>&nbsp;(<span class="sig-arg">a</span>,
+        <span class="sig-arg">f_</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>b</code>, the <i>polar</i> radius for a given 
+  <i>equatorial</i> radius and <i>inverse flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>a</code></strong> - Equatorial radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>f_</code></strong> - Inverse flattening (<code>scalar</code> &gt;&gt;&gt; 1).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The polar radius (<code>float</code>), <i class="math">a * (f_ - 
+          1) / f_</i>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="b_f2a"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">b_f2a</span>&nbsp;(<span class="sig-arg">b</span>,
+        <span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>a</code>, the <i>equatorial</i> radius for a given 
+  <i>polar</i> radius and <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The equatorial radius (<code>float</code>), <i class="math">b / 
+          (1 - f)</i>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="b_f_2a"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">b_f_2a</span>&nbsp;(<span class="sig-arg">b</span>,
+        <span class="sig-arg">f_</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>a</code>, the <i>equatorial</i> radius for a given 
+  <i>polar</i> radius and <i>inverse flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>b</code></strong> - Polar radius (<code>scalar</code> &gt; 0).</li>
+        <li><strong class="pname"><code>f_</code></strong> - Inverse flattening (<code>scalar</code> &gt;&gt;&gt; 1).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The equatorial radius (<code>float</code>), <i class="math">b * 
+          f_ / (f_ - 1)</i>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="date2epoch"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">date2epoch</span>&nbsp;(<span class="sig-arg">year</span>,
+        <span class="sig-arg">month</span>,
+        <span class="sig-arg">day</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the reference frame <code>epoch</code> for a calendar day.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>year</code></strong> - Year of the date (<code>scalar</code>).</li>
+        <li><strong class="pname"><code>month</code></strong> - Month in the <b><code>year</code></b> (<code>scalar</code>, 
+          1..12).</li>
+        <li><strong class="pname"><code>day</code></strong> - Day in the <b><code>month</code></b> (<code>scalar</code>, 
+          1..31).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Epoch, the fractional year (<code>float</code>).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>year</code></b>, <b><code>month</code></b> or 
+        <b><code>day</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Any <b><code>year</code></b> is considered a leap year, i.e. having
+        29 days in February.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="e22f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">e22f</span>&nbsp;(<span class="sig-arg">e2</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f</code>, the <i>flattening</i> for a given <i>1st 
+  eccentricity squared</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>e2</code></strong> - The (1st) eccentricity <i>squared</i>, <i>signed</i> (NINF &lt; 
+          <code>float</code> &lt; 1)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The flattening (<code>float</code> or <code>0</code>), <i 
+          class="math">e2 / (sqrt(e2 - 1) + 1)</i>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="e2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">e2f</span>&nbsp;(<span class="sig-arg">e</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f</code>, the <i>flattening</i> for a given <i>1st 
+  eccentricity</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>e</code></strong> - The (1st) eccentricity (0 &lt;= <code>float</code> &lt; 1)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The flattening (<code>scalar</code> or <code>0</code>).</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a href="pygeodesy3.earth.ellipsoids-module.html#e22f" 
+        class="link">e22f</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="epoch2date"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">epoch2date</span>&nbsp;(<span class="sig-arg">epoch</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the date for a reference frame <code>epoch</code>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>epoch</code></strong> - Fractional year (<code>scalar</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>3-Tuple <code>(year, month, day)</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>epoch</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Any <b><code>year</code></b> is considered a leap year, i.e. having
+        29 days in February.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="f2e2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">f2e2</span>&nbsp;(<span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e2</code>, the <i>1st eccentricity squared</i> for a 
+  given <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, (1st) eccentricity <i>squared</i> 
+          (<code>float</code> &lt; 1), <i class="math">f * (2 - f)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+      <p><strong>See Also:</strong>
+        <a 
+        href="https://GeographicLib.SourceForge.io/html/classGeographicLib_1_1Ellipsoid.html"
+        target="_top">Eccentricity conversions</a> and <a 
+        href="https://WikiPedia.org/wiki/Flattening" 
+        target="_top">Flattening</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="f2e22"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">f2e22</span>&nbsp;(<span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e22</code>, the <i>2nd eccentricity squared</i> for a 
+  given <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 2nd eccentricity <i>squared</i> 
+          (<code>float</code> &gt; -1 or <code>INF</code>), <i 
+          class="math">f * (2 - f) / (1 - f)**2</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for near-spherical ellipsoids.
+      </p>
+      <p><strong>See Also:</strong>
+        <a 
+        href="https://GeographicLib.SourceForge.io/html/classGeographicLib_1_1Ellipsoid.html"
+        target="_top">Eccentricity conversions</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="f2e32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">f2e32</span>&nbsp;(<span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e32</code>, the <i>3rd eccentricity squared</i> for a 
+  given <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 3rd eccentricity <i>squared</i> 
+          (<code>float</code>), <i class="math">f * (2 - f) / (1 + (1 - 
+          f)**2)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+      <p><strong>See Also:</strong>
+        <a 
+        href="https://GeographicLib.SourceForge.io/html/classGeographicLib_1_1Ellipsoid.html"
+        target="_top">Eccentricity conversions</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="f2f2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">f2f2</span>&nbsp;(<span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f2</code>, the <i>2nd flattening</i> for a given 
+  <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 2nd flattening (<code>scalar</code> or 
+          <code>INF</code>), <i class="math">f / (1 - f)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+      <p><strong>See Also:</strong>
+        <a 
+        href="https://GeographicLib.SourceForge.io/html/classGeographicLib_1_1Ellipsoid.html"
+        target="_top">Eccentricity conversions</a> and <a 
+        href="https://WikiPedia.org/wiki/Flattening" 
+        target="_top">Flattening</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="f2f_"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">f2f_</span>&nbsp;(<span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f_</code>, the <i>inverse flattening</i> for a given 
+  <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The inverse flattening (<code>scalar</code> or <code>0</code>), 
+          <i class="math">1 / f</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="f2n"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">f2n</span>&nbsp;(<span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>n</code>, the <i>3rd flattening</i> for a given 
+  <i>flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>f</code></strong> - Flattening (<code>scalar</code> &lt; 1, negative for 
+          <i>prolate</i>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, 3rd flattening (-1 &lt;= <code>float</code> 
+          &lt; 1), <i class="math">f / (2 - f)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+      <p><strong>See Also:</strong>
+        <a 
+        href="https://GeographicLib.SourceForge.io/html/classGeographicLib_1_1Ellipsoid.html"
+        target="_top">Eccentricity conversions</a> and <a 
+        href="https://WikiPedia.org/wiki/Flattening" 
+        target="_top">Flattening</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="f_2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">f_2f</span>&nbsp;(<span class="sig-arg">f_</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f</code>, the <i>flattening</i> for a given <i>inverse 
+  flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>f_</code></strong> - Inverse flattening (<code>scalar</code> &gt;&gt;&gt; 1).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The flattening (<code>scalar</code> or <code>0</code>), <i 
+          class="math">1 / f_</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="hartzell4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hartzell4</span>&nbsp;(<span class="sig-arg">pov</span>,
+        <span class="sig-arg">los</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">tri_biax</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Compute the intersection of a tri-/biaxial ellipsoid and a 
+  Line-Of-Sight from a Point-Of-View outside.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>pov</code></strong> - Point-Of-View outside the tri-/biaxial (<code>Cartesian</code>, 
+          <a href="pygeodesy3.earth.ecef.Ecef9Tuple-class.html" 
+          class="link">Ecef9Tuple</a> <code>LatLon</code> or <a 
+          href="pygeodesy3.maths.vector3d.Vector3d-class.html" 
+          class="link">Vector3d</a>).</li>
+        <li><strong class="pname"><code>los</code></strong> - Line-Of-Sight, <i>direction</i> to the tri-/biaxial (<a 
+          href="pygeodesy3.projections.ltpTuples.Los-class.html" 
+          class="link">Los</a>, <a 
+          href="pygeodesy3.maths.vector3d.Vector3d-class.html" 
+          class="link">Vector3d</a>) or <code>None</code> to point to the 
+          tri-/biaxial's center.</li>
+        <li><strong class="pname"><code>tri_biax</code></strong> - A triaxial (<a 
+          href="pygeodesy3.earth.triaxials.Triaxial-class.html" 
+          class="link">Triaxial</a>, <a 
+          href="pygeodesy3.earth.triaxials.Triaxial_-class.html" 
+          class="link">Triaxial_</a>, <a 
+          href="pygeodesy3.earth.triaxials.JacobiConformal-class.html" 
+          class="link">JacobiConformal</a> or <a 
+          href="pygeodesy3.earth.triaxials.JacobiConformalSpherical-class.html"
+          class="link">JacobiConformalSpherical</a>) or biaxial ellipsoid 
+          (<a href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a> or <code>scalar</code> radius, 
+          conventionally in <code>meter</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><a href="pygeodesy3.miscs.namedTuples.Vector4Tuple-class.html" 
+          class="link">Vector4Tuple</a><code>(x, y, z, h)</code> on the 
+          tri-/biaxial's surface, with <code>h</code> the distance from 
+          <b><code>pov</code></b> to <code>(x, y, z)</code> <i>along 
+          the</i> <b><code>los</code></b>, all in <code>meter</code>, 
+          conventionally.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.earth.triaxials.TriaxialError-class.html">TriaxialError</a></strong></code> - Null <b><code>pov</code></b> or <b><code>los</code></b>, or 
+        <b><code>pov</code></b> is inside the tri-/biaxial or 
+        <b><code>los</code></b> points outside the tri-/biaxial or points 
+        in an opposite direction.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>pov</code></b> or <b><code>los</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a href="pygeodesy3.distances.formy-module.html#hartzell" 
+        class="link">pygeodesy3.hartzell</a>, <a 
+        href="pygeodesy3.projections.ltp-module.html#tyr3d" 
+        class="link">pygeodesy3.tyr3d</a>, class <a 
+        href="pygeodesy3.projections.ltpTuples.Los-class.html" 
+        class="link">pygeodesy3.Los</a> and <a 
+        href="https://PyPI.org/project/pymap3d" 
+        target="_top">lookAtSpheroid</a> and <a 
+        href="https://StephenHartzell.Medium.com/satellite-line-of-sight-intersection-with-earth-d786b4a6a9b6"
+        target="_top"><i>Satellite Line-of-Sight Intersection with 
+        Earth</i></a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="n2e2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">n2e2</span>&nbsp;(<span class="sig-arg">n</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>e2</code>, the <i>1st eccentricity squared</i> for a 
+  given <i>3rd flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>n</code></strong> - The 3rd flattening (-1 &lt;= <code>scalar</code> &lt; 1).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>signed</i>, (1st) eccentricity <i>squared</i> 
+          (<code>float</code> or NINF), <i class="math">4 * n / (1 + 
+          n)**2</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The result is positive for <i>oblate</i>, negative for 
+        <i>prolate</i> or <code>0</code> for <i>near-spherical</i> 
+        ellipsoids.
+      </p>
+      <p><strong>See Also:</strong>
+        <a href="https://WikiPedia.org/wiki/Flattening" 
+        target="_top">Flattening</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="n2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">n2f</span>&nbsp;(<span class="sig-arg">n</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f</code>, the <i>flattening</i> for a given <i>3rd 
+  flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>n</code></strong> - The 3rd flattening (-1 &lt;= <code>scalar</code> &lt; 1).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The flattening (<code>scalar</code> or NINF), <i class="math">2 *
+          n / (1 + n)</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a 
+        href="https://GeographicLib.SourceForge.io/html/classGeographicLib_1_1Ellipsoid.html"
+        target="_top">Eccentricity conversions</a> and <a 
+        href="https://WikiPedia.org/wiki/Flattening" 
+        target="_top">Flattening</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="n2f_"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">n2f_</span>&nbsp;(<span class="sig-arg">n</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return <code>f_</code>, the <i>inverse flattening</i> for a given 
+  <i>3rd flattening</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>n</code></strong> - The 3rd flattening (-1 &lt;= <code>scalar</code> &lt; 1).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The inverse flattening (<code>scalar</code> or <code>0</code>), 
+          <i class="math">1 / f</i>.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a href="pygeodesy3.earth.ellipsoids-module.html#n2f" 
+        class="link">n2f</a> and <a 
+        href="pygeodesy3.earth.ellipsoids-module.html#f2f_" 
+        class="link">f2f_</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="trfXform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trfXform</span>&nbsp;(<span class="sig-arg">reframe1</span>,
+        <span class="sig-arg">reframe2</span>,
+        <span class="sig-arg">epoch</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">xform</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">rates</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Define a new Terrestrial Reference Frame (TRF) conversion.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>reframe1</code></strong> - Source reframe (<a 
+          href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a>), converting <i>from</i>.</li>
+        <li><strong class="pname"><code>reframe2</code></strong> - Destination reframe (<a 
+          href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a>), converting <i>to</i>.</li>
+        <li><strong class="pname"><code>epoch</code></strong> - Epoch, a fractional calendar year (<code>scalar</code> or 
+          <code>str</code>) or <code>None</code> for 
+          <code><b>reframe2</b>.epoch</code>.</li>
+        <li><strong class="pname"><code>xform</code></strong> - Helmert transform parameters (<code>Helmert7Tuple</code>).</li>
+        <li><strong class="pname"><code>rates</code></strong> - Helmert rate parameters (<code>Helmert7Tuple</code>).</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>epoch</code></b> or TRF conversion already exists.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables Details</span></td>
+</tr>
+</table>
+<a name="Datums"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Datums</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipsoids.Airy1830, tra<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+nsform=Transforms.OSGB36),
+Datums.WGS84: Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transfor<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+m=Transforms.WGS84),
+Datums.Sphere: Datum(name='Sphere', ellipsoid=Ellipsoids.Sphere, trans<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+form=Transforms.WGS84)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Ellipsoids"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Ellipsoids</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Ellipsoids.Sphere: Ellipsoid(name='Sphere', a=6371008.771415, b=637100<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8.771415, f_=0, f=0, f2=0, n=0, e=0, e2=0, e21=1, e22=0, e32=0, A=6371<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+008.771415, L=10007557.17611675, R1=6371008.771415, R2=6371008.771415,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ R3=6371008.771415, Rbiaxial=6371008.771415, Rtriaxial=6371008.771415)<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+,
+Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8, f_=298.25722356, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.081<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+81919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Transforms"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Transforms</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Transforms.OSGB36: Transform(name='OSGB36', tx=-446.448, ty=125.157, t<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+z=-542.06, rx=-0, ry=-0, rz=-0, s=20.4894, s1=1.00002, sx=-0.1502, sy=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+-0.247, sz=-0.8421),
+Transforms.WGS84: Transform(name='WGS84', tx=0, ty=0, tz=0, rx=0, ry=0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, rz=0, s=0, s1=1, sx=0, sy=0, sz=0),
+Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, ry=0, rz=0, s=0, s1=1, sx=0, sy=0, sz=0)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Dec 19 14:13:29 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

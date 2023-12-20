@@ -1,0 +1,38 @@
+
+# python -m coverage html --rcfile=testcoverage.rc --title="..."
+# __version__ = '23.12.18'
+
+[report]
+exclude_lines =
+    pragma: no cover
+    no cover
+    PYCHOK no cover
+    except\s
+    \sraise\s
+    if False:
+    if __name__ == .__main__.:
+    if _FOR_DOCS:
+
+include =
+    pygeodesy3/*.py
+    pygeodesy3/base/*.py
+    pygeodesy3/deprecated/*.py
+    pygeodesy3/distances/*.py
+    pygeodesy3/earth/*.py
+    pygeodesy3/elevations/*.py
+    pygeodesy3/ellipsoidal/*.py
+    pygeodesy3/geodesic/*.py
+    pygeodesy3/geodesic/exact/*.py
+    pygeodesy3/grids/*.py
+    pygeodesy3/maths/*.py
+    pygeodesy3/maths/auxilats/*.py
+    pygeodesy3/miscs/*.py
+    pygeodesy3/polygonal/*.py
+    pygeodesy3/projections/*.py
+    pygeodesy3/rhumb/*.py
+    pygeodesy3/spherical/*.py
+
+# omit = test/*.py
+
+[html]
+directory = testcoverage

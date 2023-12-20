@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygeodesy3.elevations</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygeodesy3-module.html">Package&nbsp;pygeodesy3</a> ::
+        Package&nbsp;elevations
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pygeodesy3.elevations-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package elevations</h1><p class="nomargin-top"></p>
+<p>Elevations: ellipsoidal, orthometric heights for (geodetic) 
+  <code>LatLon</code> points from geoid models, interpolations and web 
+  services.</p>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        23.12.18
+      </p>
+</div><!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.elevations.geoids-module.html" onclick="show_private();">pygeodesy3.elevations.geoids</a></strong>: <em class="summary">Geoid models and geoid height interpolations.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.elevations.heights-module.html" onclick="show_private();">pygeodesy3.elevations.heights</a></strong>: <em class="summary">Height interpolations of <code>LatLon</code> points.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.elevations.webs-module.html" onclick="show_private();">pygeodesy3.elevations.webs</a></strong>: <em class="summary">Web-services-based elevations and <code>CONUS</code> geoid heights.</em>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.webs.Elevation2Tuple-class.html" class="summary-name">Elevation2Tuple</a><br />
+      2-Tuple <code>(elevation, data_source)</code> in <code>meter</code>
+        and <code>str</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.geoids.GeoidError-class.html" class="summary-name">GeoidError</a><br />
+      Geoid interpolator <code>Geoid...</code> or interpolation issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.geoids.GeoidG2012B-class.html" class="summary-name">GeoidG2012B</a><br />
+      Geoid height interpolator for <a 
+        href="https://www.NGS.NOAA.gov/GEOID/GEOID12B/" 
+        target="_top">GEOID12B Model</a> grids <a 
+        href="https://www.NGS.NOAA.gov/GEOID/GEOID12B/GEOID12B_CONUS.shtml"
+        target="_top">CONUS</a>, <a 
+        href="https://www.NGS.NOAA.gov/GEOID/GEOID12B/GEOID12B_AK.shtml" 
+        target="_top">Alaska</a>, <a 
+        href="https://www.NGS.NOAA.gov/GEOID/GEOID12B/GEOID12B_HI.shtml" 
+        target="_top">Hawaii</a>, <a 
+        href="https://www.NGS.NOAA.gov/GEOID/GEOID12B/GEOID12B_GMNI.shtml" 
+        target="_top">Guam and Northern Mariana Islands</a>, <a 
+        href="https://www.NGS.NOAA.gov/GEOID/GEOID12B/GEOID12B_PRVI.shtml" 
+        target="_top">Puerto Rico and U.S. Virgin Islands</a> and <a 
+        href="https://www.NGS.NOAA.gov/GEOID/GEOID12B/GEOID12B_AS.shtml" 
+        target="_top">American Samoa</a> based on <code>SciPy</code> <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.RectBivariateSpline.html"
+        target="_top">RectBivariateSpline</a> or <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.interp2d.html"
+        target="_top">interp2d</a> interpolation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.webs.GeoidHeight2Tuple-class.html" class="summary-name">GeoidHeight2Tuple</a><br />
+      2-Tuple <code>(height, model_name)</code>, geoid 
+        <code>height</code> in <code>meter</code> and 
+        <code>model_name</code> as <code>str</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.geoids.GeoidHeight5Tuple-class.html" class="summary-name">GeoidHeight5Tuple</a><br />
+      5-Tuple <code>(lat, lon, egm84, egm96, egm2008)</code> for <a 
+        href="https://SourceForge.net/projects/geographiclib/files/testdata/"
+        target="_top">GeoidHeights.dat</a> tests with the heights for 3 
+        different EGM grids at <code>degrees90</code> and 
+        <code>degrees180</code> degrees (after converting <code>lon</code> 
+        from original <code>0 &lt;= EasterLon &lt;= 360</code>).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.geoids.GeoidKarney-class.html" class="summary-name">GeoidKarney</a><br />
+      Geoid height interpolator for <i>Karney</i>'s <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/geoid.html" 
+        target="_top">GeographicLib Earth Gravitational Model (EGM)</a> 
+        geoid <a 
+        href="https://GeographicLib.SourceForge.io/html/geoid.html#geoidinst"
+        target="_top">egm*.pgm</a> datasets using bilinear or <a 
+        href="https://dl.ACM.org/citation.cfm?id=368443" 
+        target="_top">cubic</a> interpolation and <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/geoid.html#geoidcache"
+        target="_top">caching</a> in pure Python, transcoded from 
+        <i>Karney</i>'s <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/geoid.html#geoidinterp"
+        target="_top">C++ class Geoid</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.geoids.GeoidPGM-class.html" class="summary-name">GeoidPGM</a><br />
+      Geoid height interpolator for <i>Karney</i>'s <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/geoid.html" 
+        target="_top">GeographicLib Earth Gravitational Model (EGM)</a> 
+        geoid <a 
+        href="https://GeographicLib.SourceForge.io/html/geoid.html#geoidinst"
+        target="_top">egm*.pgm</a> datasets but based on <code>SciPy</code>
+        <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.RectBivariateSpline.html"
+        target="_top">RectBivariateSpline</a> or <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.interp2d.html"
+        target="_top">interp2d</a> interpolation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightCubic-class.html" class="summary-name">HeightCubic</a><br />
+      Height interpolator based on <code>SciPy</code> <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.interp2d.html"
+        target="_top">interp2d</a> <code>kind='cubic'</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightError-class.html" class="summary-name">HeightError</a><br />
+      Height interpolator <code>Height...</code> or interpolation issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWcosineAndoyerLambert-class.html" class="summary-name">HeightIDWcosineAndoyerLambert</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#cosineAndoyerLambert_"
+        class="link">pygeodesy3.cosineAndoyerLambert_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWcosineForsytheAndoyerLambert-class.html" class="summary-name">HeightIDWcosineForsytheAndoyerLambert</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#cosineForsytheAndoyerLambert_"
+        class="link">pygeodesy3.cosineForsytheAndoyerLambert_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWcosineLaw-class.html" class="summary-name">HeightIDWcosineLaw</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#cosineLaw_" 
+        class="link">pygeodesy3.cosineLaw_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWdistanceTo-class.html" class="summary-name">HeightIDWdistanceTo</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the distance
+        from the points' <code>LatLon.distanceTo</code> method, 
+        conventionally in <code>meter</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWequirectangular-class.html" class="summary-name">HeightIDWequirectangular</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians squared</code> like 
+        function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWeuclidean-class.html" class="summary-name">HeightIDWeuclidean</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#euclidean_" 
+        class="link">pygeodesy3.euclidean_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWexact-class.html" class="summary-name">HeightIDWexact</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>degrees</code> from method <a 
+        href="pygeodesy3.geodesic.exact.gx.GeodesicExact-class.html" 
+        class="link">GeodesicExact</a><code>.Inverse</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWflatLocal-class.html" class="summary-name">HeightIDWflatLocal</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians squared</code> like 
+        function <a 
+        href="pygeodesy3.distances.formy-module.html#flatLocal_" 
+        class="link">pygeodesy3.flatLocal_</a>/<a 
+        href="pygeodesy3.distances.formy-module.html#flatLocal_" 
+        class="link">pygeodesy3.hubeny_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWflatPolar-class.html" class="summary-name">HeightIDWflatPolar</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#flatPolar_" 
+        class="link">pygeodesy3.flatPolar_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWhaversine-class.html" class="summary-name">HeightIDWhaversine</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#haversine_" 
+        class="link">pygeodesy3.haversine_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWhubeny-class.html" class="summary-name">HeightIDWhubeny</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians squared</code> like 
+        function <a 
+        href="pygeodesy3.distances.formy-module.html#flatLocal_" 
+        class="link">pygeodesy3.flatLocal_</a>/<a 
+        href="pygeodesy3.distances.formy-module.html#flatLocal_" 
+        class="link">pygeodesy3.hubeny_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWkarney-class.html" class="summary-name">HeightIDWkarney</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>degrees</code> from 
+        <i>Karney</i>'s <a href="https://PyPI.org/project/geographiclib" 
+        target="_top">geographiclib</a> <a 
+        href="https://GeographicLib.SourceForge.io/Python/doc/code.html" 
+        target="_top">Geodesic</a> Inverse method.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWthomas-class.html" class="summary-name">HeightIDWthomas</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#thomas_" 
+        class="link">pygeodesy3.thomas_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightIDWvincentys-class.html" class="summary-name">HeightIDWvincentys</a><br />
+      Height interpolator using <a 
+        href="https://WikiPedia.org/wiki/Inverse_distance_weighting" 
+        target="_top">Inverse Distance Weighting</a> (IDW) and the 
+        <i>angular</i> distance in <code>radians</code> from function <a 
+        href="pygeodesy3.distances.formy-module.html#vincentys_" 
+        class="link">pygeodesy3.vincentys_</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightLSQBiSpline-class.html" class="summary-name">HeightLSQBiSpline</a><br />
+      Height interpolator using <code>SciPy</code> <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.LSQSphereBivariateSpline.html"
+        target="_top">LSQSphereBivariateSpline</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightLinear-class.html" class="summary-name">HeightLinear</a><br />
+      Height interpolator based on <code>SciPy</code> <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.interp2d.html"
+        target="_top">interp2d</a> <code>kind='linear'</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.heights.HeightSmoothBiSpline-class.html" class="summary-name">HeightSmoothBiSpline</a><br />
+      Height interpolator using <code>SciPy</code> <a 
+        href="https://docs.SciPy.org/doc/scipy/reference/generated/scipy.interpolate.SmoothSphereBivariateSpline.html"
+        target="_top">SmoothSphereBivariateSpline</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.elevations.geoids.PGMError-class.html" class="summary-name">PGMError</a><br />
+      Issue parsing or cropping an <code>egm*.pgm</code> geoid dataset.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.elevations-module.html#egmGeoidHeights" class="summary-sig-name">egmGeoidHeights</a>(<span class="summary-sig-arg">GeoidHeights_dat</span>)</span><br />
+      Generate geoid <a 
+      href="https://GeographicLib.SourceForge.io/html/geoid.html#geoidinst"
+      target="_top">egm*.pgm</a> height tests from <a 
+      href="https://SourceForge.net/projects/geographiclib/files/testdata/"
+      target="_top">GeoidHeights.dat</a> <a 
+      href="https://GeographicLib.SourceForge.io/C++/doc/geoid.html#testgeoid"
+      target="_top">Test data for Geoids</a>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.elevations-module.html#elevation2" class="summary-sig-name">elevation2</a>(<span class="summary-sig-arg">lat</span>,
+        <span class="summary-sig-arg">lon</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">2.0</span>)</span><br />
+      Get the geoid elevation at an <code>NAD83</code> to 
+      <code>NAVD88</code> location.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.elevations-module.html#geoidHeight2" class="summary-sig-name">geoidHeight2</a>(<span class="summary-sig-arg">lat</span>,
+        <span class="summary-sig-arg">lon</span>,
+        <span class="summary-sig-arg">model</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">2.0</span>)</span><br />
+      Get the <code>NAVD88</code> geoid height at an <code>NAD83</code> 
+      location.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__getattr__"></a><span class="summary-name">__getattr__</span> = <code title="_lazy_import_as(__name__)">_lazy_import_as(__name__)</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="egmGeoidHeights"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">egmGeoidHeights</span>&nbsp;(<span class="sig-arg">GeoidHeights_dat</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generate geoid <a 
+  href="https://GeographicLib.SourceForge.io/html/geoid.html#geoidinst" 
+  target="_top">egm*.pgm</a> height tests from <a 
+  href="https://SourceForge.net/projects/geographiclib/files/testdata/" 
+  target="_top">GeoidHeights.dat</a> <a 
+  href="https://GeographicLib.SourceForge.io/C++/doc/geoid.html#testgeoid" 
+  target="_top">Test data for Geoids</a>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>GeoidHeights_dat</code></strong> - The un-gz-ed <code>GeoidHeights.dat</code> file (<code>str</code>
+          or <code>file</code> handle).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>For each test, yield a <a 
+          href="pygeodesy3.elevations.geoids.GeoidHeight5Tuple-class.html" 
+          class="link">GeoidHeight5Tuple</a><code>(lat, lon, egm84, egm96, 
+          egm2008)</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.elevations.geoids.GeoidError-class.html">GeoidError</a></strong></code> - Invalid <b><code>GeoidHeights_dat</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Function <a 
+        href="pygeodesy3.elevations.geoids-module.html#egmGeoidHeights" 
+        class="link">egmGeoidHeights</a> is used to test the geoids <a 
+        href="pygeodesy3.elevations.geoids.GeoidKarney-class.html" 
+        class="link">GeoidKarney</a> and <a 
+        href="pygeodesy3.elevations.geoids.GeoidPGM-class.html" 
+        class="link">GeoidPGM</a>, see PyGeodesy3 module 
+        <code>test/testGeoids.py</code>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="elevation2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">elevation2</span>&nbsp;(<span class="sig-arg">lat</span>,
+        <span class="sig-arg">lon</span>,
+        <span class="sig-arg">timeout</span>=<span class="sig-default">2.0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the geoid elevation at an <code>NAD83</code> to 
+  <code>NAVD88</code> location.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lat</code></strong> - Latitude (<code>degrees</code>).</li>
+        <li><strong class="pname"><code>lon</code></strong> - Longitude (<code>degrees</code>).</li>
+        <li><strong class="pname"><code>timeout</code></strong> - Optional, query timeout (seconds).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>An <a 
+          href="pygeodesy3.elevations.webs.Elevation2Tuple-class.html" 
+          class="link">Elevation2Tuple</a><code>(elevation, 
+          data_source)</code> or (<code>None, &quot;error&quot;</code>) in 
+          case of errors.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>timeout</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The returned <code>elevation</code> is <code>None</code> if 
+        <b><code>lat</code></b> or <b><code>lon</code></b> is invalid or 
+        outside the <code>Conterminous US (CONUS)</code>, if conversion 
+        failed or if the query timed out.  The 
+        <code>&quot;error&quot;</code> is the <code>HTTP-, IO-, SSL-</code>
+        or other <code>-Error</code> as a string (<code>str</code>).
+      </p>
+      <p><strong>See Also:</strong>
+        <a href="https://apps.NationalMap.gov/epqs/" target="_top">USGS 
+        Elevation Point Query Service</a>, the <a 
+        href="https://www.USGS.gov/faqs/what-are-projection-horizontal-and-vertical-datum-units-and-resolution-3dep-standard-dems"
+        target="_top">FAQ</a>, <a href="https://Gist.GitHub.com/pyRobShrk" 
+        target="_top">geoid.py</a>, module <a 
+        href="pygeodesy3.elevations.geoids-module.html" class="link" 
+        onclick="show_private();">geoids</a>, classes <a 
+        href="pygeodesy3.elevations.geoids.GeoidG2012B-class.html" 
+        class="link">GeoidG2012B</a>, <a 
+        href="pygeodesy3.elevations.geoids.GeoidKarney-class.html" 
+        class="link">GeoidKarney</a> and <a 
+        href="pygeodesy3.elevations.geoids.GeoidPGM-class.html" 
+        class="link">GeoidPGM</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="geoidHeight2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">geoidHeight2</span>&nbsp;(<span class="sig-arg">lat</span>,
+        <span class="sig-arg">lon</span>,
+        <span class="sig-arg">model</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">timeout</span>=<span class="sig-default">2.0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the <code>NAVD88</code> geoid height at an <code>NAD83</code> 
+  location.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lat</code></strong> - Latitude (<code>degrees</code>).</li>
+        <li><strong class="pname"><code>lon</code></strong> - Longitude (<code>degrees</code>).</li>
+        <li><strong class="pname"><code>model</code></strong> - Optional, geoid model ID (<code>int</code>).</li>
+        <li><strong class="pname"><code>timeout</code></strong> - Optional, query timeout (seconds).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>An <a 
+          href="pygeodesy3.elevations.webs.GeoidHeight2Tuple-class.html" 
+          class="link">GeoidHeight2Tuple</a><code>(height, 
+          model_name)</code> or <code>(None, &quot;error&quot;</code>) in 
+          case of errors.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>timeout</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The returned <code>height</code> is <code>None</code> if 
+        <b><code>lat</code></b> or <b><code>lon</code></b> is invalid or 
+        outside the <code>Conterminous US (CONUS)</code>, if the 
+        <b><code>model</code></b> was invalid, if conversion failed or if 
+        the query timed out.  The <code>&quot;error&quot;</code> is the 
+        <code>HTTP-, IO-, SSL-, URL-</code> or other <code>-Error</code> as
+        a string (<code>str</code>).
+      </p>
+      <p><strong>See Also:</strong>
+        <a href="https://www.NGS.NOAA.gov/INFO/geodesy.shtml" 
+        target="_top">NOAA National Geodetic Survey</a>, <a 
+        href="https://www.NGS.NOAA.gov/web_services/geoid.shtml" 
+        target="_top">Geoid</a>, <a 
+        href="https://Gist.GitHub.com/pyRobShrk" 
+        target="_top">USGS10mElev.py</a>, module <a 
+        href="pygeodesy3.elevations.geoids-module.html" class="link" 
+        onclick="show_private();">geoids</a>, classes <a 
+        href="pygeodesy3.elevations.geoids.GeoidG2012B-class.html" 
+        class="link">GeoidG2012B</a>, <a 
+        href="pygeodesy3.elevations.geoids.GeoidKarney-class.html" 
+        class="link">GeoidKarney</a> and <a 
+        href="pygeodesy3.elevations.geoids.GeoidPGM-class.html" 
+        class="link">GeoidPGM</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Dec 19 14:13:29 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

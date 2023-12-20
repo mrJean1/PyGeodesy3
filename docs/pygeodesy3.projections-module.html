@@ -1,0 +1,2778 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygeodesy3.projections</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygeodesy3-module.html">Package&nbsp;pygeodesy3</a> ::
+        Package&nbsp;projections
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pygeodesy3.projections-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package projections</h1><p class="nomargin-top"></p>
+<p>Various earth projections.</p>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        23.12.18
+      </p>
+</div><!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.albers-module.html" onclick="show_private();">pygeodesy3.projections.albers</a></strong>: <em class="summary">Albers Equal-Area projections.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.azimuthal-module.html" onclick="show_private();">pygeodesy3.projections.azimuthal</a></strong>: <em class="summary">Equidistant, Equal-Area, and other Azimuthal projections.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.css-module.html" onclick="show_private();">pygeodesy3.projections.css</a></strong>: <em class="summary">Cassini-Soldner (CSS) projection.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.etm-module.html" onclick="show_private();">pygeodesy3.projections.etm</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s <code>Exact Transverse 
+        Mercator</code> (ETM) projection.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.ktm-module.html" onclick="show_private();">pygeodesy3.projections.ktm</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1TransverseMercator.html"
+        target="_top">TransverseMercator</a> based on <i>Kr&#252;ger</i> series.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.lcc-module.html" onclick="show_private();">pygeodesy3.projections.lcc</a></strong>: <em class="summary">Lambert Conformal Conic (LCC) projection.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.ltp-module.html" onclick="show_private();">pygeodesy3.projections.ltp</a></strong>: <em class="summary"><i>Local Tangent Plane</i> (LTP) and <i>local</i> cartesian 
+        coordinates.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.ltpTuples-module.html" onclick="show_private();">pygeodesy3.projections.ltpTuples</a></strong>: <em class="summary">Named, <i>Local Tangent Plane</i> (LTP) tuples.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.ups-module.html" onclick="show_private();">pygeodesy3.projections.ups</a></strong>: <em class="summary"><i>Karney</i>'s Universal Polar Stereographic (UPS) projection.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.utm-module.html" onclick="show_private();">pygeodesy3.projections.utm</a></strong>: <em class="summary"><i>Veness</i>' Universal Transverse Mercator (UTM) projection.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.utmups-module.html" onclick="show_private();">pygeodesy3.projections.utmups</a></strong>: <em class="summary"><i>Karney</i>'s UTM and UPS utilities.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.projections.webmercator-module.html" onclick="show_private();">pygeodesy3.projections.webmercator</a></strong>: <em class="summary">Web Mercator (WM) projection.</em>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Aer-class.html" class="summary-name">Aer</a><br />
+      Local <code>Azimuth-Elevation-Range</code> (AER) in a <i>local 
+        tangent plane</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Aer4Tuple-class.html" class="summary-name">Aer4Tuple</a><br />
+      4-Tuple <code>(azimuth, elevation, slantrange, ltp)</code>, all in 
+        <code>meter</code> except <code>ltp</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.Albers7Tuple-class.html" class="summary-name">Albers7Tuple</a><br />
+      7-Tuple <code>(x, y, lat, lon, gamma, scale, datum)</code>, in 
+        <code>meter</code>, <code>meter</code>, <code>degrees90</code>, 
+        <code>degrees180</code>, <code>degrees360</code>, 
+        <code>scalar</code> and <code>Datum</code> where <code>(x, 
+        y)</code> is the projected, <code>(lat, lon)</code> the geodetic 
+        location, <code>gamma</code> the meridian convergence at point, the
+        bearing of the y-axis measured clockwise from true North and 
+        <code>scale</code> is the azimuthal scale of the projection at 
+        point.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.AlbersEqualArea-class.html" class="summary-name">AlbersEqualArea</a><br />
+      An Albers equal-area (authalic) projection with a single standard 
+        parallel.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.AlbersEqualArea2-class.html" class="summary-name">AlbersEqualArea2</a><br />
+      An Albers equal-area (authalic) projection with two standard 
+        parallels.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.AlbersEqualArea4-class.html" class="summary-name">AlbersEqualArea4</a><br />
+      An Albers equal-area (authalic) projection specified by the 
+        <code>sin</code> and <code>cos</code> of both standard parallels.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.AlbersEqualAreaCylindrical-class.html" class="summary-name">AlbersEqualAreaCylindrical</a><br />
+      An <a 
+        href="pygeodesy3.projections.albers.AlbersEqualArea-class.html" 
+        class="link">AlbersEqualArea</a> projection at <code>lat=0</code> 
+        and <code>k0=1</code> degenerating to the cylindrical-equal-area 
+        projection.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.AlbersEqualAreaNorth-class.html" class="summary-name">AlbersEqualAreaNorth</a><br />
+      An azimuthal <a 
+        href="pygeodesy3.projections.albers.AlbersEqualArea-class.html" 
+        class="link">AlbersEqualArea</a> projection at <code>lat=90</code> 
+        and <code>k0=1</code> degenerating to the <a 
+        href="pygeodesy3.projections.azimuthal-module.html" class="link" 
+        onclick="show_private();">azimuthal</a> <a 
+        href="pygeodesy3.projections.azimuthal.LambertEqualArea-class.html"
+        class="link">LambertEqualArea</a> projection.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.AlbersEqualAreaSouth-class.html" class="summary-name">AlbersEqualAreaSouth</a><br />
+      An azimuthal <a 
+        href="pygeodesy3.projections.albers.AlbersEqualArea-class.html" 
+        class="link">AlbersEqualArea</a> projection at <code>lat=-90</code>
+        and <code>k0=1</code> degenerating to the <a 
+        href="pygeodesy3.projections.azimuthal-module.html" class="link" 
+        onclick="show_private();">azimuthal</a> <a 
+        href="pygeodesy3.projections.azimuthal.LambertEqualArea-class.html"
+        class="link">LambertEqualArea</a> projection.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.albers.AlbersError-class.html" class="summary-name">AlbersError</a><br />
+      An <a 
+        href="pygeodesy3.projections.albers.AlbersEqualArea-class.html" 
+        class="link">AlbersEqualArea</a>, <a 
+        href="pygeodesy3.projections.albers.AlbersEqualArea2-class.html" 
+        class="link">AlbersEqualArea2</a>, <a 
+        href="pygeodesy3.projections.albers.AlbersEqualArea4-class.html" 
+        class="link">AlbersEqualArea4</a>, <a 
+        href="pygeodesy3.projections.albers.AlbersEqualAreaCylindrical-class.html"
+        class="link">AlbersEqualAreaCylindrical</a>, <a 
+        href="pygeodesy3.projections.albers.AlbersEqualAreaNorth-class.html"
+        class="link">AlbersEqualAreaNorth</a>, <a 
+        href="pygeodesy3.projections.albers.AlbersEqualAreaSouth-class.html"
+        class="link">AlbersEqualAreaSouth</a> or <a 
+        href="pygeodesy3.projections.albers.Albers7Tuple-class.html" 
+        class="link">Albers7Tuple</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.Attitude-class.html" class="summary-name">Attitude</a><br />
+      The orientation of a plane or camera in space.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Attitude4Tuple-class.html" class="summary-name">Attitude4Tuple</a><br />
+      4-Tuple <code>(alt, tilt, yaw, roll)</code> with 
+        <code>altitude</code> in (positive) <code>meter</code> and 
+        <code>tilt</code>, <code>yaw</code> and <code>roll</code> in 
+        <code>degrees</code> representing the attitude of a plane or 
+        camera.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.AttitudeError-class.html" class="summary-name">AttitudeError</a><br />
+      An <a href="pygeodesy3.projections.ltp.Attitude-class.html" 
+        class="link">Attitude</a> or <a 
+        href="pygeodesy3.projections.ltpTuples.Attitude4Tuple-class.html" 
+        class="link">Attitude4Tuple</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.Azimuthal7Tuple-class.html" class="summary-name">Azimuthal7Tuple</a><br />
+      7-Tuple <code>(x, y, lat, lon, azimuth, scale, datum)</code>, in 
+        <code>meter</code>, <code>meter</code>, <code>degrees90</code>, 
+        <code>degrees180</code>, compass <code>degrees</code>, 
+        <code>scalar</code> and <code>Datum</code> where <code>(x, 
+        y)</code> is the easting and northing of a projected point, 
+        <code>(lat, lon)</code> the geodetic location, <code>azimuth</code>
+        the azimuth, clockwise from true North and <code>scale</code> is 
+        the projection scale, either <code>1 / reciprocal</code> or 
+        <code>1</code> or <code>-1</code> in the <a 
+        href="pygeodesy3.projections.azimuthal.Equidistant-class.html" 
+        class="link">Equidistant</a> case.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.AzimuthalError-class.html" class="summary-name">AzimuthalError</a><br />
+      An azimuthal <a 
+        href="pygeodesy3.projections.azimuthal.Equidistant-class.html" 
+        class="link">Equidistant</a>, <a 
+        href="pygeodesy3.projections.azimuthal.EquidistantKarney-class.html"
+        class="link">EquidistantKarney</a>, <a 
+        href="pygeodesy3.projections.azimuthal.Gnomonic-class.html" 
+        class="link">Gnomonic</a>, <a 
+        href="pygeodesy3.projections.azimuthal.LambertEqualArea-class.html"
+        class="link">LambertEqualArea</a>, <a 
+        href="pygeodesy3.projections.azimuthal.Orthographic-class.html" 
+        class="link">Orthographic</a>, <a 
+        href="pygeodesy3.projections.azimuthal.Stereographic-class.html" 
+        class="link">Stereographic</a> or <a 
+        href="pygeodesy3.projections.azimuthal.Azimuthal7Tuple-class.html" 
+        class="link">Azimuthal7Tuple</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.css.CSSError-class.html" class="summary-name">CSSError</a><br />
+      Cassini-Soldner (CSS) conversion or other <a 
+        href="pygeodesy3.projections.css.Css-class.html" 
+        class="link">Css</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.css.CassiniSoldner-class.html" class="summary-name">CassiniSoldner</a><br />
+      Cassini-Soldner projection, a Python version of <i>Karney</i>'s C++
+        class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1CassiniSoldner.html"
+        target="_top">CassiniSoldner</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.ChLV-class.html" class="summary-name">ChLV</a><br />
+      Conversion between <i>WGS84 geodetic</i> and <i>Swiss</i> 
+        projection coordinates using <a 
+        href="pygeodesy3.earth.ecef.EcefKarney-class.html" 
+        class="link">pygeodesy3.EcefKarney</a>'s Earth-Centered, 
+        Earth-Fixed (ECEF) methods.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.ChLV9Tuple-class.html" class="summary-name">ChLV9Tuple</a><br />
+      9-Tuple <code>(Y, X, h_, lat, lon, height, ltp, ecef, M)</code> 
+        with <i><b>unfalsed</b> Swiss (Y, X, h_)</i> coordinates and 
+        height, all in <code>meter</code>, <code>ltp</code> either a <a 
+        href="pygeodesy3.projections.ltp.ChLV-class.html" 
+        class="link">ChLV</a>, <a 
+        href="pygeodesy3.projections.ltp.ChLVa-class.html" 
+        class="link">ChLVa</a> or <a 
+        href="pygeodesy3.projections.ltp.ChLVe-class.html" 
+        class="link">ChLVe</a> instance and <code>ecef</code> (<a 
+        href="pygeodesy3.earth.ecef.EcefKarney-class.html" 
+        class="link">EcefKarney</a> <i>at Bern, Ch</i>), otherwise like <a 
+        href="pygeodesy3.projections.ltpTuples.Local9Tuple-class.html" 
+        class="link">Local9Tuple</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.ChLVEN2Tuple-class.html" class="summary-name">ChLVEN2Tuple</a><br />
+      2-Tuple <code>(E_LV95, N_LV95)</code> with <b>falsed</b> <i>Swiss 
+        LV95</i> easting and norting in <code>meter (2_600_000, 
+        1_200_000)</code> and origin at <code>Bern, Ch</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.ChLVYX2Tuple-class.html" class="summary-name">ChLVYX2Tuple</a><br />
+      2-Tuple <code>(Y, X)</code> with <b>unfalsed</b> <i>Swiss LV95</i> 
+        easting and norting in <code>meter</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.ChLVa-class.html" class="summary-name">ChLVa</a><br />
+      Conversion between <i>WGS84 geodetic</i> and <i>Swiss</i> 
+        projection coordinates using the <a 
+        href="https://www.SwissTopo.admin.CH/en/maps-data-online/calculation-services.html"
+        target="_top">Approximate</a> formulas, page 13.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.ChLVe-class.html" class="summary-name">ChLVe</a><br />
+      Conversion between <i>WGS84 geodetic</i> and <i>Swiss</i> 
+        projection coordinates using the <a 
+        href="https://www.SwissTopo.admin.CH/en/maps-data-online/calculation-services.html"
+        target="_top">Ellipsoidal approximate</a> formulas, pp 10-11 and <a
+        
+        href="https://eMuseum.GGGS.CH/literatur-lv/liste-Dateien/1967_Bolliger_a.pdf"
+        target="_top">Bolliger, J.</a> pp 148-151 (also <a 
+        href="https://eMuseum.GGGS.CH/literatur-lv/liste.htm" 
+        target="_top">GGGS</a>).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.ChLVyx2Tuple-class.html" class="summary-name">ChLVyx2Tuple</a><br />
+      2-Tuple <code>(y_LV03, x_LV03)</code> with <b>falsed</b> <i>Swiss 
+        LV03</i> easting and norting in <code>meter (600_000, 
+        200_000)</code> and origin at <code>Bern, Ch</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.lcc.Conic-class.html" class="summary-name">Conic</a><br />
+      Lambert conformal conic projection (1- or 2-SP).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.css.Css-class.html" class="summary-name">Css</a><br />
+      Cassini-Soldner East-/Northing location.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.etm.ETMError-class.html" class="summary-name">ETMError</a><br />
+      Exact Transverse Mercator (ETM) parse, projection or other <a 
+        href="pygeodesy3.projections.etm.Etm-class.html" 
+        class="link">Etm</a> issue or <a 
+        href="pygeodesy3.projections.etm.ExactTransverseMercator-class.html"
+        class="link">ExactTransverseMercator</a> conversion failure.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.css.EasNorAziRk4Tuple-class.html" class="summary-name">EasNorAziRk4Tuple</a><br />
+      4-Tuple <code>(easting, northing, azimuth, reciprocal)</code> for 
+        the Cassini-Soldner location with <code>easting</code> and 
+        <code>northing</code> in <code>meters</code> and the 
+        <code>azimuth</code> of easting direction and 
+        <code>reciprocal</code> of azimuthal northing scale, both in 
+        <code>degrees</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.css.EasNorAziRkEqu6Tuple-class.html" class="summary-name">EasNorAziRkEqu6Tuple</a><br />
+      6-Tuple <code>(easting, northing, azimuth, reciprocal, equatorarc, 
+        equatorazimuth)</code> for the Cassini-Soldner location with 
+        <code>easting</code> and <code>northing</code> in 
+        <code>meters</code> and the <code>azimuth</code> of easting 
+        direction, <code>reciprocal</code> of azimuthal northing scale, 
+        <code>equatorarc</code> and <code>equatorazimuth</code>, all in 
+        <code>degrees</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.webmercator.EasNorRadius3Tuple-class.html" class="summary-name">EasNorRadius3Tuple</a><br />
+      3-Tuple <code>(easting, northing, radius)</code>, all in 
+        <code>meter</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Enu-class.html" class="summary-name">Enu</a><br />
+      Local <code>Eeast-North-Up</code> (ENU) location in a <i>local 
+        tangent plane</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Enu4Tuple-class.html" class="summary-name">Enu4Tuple</a><br />
+      4-Tuple <code>(east, north, up, ltp)</code>, in <code>meter</code> 
+        except <code>ltp</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.Equidistant-class.html" class="summary-name">Equidistant</a><br />
+      Azimuthal equidistant projection for the sphere***, see <a 
+        href="https://Pubs.USGS.gov/pp/1395/report.pdf" 
+        target="_top">Snyder, pp 195-197</a> and <a 
+        href="https://MathWorld.Wolfram.com/AzimuthalEquidistantProjection.html"
+        target="_top">MathWorld-Wolfram</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.EquidistantExact-class.html" class="summary-name">EquidistantExact</a><br />
+      Azimuthal equidistant projection, a Python version of 
+        <i>Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1AzimuthalEquidistant.html"
+        target="_top">AzimuthalEquidistant</a>, based on exact geodesic 
+        classes <a 
+        href="pygeodesy3.geodesic.exact.gx.GeodesicExact-class.html" 
+        class="link">GeodesicExact</a> and <a 
+        href="pygeodesy3.geodesic.exact.gx.GeodesicLineExact-class.html" 
+        class="link">GeodesicLineExact</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.EquidistantGeodSolve-class.html" class="summary-name">EquidistantGeodSolve</a><br />
+      Azimuthal equidistant projection, a Python version of 
+        <i>Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1AzimuthalEquidistant.html"
+        target="_top">AzimuthalEquidistant</a>, based on (exact) geodesic 
+        <i>wrappers</i> <a 
+        href="pygeodesy3.geodesic.solve.GeodesicSolve-class.html" 
+        class="link">GeodesicSolve</a> and <a 
+        href="pygeodesy3.geodesic.solve.GeodesicLineSolve-class.html" 
+        class="link">GeodesicLineSolve</a> and intended <i>for testing 
+        purposes only</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.EquidistantKarney-class.html" class="summary-name">EquidistantKarney</a><br />
+      Azimuthal equidistant projection, a Python version of 
+        <i>Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1AzimuthalEquidistant.html"
+        target="_top">AzimuthalEquidistant</a>, requiring package <a 
+        href="https://PyPI.org/project/geographiclib" 
+        target="_top">geographiclib</a> to be installed.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.etm.Etm-class.html" class="summary-name">Etm</a><br />
+      Exact Transverse Mercator (ETM) coordinate, a sub-class of <a 
+        href="pygeodesy3.projections.utm.Utm-class.html" 
+        class="link">Utm</a>, a Universal Transverse Mercator (UTM) 
+        coordinate using the <a 
+        href="pygeodesy3.projections.etm.ExactTransverseMercator-class.html"
+        class="link">ExactTransverseMercator</a> projection for highest 
+        accuracy.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.etm.ExactTransverseMercator-class.html" class="summary-name">ExactTransverseMercator</a><br />
+      Pure Python version of Karney's C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/TransverseMercatorExact_8cpp_source.html"
+        target="_top">TransverseMercatorExact</a>, a numerically exact 
+        transverse Mercator projection, further referred to as 
+        <code>TMExact</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Footprint5Tuple-class.html" class="summary-name">Footprint5Tuple</a><br />
+      5-Tuple <code>(center, upperleft, upperight, loweright, 
+        lowerleft)</code> with the <code>center</code> and 4 corners of the
+        <i>local</i> projection of a <code>Frustum</code>, each an <a 
+        href="pygeodesy3.projections.ltpTuples.Xyz4Tuple-class.html" 
+        class="link">Xyz4Tuple</a>, <a 
+        href="pygeodesy3.projections.ltpTuples.XyzLocal-class.html" 
+        class="link">XyzLocal</a>, <code>LatLon</code>, etc.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.Frustum-class.html" class="summary-name">Frustum</a><br />
+      A rectangular pyramid, typically representing a camera's 
+        <i>field-of-view</i> (fov) and the intersection with (or projection
+        to) a <i>local tangent plane</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.Gnomonic-class.html" class="summary-name">Gnomonic</a><br />
+      Azimuthal gnomonic projection for the sphere***, see <a 
+        href="https://Pubs.USGS.gov/pp/1395/report.pdf" 
+        target="_top">Snyder, pp 164-168</a> and <a 
+        href="https://MathWorld.Wolfram.com/GnomonicProjection.html" 
+        target="_top">MathWorld-Wolfram</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.GnomonicExact-class.html" class="summary-name">GnomonicExact</a><br />
+      Azimuthal gnomonic projection, a Python version of <i>Karney</i>'s 
+        C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Gnomonic.html"
+        target="_top">Gnomonic</a>, based on exact geodesic classes <a 
+        href="pygeodesy3.geodesic.exact.gx.GeodesicExact-class.html" 
+        class="link">GeodesicExact</a> and <a 
+        href="pygeodesy3.geodesic.exact.gx.GeodesicLineExact-class.html" 
+        class="link">GeodesicLineExact</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.GnomonicGeodSolve-class.html" class="summary-name">GnomonicGeodSolve</a><br />
+      Azimuthal gnomonic projection, a Python version of <i>Karney</i>'s 
+        C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Gnomonic.html"
+        target="_top">Gnomonic</a>, based on (exact) geodesic 
+        <i>wrappers</i> <a 
+        href="pygeodesy3.geodesic.solve.GeodesicSolve-class.html" 
+        class="link">GeodesicSolve</a> and <a 
+        href="pygeodesy3.geodesic.solve.GeodesicLineSolve-class.html" 
+        class="link">GeodesicLineSolve</a> and intended <i>for testing 
+        purposes only</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.GnomonicKarney-class.html" class="summary-name">GnomonicKarney</a><br />
+      Azimuthal gnomonic projection, a Python version of <i>Karney</i>'s 
+        C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Gnomonic.html"
+        target="_top">Gnomonic</a>, requiring package <a 
+        href="https://PyPI.org/project/geographiclib" 
+        target="_top">geographiclib</a> to be installed.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ktm.KTMError-class.html" class="summary-name">KTMError</a><br />
+      Error raised for <a 
+        href="pygeodesy3.projections.ktm.KTransverseMercator-class.html" 
+        class="link">KTransverseMercator</a> and <a 
+        href="pygeodesy3.projections.ktm.KTransverseMercator-class.html#forward"
+        class="link">KTransverseMercator.forward</a> issues.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ktm.KTransverseMercator-class.html" class="summary-name">KTransverseMercator</a><br />
+      <i>Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1TransverseMercator.html"
+        target="_top">TransverseMercator</a> transcoded to pure Python, 
+        following is a partial copy of <i>Karney</i>'s documentation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.lcc.LCCError-class.html" class="summary-name">LCCError</a><br />
+      Lambert Conformal Conic <code>LCC</code> or other <a 
+        href="pygeodesy3.projections.lcc.Lcc-class.html" 
+        class="link">Lcc</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.LambertEqualArea-class.html" class="summary-name">LambertEqualArea</a><br />
+      Lambert-equal-area projection for the sphere*** (aka <a 
+        href="https://WikiPedia.org/wiki/Lambert_azimuthal_equal-area_projection"
+        target="_top">Lambert zenithal equal-area projection</a>, see <a 
+        href="https://Pubs.USGS.gov/pp/1395/report.pdf" 
+        target="_top">Snyder, pp 185-187</a> and <a 
+        href="https://MathWorld.Wolfram.com/LambertAzimuthalEqual-AreaProjection.html"
+        target="_top">MathWorld-Wolfram</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.css.LatLonAziRk4Tuple-class.html" class="summary-name">LatLonAziRk4Tuple</a><br />
+      4-Tuple <code>(lat, lon, azimuth, reciprocal)</code>, all in 
+        <code>degrees</code> where <code>azimuth</code> is the azimuth of 
+        easting direction and <code>reciprocal</code> the reciprocal of 
+        azimuthal northing scale.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.lcc.Lcc-class.html" class="summary-name">Lcc</a><br />
+      Lambert conformal conic East-/Northing location.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Local9Tuple-class.html" class="summary-name">Local9Tuple</a><br />
+      9-Tuple <code>(x, y, z, lat, lon, height, ltp, ecef, M)</code> with
+        <i>local</i> <code>x</code>, <code>y</code>, <code>z</code> all in 
+        <code>meter</code>, <i>geodetic</i> <code>lat</code>, 
+        <code>lon</code>, <code>height</code>, <i>local tangent plane</i> 
+        <code>ltp</code> (<a 
+        href="pygeodesy3.projections.ltp.Ltp-class.html" 
+        class="link">Ltp</a>), <code>ecef</code> (<a 
+        href="pygeodesy3.earth.ecef.Ecef9Tuple-class.html" 
+        class="link">Ecef9Tuple</a>) with <i>geocentric</i> <code>x</code>,
+        <code>y</code>, <code>z</code>, <i>geodetic</i> <code>lat</code>, 
+        <code>lon</code>, <code>height</code> and <i>concatenated</i> 
+        rotation matrix <code>M</code> (<a 
+        href="pygeodesy3.earth.ecef.EcefMatrix-class.html" 
+        class="link">EcefMatrix</a>) or <code>None</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.LocalCartesian-class.html" class="summary-name">LocalCartesian</a><br />
+      Conversion between geodetic <code>(lat, lon, height)</code> and 
+        <i>local cartesian</i> <code>(x, y, z)</code> coordinates with 
+        <i>geodetic</i> origin <code>(lat0, lon0, height0)</code>, 
+        transcoded from <i>Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1LocalCartesian.html"
+        target="_top">LocalCartesian</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.LocalError-class.html" class="summary-name">LocalError</a><br />
+      A <a href="pygeodesy3.projections.ltp.LocalCartesian-class.html" 
+        class="link">LocalCartesian</a> or <a 
+        href="pygeodesy3.projections.ltp.Ltp-class.html" 
+        class="link">Ltp</a> related issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Los-class.html" class="summary-name">Los</a><br />
+      A Line-Of-Sight (LOS) from a <code>LatLon</code> or 
+        <code>Cartesian</code> location.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltp.Ltp-class.html" class="summary-name">Ltp</a><br />
+      A <i>local tangent plan</i> (LTP), a sub-class of 
+        <code>LocalCartesian</code> with (re-)configurable ECEF converter.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Ned-class.html" class="summary-name">Ned</a><br />
+      Local <code>North-Eeast-Down</code> (NED) location in a <i>local 
+        tangent plane</i>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Ned4Tuple-class.html" class="summary-name">Ned4Tuple</a><br />
+      4-Tuple <code>(north, east, down, ltp)</code>, all in 
+        <code>meter</code> except <code>ltp</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.Orthographic-class.html" class="summary-name">Orthographic</a><br />
+      Orthographic projection for the sphere***, see <a 
+        href="https://Pubs.USGS.gov/pp/1395/report.pdf" 
+        target="_top">Snyder, pp 148-153</a> and <a 
+        href="https://MathWorld.Wolfram.com/OrthographicProjection.html" 
+        target="_top">MathWorld-Wolfram</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.azimuthal.Stereographic-class.html" class="summary-name">Stereographic</a><br />
+      Stereographic projection for the sphere***, see <a 
+        href="https://Pubs.USGS.gov/pp/1395/report.pdf" 
+        target="_top">Snyder, pp 157-160</a> and <a 
+        href="https://MathWorld.Wolfram.com/StereographicProjection.html" 
+        target="_top">MathWorld-Wolfram</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ups.UPSError-class.html" class="summary-name">UPSError</a><br />
+      Universal Polar Stereographic (UPS) parse or other <a 
+        href="pygeodesy3.projections.ups.Ups-class.html" 
+        class="link">Ups</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.utm.UTMError-class.html" class="summary-name">UTMError</a><br />
+      Universal Transverse Mercator (UTM parse or other <a 
+        href="pygeodesy3.projections.utm.Utm-class.html" 
+        class="link">Utm</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.utmups.UTMUPSError-class.html" class="summary-name">UTMUPSError</a><br />
+      Universal Transverse Mercator/Universal Polar Stereographic 
+        (UTM/UPS) parse, validate or other issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ups.Ups-class.html" class="summary-name">Ups</a><br />
+      Universal Polar Stereographic (UPS) coordinate.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.utm.Utm-class.html" class="summary-name">Utm</a><br />
+      Universal Transverse Mercator (UTM) coordinate.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Uvw-class.html" class="summary-name">Uvw</a><br />
+      3-D <code>u-v-w</code> (UVW) components.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Uvw3Tuple-class.html" class="summary-name">Uvw3Tuple</a><br />
+      3-Tuple <code>(u, v, w)</code>, in <code>meter</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.webmercator.WebMercatorError-class.html" class="summary-name">WebMercatorError</a><br />
+      Web Mercator (WM) parser or <a 
+        href="pygeodesy3.projections.webmercator.Wm-class.html" 
+        class="link">Wm</a> issue.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.webmercator.Wm-class.html" class="summary-name">Wm</a><br />
+      Web Mercator (WM) coordinate.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.Xyz4Tuple-class.html" class="summary-name">Xyz4Tuple</a><br />
+      4-Tuple <code>(x, y, z, ltp)</code>, all in <code>meter</code> 
+        except <code>ltp</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections.ltpTuples.XyzLocal-class.html" class="summary-name">XyzLocal</a><br />
+      Local <code>(x, y, z)</code> in a <i>local tangent plane</i> (LTP),
+        also base class for local <a 
+        href="pygeodesy3.projections.ltpTuples.Enu-class.html" 
+        class="link">Enu</a>.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#UtmUps" class="summary-sig-name">UtmUps</a>(<span class="summary-sig-arg">zone</span>,
+        <span class="summary-sig-arg">hemipole</span>,
+        <span class="summary-sig-arg">easting</span>,
+        <span class="summary-sig-arg">northing</span>,
+        <span class="summary-sig-arg">band</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Class-like function to create a UTM/UPS coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#equidistant" class="summary-sig-name">equidistant</a>(<span class="summary-sig-arg">lat0</span>,
+        <span class="summary-sig-arg">lon0</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">exact</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">geodsolve</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Return an <a 
+      href="pygeodesy3.projections.azimuthal.EquidistantExact-class.html" 
+      class="link">EquidistantExact</a>, <a 
+      href="pygeodesy3.projections.azimuthal.EquidistantGeodSolve-class.html"
+      class="link">EquidistantGeodSolve</a> or (if <i>Karney</i>'s <a 
+      href="https://PyPI.org/project/geographiclib" 
+      target="_top">geographiclib</a> package is installed) an <a 
+      href="pygeodesy3.projections.azimuthal.EquidistantKarney-class.html" 
+      class="link">EquidistantKarney</a>, otherwise an <a 
+      href="pygeodesy3.projections.azimuthal.Equidistant-class.html" 
+      class="link">Equidistant</a> instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#gnomonic" class="summary-sig-name">gnomonic</a>(<span class="summary-sig-arg">lat0</span>,
+        <span class="summary-sig-arg">lon0</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">exact</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">geodsolve</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Return a <a 
+      href="pygeodesy3.projections.azimuthal.GnomonicExact-class.html" 
+      class="link">GnomonicExact</a> or (if <i>Karney</i>'s <a 
+      href="https://PyPI.org/project/geographiclib" 
+      target="_top">geographiclib</a> package is installed) a <a 
+      href="pygeodesy3.projections.azimuthal.GnomonicKarney-class.html" 
+      class="link">GnomonicKarney</a>, otherwise a <a 
+      href="pygeodesy3.projections.azimuthal.Gnomonic-class.html" 
+      class="link">Gnomonic</a> instance.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#parseETM5" class="summary-sig-name">parseETM5</a>(<span class="summary-sig-arg">strUTM</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">Etm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.etm.Etm'&gt;</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Parse a string representing a UTM coordinate, consisting of 
+      <code>&quot;zone[band] hemisphere easting northing&quot;</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#parseUPS5" class="summary-sig-name">parseUPS5</a>(<span class="summary-sig-arg">strUPS</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">Ups</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Parse a string representing a UPS coordinate, consisting of 
+      <code>&quot;[zone][band] pole easting northing&quot;</code> where 
+      <b><code>zone</code></b> is pseudo zone 
+      <code>&quot;00&quot;|&quot;0&quot;|&quot;&quot;</code> and 
+      <code>band</code> is <code>'A'|'B'|'Y'|'Z'|''</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#parseUTM5" class="summary-sig-name">parseUTM5</a>(<span class="summary-sig-arg">strUTM</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">Utm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Parse a string representing a UTM coordinate, consisting of 
+      <code>&quot;zone[band] hemisphere easting northing&quot;</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#parseUTMUPS5" class="summary-sig-name">parseUTMUPS5</a>(<span class="summary-sig-arg">strUTMUPS</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">Utm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="summary-sig-arg">Ups</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Parse a string representing a UTM or UPS coordinate, consisting of 
+      <code>&quot;zone[band] hemisphere/pole easting northing&quot;</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#parseWM" class="summary-sig-name">parseWM</a>(<span class="summary-sig-arg">strWM</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6378137.0</span>,
+        <span class="summary-sig-arg">Wm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.webmercator.Wm'&gt;</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Parse a string <code>&quot;e n [r]&quot;</code> representing a WM 
+      coordinate, consisting of easting, northing and an optional radius.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#toCss" class="summary-sig-name">toCss</a>(<span class="summary-sig-arg">latlon</span>,
+        <span class="summary-sig-arg">cs0</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">height</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Css</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.css.Css'&gt;</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Convert an (ellipsoidal) geodetic point to a Cassini-Soldner 
+      location.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#toEtm8" class="summary-sig-name">toEtm8</a>(<span class="summary-sig-arg">latlon</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Etm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.etm.Etm'&gt;</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">strict</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">zone</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**cmoff</span>)</span><br />
+      Convert a geodetic lat-/longitude to an ETM coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#toLcc" class="summary-sig-name">toLcc</a>(<span class="summary-sig-arg">latlon</span>,
+        <span class="summary-sig-arg">conic</span>=<span class="summary-sig-default">Conic(name='WRF_Lb', lat0=40, lon0=-97, par1=33, par2=45, E0=0<code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">height</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Lcc</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.lcc.Lcc'&gt;</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**Lcc_kwds</span>)</span><br />
+      Convert an (ellipsoidal) geodetic point to a <i>Lambert</i> location.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#toUps8" class="summary-sig-name">toUps8</a>(<span class="summary-sig-arg">latlon</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Ups</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="summary-sig-arg">pole</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">strict</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Convert a lat-/longitude point to a UPS coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#toUtm8" class="summary-sig-name">toUtm8</a>(<span class="summary-sig-arg">latlon</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Utm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">strict</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">zone</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**cmoff</span>)</span><br />
+      Convert a lat-/longitude point to a UTM coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#toUtmUps8" class="summary-sig-name">toUtmUps8</a>(<span class="summary-sig-arg">latlon</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">datum</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">Utm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="summary-sig-arg">Ups</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="summary-sig-arg">pole</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**cmoff</span>)</span><br />
+      Convert a lat-/longitude point to a UTM or UPS coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#toWm" class="summary-sig-name">toWm</a>(<span class="summary-sig-arg">latlon</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">earth</span>=<span class="summary-sig-default">6378137.0</span>,
+        <span class="summary-sig-arg">Wm</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.webmercator.Wm'&gt;</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**Wm_kwds</span>)</span><br />
+      Convert a lat-/longitude point to a WM coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#tyr3d" class="summary-sig-name">tyr3d</a>(<span class="summary-sig-arg">tilt</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">yaw</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">roll</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">Vector</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.maths.vector3d.Vector3d'&gt;</span>,
+        <span class="summary-sig-arg">**Vector_kwds</span>)</span><br />
+      Convert an attitude oriention into a (3-D) direction vector.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#upsZoneBand5" class="summary-sig-name">upsZoneBand5</a>(<span class="summary-sig-arg">lat</span>,
+        <span class="summary-sig-arg">lon</span>,
+        <span class="summary-sig-arg">strict</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Return the UTM/UPS zone number, <i>polar</i> Band letter, pole and 
+      clipped lat- and longitude for a given location.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#utmZoneBand5" class="summary-sig-name">utmZoneBand5</a>(<span class="summary-sig-arg">lat</span>,
+        <span class="summary-sig-arg">lon</span>,
+        <span class="summary-sig-arg">cmoff</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Return the UTM zone number, Band letter, hemisphere and (clipped) 
+      lat- and longitude for a given location.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#utmupsValidate" class="summary-sig-name">utmupsValidate</a>(<span class="summary-sig-arg">coord</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">MGRS</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">Error</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.projections.utmups.UTMUPSError'&gt;</span>)</span><br />
+      Check a UTM or UPS coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#utmupsValidateOK" class="summary-sig-name">utmupsValidateOK</a>(<span class="summary-sig-arg">coord</span>,
+        <span class="summary-sig-arg">falsed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">ok</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Check a UTM or UPS coordinate.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.projections-module.html#utmupsZoneBand5" class="summary-sig-name">utmupsZoneBand5</a>(<span class="summary-sig-arg">lat</span>,
+        <span class="summary-sig-arg">lon</span>,
+        <span class="summary-sig-arg">cmoff</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Return the UTM/UPS zone number, Band letter, hemisphere/pole and 
+      clipped lat- and longitude for a given location.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__getattr__"></a><span class="summary-name">__getattr__</span> = <code title="_lazy_import_as(__name__)">_lazy_import_as(__name__)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.projections-module.html#Conics" class="summary-name">Conics</a> = <code title="Conics.WRF_Lb: Conic(name='WRF_Lb', lat0=40, lon0=-97, par1=33, par2=4\
+5, E0=0, N0=0, k0=1, SP=2, datum=Datum(name='WGS84', ellipsoid=Ellipso\
+ids.WGS84, transform=Transforms.WGS84))">Conics.WRF_Lb: Conic(name='WRF_Lb', lat0=40, lon0=-97<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="UtmUps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">UtmUps</span>&nbsp;(<span class="sig-arg">zone</span>,
+        <span class="sig-arg">hemipole</span>,
+        <span class="sig-arg">easting</span>,
+        <span class="sig-arg">northing</span>,
+        <span class="sig-arg">band</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class-like function to create a UTM/UPS coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>zone</code></strong> - The UTM zone with/-out <i>longitudinal</i> Band or UPS zone 
+          <code>0</code> or <code>&quot;00&quot;</code> with/-out 
+          <i>polar</i> Band (<code>str</code> or <code>int</code>).</li>
+        <li><strong class="pname"><code>hemipole</code></strong> - UTM hemisphere or UPS top/center of projection (<code>str</code>,
+          <code>'N[orth]'</code> or <code>'S[outh]'</code>).</li>
+        <li><strong class="pname"><code>easting</code></strong> - Easting, see <b><code>falsed</code></b> (<code>meter</code>).</li>
+        <li><strong class="pname"><code>northing</code></strong> - Northing, see <b><code>falsed</code></b> (<code>meter</code>).</li>
+        <li><strong class="pname"><code>band</code></strong> - Optional, UTM <i>latitudinal</i> <code>'C'|'D'|..|'W'|'X'</code> 
+          or UPS <i>polar</i> Band letter <code>'A'|'B'|'Y'|'Z'</code> Band
+          letter (<code>str</code>).</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional, the coordinate's datum (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>).</li>
+        <li><strong class="pname"><code>falsed</code></strong> - Both <b><code>easting</code></b> and <b><code>northing</code></b>
+          are falsed (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>New UTM or UPS instance (<a 
+          href="pygeodesy3.projections.utm.Utm-class.html" 
+          class="link">Utm</a> or <a 
+          href="pygeodesy3.projections.ups.Ups-class.html" 
+          class="link">Ups</a>).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>datum</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.utmups.UTMUPSError-class.html">UTMUPSError</a></strong></code> - UTM or UPS validation failed.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Classes <a href="pygeodesy3.projections.utm.Utm-class.html" 
+        class="link">Utm</a> and <a 
+        href="pygeodesy3.projections.ups.Ups-class.html" 
+        class="link">Ups</a> and <i>Karney</i>'s <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1UTMUPS.html"
+        target="_top">UTMUPS</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="equidistant"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">equidistant</span>&nbsp;(<span class="sig-arg">lat0</span>,
+        <span class="sig-arg">lon0</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">exact</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">geodsolve</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return an <a 
+  href="pygeodesy3.projections.azimuthal.EquidistantExact-class.html" 
+  class="link">EquidistantExact</a>, <a 
+  href="pygeodesy3.projections.azimuthal.EquidistantGeodSolve-class.html" 
+  class="link">EquidistantGeodSolve</a> or (if <i>Karney</i>'s <a 
+  href="https://PyPI.org/project/geographiclib" 
+  target="_top">geographiclib</a> package is installed) an <a 
+  href="pygeodesy3.projections.azimuthal.EquidistantKarney-class.html" 
+  class="link">EquidistantKarney</a>, otherwise an <a 
+  href="pygeodesy3.projections.azimuthal.Equidistant-class.html" 
+  class="link">Equidistant</a> instance.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lat0</code></strong> - Latitude of center point (<code>degrees90</code>).</li>
+        <li><strong class="pname"><code>lon0</code></strong> - Longitude of center point (<code>degrees180</code>).</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum or ellipsoid (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>) or <i>scalar</i> earth radius 
+          (<code>meter</code>).</li>
+        <li><strong class="pname"><code>exact</code></strong> - Return an <a 
+          href="pygeodesy3.projections.azimuthal.EquidistantExact-class.html"
+          class="link">EquidistantExact</a> instance.</li>
+        <li><strong class="pname"><code>geodsolve</code></strong> - Return an <a 
+          href="pygeodesy3.projections.azimuthal.EquidistantGeodSolve-class.html"
+          class="link">EquidistantGeodSolve</a> instance.</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name for the projection (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>An <a 
+          href="pygeodesy3.projections.azimuthal.EquidistantExact-class.html"
+          class="link">EquidistantExact</a>, <a 
+          href="pygeodesy3.projections.azimuthal.EquidistantGeodSolve-class.html"
+          class="link">EquidistantGeodSolve</a>, <a 
+          href="pygeodesy3.projections.azimuthal.EquidistantKarney-class.html"
+          class="link">EquidistantKarney</a> or <a 
+          href="pygeodesy3.projections.azimuthal.Equidistant-class.html" 
+          class="link">Equidistant</a> instance.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.azimuthal.AzimuthalError-class.html">AzimuthalError</a></strong></code> - Invalid <b><code>lat0</code></b> or <b><code>lon0</code></b> or 
+        (spherical) <b><code>datum</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.GeodesicError-class.html">GeodesicError</a></strong></code> - Issue with <a 
+        href="pygeodesy3.geodesic.exact.gx.GeodesicExact-class.html" 
+        class="link">GeodesicExact</a>, <a 
+        href="pygeodesy3.geodesic.solve.GeodesicSolve-class.html" 
+        class="link">GeodesicSolve</a> or <i>Karney</i>'s wrapped 
+        <code>Geodesic</code>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>datum</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="gnomonic"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">gnomonic</span>&nbsp;(<span class="sig-arg">lat0</span>,
+        <span class="sig-arg">lon0</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">exact</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">geodsolve</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a <a 
+  href="pygeodesy3.projections.azimuthal.GnomonicExact-class.html" 
+  class="link">GnomonicExact</a> or (if <i>Karney</i>'s <a 
+  href="https://PyPI.org/project/geographiclib" 
+  target="_top">geographiclib</a> package is installed) a <a 
+  href="pygeodesy3.projections.azimuthal.GnomonicKarney-class.html" 
+  class="link">GnomonicKarney</a>, otherwise a <a 
+  href="pygeodesy3.projections.azimuthal.Gnomonic-class.html" 
+  class="link">Gnomonic</a> instance.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lat0</code></strong> - Latitude of center point (<code>degrees90</code>).</li>
+        <li><strong class="pname"><code>lon0</code></strong> - Longitude of center point (<code>degrees180</code>).</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum or ellipsoid (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>) or <i>scalar</i> earth radius 
+          (<code>meter</code>).</li>
+        <li><strong class="pname"><code>exact</code></strong> - Return a <a 
+          href="pygeodesy3.projections.azimuthal.GnomonicExact-class.html" 
+          class="link">GnomonicExact</a> instance.</li>
+        <li><strong class="pname"><code>geodsolve</code></strong> - Return a <a 
+          href="pygeodesy3.projections.azimuthal.GnomonicGeodSolve-class.html"
+          class="link">GnomonicGeodSolve</a> instance.</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name for the projection (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a 
+          href="pygeodesy3.projections.azimuthal.GnomonicExact-class.html" 
+          class="link">GnomonicExact</a>, <a 
+          href="pygeodesy3.projections.azimuthal.GnomonicGeodSolve-class.html"
+          class="link">GnomonicGeodSolve</a>, <a 
+          href="pygeodesy3.projections.azimuthal.GnomonicKarney-class.html"
+          class="link">GnomonicKarney</a> or <a 
+          href="pygeodesy3.projections.azimuthal.Gnomonic-class.html" 
+          class="link">Gnomonic</a> instance.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.azimuthal.AzimuthalError-class.html">AzimuthalError</a></strong></code> - Invalid <b><code>lat0</code></b> or <b><code>lon0</code></b> or 
+        (spherical) <b><code>datum</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.GeodesicError-class.html">GeodesicError</a></strong></code> - Issue with <a 
+        href="pygeodesy3.geodesic.exact.gx.GeodesicExact-class.html" 
+        class="link">GeodesicExact</a>, <a 
+        href="pygeodesy3.geodesic.solve.GeodesicSolve-class.html" 
+        class="link">GeodesicSolve</a> or <i>Karney</i>'s wrapped 
+        <code>Geodesic</code>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>datum</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="parseETM5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseETM5</span>&nbsp;(<span class="sig-arg">strUTM</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">Etm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.etm.Etm'&gt;</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parse a string representing a UTM coordinate, consisting of 
+  <code>&quot;zone[band] hemisphere easting northing&quot;</code>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>strUTM</code></strong> - A UTM coordinate (<code>str</code>).</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum to use (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>).</li>
+        <li><strong class="pname"><code>Etm</code></strong> - Optional class to return the UTM coordinate (<a 
+          href="pygeodesy3.projections.etm.Etm-class.html" 
+          class="link">Etm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>falsed</code></strong> - Both easting and northing are <code>falsed</code> 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Etm</code></b> name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The UTM coordinate (<b><code>Etm</code></b>) or if 
+          <b><code>Etm</code></b> is <code>None</code>, a <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUps5Tuple-class.html" 
+          class="link">UtmUps5Tuple</a><code>(zone, hemipole, easting, 
+          northing, band)</code>.  The <code>hemipole</code> is the 
+          hemisphere <code>'N'|'S'</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.etm.ETMError-class.html">ETMError</a></strong></code> - Invalid <b><code>strUTM</code></b>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid or near-spherical <b><code>datum</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="parseUPS5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseUPS5</span>&nbsp;(<span class="sig-arg">strUPS</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">Ups</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parse a string representing a UPS coordinate, consisting of 
+  <code>&quot;[zone][band] pole easting northing&quot;</code> where 
+  <b><code>zone</code></b> is pseudo zone 
+  <code>&quot;00&quot;|&quot;0&quot;|&quot;&quot;</code> and 
+  <code>band</code> is <code>'A'|'B'|'Y'|'Z'|''</code>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>strUPS</code></strong> - A UPS coordinate (<code>str</code>).</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum to use (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>).</li>
+        <li><strong class="pname"><code>Ups</code></strong> - Optional class to return the UPS coordinate (<a 
+          href="pygeodesy3.projections.ups.Ups-class.html" 
+          class="link">Ups</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>falsed</code></strong> - Both <b><code>easting</code></b> and <b><code>northing</code></b>
+          are falsed (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Ups</code></b> name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The UPS coordinate (<b><code>Ups</code></b>) or a <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUps5Tuple-class.html" 
+          class="link">UtmUps5Tuple</a><code>(zone, hemipole, easting, 
+          northing, band)</code> if <b><code>Ups</code></b> is 
+          <code>None</code>.  The <code>hemipole</code> is the 
+          <code>'N'|'S'</code> pole, the UPS projection top/center.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.ups.UPSError-class.html">UPSError</a></strong></code> - Invalid <b><code>strUPS</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="parseUTM5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseUTM5</span>&nbsp;(<span class="sig-arg">strUTM</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">Utm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parse a string representing a UTM coordinate, consisting of 
+  <code>&quot;zone[band] hemisphere easting northing&quot;</code>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>strUTM</code></strong> - A UTM coordinate (<code>str</code>).</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum to use (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>).</li>
+        <li><strong class="pname"><code>Utm</code></strong> - Optional class to return the UTM coordinate (<a 
+          href="pygeodesy3.projections.utm.Utm-class.html" 
+          class="link">Utm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>falsed</code></strong> - Both easting and northing are falsed (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Utm</code></b> name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The UTM coordinate (<b><code>Utm</code></b>) or if 
+          <b><code>Utm</code></b> is <code>None</code>, a <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUps5Tuple-class.html" 
+          class="link">UtmUps5Tuple</a><code>(zone, hemipole, easting, 
+          northing, band)</code>.  The <code>hemipole</code> is the 
+          <code>'N'|'S'</code> hemisphere.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.utm.UTMError-class.html">UTMError</a></strong></code> - Invalid <b><code>strUTM</code></b>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>datum</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="parseUTMUPS5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseUTMUPS5</span>&nbsp;(<span class="sig-arg">strUTMUPS</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">Utm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="sig-arg">Ups</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parse a string representing a UTM or UPS coordinate, consisting of 
+  <code>&quot;zone[band] hemisphere/pole easting northing&quot;</code>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>strUTMUPS</code></strong> - A UTM or UPS coordinate (<code>str</code>).</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum to use (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>).</li>
+        <li><strong class="pname"><code>Utm</code></strong> - Optional class to return the UTM coordinate (<a 
+          href="pygeodesy3.projections.utm.Utm-class.html" 
+          class="link">Utm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>Ups</code></strong> - Optional class to return the UPS coordinate (<a 
+          href="pygeodesy3.projections.ups.Ups-class.html" 
+          class="link">Ups</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional instance name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The UTM or UPS instance (<b><code>Utm</code></b> or 
+          <b><code>Ups</code></b>) or a <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUps5Tuple-class.html" 
+          class="link">UtmUps5Tuple</a><code>(zone, hemipole, easting, 
+          northing, band)</code> if <b><code>Utm</code></b> respectively 
+          <b><code>Ups</code></b> or both are <code>None</code>.  The 
+          <code>hemipole</code> is <code>'N'|'S'</code>, the UTM hemisphere
+          or UPS pole, the UPS projection top/center.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.utmups.UTMUPSError-class.html">UTMUPSError</a></strong></code> - Invalid <b><code>strUTMUPS</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Functions <a 
+        href="pygeodesy3.projections.utm-module.html#parseUTM5" 
+        class="link">pygeodesy3.parseUTM5</a> and <a 
+        href="pygeodesy3.projections.ups-module.html#parseUPS5" 
+        class="link">pygeodesy3.parseUPS5</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="parseWM"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseWM</span>&nbsp;(<span class="sig-arg">strWM</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6378137.0</span>,
+        <span class="sig-arg">Wm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.webmercator.Wm'&gt;</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parse a string <code>&quot;e n [r]&quot;</code> representing a WM 
+  coordinate, consisting of easting, northing and an optional radius.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>strWM</code></strong> - A WM coordinate (<code>str</code>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Optional earth radius (<code>meter</code>), needed in case 
+          <b><code>strWM</code></b> doesn't include <code>r</code>.</li>
+        <li><strong class="pname"><code>Wm</code></strong> - Optional class to return the WM coordinate (<a 
+          href="pygeodesy3.projections.webmercator.Wm-class.html" 
+          class="link">Wm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The WM coordinate (<b><code>Wm</code></b>) or an <a 
+          href="pygeodesy3.projections.webmercator.EasNorRadius3Tuple-class.html"
+          class="link">EasNorRadius3Tuple</a><code>(easting, northing, 
+          radius)</code> if <b><code>Wm</code></b> is <code>None</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.webmercator.WebMercatorError-class.html">WebMercatorError</a></strong></code> - Invalid <b><code>strWM</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="toCss"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toCss</span>&nbsp;(<span class="sig-arg">latlon</span>,
+        <span class="sig-arg">cs0</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">height</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Css</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.css.Css'&gt;</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert an (ellipsoidal) geodetic point to a Cassini-Soldner 
+  location.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latlon</code></strong> - Ellipsoidal point (<code>LatLon</code> or <a 
+          href="pygeodesy3.miscs.namedTuples.LatLon4Tuple-class.html" 
+          class="link">LatLon4Tuple</a>).</li>
+        <li><strong class="pname"><code>cs0</code></strong> - Optional, the Cassini-Soldner projection to use (<a 
+          href="pygeodesy3.projections.css.CassiniSoldner-class.html" 
+          class="link">CassiniSoldner</a>).</li>
+        <li><strong class="pname"><code>height</code></strong> - Optional height for the point, overriding the default height 
+          (<code>meter</code>).</li>
+        <li><strong class="pname"><code>Css</code></strong> - Optional class to return the location (<a 
+          href="pygeodesy3.projections.css.Css-class.html" 
+          class="link">Css</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Css</code></b> name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The Cassini-Soldner location (<b><code>Css</code></b>) or an <a 
+          href="pygeodesy3.miscs.namedTuples.EasNor3Tuple-class.html" 
+          class="link">EasNor3Tuple</a><code>(easting, northing, 
+          height)</code> if <b><code>Css</code></b> is <code>None</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.css.CSSError-class.html">CSSError</a></strong></code> - Ellipsoidal mismatch of <b><code>latlon</code></b> and 
+        <b><code>cs0</code></b>.</li>
+        <li><code><strong class='fraise'>ImportError</strong></code> - Package <a href="https://PyPI.org/project/geographiclib" 
+        target="_top">geographiclib</a> not installed or not found.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - If <b><code>latlon</code></b> is not ellipsoidal.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="toEtm8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toEtm8</span>&nbsp;(<span class="sig-arg">latlon</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Etm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.etm.Etm'&gt;</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">strict</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">zone</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**cmoff</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert a geodetic lat-/longitude to an ETM coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latlon</code></strong> - Latitude (<code>degrees</code>) or an (ellipsoidal) geodetic 
+          <code>LatLon</code> instance.</li>
+        <li><strong class="pname"><code>lon</code></strong> - Optional longitude (<code>degrees</code>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum for the ETM coordinate, overriding 
+          <b><code>latlon</code></b>'s datum (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>).</li>
+        <li><strong class="pname"><code>Etm</code></strong> - Optional class to return the ETM coordinate (<a 
+          href="pygeodesy3.projections.etm.Etm-class.html" 
+          class="link">Etm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>falsed</code></strong> - False both easting and northing (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Utm</code></b> name (<code>str</code>).</li>
+        <li><strong class="pname"><code>strict</code></strong> - Restrict <b><code>lat</code></b> to UTM ranges 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>zone</code></strong> - Optional UTM zone to enforce (<code>int</code> or 
+          <code>str</code>).</li>
+        <li><strong class="pname"><code>cmoff</code></strong> - DEPRECATED, use <b><code>falsed</code></b>.  Offset longitude 
+          from the zone's central meridian (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The ETM coordinate as an <b><code>Etm</code></b> instance or a <a
+          href="pygeodesy3.miscs.namedTuples.UtmUps8Tuple-class.html" 
+          class="link">UtmUps8Tuple</a><code>(zone, hemipole, easting, 
+          northing, band, datum, gamma, scale)</code> if 
+          <b><code>Etm</code></b> is <code>None</code> or not 
+          <b><code>falsed</code></b>.  The <code>hemipole</code> is the 
+          <code>'N'|'S'</code> hemisphere.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.etm.ETMError-class.html">ETMError</a></strong></code> - No convergence transforming to ETM easting and northing.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.etm.ETMError-class.html">ETMError</a></strong></code> - Invalid <b><code>zone</code></b> or near-spherical or incompatible 
+        <b><code>datum</code></b> or <code>ellipsoid</code>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.RangeError-class.html">RangeError</a></strong></code> - If <b><code>lat</code></b> outside the valid UTM bands or if 
+        <b><code>lat</code></b> or <b><code>lon</code></b> outside the 
+        valid range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> set to <code>True</code>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid or near-spherical <b><code>datum</code></b> or 
+        <b><code>latlon</code></b> not ellipsoidal.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - The <b><code>lon</code></b> value is missing or 
+        <b><code>latlon</code></b> is invalid.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="toLcc"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toLcc</span>&nbsp;(<span class="sig-arg">latlon</span>,
+        <span class="sig-arg">conic</span>=<span class="sig-default">Conic(name='WRF_Lb', lat0=40, lon0=-97, par1=33, par2=45, E0=0<code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">height</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Lcc</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.lcc.Lcc'&gt;</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**Lcc_kwds</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert an (ellipsoidal) geodetic point to a <i>Lambert</i> 
+  location.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latlon</code></strong> - Ellipsoidal point (<code>LatLon</code>).</li>
+        <li><strong class="pname"><code>conic</code></strong> - Optional Lambert projection to use (<a 
+          href="pygeodesy3.projections.lcc.Conic-class.html" 
+          class="link">Conic</a>).</li>
+        <li><strong class="pname"><code>height</code></strong> - Optional height for the point, overriding the default height 
+          (<code>meter</code>).</li>
+        <li><strong class="pname"><code>Lcc</code></strong> - Optional class to return the <i>Lambert</i> location (<a 
+          href="pygeodesy3.projections.lcc.Lcc-class.html" 
+          class="link">Lcc</a>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Lcc</code></b> name (<code>str</code>).</li>
+        <li><strong class="pname"><code>Lcc_kwds</code></strong> - Optional, additional <b><code>Lcc</code></b> keyword arguments, 
+          ignored if <b><code>Lcc</code></b> is <code>None</code>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The <i>Lambert</i> location (<a 
+          href="pygeodesy3.projections.lcc.Lcc-class.html" 
+          class="link">Lcc</a>) or an <a 
+          href="pygeodesy3.miscs.namedTuples.EasNor3Tuple-class.html" 
+          class="link">EasNor3Tuple</a><code>(easting, northing, 
+          height)</code> if <code><b>Lcc</b> is None</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - If <b><code>latlon</code></b> is not ellipsoidal.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="toUps8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toUps8</span>&nbsp;(<span class="sig-arg">latlon</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Ups</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="sig-arg">pole</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">strict</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert a lat-/longitude point to a UPS coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latlon</code></strong> - Latitude (<code>degrees</code>) or an (ellipsoidal) geodetic 
+          <code>LatLon</code> point.</li>
+        <li><strong class="pname"><code>lon</code></strong> - Optional longitude (<code>degrees</code>) or <code>None</code> if
+          <b><code>latlon</code></b> is a <code>LatLon</code>.</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum for this UPS coordinate, overriding 
+          <b><code>latlon</code></b>'s datum (<code>Datum</code>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>).</li>
+        <li><strong class="pname"><code>Ups</code></strong> - Optional class to return the UPS coordinate (<a 
+          href="pygeodesy3.projections.ups.Ups-class.html" 
+          class="link">Ups</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>pole</code></strong> - Optional top/center of (stereographic) projection 
+          (<code>str</code>, <code>'N[orth]'</code> or 
+          <code>'S[outh]'</code>).</li>
+        <li><strong class="pname"><code>falsed</code></strong> - False both easting and northing (<code>bool</code>).</li>
+        <li><strong class="pname"><code>strict</code></strong> - Restrict <b><code>lat</code></b> to UPS ranges 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Ups</code></b> name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The UPS coordinate (<b><code>Ups</code></b>) or a <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUps8Tuple-class.html" 
+          class="link">UtmUps8Tuple</a><code>(zone, hemipole, easting, 
+          northing, band, datum, gamma, scale)</code> if 
+          <b><code>Ups</code></b> is <code>None</code>. The 
+          <code>hemipole</code> is the <code>'N'|'S'</code> pole, the UPS 
+          projection top/center.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.RangeError-class.html">RangeError</a></strong></code> - If <b><code>strict</code></b> and <b><code>lat</code></b> outside 
+        the valid UPS bands or if <b><code>lat</code></b> or 
+        <b><code>lon</code></b> outside the valid range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> set to <code>True</code>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - If <b><code>latlon</code></b> is not ellipsoidal or 
+        <b><code>datum</code></b> invalid.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - If <b><code>lon</code></b> value is missing or if 
+        <b><code>latlon</code></b> is invalid.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <i>Karney</i>'s C++ class <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1UPS.html"
+        target="_top">UPS</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="toUtm8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toUtm8</span>&nbsp;(<span class="sig-arg">latlon</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Utm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">strict</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">zone</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**cmoff</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert a lat-/longitude point to a UTM coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latlon</code></strong> - Latitude (<code>degrees</code>) or an (ellipsoidal) geodetic 
+          <code>LatLon</code> point.</li>
+        <li><strong class="pname"><code>lon</code></strong> - Optional longitude (<code>degrees</code>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum for this UTM coordinate, overriding 
+          <b><code>latlon</code></b>'s datum (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>).</li>
+        <li><strong class="pname"><code>Utm</code></strong> - Optional class to return the UTM coordinate (<a 
+          href="pygeodesy3.projections.utm.Utm-class.html" 
+          class="link">Utm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>falsed</code></strong> - False both easting and northing (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <b><code>Utm</code></b> name (<code>str</code>).</li>
+        <li><strong class="pname"><code>strict</code></strong> - Restrict <b><code>lat</code></b> to UTM ranges 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>zone</code></strong> - Optional UTM zone to enforce (<code>int</code> or 
+          <code>str</code>).</li>
+        <li><strong class="pname"><code>cmoff</code></strong> - DEPRECATED, use <b><code>falsed</code></b>.  Offset longitude 
+          from the zone's central meridian (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The UTM coordinate (<b><code>Utm</code></b>) or if 
+          <b><code>Utm</code></b> is <code>None</code> or not 
+          <b><code>falsed</code></b>, a <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUps8Tuple-class.html" 
+          class="link">UtmUps8Tuple</a><code>(zone, hemipole, easting, 
+          northing, band, datum, gamma, scale)</code>.  The 
+          <code>hemipole</code> is the <code>'N'|'S'</code> hemisphere.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.RangeError-class.html">RangeError</a></strong></code> - If <b><code>lat</code></b> outside the valid UTM bands or if 
+        <b><code>lat</code></b> or <b><code>lon</code></b> outside the 
+        valid range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> set to <code>True</code>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>datum</code></b> or <b><code>latlon</code></b> not
+        ellipsoidal.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.utm.UTMError-class.html">UTMError</a></strong></code> - Invalid <b><code>zone</code></b>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - If <b><code>lon</code></b> value is missing or if 
+        <b><code>latlon</code></b> is invalid.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Implements Karney&#8217;s method, using 8-th order Kr&#252;ger series, giving 
+        results accurate to 5 nm (or better) for distances up to 3,900 Km 
+        from the central meridian.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="toUtmUps8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toUtmUps8</span>&nbsp;(<span class="sig-arg">latlon</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">datum</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">Utm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.utm.Utm'&gt;</span>,
+        <span class="sig-arg">Ups</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.ups.Ups'&gt;</span>,
+        <span class="sig-arg">pole</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**cmoff</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert a lat-/longitude point to a UTM or UPS coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latlon</code></strong> - Latitude (<code>degrees</code>) or an (ellipsoidal) geodetic 
+          <code>LatLon</code> point.</li>
+        <li><strong class="pname"><code>lon</code></strong> - Optional longitude (<code>degrees</code>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>datum</code></strong> - Optional datum to use this UTM coordinate, overriding 
+          <b><code>latlon</code></b>'s datum (<code>Datum</code>).</li>
+        <li><strong class="pname"><code>falsed</code></strong> - False both easting and northing (<code>bool</code>).</li>
+        <li><strong class="pname"><code>Utm</code></strong> - Optional class to return the UTM coordinate (<a 
+          href="pygeodesy3.projections.utm.Utm-class.html" 
+          class="link">Utm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>Ups</code></strong> - Optional class to return the UPS coordinate (<a 
+          href="pygeodesy3.projections.ups.Ups-class.html" 
+          class="link">Ups</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>pole</code></strong> - Optional top/center of UPS (stereographic) projection 
+          (<code>str</code>, <code>'N[orth]'</code> or 
+          <code>'S[outh]'</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+        <li><strong class="pname"><code>cmoff</code></strong> - DEPRECATED, use <b><code>falsed</code></b>.  Offset longitude 
+          from zone's central meridian, for UTM only (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The UTM or UPS coordinate (<b><code>Utm</code></b> respectively 
+          <b><code>Ups</code></b>) or a <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUps8Tuple-class.html" 
+          class="link">UtmUps8Tuple</a><code>(zone, hemipole, easting, 
+          northing, band, datum, gamma, scale)</code> if 
+          <b><code>Utm</code></b> respectively <b><code>Ups</code></b> is 
+          <code>None</code> or <b><code>cmoff</code></b> is 
+          <code>False</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.RangeError-class.html">RangeError</a></strong></code> - If <b><code>lat</code></b> outside the valid UTM or UPS bands or if
+        <b><code>lat</code></b> or <b><code>lon</code></b> outside the 
+        valid range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> set to <code>True</code>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - If <b><code>latlon</code></b> is not ellipsoidal or 
+        <b><code>lon</code></b> value is missing of 
+        <b><code>datum</code></b> is invalid.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.projections.utmups.UTMUPSError-class.html">UTMUPSError</a></strong></code> - UTM or UPS validation failed.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>lat</code></b> or <b><code>lon</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Functions <a href="pygeodesy3.projections.utm-module.html#toUtm8" 
+        class="link">pygeodesy3.toUtm8</a> and <a 
+        href="pygeodesy3.projections.ups-module.html#toUps8" 
+        class="link">pygeodesy3.toUps8</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="toWm"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">toWm</span>&nbsp;(<span class="sig-arg">latlon</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">earth</span>=<span class="sig-default">6378137.0</span>,
+        <span class="sig-arg">Wm</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.webmercator.Wm'&gt;</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**Wm_kwds</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert a lat-/longitude point to a WM coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latlon</code></strong> - Latitude (<code>degrees</code>) or an (ellipsoidal or spherical) 
+          geodetic <code>LatLon</code> point.</li>
+        <li><strong class="pname"><code>lon</code></strong> - Optional longitude (<code>degrees</code> or <code>None</code>).</li>
+        <li><strong class="pname"><code>earth</code></strong> - Earth radius (<code>meter</code>), datum or ellipsoid (<a 
+          href="pygeodesy3.earth.datums.Datum-class.html" 
+          class="link">Datum</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
+          class="link">a_f2Tuple</a>, <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html" 
+          class="link">Ellipsoid</a> or <a 
+          href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
+          class="link">Ellipsoid2</a>), overridden by 
+          <b><code>latlon</code></b>'s datum if present.</li>
+        <li><strong class="pname"><code>Wm</code></strong> - Optional class to return the WM coordinate (<a 
+          href="pygeodesy3.projections.webmercator.Wm-class.html" 
+          class="link">Wm</a>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+        <li><strong class="pname"><code>Wm_kwds</code></strong> - Optional, additional <b><code>Wm</code></b> keyword arguments, 
+          ignored if <code><b>Wm</b> is None</code>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The WM coordinate (<b><code>Wm</code></b>) or if 
+          <b><code>Wm</code></b> is <code>None</code> an <a 
+          href="pygeodesy3.projections.webmercator.EasNorRadius3Tuple-class.html"
+          class="link">EasNorRadius3Tuple</a><code>(easting, northing, 
+          radius)</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>ValueError</strong></code> - If <b><code>lon</code></b> value is missing, if 
+        <b><code>latlon</code></b> is not scalar, if 
+        <b><code>latlon</code></b> is beyond the valid WM range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> is set to <code>True</code> 
+        or if <b><code>earth</code></b> is invalid.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="tyr3d"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">tyr3d</span>&nbsp;(<span class="sig-arg">tilt</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">yaw</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">roll</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">Vector</span>=<span class="sig-default">&lt;class 'pygeodesy3.maths.vector3d.Vector3d'&gt;</span>,
+        <span class="sig-arg">**Vector_kwds</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Convert an attitude oriention into a (3-D) direction vector.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>tilt</code></strong> - Pitch, elevation from horizontal (<code>degrees</code>), negative
+          down (clockwise rotation along and around the x-axis).</li>
+        <li><strong class="pname"><code>yaw</code></strong> - Bearing, heading (compass <code>degrees360</code>), clockwise 
+          from North (counter-clockwise rotation along and around the 
+          z-axis).</li>
+        <li><strong class="pname"><code>roll</code></strong> - Roll, bank (<code>degrees</code>), positive to the right and down
+          (clockwise rotation along and around the y-axis).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A named <b><code>Vector</code></b> instance or if 
+          <b><code>Vector</code></b> is <code>None</code>, a named <a 
+          href="pygeodesy3.miscs.namedTuples.Vector3Tuple-class.html" 
+          class="link">Vector3Tuple</a><code>(x, y, z)</code>.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a href="http://MSL.CS.UIUC.edu/planning/node102.html" 
+        target="_top">Yaw, pitch, and roll rotations</a> and function <a 
+        href="pygeodesy3.distances.formy-module.html#hartzell" 
+        class="link">pygeodesy3.hartzell</a> argument <code>los</code>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="upsZoneBand5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">upsZoneBand5</span>&nbsp;(<span class="sig-arg">lat</span>,
+        <span class="sig-arg">lon</span>,
+        <span class="sig-arg">strict</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the UTM/UPS zone number, <i>polar</i> Band letter, pole and 
+  clipped lat- and longitude for a given location.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lat</code></strong> - Latitude in degrees (<code>scalar</code> or <code>str</code>).</li>
+        <li><strong class="pname"><code>lon</code></strong> - Longitude in degrees (<code>scalar</code> or <code>str</code>).</li>
+        <li><strong class="pname"><code>strict</code></strong> - Restrict <b><code>lat</code></b> to UPS ranges 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUpsLatLon5Tuple-class.html"
+          class="link">UtmUpsLatLon5Tuple</a><code>(zone, band, hemipole, 
+          lat, lon)</code> where <code>hemipole</code> is the 
+          <code>'N'|'S'</code> pole, the UPS projection top/center and 
+          <code>lon</code> [-180..180).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.RangeError-class.html">RangeError</a></strong></code> - If <b><code>strict</code></b> and <b><code>lat</code></b> in the 
+        UTM and not the UPS range or if <b><code>lat</code></b> or 
+        <b><code>lon</code></b> outside the valid range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> set to <code>True</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>lat</code></b> or <b><code>lon</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The <code>lon</code> is set to <code>0</code> if 
+        <b><code>lat</code></b> is <code>-90</code> or <code>90</code>, see
+        env variable <code>PYGEODESY3_UPS_POLES</code> in module <a 
+        href="pygeodesy3.projections.ups-module.html" class="link" 
+        onclick="show_private();">pygeodesy3.projections.ups</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="utmZoneBand5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">utmZoneBand5</span>&nbsp;(<span class="sig-arg">lat</span>,
+        <span class="sig-arg">lon</span>,
+        <span class="sig-arg">cmoff</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the UTM zone number, Band letter, hemisphere and (clipped) lat-
+  and longitude for a given location.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lat</code></strong> - Latitude in degrees (<code>scalar</code> or <code>str</code>).</li>
+        <li><strong class="pname"><code>lon</code></strong> - Longitude in degrees (<code>scalar</code> or <code>str</code>).</li>
+        <li><strong class="pname"><code>cmoff</code></strong> - Offset longitude from the zone's central meridian 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUpsLatLon5Tuple-class.html"
+          class="link">UtmUpsLatLon5Tuple</a><code>(zone, band, hemipole, 
+          lat, lon)</code> where <code>hemipole</code> is the 
+          <code>'N'|'S'</code> UTM hemisphere.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.RangeError-class.html">RangeError</a></strong></code> - If <b><code>lat</code></b> outside the valid UTM bands or if 
+        <b><code>lat</code></b> or <b><code>lon</code></b> outside the 
+        valid range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> set to <code>True</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>lat</code></b> or <b><code>lon</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="utmupsValidate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">utmupsValidate</span>&nbsp;(<span class="sig-arg">coord</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">MGRS</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">Error</span>=<span class="sig-default">&lt;class 'pygeodesy3.projections.utmups.UTMUPSError'&gt;</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check a UTM or UPS coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>coord</code></strong> - The UTM or UPS coordinate (<a 
+          href="pygeodesy3.projections.utm.Utm-class.html" 
+          class="link">Utm</a>, <a 
+          href="pygeodesy3.projections.etm.Etm-class.html" 
+          class="link">Etm</a>, <a 
+          href="pygeodesy3.projections.ups.Ups-class.html" 
+          class="link">Ups</a> or <code>5+Tuple</code>).</li>
+        <li><strong class="pname"><code>falsed</code></strong> - <code>5+Tuple</code> easting and northing are falsed 
+          (<code>bool</code>), ignored otherwise.</li>
+        <li><strong class="pname"><code>MGRS</code></strong> - Increase easting and northing ranges (<code>bool</code>).</li>
+        <li><strong class="pname"><code>Error</code></strong> - Optional error to raise, overriding the default (<a 
+          href="pygeodesy3.projections.utmups.UTMUPSError-class.html" 
+          class="link">UTMUPSError</a>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><code>None</code> if validation passed.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>Error</strong></code> - Validation failed.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a 
+        href="pygeodesy3.projections.utmups-module.html#utmupsValidateOK" 
+        class="link">utmupsValidateOK</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="utmupsValidateOK"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">utmupsValidateOK</span>&nbsp;(<span class="sig-arg">coord</span>,
+        <span class="sig-arg">falsed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">ok</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check a UTM or UPS coordinate.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>coord</code></strong> - The UTM or UPS coordinate (<a 
+          href="pygeodesy3.projections.utm.Utm-class.html" 
+          class="link">Utm</a>, <a 
+          href="pygeodesy3.projections.ups.Ups-class.html" 
+          class="link">Ups</a> or <code>5+Tuple</code>).</li>
+        <li><strong class="pname"><code>falsed</code></strong> - <code>5+Tuple</code> easting and northing are falsed 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>ok</code></strong> - Result to return if validation passed (<b><code>ok</code></b>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><b><code>ok</code></b> if validation passed, the <a 
+          href="pygeodesy3.projections.utmups.UTMUPSError-class.html" 
+          class="link">UTMUPSError</a> otherwise.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a 
+        href="pygeodesy3.projections.utmups-module.html#utmupsValidate" 
+        class="link">utmupsValidate</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="utmupsZoneBand5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">utmupsZoneBand5</span>&nbsp;(<span class="sig-arg">lat</span>,
+        <span class="sig-arg">lon</span>,
+        <span class="sig-arg">cmoff</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the UTM/UPS zone number, Band letter, hemisphere/pole and 
+  clipped lat- and longitude for a given location.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lat</code></strong> - Latitude in degrees (<code>scalar</code> or <code>str</code>).</li>
+        <li><strong class="pname"><code>lon</code></strong> - Longitude in degrees (<code>scalar</code> or <code>str</code>).</li>
+        <li><strong class="pname"><code>cmoff</code></strong> - Offset longitude from the zone's central meridian, for UTM only 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a 
+          href="pygeodesy3.miscs.namedTuples.UtmUpsLatLon5Tuple-class.html"
+          class="link">UtmUpsLatLon5Tuple</a><code>(zone, band, hemipole, 
+          lat, lon)</code> where <code>hemipole</code> is 
+          <code>'N'|'S'</code>, the UTM hemisphere or UPS pole, the UPS 
+          projection top/center.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.RangeError-class.html">RangeError</a></strong></code> - If <b><code>lat</code></b> outside the valid UTM or UPS bands or if
+        <b><code>lat</code></b> or <b><code>lon</code></b> outside the 
+        valid range and <a 
+        href="pygeodesy3.miscs.errors-module.html#rangerrors" 
+        class="link">pygeodesy3.rangerrors</a> set to <code>True</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>lat</code></b> or <b><code>lon</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Functions <a 
+        href="pygeodesy3.projections.utm-module.html#utmZoneBand5" 
+        class="link">pygeodesy3.utmZoneBand5</a> and <a 
+        href="pygeodesy3.projections.ups-module.html#upsZoneBand5" 
+        class="link">pygeodesy3.upsZoneBand5</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables Details</span></td>
+</tr>
+</table>
+<a name="Conics"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">Conics</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+Conics.WRF_Lb: Conic(name='WRF_Lb', lat0=40, lon0=-97, par1=33, par2=4<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+5, E0=0, N0=0, k0=1, SP=2, datum=Datum(name='WGS84', ellipsoid=Ellipso<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ids.WGS84, transform=Transforms.WGS84))
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Dec 19 14:13:30 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

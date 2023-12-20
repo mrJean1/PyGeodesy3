@@ -1,0 +1,24 @@
+
+# -*- coding: utf-8 -*-
+
+# Test L{etm} module and L{Etm} class with the C(TMcoords.dat} from
+# U{C. F. F. Karney, "Test data for the transverse Mercator projection (2009)"
+# <https://GeographicLib.SourceForge.io/C++/doc/transversemercator.html>},
+# also available U{here<https://Zenodo.org/record/32470>}, file C{TMcoords.dat}.
+
+__all__ = ('testEtmTMcoords',)
+__version__ = '23.12.18'
+
+from testTMcoords import testTMcoords
+
+
+def testEtmTMcoords(name):
+
+    from pygeodesy3 import etm, Etm, toEtm8
+
+    testTMcoords(etm, toEtm8, name=name, eps1=2e-7, eps2=1e-7, lonE=360, Etm=Etm)
+
+
+if __name__ == '__main__':
+
+    testEtmTMcoords(__file__)

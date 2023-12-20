@@ -1,0 +1,2294 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pygeodesy3.polygonal</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pygeodesy3-module.html">Package&nbsp;pygeodesy3</a> ::
+        Package&nbsp;polygonal
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pygeodesy3.polygonal-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package polygonal</h1><p class="nomargin-top"></p>
+<p>Classes and functions for operations on polygons or polylines, open or
+  closed lists of points.</p>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        23.12.18
+      </p>
+</div><!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.booleans-module.html" onclick="show_private();">pygeodesy3.polygonal.booleans</a></strong>: <em class="summary"><i>Boolean</i> operations on <i>composite</i> polygons and 
+        <i>clip</i>s.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers-module.html" onclick="show_private();">pygeodesy3.polygonal.clippers</a></strong>: <em class="summary">Clip a path or polygon of <code>LatLon</code> points against a 
+        rectangular box or an arbitrary (convex) region.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.points-module.html" onclick="show_private();">pygeodesy3.polygonal.points</a></strong>: <em class="summary">Utilities for point lists, tuples, etc.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.simplify-module.html" onclick="show_private();">pygeodesy3.polygonal.simplify</a></strong>: <em class="summary">Simplify or linearize a path.</em>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" class="summary-name">BooleanFHP</a><br />
+      <i>Composite</i> class providing <i>boolean</i> operations between 
+        two <i>composites</i> using <a 
+        href="https://www.ScienceDirect.com/science/article/pii/S259014861930007X"
+        target="_top">Forster-Hormann-Popa</a>'s C++ implementation, 
+        transcoded to pure Python.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" class="summary-name">BooleanGH</a><br />
+      <i>Composite</i> class providing <i>boolean</i> operations between 
+        two <i>composites</i> using the <a 
+        href="http://www.Inf.USI.CH/hormann/papers/Greiner.1998.ECO.pdf" 
+        target="_top">Greiner-Hormann</a> algorithm and <a 
+        href="https://GitHub.com/helderco/univ-polyclip" 
+        target="_top">Correia</a>'s implementation, modified and extended.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.clippers.ClipCS4Tuple-class.html" class="summary-name">ClipCS4Tuple</a><br />
+      4-Tuple <code>(start, end, i, j)</code> for each edge of a 
+        <i>clipped</i> path with the <code>start</code> and 
+        <code>end</code> points (<code>LatLon</code>) of the portion of the
+        edge inside or on the clip box and the indices <code>i</code> and 
+        <code>j</code> (<code>int</code>) of the edge start and end points 
+        in the original path.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.clippers.ClipFHP4Tuple-class.html" class="summary-name">ClipFHP4Tuple</a><br />
+      4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
+        the <a href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        class="link">clipFHP4</a> result with the <code>lat</code>-, 
+        <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
+        of the polygon or clip.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.clippers.ClipGH4Tuple-class.html" class="summary-name">ClipGH4Tuple</a><br />
+      4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
+        the <a href="pygeodesy3.polygonal.clippers-module.html#clipGH4" 
+        class="link">clipGH4</a> result with the <code>lat</code>-, 
+        <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
+        of the polygon or clip.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.clippers.ClipLB6Tuple-class.html" class="summary-name">ClipLB6Tuple</a><br />
+      6-Tuple <code>(start, end, i, fi, fj, j)</code> for each edge of 
+        the <i>clipped</i> path with the <code>start</code> and 
+        <code>end</code> points (<code>LatLon</code>) of the portion of the
+        edge inside or on the clip box, indices <code>i</code> and 
+        <code>j</code> (both <code>int</code>) of the original path edge 
+        start and end points and <i>fractional</i> indices <code>fi</code> 
+        and <code>fj</code> (both <a 
+        href="pygeodesy3.miscs.units.FIx-class.html" class="link">FIx</a>) 
+        of the <code>start</code> and <code>end</code> points along the 
+        edge of the original path.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.clippers.ClipSH3Tuple-class.html" class="summary-name">ClipSH3Tuple</a><br />
+      3-Tuple <code>(start, end, original)</code> for each edge of a 
+        <i>clipped</i> polygon, the <code>start</code> and <code>end</code>
+        points (<code>LatLon</code>) of the portion of the edge inside or 
+        on the clip region and <code>original</code> indicates whether the 
+        edge is part of the original polygon or part of the clip region 
+        (<code>bool</code>).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.points.LatLon2psxy-class.html" class="summary-name">LatLon2psxy</a><br />
+      Wrapper for <code>LatLon</code> points as &quot;on-the-fly&quot; 
+        pseudo-xy coordinates.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.booleans.LatLonFHP-class.html" class="summary-name">LatLonFHP</a><br />
+      A point or intersection in a <a 
+        href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" 
+        class="link">BooleanFHP</a> clip or composite.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.booleans.LatLonGH-class.html" class="summary-name">LatLonGH</a><br />
+      A point or intersection in a <a 
+        href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" 
+        class="link">BooleanGH</a> clip or composite.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.points.LatLon_-class.html" class="summary-name">LatLon_</a><br />
+      Low-overhead <code>LatLon</code> class, mainly for <a 
+        href="pygeodesy3.polygonal.points.Numpy2LatLon-class.html" 
+        class="link">Numpy2LatLon</a> and <a 
+        href="pygeodesy3.polygonal.points.Tuple2LatLon-class.html" 
+        class="link">Tuple2LatLon</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.points.Numpy2LatLon-class.html" class="summary-name">Numpy2LatLon</a><br />
+      Wrapper for <code>NumPy</code> arrays as &quot;on-the-fly&quot; 
+        <code>LatLon</code> points.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.points.Shape2Tuple-class.html" class="summary-name">Shape2Tuple</a><br />
+      2-Tuple <code>(nrows, ncols)</code>, the number of rows and 
+        columns, both <code>int</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.polygonal.points.Tuple2LatLon-class.html" class="summary-name">Tuple2LatLon</a><br />
+      Wrapper for tuple sequences as &quot;on-the-fly&quot; 
+        <code>LatLon</code> points.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#areaOf" class="summary-sig-name">areaOf</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">adjust</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Approximate the area of a polygon or composite.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#boundsOf" class="summary-sig-name">boundsOf</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">LatLon</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Determine the bottom-left SW and top-right NE corners of a path or 
+      polygon.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#centroidOf" class="summary-sig-name">centroidOf</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">LatLon</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Determine the centroid of a polygon.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#clipCS4" class="summary-sig-name">clipCS4</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">lowerleft</span>,
+        <span class="summary-sig-arg">upperight</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">inull</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Clip a path against a rectangular clip box using the <a 
+      href="https://WikiPedia.org/wiki/Cohen-Sutherland_algorithm" 
+      target="_top">Cohen-Sutherland</a> algorithm.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#clipFHP4" class="summary-sig-name">clipFHP4</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">corners</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">inull</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">raiser</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">eps</span>=<span class="summary-sig-default">2.220446049250313e-16</span>)</span><br />
+      Clip one or more polygons against a clip region or box using <a 
+      href="https://www.ScienceDirect.com/science/article/pii/S259014861930007X"
+      target="_top">Forster-Hormann-Popa</a>'s C++ implementation 
+      transcoded to pure Python.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#clipGH4" class="summary-sig-name">clipGH4</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">corners</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">inull</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">raiser</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">xtend</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">eps</span>=<span class="summary-sig-default">2.220446049250313e-16</span>)</span><br />
+      Clip one or more polygons against a clip region or box using the <a 
+      href="http://www.Inf.USI.CH/hormann/papers/Greiner.1998.ECO.pdf" 
+      target="_top">Greiner-Hormann</a> algorithm, <a 
+      href="https://GitHub.com/helderco/univ-polyclip" 
+      target="_top">Correia</a>'s implementation modified and extended.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#clipLB6" class="summary-sig-name">clipLB6</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">lowerleft</span>,
+        <span class="summary-sig-arg">upperight</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">inull</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Clip a path against a rectangular clip box using the <a 
+      href="https://www.CSE.UNT.edu/~renka/4230/LineClipping.pdf" 
+      target="_top">Liang-Barsky</a> algorithm.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#clipSH" class="summary-sig-name">clipSH</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">corners</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">inull</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Clip a polygon against a clip region or box using the <a 
+      href="https://WikiPedia.org/wiki/Sutherland-Hodgman_algorithm" 
+      target="_top">Sutherland-Hodgman</a> algorithm.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#clipSH3" class="summary-sig-name">clipSH3</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">corners</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">inull</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Clip a polygon against a clip region or box using the <a 
+      href="https://WikiPedia.org/wiki/Sutherland-Hodgman_algorithm" 
+      target="_top">Sutherland-Hodgman</a> algorithm.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#fractional" class="summary-sig-name">fractional</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">fi</span>,
+        <span class="summary-sig-arg">j</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">LatLon</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">Vector</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**kwds</span>)</span><br />
+      Return the point at a given <i>fractional</i> index.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#isBoolean" class="summary-sig-name">isBoolean</a>(<span class="summary-sig-arg">obj</span>)</span><br />
+      Check for <code>Boolean</code> composites.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#isclockwise" class="summary-sig-name">isclockwise</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">adjust</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Determine the direction of a path or polygon.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#isconvex" class="summary-sig-name">isconvex</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">adjust</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Determine whether a polygon is convex.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#isconvex_" class="summary-sig-name">isconvex_</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">adjust</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Determine whether a polygon is convex <i>and clockwise</i>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#isenclosedBy" class="summary-sig-name">isenclosedBy</a>(<span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Determine whether a point is enclosed by a polygon or composite.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#ispolar" class="summary-sig-name">ispolar</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Check whether a polygon encloses a pole.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#luneOf" class="summary-sig-name">luneOf</a>(<span class="summary-sig-arg">lon1</span>,
+        <span class="summary-sig-arg">lon2</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">LatLon</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.polygonal.points.LatLon_'&gt;</span>,
+        <span class="summary-sig-arg">**LatLon_kwds</span>)</span><br />
+      Generate an ellipsoidal or spherical <a 
+      href="https://WikiPedia.org/wiki/Spherical_lune" 
+      target="_top">lune</a>-shaped path or polygon.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#nearestOn5" class="summary-sig-name">nearestOn5</a>(<span class="summary-sig-arg">point</span>,
+        <span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">adjust</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">9</span>,
+        <span class="summary-sig-arg">**LatLon_and_kwds</span>)</span><br />
+      Locate the point on a path or polygon closest to a reference point.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#perimeterOf" class="summary-sig-name">perimeterOf</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">adjust</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">wrap</span>=<span class="summary-sig-default">True</span>)</span><br />
+      <i>Approximate</i> the perimeter of a path, polygon.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#quadOf" class="summary-sig-name">quadOf</a>(<span class="summary-sig-arg">latS</span>,
+        <span class="summary-sig-arg">lonW</span>,
+        <span class="summary-sig-arg">latN</span>,
+        <span class="summary-sig-arg">lonE</span>,
+        <span class="summary-sig-arg">closed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">LatLon</span>=<span class="summary-sig-default">&lt;class 'pygeodesy3.polygonal.points.LatLon_'&gt;</span>,
+        <span class="summary-sig-arg">**LatLon_kwds</span>)</span><br />
+      Generate a quadrilateral path or polygon from two points.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#simplify1" class="summary-sig-name">simplify1</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">distance</span>=<span class="summary-sig-default">0.001</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">indices</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**options</span>)</span><br />
+      Basic simplification of a path of <code>LatLon</code> points.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#simplifyRDP" class="summary-sig-name">simplifyRDP</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">distance</span>=<span class="summary-sig-default">0.001</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">shortest</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">indices</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**options</span>)</span><br />
+      <i>Ramer-Douglas-Peucker</i> (RDP) simplification of a path of 
+      <code>LatLon</code> points.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#simplifyRDPm" class="summary-sig-name">simplifyRDPm</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">distance</span>=<span class="summary-sig-default">0.001</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">shortest</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">indices</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**options</span>)</span><br />
+      Modified <i>Ramer-Douglas-Peucker</i> (RDPm) simplification of a path
+      of <code>LatLon</code> points.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#simplifyRW" class="summary-sig-name">simplifyRW</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">pipe</span>=<span class="summary-sig-default">0.001</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">shortest</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">indices</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**options</span>)</span><br />
+      <i>Reumann-Witkam</i> (RW) simplification of a path of 
+      <code>LatLon</code> points.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#simplifyVW" class="summary-sig-name">simplifyVW</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">area</span>=<span class="summary-sig-default">0.001</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">attr</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">indices</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**options</span>)</span><br />
+      <i>Visvalingam-Whyatt</i> (VW) simplification of a path of 
+      <code>LatLon</code> points.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.polygonal-module.html#simplifyVWm" class="summary-sig-name">simplifyVWm</a>(<span class="summary-sig-arg">points</span>,
+        <span class="summary-sig-arg">area</span>=<span class="summary-sig-default">0.001</span>,
+        <span class="summary-sig-arg">radius</span>=<span class="summary-sig-default">6371008.771415</span>,
+        <span class="summary-sig-arg">attr</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">indices</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**options</span>)</span><br />
+      <i>Modified Visvalingam-Whyatt</i> (VWm) simplification of a path of 
+      <code>LatLon</code> points.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__getattr__"></a><span class="summary-name">__getattr__</span> = <code title="_lazy_import_as(__name__)">_lazy_import_as(__name__)</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="areaOf"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">areaOf</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">adjust</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Approximate the area of a polygon or composite.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points or clips (<code>LatLon</code>[], <a 
+          href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" 
+          class="link">BooleanFHP</a> or <a 
+          href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" 
+          class="link">BooleanGH</a>).</li>
+        <li><strong class="pname"><code>adjust</code></strong> - Adjust the wrapped, unrolled longitudinal delta by the cosine of 
+          the mean latitude (<code>bool</code>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Approximate area (<i>square</i> <code>meter</code>, same units as
+          <b><code>radius</code></b> or <code>radians</code> <i>squared</i>
+          if <b><code>radius</code></b> is <code>None</code>).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>radius</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This area approximation has limited accuracy and is ill-suited for 
+        regions exceeding several hundred Km or Miles or with near-polar 
+        latitudes.
+      </p>
+      <p><strong>See Also:</strong>
+        <a href="pygeodesy3.spherical.nvector-module.html#areaOf" 
+        class="link">spherical.nvector.areaOf</a>, <a 
+        href="pygeodesy3.spherical.trigonometry-module.html#areaOf" 
+        class="link">spherical.trigonometry.areaOf</a>, <a 
+        href="pygeodesy3.ellipsoidal.exact-module.html#areaOf" 
+        class="link">ellipsoidal.exact.areaOf</a> and <a 
+        href="pygeodesy3.ellipsoidal.karney-module.html#areaOf" 
+        class="link">ellipsoidal.karney.areaOf</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="boundsOf"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">boundsOf</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">LatLon</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine the bottom-left SW and top-right NE corners of a path or 
+  polygon.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The path or polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+        <li><strong class="pname"><code>LatLon</code></strong> - Optional class to return the <code>bounds</code> corners 
+          (<code>LatLon</code>) or <code>None</code>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a href="pygeodesy3.miscs.namedTuples.Bounds2Tuple-class.html" 
+          class="link">Bounds2Tuple</a><code>(latlonSW, latlonNE)</code> as
+          <b><code>LatLon</code></b>s if <b><code>LatLon</code></b> is 
+          <code>None</code> a <a 
+          href="pygeodesy3.miscs.namedTuples.Bounds4Tuple-class.html" 
+          class="link">Bounds4Tuple</a><code>(latS, lonW, latN, 
+          lonE)</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a href="pygeodesy3.polygonal.points-module.html#quadOf" 
+        class="link">quadOf</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="centroidOf"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">centroidOf</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">LatLon</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine the centroid of a polygon.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+        <li><strong class="pname"><code>LatLon</code></strong> - Optional class to return the centroid (<code>LatLon</code>) or 
+          <code>None</code>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Centroid (<b><code>LatLon</code></b>) or a <a 
+          href="pygeodesy3.miscs.namedTuples.LatLon2Tuple-class.html" 
+          class="link">LatLon2Tuple</a><code>(lat, lon)</code> if 
+          <code><b>LatLon</b> is None</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - The <b><code>points</code></b> enclose a pole or near-zero area.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a href="https://WikiPedia.org/wiki/Centroid#Of_a_polygon" 
+        target="_top">Centroid</a> and Paul Bourke's <a 
+        href="https://www.SEAS.UPenn.edu/~ese502/lab-content/extra_materials/Polygon%20Area%20and%20Centroid.pdf"
+        target="_top">Calculating The Area And Centroid Of A Polygon</a>, 
+        1988.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="clipCS4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clipCS4</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">lowerleft</span>,
+        <span class="sig-arg">upperight</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">inull</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Clip a path against a rectangular clip box using the <a 
+  href="https://WikiPedia.org/wiki/Cohen-Sutherland_algorithm" 
+  target="_top">Cohen-Sutherland</a> algorithm.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>lowerleft</code></strong> - Bottom-left corner of the clip box (<code>LatLon</code>).</li>
+        <li><strong class="pname"><code>upperight</code></strong> - Top-right corner of the clip box (<code>LatLon</code>).</li>
+        <li><strong class="pname"><code>closed</code></strong> - Optionally, close the path (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inull</code></strong> - Optionally, retain null edges if inside (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Yield a <a 
+          href="pygeodesy3.polygonal.clippers.ClipCS4Tuple-class.html" 
+          class="link">ClipCS4Tuple</a><code>(start, end, i, j)</code> for 
+          each edge of the <i>clipped</i> path.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.ClipError-class.html">ClipError</a></strong></code> - The <b><code>lowerleft</code></b> and <b><code>upperight</code></b>
+        corners specify an invalid clip box.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="clipFHP4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clipFHP4</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">corners</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">inull</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">raiser</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">eps</span>=<span class="sig-default">2.220446049250313e-16</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Clip one or more polygons against a clip region or box using <a 
+  href="https://www.ScienceDirect.com/science/article/pii/S259014861930007X"
+  target="_top">Forster-Hormann-Popa</a>'s C++ implementation transcoded to
+  pure Python.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points and clips (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>corners</code></strong> - Three or more points defining the clip regions 
+          (<code>LatLon</code>[]) or two points to specify a single, 
+          rectangular clip box.</li>
+        <li><strong class="pname"><code>closed</code></strong> - If <code>True</code>, close each result clip (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inull</code></strong> - If <code>True</code>, retain null edges in result clips 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>raiser</code></strong> - If <code>True</code>, throw <a 
+          href="pygeodesy3.miscs.errors.ClipError-class.html" 
+          class="link">ClipError</a> exceptions (<code>bool</code>).</li>
+        <li><strong class="pname"><code>esp</code></strong> - Tolerance for eliminating null edges (<code>degrees</code>, same 
+          units as the <b><code>points</code></b> and 
+          <b><code>corners</code></b> coordinates).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Yield a <a 
+          href="pygeodesy3.polygonal.clippers.ClipFHP4Tuple-class.html" 
+          class="link">ClipFHP4Tuple</a><code>(lat, lon, height, 
+          clipid)</code> for each clipped point.  The result may consist of
+          several clips, each a (closed) polygon with a unique 
+          <code>clipid</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.ClipError-class.html">ClipError</a></strong></code> - Insufficient <b><code>points</code></b> or 
+        <b><code>corners</code></b> or an open clip.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a 
+        href="https://www.ScienceDirect.com/science/article/pii/S259014861930007X"
+        target="_top">Forster, Hormann and Popa</a>, class <a 
+        href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" 
+        class="link">BooleanFHP</a> and function <a 
+        href="pygeodesy3.polygonal.clippers-module.html#clipGH4" 
+        class="link">clipGH4</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="clipGH4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clipGH4</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">corners</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">inull</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">raiser</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">xtend</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">eps</span>=<span class="sig-default">2.220446049250313e-16</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Clip one or more polygons against a clip region or box using the <a 
+  href="http://www.Inf.USI.CH/hormann/papers/Greiner.1998.ECO.pdf" 
+  target="_top">Greiner-Hormann</a> algorithm, <a 
+  href="https://GitHub.com/helderco/univ-polyclip" 
+  target="_top">Correia</a>'s implementation modified and extended.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points and clips (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>corners</code></strong> - Three or more points defining the clip regions 
+          (<code>LatLon</code>[]) or two points to specify a single, 
+          rectangular clip box.</li>
+        <li><strong class="pname"><code>closed</code></strong> - If <code>True</code>, close each result clip (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inull</code></strong> - If <code>True</code>, retain null edges in result clips 
+          (<code>bool</code>).</li>
+        <li><strong class="pname"><code>raiser</code></strong> - If <code>True</code>, throw <a 
+          href="pygeodesy3.miscs.errors.ClipError-class.html" 
+          class="link">ClipError</a> exceptions (<code>bool</code>).</li>
+        <li><strong class="pname"><code>xtend</code></strong> - If <code>True</code>, extend edges of <i>degenerate cases</i>, an
+          attempt to handle the latter (<code>bool</code>).</li>
+        <li><strong class="pname"><code>esp</code></strong> - Tolerance for eliminating null edges (<code>degrees</code>, same 
+          units as the <b><code>points</code></b> and 
+          <b><code>corners</code></b> coordinates).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Yield a <a 
+          href="pygeodesy3.polygonal.clippers.ClipGH4Tuple-class.html" 
+          class="link">ClipGH4Tuple</a><code>(lat, lon, height, 
+          clipid)</code> for each clipped point.  The result may consist of
+          several clips, each a (closed) polygon with a unique 
+          <code>clipid</code>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.ClipError-class.html">ClipError</a></strong></code> - Insufficient <b><code>points</code></b> or 
+        <b><code>corners</code></b>, an open clip, a <i>degenerate case</i>
+        or <i>unhandled</i> intersection.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        To handle <i>degenerate cases</i> like <code>point-edge</code> and 
+        <code>point-point</code> intersections, use function <a 
+        href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        class="link">clipFHP4</a>.
+      </p>
+      <p><strong>See Also:</strong>
+        <a 
+        href="https://WikiPedia.org/wiki/Greiner&#8211;Hormann_clipping_algorithm"
+        target="_top">Greiner-Hormann</a>, <a 
+        href="https://Davis.WPI.edu/~matt/courses/clipping/" 
+        target="_top">Ionel Daniel Stroe</a>, <i>Correia</i>'s <a 
+        href="https://GitHub.com/helderco/univ-polyclip" 
+        target="_top">univ-polyclip</a>, class <a 
+        href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" 
+        class="link">BooleanGH</a> and function <a 
+        href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        class="link">clipFHP4</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="clipLB6"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clipLB6</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">lowerleft</span>,
+        <span class="sig-arg">upperight</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">inull</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Clip a path against a rectangular clip box using the <a 
+  href="https://www.CSE.UNT.edu/~renka/4230/LineClipping.pdf" 
+  target="_top">Liang-Barsky</a> algorithm.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>lowerleft</code></strong> - Bottom-left corner of the clip box (<code>LatLon</code>).</li>
+        <li><strong class="pname"><code>upperight</code></strong> - Top-right corner of the clip box (<code>LatLon</code>).</li>
+        <li><strong class="pname"><code>closed</code></strong> - Optionally, close the path (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inull</code></strong> - Optionally, retain null edges if inside (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Yield a <a 
+          href="pygeodesy3.polygonal.clippers.ClipLB6Tuple-class.html" 
+          class="link">ClipLB6Tuple</a><code>(start, end, i, fi, fj, 
+          j)</code> for each edge of the <i>clipped</i> path.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.ClipError-class.html">ClipError</a></strong></code> - The <b><code>lowerleft</code></b> and <b><code>upperight</code></b>
+        corners specify an invalid clip box.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a 
+        href="https://www.CS.Helsinki.FI/group/goa/viewing/leikkaus/intro.html"
+        target="_top">Liang-Barsky Line Clipping</a>, <a 
+        href="https://www.Skytopia.com/project/articles/compsci/clipping.html"
+        target="_top">Liang-Barsky line clipping algorithm</a> and <a 
+        href="https://WikiPedia.org/wiki/Liang-Barsky_algorithm" 
+        target="_top">Liang-Barsky algorithm</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="clipSH"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clipSH</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">corners</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">inull</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Clip a polygon against a clip region or box using the <a 
+  href="https://WikiPedia.org/wiki/Sutherland-Hodgman_algorithm" 
+  target="_top">Sutherland-Hodgman</a> algorithm.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>corners</code></strong> - Three or more points defining a convex clip region 
+          (<code>LatLon</code>[]) or two points to specify a rectangular 
+          clip box.</li>
+        <li><strong class="pname"><code>closed</code></strong> - Close the clipped points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inull</code></strong> - Optionally, include null edges (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Yield the clipped points (<code>LatLon</code>[]).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.ClipError-class.html">ClipError</a></strong></code> - The <b><code>corners</code></b> specify a polar, zero-area, 
+        non-convex or otherwise invalid clip box or region.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="clipSH3"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clipSH3</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">corners</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">inull</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Clip a polygon against a clip region or box using the <a 
+  href="https://WikiPedia.org/wiki/Sutherland-Hodgman_algorithm" 
+  target="_top">Sutherland-Hodgman</a> algorithm.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>corners</code></strong> - Three or more points defining a convex clip region 
+          (<code>LatLon</code>[]) or two points to specify a rectangular 
+          clip box.</li>
+        <li><strong class="pname"><code>closed</code></strong> - Close the clipped points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inull</code></strong> - Optionally, include null edges (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Yield a <a 
+          href="pygeodesy3.polygonal.clippers.ClipSH3Tuple-class.html" 
+          class="link">ClipSH3Tuple</a><code>(start, end, original)</code> 
+          for each edge of the <i>clipped</i> polygon.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.ClipError-class.html">ClipError</a></strong></code> - The <b><code>corners</code></b> specify a polar, zero-area, 
+        non-convex or otherwise invalid clip box or region.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b> or 
+        <b><code>corners</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fractional"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fractional</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">fi</span>,
+        <span class="sig-arg">j</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">LatLon</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">Vector</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**kwds</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the point at a given <i>fractional</i> index.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The points (<code>LatLon</code>[], <a 
+          href="pygeodesy3.polygonal.points.Numpy2LatLon-class.html" 
+          class="link">Numpy2LatLon</a>[], <a 
+          href="pygeodesy3.polygonal.points.Tuple2LatLon-class.html" 
+          class="link">Tuple2LatLon</a>[], <code>Cartesian</code>[], 
+          <code>Vector3d</code>[], <a 
+          href="pygeodesy3.miscs.namedTuples.Vector3Tuple-class.html" 
+          class="link">Vector3Tuple</a>[]).</li>
+        <li><strong class="pname"><code>fi</code></strong> - The fractional index (<a 
+          href="pygeodesy3.miscs.units.FIx-class.html" 
+          class="link">FIx</a>, <code>float</code> or <code>int</code>).</li>
+        <li><strong class="pname"><code>j</code></strong> - Optionally, index of the other point (<code>int</code>).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b>{points}</b> (<code>bool</code>) or <code>None</code> for a 
+          backward compatible <a 
+          href="pygeodesy3.miscs.namedTuples.LatLon2Tuple-class.html" 
+          class="link">LatLon2Tuple</a> or <b><code>LatLon</code></b> with 
+          averaged lat- and longitudes.  Use <code>True</code> or 
+          <code>False</code> to get the <i>fractional</i> point computed by
+          method <code><b>points</b>[fi].intermediateTo</code>.</li>
+        <li><strong class="pname"><code>LatLon</code></strong> - Optional class to return the <i>intermediate</i>, 
+          <i>fractional</i> point (<code>LatLon</code>) or 
+          <code>None</code>.</li>
+        <li><strong class="pname"><code>Vector</code></strong> - Optional class to return the <i>intermediate</i>, 
+          <i>fractional</i> point (<code>Cartesian</code>, 
+          <code>Vector3d</code>) or <code>None</code>.</li>
+        <li><strong class="pname"><code>kwds</code></strong> - Optional, additional <b><code>LatLon</code></b> <i>or</i> 
+          <b><code>Vector</code></b> keyword arguments, ignored if both 
+          <code><b>LatLon</b></code> and <code><b>Vector</b></code> are 
+          <code>None</code>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a href="pygeodesy3.miscs.namedTuples.LatLon2Tuple-class.html" 
+          class="link">LatLon2Tuple</a><code>(lat, lon)</code> if 
+          <b><code>wrap</code></b>, <b><code>LatLon</code></b> and 
+          <b><code>Vector</code></b> all are <code>None</code>, the 
+          defaults.
+          <p>An instance of <b><code>LatLon</code></b> if not 
+          <code>None</code> <i>or</i> an instance of 
+          <b><code>Vector</code></b> if not <code>None</code>.</p>
+          <p>Otherwise with <b><code>wrap</code></b> either 
+          <code>True</code> or <code>False</code> and 
+          <b><code>LatLon</code></b> and <b><code>Vector</code></b> both 
+          <code>None</code>, an instance of <b><code>points</code></b>' 
+          (sub-)class <code>intermediateTo</code> <i>fractional</i>.</p>
+          <p>Summarized as follows:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span> wrap  | LatLon | Vector | returned type/value
+<span class="py-output">#   -------+--------+--------+--------------+------</span>
+<span class="py-output">#          |        |        | LatLon2Tuple | favg</span>
+<span class="py-output">#    None  |  None  |  None  |   or**       |</span>
+<span class="py-output">#          |        |        | Vector3Tuple | favg</span>
+<span class="py-output">#    None  | LatLon |  None  | LatLon       | favg</span>
+<span class="py-output">#    None  |  None  | Vector | Vector       | favg</span>
+<span class="py-output">#   -------+--------+--------+--------------+------</span>
+<span class="py-output">#    True  |  None  |  None  | points'      | .iTo</span>
+<span class="py-output">#    True  | LatLon |  None  | LatLon       | .iTo</span>
+<span class="py-output">#    True  |  None  | Vector | Vector       | .iTo</span>
+<span class="py-output">#   -------+--------+--------+--------------+------</span>
+<span class="py-output">#    False |  None  |  None  | points'      | .iTo</span>
+<span class="py-output">#    False | LatLon |  None  | LatLon       | .iTo</span>
+<span class="py-output">#    False |  None  | Vector | Vector       | .iTo</span>
+<span class="py-output"># _____</span>
+<span class="py-output"># favg) averaged lat, lon or x, y, z values</span>
+<span class="py-output"># .iTo) value from points[fi].intermediateTo</span>
+<span class="py-output"># **) depends on base class of points[fi]</span></pre></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>IndexError</strong></code> - Fractional index <b><code>fi</code></b> invalid or 
+        <b><code>points</code></b> not subscriptable or not closed.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>LatLon</code></b>, <b><code>Vector</code></b> or 
+        <b><code>kwds</code></b> argument.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Class <a href="pygeodesy3.miscs.units.FIx-class.html" 
+        class="link">FIx</a> and method <a 
+        href="pygeodesy3.miscs.units.FIx-class.html#fractional" 
+        class="link">FIx.fractional</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="isBoolean"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isBoolean</span>&nbsp;(<span class="sig-arg">obj</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check for <code>Boolean</code> composites.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>obj</code></strong> - The object (any <code>type</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><code>True</code> if <b><code>obj</code></b> is <a 
+          href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" 
+          class="link">BooleanFHP</a>, <a 
+          href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" 
+          class="link">BooleanGH</a> oe some other composite, 
+          <code>False</code> otherwise.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isclockwise"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isclockwise</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">adjust</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine the direction of a path or polygon.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The path or polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>adjust</code></strong> - Adjust the wrapped, unrolled longitudinal delta by the cosine of 
+          the mean latitude (<code>bool</code>).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><code>True</code> if <b><code>points</code></b> are clockwise, 
+          <code>False</code> otherwise.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - The <b><code>points</code></b> enclose a pole or zero area.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isconvex"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isconvex</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">adjust</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine whether a polygon is convex.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>adjust</code></strong> - Adjust the wrapped, unrolled longitudinal delta by the cosine of 
+          the mean latitude (<code>bool</code>).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><code>True</code> if <b><code>points</code></b> are convex, 
+          <code>False</code> otherwise.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.CrossError-class.html">CrossError</a></strong></code> - Some <b><code>points</code></b> are colinear.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isconvex_"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isconvex_</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">adjust</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine whether a polygon is convex <i>and clockwise</i>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>adjust</code></strong> - Adjust the wrapped, unrolled longitudinal delta by the cosine of 
+          the mean latitude (<code>bool</code>).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><code>+1</code> if <b><code>points</code></b> are convex 
+          clockwise, <code>-1</code> for convex counter-clockwise 
+          <b><code>points</code></b>, <code>0</code> otherwise.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.CrossError-class.html">CrossError</a></strong></code> - Some <b><code>points</code></b> are colinear.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isenclosedBy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isenclosedBy</span>&nbsp;(<span class="sig-arg">point</span>,
+        <span class="sig-arg">points</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Determine whether a point is enclosed by a polygon or composite.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - The point (<code>LatLon</code> or 2-tuple <code>(lat, 
+          lon)</code>).</li>
+        <li><strong class="pname"><code>points</code></strong> - The polygon points or clips (<code>LatLon</code>[], <a 
+          href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" 
+          class="link">BooleanFHP</a> or <a 
+          href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" 
+          class="link">BooleanGH</a>).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><code>True</code> if the <b><code>point</code></b> is inside the 
+          polygon or composite, <code>False</code> otherwise.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>point</code></b>, lat- or longitude.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Functions <a 
+        href="pygeodesy3.polygonal.points-module.html#isconvex" 
+        class="link">pygeodesy3.isconvex</a> and <a 
+        href="pygeodesy3.polygonal.points-module.html#ispolar" 
+        class="link">pygeodesy3.ispolar</a> especially if the 
+        <b><code>points</code></b> may enclose a pole or wrap around the 
+        earth <i>longitudinally</i>, methods <a 
+        href="pygeodesy3.spherical.nvector.LatLon-class.html#isenclosedBy" 
+        class="link">spherical.nvector.LatLon.isenclosedBy</a>, <a 
+        href="pygeodesy3.spherical.trigonometry.LatLon-class.html#isenclosedBy"
+        class="link">spherical.trigonometry.LatLon.isenclosedBy</a> and <a 
+        href="https://GitHub.com/NASA/MultiDop" target="_top">MultiDop 
+        GeogContainPt</a> (<a 
+        href="https://Journals.AMetSoc.org/doi/abs/10.1175/2009JTECHA1256.1"
+        target="_top">Shapiro et.al. 2009, JTECH</a> and <a 
+        href="https://Journals.AMetSoc.org/doi/abs/10.1175/JTECH-D-11-00019.1"
+        target="_top">Potvin et al. 2012, JTECH</a>).
+      </p>
+</div></td></tr></table>
+</div>
+<a name="ispolar"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ispolar</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check whether a polygon encloses a pole.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd><code>True</code> if the polygon encloses a pole, 
+          <code>False</code> otherwise.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code> or 
+        don't have <code>bearingTo2</code>, <code>initialBearingTo</code> 
+        and <code>finalBearingTo</code> methods.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="luneOf"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">luneOf</span>&nbsp;(<span class="sig-arg">lon1</span>,
+        <span class="sig-arg">lon2</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">LatLon</span>=<span class="sig-default">&lt;class 'pygeodesy3.polygonal.points.LatLon_'&gt;</span>,
+        <span class="sig-arg">**LatLon_kwds</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generate an ellipsoidal or spherical <a 
+  href="https://WikiPedia.org/wiki/Spherical_lune" 
+  target="_top">lune</a>-shaped path or polygon.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>lon1</code></strong> - Left longitude (<code>degrees90</code>).</li>
+        <li><strong class="pname"><code>lon2</code></strong> - Right longitude (<code>degrees90</code>).</li>
+        <li><strong class="pname"><code>closed</code></strong> - Optionally, close the path (<code>bool</code>).</li>
+        <li><strong class="pname"><code>LatLon</code></strong> - Class to use (<a 
+          href="pygeodesy3.polygonal.points.LatLon_-class.html" 
+          class="link">LatLon_</a>).</li>
+        <li><strong class="pname"><code>LatLon_kwds</code></strong> - Optional, additional <b><code>LatLon</code></b> keyword 
+          arguments.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A tuple of 4 or 5 <b><code>LatLon</code></b> instances outlining 
+          the lune shape.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a href="https://www.MathWorks.com/help/map/ref/areaquad.html" 
+        target="_top">Latitude-longitude quadrangle</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="nearestOn5"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">nearestOn5</span>&nbsp;(<span class="sig-arg">point</span>,
+        <span class="sig-arg">points</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">adjust</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">9</span>,
+        <span class="sig-arg">**LatLon_and_kwds</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Locate the point on a path or polygon closest to a reference 
+  point.</p>
+  <p>The closest point on each polygon edge is either the nearest of that 
+  edge's end points or a point in between.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>point</code></strong> - The reference point (<code>LatLon</code>).</li>
+        <li><strong class="pname"><code>points</code></strong> - The path or polygon points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>closed</code></strong> - Optionally, close the path or polygon (<code>bool</code>).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+        <li><strong class="pname"><code>adjust</code></strong> - See function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a> (<code>bool</code>).</li>
+        <li><strong class="pname"><code>limit</code></strong> - See function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a> 
+          (<code>degrees</code>), default <code>9 degrees</code> is about 
+          <code>1,000 Kmeter</code> (for mean spherical earth radius <a 
+          href="pygeodesy3-module.html#R_KM" class="link">R_KM</a>).</li>
+        <li><strong class="pname"><code>LatLon_and_kwds</code></strong> - Optional, <code><b>LatLon</b>=None</code> class to use for the 
+          closest point and additional <b><code>LatLon</code></b> keyword 
+          arguments, ignored if <code><b>LatLon</b>=None</code> or not 
+          given.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a 
+          href="pygeodesy3.miscs.namedTuples.NearestOn3Tuple-class.html" 
+          class="link">NearestOn3Tuple</a><code>(closest, distance, 
+          angle)</code> with the {closest} point 
+          (<b><code>LatLon</code></b>) or if <code><b>LatLon</b> is 
+          None</code>, a NearestOn5Tuple<code>(lat, lon, distance, angle, 
+          height)</code>. The <code>distance</code> is the <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular" 
+          class="link">pygeodesy3.equirectangular</a> distance between the 
+          <code>closest</code> and reference <b><code>point</code></b> in 
+          <code>degrees</code>. The <code>angle</code> from the 
+          <b><code>point</code></b> to the <code>closest</code> is in 
+          compass <code>degrees</code>, like function <a 
+          href="pygeodesy3.distances.formy-module.html#compassAngle" 
+          class="link">pygeodesy3.compassAngle</a>.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.LimitError-class.html">LimitError</a></strong></code> - Lat- and/or longitudinal delta exceeds the 
+        <b><code>limit</code></b>, see function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Distances are <i>approximated</i> by function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>. For more accuracy use
+        one of the <code>LatLon.nearestOn6</code> methods.
+      </p>
+      <p><strong>See Also:</strong>
+        Function <a href="pygeodesy3.maths.umath-module.html#degrees2m" 
+        class="link">pygeodesy3.degrees2m</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="perimeterOf"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">perimeterOf</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">adjust</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">wrap</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p><i>Approximate</i> the perimeter of a path, polygon. or composite.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - The path or polygon points or clips (<code>LatLon</code>[], <a 
+          href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" 
+          class="link">BooleanFHP</a> or <a 
+          href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" 
+          class="link">BooleanGH</a>).</li>
+        <li><strong class="pname"><code>closed</code></strong> - Optionally, close the path or polygon (<code>bool</code>).</li>
+        <li><strong class="pname"><code>adjust</code></strong> - Adjust the wrapped, unrolled longitudinal delta by the cosine of 
+          the mean latitude (<code>bool</code>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>).</li>
+        <li><strong class="pname"><code>wrap</code></strong> - If <code>True</code>, wrap or <i>normalize</i> and unroll the 
+          <b><code>points</code></b> (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Approximate perimeter (<code>meter</code>, same units as 
+          <b><code>radius</code></b>).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.PointsError-class.html">PointsError</a></strong></code> - Insufficient number of <b><code>points</code></b></li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Some <b><code>points</code></b> are not <code>LatLon</code>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Invalid <b><code>radius</code></b> or 
+        <code><b>closed</b>=False</code> with <code><b>points</b></code> a 
+        composite.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This perimeter is based on the <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a> distance approximation
+        and is ill-suited for regions exceeding several hundred Km or Miles
+        or with near-polar latitudes.
+      </p>
+      <p><strong>See Also:</strong>
+        Functions <a 
+        href="pygeodesy3.spherical.trigonometry-module.html#perimeterOf" 
+        class="link">spherical.trigonometry.perimeterOf</a> and <a 
+        href="pygeodesy3.ellipsoidal.karney-module.html#perimeterOf" 
+        class="link">ellipsoidal.karney.perimeterOf</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="quadOf"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">quadOf</span>&nbsp;(<span class="sig-arg">latS</span>,
+        <span class="sig-arg">lonW</span>,
+        <span class="sig-arg">latN</span>,
+        <span class="sig-arg">lonE</span>,
+        <span class="sig-arg">closed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">LatLon</span>=<span class="sig-default">&lt;class 'pygeodesy3.polygonal.points.LatLon_'&gt;</span>,
+        <span class="sig-arg">**LatLon_kwds</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generate a quadrilateral path or polygon from two points.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latS</code></strong> - Souther-nmost latitude (<code>degrees90</code>).</li>
+        <li><strong class="pname"><code>lonW</code></strong> - Western-most longitude (<code>degrees180</code>).</li>
+        <li><strong class="pname"><code>latN</code></strong> - Norther-nmost latitude (<code>degrees90</code>).</li>
+        <li><strong class="pname"><code>lonE</code></strong> - Eastern-most longitude (<code>degrees180</code>).</li>
+        <li><strong class="pname"><code>closed</code></strong> - Optionally, close the path (<code>bool</code>).</li>
+        <li><strong class="pname"><code>LatLon</code></strong> - Class to use (<a 
+          href="pygeodesy3.polygonal.points.LatLon_-class.html" 
+          class="link">LatLon_</a>).</li>
+        <li><strong class="pname"><code>LatLon_kwds</code></strong> - Optional, additional <b><code>LatLon</code></b> keyword 
+          arguments.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Return a tuple of 4 or 5 <b><code>LatLon</code></b> instances 
+          outlining the quadrilateral.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a href="pygeodesy3.polygonal.points-module.html#boundsOf"
+        class="link">boundsOf</a>.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="simplify1"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">simplify1</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">distance</span>=<span class="sig-default">0.001</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">indices</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">**options</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Basic simplification of a path of <code>LatLon</code> points.</p>
+  <p>Eliminates any points closer together than the given <i>distance</i> 
+  tolerance.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - Path points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>distance</code></strong> - Tolerance (<code>meter</code>, same units as 
+          <b><code>radius</code></b>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>).</li>
+        <li><strong class="pname"><code>indices</code></strong> - If <code>True</code> return the simplified point indices instead 
+          of the simplified points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>options</code></strong> - Optional keyword arguments passed thru to function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Simplified points (<code>LatLon</code>[]).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.LimitError-class.html">LimitError</a></strong></code> - Lat- and/or longitudinal delta exceeds the 
+        <b><code>limit</code></b>, see function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Tolerance <b><code>distance</code></b> or 
+        <b><code>radius</code></b> too small.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="simplifyRDP"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">simplifyRDP</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">distance</span>=<span class="sig-default">0.001</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">shortest</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">indices</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">**options</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p><i>Ramer-Douglas-Peucker</i> (RDP) simplification of a path of 
+  <code>LatLon</code> points.</p>
+  <p>Eliminates any points too close together or closer to an edge than the
+  given <i>distance</i> tolerance.</p>
+  <p>This <code>RDP</code> method exhaustively searches for the point with 
+  the largest distance, resulting in worst-case complexity <i 
+  class="math">O(n**2)</i> where <i class="math">n</i> is the number of 
+  points.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - Path points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>distance</code></strong> - Tolerance (<code>meter</code>, same units as 
+          <b><code>radius</code></b>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>).</li>
+        <li><strong class="pname"><code>shortest</code></strong> - If <code>True</code> use the <i>shortest</i> otherwise the 
+          <i>perpendicular</i> distance (<code>bool</code>).</li>
+        <li><strong class="pname"><code>indices</code></strong> - If <code>True</code> return the simplified point indices instead 
+          of the simplified points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>options</code></strong> - Optional keyword arguments passed thru to function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Simplified points (<code>LatLon</code>[]).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.LimitError-class.html">LimitError</a></strong></code> - Lat- and/or longitudinal delta exceeds the 
+        <b><code>limit</code></b>, see function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Tolerance <b><code>distance</code></b> or 
+        <b><code>radius</code></b> too small.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="simplifyRDPm"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">simplifyRDPm</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">distance</span>=<span class="sig-default">0.001</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">shortest</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">indices</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">**options</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Modified <i>Ramer-Douglas-Peucker</i> (RDPm) simplification of a path 
+  of <code>LatLon</code> points.</p>
+  <p>Eliminates any points too close together or closer to an edge than the
+  given <i>distance</i> tolerance.</p>
+  <p>This <code>RDPm</code> method stops at the first point farther than 
+  the given distance tolerance, significantly reducing the run time (but 
+  producing results different from the original <code>RDP</code> 
+  method).</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - Path points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>distance</code></strong> - Tolerance (<code>meter</code>, same units as 
+          <b><code>radius</code></b>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>).</li>
+        <li><strong class="pname"><code>shortest</code></strong> - If <code>True</code> use the <i>shortest</i> otherwise the 
+          <i>perpendicular</i> distance (<code>bool</code>).</li>
+        <li><strong class="pname"><code>indices</code></strong> - If <code>True</code> return the simplified point indices instead 
+          of the simplified points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>options</code></strong> - Optional keyword arguments passed thru to function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Simplified points (<code>LatLon</code>[]).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.LimitError-class.html">LimitError</a></strong></code> - Lat- and/or longitudinal delta exceeds the 
+        <b><code>limit</code></b>, see function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Tolerance <b><code>distance</code></b> or 
+        <b><code>radius</code></b> too small.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="simplifyRW"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">simplifyRW</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">pipe</span>=<span class="sig-default">0.001</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">shortest</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">indices</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">**options</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p><i>Reumann-Witkam</i> (RW) simplification of a path of 
+  <code>LatLon</code> points.</p>
+  <p>Eliminates any points too close together or within the given 
+  <i>pipe</i> tolerance along an edge.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - Path points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>pipe</code></strong> - Pipe radius, half-width (<code>meter</code>, same units as 
+          <b><code>radius</code></b>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>).</li>
+        <li><strong class="pname"><code>shortest</code></strong> - If <code>True</code> use the <i>shortest</i> otherwise the 
+          <i>perpendicular</i> distance (<code>bool</code>).</li>
+        <li><strong class="pname"><code>indices</code></strong> - If <code>True</code> return the simplified point indices instead 
+          of the simplified points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>options</code></strong> - Optional keyword arguments passed thru to function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Simplified points (<code>LatLon</code>[]).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.LimitError-class.html">LimitError</a></strong></code> - Lat- and/or longitudinal delta exceeds the 
+        <b><code>limit</code></b>, see function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Tolerance <b><code>pipe</code></b> or <b><code>radius</code></b> 
+        too small.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="simplifyVW"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">simplifyVW</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">area</span>=<span class="sig-default">0.001</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">attr</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">indices</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">**options</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p><i>Visvalingam-Whyatt</i> (VW) simplification of a path of 
+  <code>LatLon</code> points.</p>
+  <p>Eliminates any points too close together or with a triangular area not
+  exceeding the given <i>area</i> tolerance <i>squared</i>.</p>
+  <p>This <code>VW</code> method exhaustively searches for the single point
+  with the smallest triangular area, resulting in worst-case complexity <i 
+  class="math">O(n**2)</i> where <i class="math">n</i> is the number of 
+  points.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - Path points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>area</code></strong> - Tolerance (<code>meter</code>, same units as 
+          <b><code>radius</code></b>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>).</li>
+        <li><strong class="pname"><code>attr</code></strong> - Optional, points attribute to save the area value 
+          (<code>str</code>).</li>
+        <li><strong class="pname"><code>indices</code></strong> - If <code>True</code> return the simplified point indices instead 
+          of the simplified points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>options</code></strong> - Optional keyword arguments passed thru to function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Simplified points (<code>LatLon</code>[]).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>AttributeError</strong></code> - If an <b><code>attr</code></b> is specified for <i>Numpy2</i> 
+        <b><code>points</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.LimitError-class.html">LimitError</a></strong></code> - Lat- and/or longitudinal delta exceeds the 
+        <b><code>limit</code></b>, see function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Tolerance <b><code>area</code></b> or <b><code>radius</code></b> 
+        too small.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="simplifyVWm"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">simplifyVWm</span>&nbsp;(<span class="sig-arg">points</span>,
+        <span class="sig-arg">area</span>=<span class="sig-default">0.001</span>,
+        <span class="sig-arg">radius</span>=<span class="sig-default">6371008.771415</span>,
+        <span class="sig-arg">attr</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">indices</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">**options</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p><i>Modified Visvalingam-Whyatt</i> (VWm) simplification of a path of 
+  <code>LatLon</code> points.</p>
+  <p>Eliminates any points too close together or with a triangular area not
+  exceeding the given area tolerance <i>squared</i>.</p>
+  <p>This <code>VWm</code> method removes all points with a triangular area
+  below the tolerance in each iteration, significantly reducing the run 
+  time (but producing results different from the original <code>VW</code> 
+  method).</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>points</code></strong> - Path points (<code>LatLon</code>[]).</li>
+        <li><strong class="pname"><code>area</code></strong> - Tolerance (<code>meter</code>, same units as 
+          <b><code>radius</code></b>).</li>
+        <li><strong class="pname"><code>radius</code></strong> - Mean earth radius (<code>meter</code>).</li>
+        <li><strong class="pname"><code>attr</code></strong> - Optional, points attribute to save the area value 
+          (<code>str</code>).</li>
+        <li><strong class="pname"><code>indices</code></strong> - If <code>True</code> return the simplified point indices instead 
+          of the simplified points (<code>bool</code>).</li>
+        <li><strong class="pname"><code>options</code></strong> - Optional keyword arguments passed thru to function <a 
+          href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+          class="link">pygeodesy3.equirectangular_</a>.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Simplified points (<code>LatLon</code>[]).</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>AttributeError</strong></code> - If an <b><code>attr</code></b> is specified for <i>Numpy2</i> 
+        <b><code>points</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.LimitError-class.html">LimitError</a></strong></code> - Lat- and/or longitudinal delta exceeds the 
+        <b><code>limit</code></b>, see function <a 
+        href="pygeodesy3.distances.formy-module.html#equirectangular_" 
+        class="link">pygeodesy3.equirectangular_</a>.</li>
+        <li><code><strong class='fraise'>ValueError</strong></code> - Tolerance <b><code>area</code></b> or <b><code>radius</code></b> 
+        too small.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pygeodesy3-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="https://GitHub.com/mrJean1/PyGeodesy3">PyGeodesy3</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Dec 19 14:13:30 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
