@@ -1,0 +1,69 @@
+
+# 23.11.1
+# <http://Tomassetti.me/continous-integration-on-linux-and-windows-travis-and-appveyor/>
+# <http://GitHub.com/pypa/setuptools/blob/master/appveyor.yml>
+# <http://www.AppVeyor.com/docs/windows-images-software/#python>
+# <https://www.appveyor.com/docs/appveyor-yml/>
+
+image: Visual Studio 2022
+
+environment:
+
+  APPVEYOR: True
+# CODECOV_ENV: APPVEYOR_JOB_NAME
+
+  matrix:
+    - PYTHON: "C:\\Python312-x64"
+      PYTHON_ARCH: "64"
+      APPVEYOR_JOB_NAME: "Python312-64bit"
+
+    - PYTHON: "C:\\Python312-x64"
+      PYTHON_ARCH: "64"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYGEODESY_LAZY_IMPORT: "0"
+      APPVEYOR_JOB_NAME: "Python312-64bit-isLazy-0"
+
+    - PYTHON: "C:\\Python27-x64"
+      PYTHON_ARCH: "64"
+      APPVEYOR_JOB_NAME: "Python27-64bit"
+
+    - PYTHON: "C:\\Python27"
+      PYTHON_ARCH: "32"
+      APPVEYOR_JOB_NAME: "Python27-32bit"
+
+    - PYTHON: "C:\\Python310-x64"
+      PYTHON_ARCH: "64"
+      PYGEODESY_LAZY_IMPORT: "0"
+      APPVEYOR_JOB_NAME: "Python310-64bit-isLazy-0"
+
+install:
+  # symlink python from a directory with a space
+  - "mklink /d \"C:\\Program Files\\Python\" %PYTHON%"
+  - "SET PYTHON=\"C:\\Program Files\\Python\""
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  # UTF-8 for unicode test results
+  - "SET PYTHONIOENCODING=utf-8"
+  - "python --version"
+  - "python -m pip install --upgrade pip"
+  - "pip install geographiclib"
+  # "pip install win_unicode_console"
+
+build: off
+
+clone_depth: 1
+skip_commits:
+  files:
+    - 'dist/*.*'
+    - 'docs/*.html'
+    - 'testresults/*.txt'
+
+#cache:
+#  - '%LOCALAPPDATA%\pip\Cache'
+
+test_script:
+  - "cd C:\\projects\\pygeodesy"
+  - "python test\\run.py -failedonly"
+  # "python test\\run.py -results"
+  # "type testresults\\testresults*Windows*.txt"
+
+# version: '{build}'

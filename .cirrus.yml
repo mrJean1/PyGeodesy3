@@ -1,0 +1,23 @@
+
+# <https://Cirrus-CI.org/examples/#python>
+# <https://hub.Docker.com/_/python/>
+
+container:
+  image: python:latest
+# image: python:3.9.9-slim
+
+test_task:
+  pip_cache:
+    folder: ~/.cache/pip
+    # fingerprint_script: cat requirements.txt
+    # populate_script: pip install -r requirements.txt
+    populate_script: pip install distro
+  test_script:
+    - pip install --upgrade pip
+    - pip install distro
+    - pip install geographiclib
+    - python -c 'import distro; print(distro.id(), repr(distro.name()), distro.version())'
+    - python -c 'import platform; print(platform.uname())'  # , platform.dist())'
+    - python -c 'import geographiclib; print("geographiclib " + geographiclib.__version__)'
+    - python -B test/run.py -failedonly
+    - env PYGEODESY_LAZY_IMPORT=0 python -B test/run.py -failedonly
