@@ -20,4 +20,4 @@ test_task:
     - python -c 'import platform; print(platform.uname())'  # , platform.dist())'
     - python -c 'import geographiclib; print("geographiclib " + geographiclib.__version__)'
     - python -B test/run.py -failedonly
-    - env PYGEODESY_LAZY_IMPORT=0 python -B test/run.py -failedonly
+    - env PYGEODESY3_LAZY_IMPORT=3 python -B test/run.py -failedonly

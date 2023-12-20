@@ -20,20 +20,11 @@ environment:
     - PYTHON: "C:\\Python312-x64"
       PYTHON_ARCH: "64"
       PYTHONDONTWRITEBYTECODE: "1"
-      PYGEODESY_LAZY_IMPORT: "0"
+      PYGEODESY_LAZY_IMPORT: "3"
       APPVEYOR_JOB_NAME: "Python312-64bit-isLazy-0"
-
-    - PYTHON: "C:\\Python27-x64"
-      PYTHON_ARCH: "64"
-      APPVEYOR_JOB_NAME: "Python27-64bit"
-
-    - PYTHON: "C:\\Python27"
-      PYTHON_ARCH: "32"
-      APPVEYOR_JOB_NAME: "Python27-32bit"
 
     - PYTHON: "C:\\Python310-x64"
       PYTHON_ARCH: "64"
-      PYGEODESY_LAZY_IMPORT: "0"
       APPVEYOR_JOB_NAME: "Python310-64bit-isLazy-0"
 
 install:
@@ -61,7 +52,7 @@ skip_commits:
 #  - '%LOCALAPPDATA%\pip\Cache'
 
 test_script:
-  - "cd C:\\projects\\pygeodesy"
+  - "cd C:\\projects\\pygeodesy3"
   - "python test\\run.py -failedonly"
   # "python test\\run.py -results"
   # "type testresults\\testresults*Windows*.txt"
