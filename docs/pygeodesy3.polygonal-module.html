@@ -64,7 +64,7 @@
 
 <hr />
 <div class="fields">      <p><strong>Version:</strong>
-        23.12.18
+        23.12.21
       </p>
 </div><!-- ==================== SUBMODULES ==================== -->
 <a name="section-Submodules"></a>
@@ -78,7 +78,7 @@
   <ul class="nomargin">
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.booleans-module.html" onclick="show_private();">pygeodesy3.polygonal.booleans</a></strong>: <em class="summary"><i>Boolean</i> operations on <i>composite</i> polygons and 
         <i>clip</i>s.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers-module.html" onclick="show_private();">pygeodesy3.polygonal.clippers</a></strong>: <em class="summary">Clip a path or polygon of <code>LatLon</code> points against a 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy-module.html" onclick="show_private();">pygeodesy3.polygonal.clipy</a></strong>: <em class="summary">Clip a path or polygon of <code>LatLon</code> points against a 
         rectangular box or an arbitrary (convex) region.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.points-module.html" onclick="show_private();">pygeodesy3.polygonal.points</a></strong>: <em class="summary">Utilities for point lists, tuples, etc.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.polygonal.simplify-module.html" onclick="show_private();">pygeodesy3.polygonal.simplify</a></strong>: <em class="summary">Simplify or linearize a path.</em>    </li>
@@ -123,7 +123,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.polygonal.clippers.ClipCS4Tuple-class.html" class="summary-name">ClipCS4Tuple</a><br />
+        <a href="pygeodesy3.polygonal.clipy.ClipCS4Tuple-class.html" class="summary-name">ClipCS4Tuple</a><br />
       4-Tuple <code>(start, end, i, j)</code> for each edge of a 
         <i>clipped</i> path with the <code>start</code> and 
         <code>end</code> points (<code>LatLon</code>) of the portion of the
@@ -136,9 +136,9 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.polygonal.clippers.ClipFHP4Tuple-class.html" class="summary-name">ClipFHP4Tuple</a><br />
+        <a href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html" class="summary-name">ClipFHP4Tuple</a><br />
       4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
-        the <a href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        the <a href="pygeodesy3.polygonal.clipy-module.html#clipFHP4" 
         class="link">clipFHP4</a> result with the <code>lat</code>-, 
         <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
         of the polygon or clip.
@@ -148,9 +148,9 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.polygonal.clippers.ClipGH4Tuple-class.html" class="summary-name">ClipGH4Tuple</a><br />
+        <a href="pygeodesy3.polygonal.clipy.ClipGH4Tuple-class.html" class="summary-name">ClipGH4Tuple</a><br />
       4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
-        the <a href="pygeodesy3.polygonal.clippers-module.html#clipGH4" 
+        the <a href="pygeodesy3.polygonal.clipy-module.html#clipGH4" 
         class="link">clipGH4</a> result with the <code>lat</code>-, 
         <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
         of the polygon or clip.
@@ -160,7 +160,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.polygonal.clippers.ClipLB6Tuple-class.html" class="summary-name">ClipLB6Tuple</a><br />
+        <a href="pygeodesy3.polygonal.clipy.ClipLB6Tuple-class.html" class="summary-name">ClipLB6Tuple</a><br />
       6-Tuple <code>(start, end, i, fi, fj, j)</code> for each edge of 
         the <i>clipped</i> path with the <code>start</code> and 
         <code>end</code> points (<code>LatLon</code>) of the portion of the
@@ -177,7 +177,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.polygonal.clippers.ClipSH3Tuple-class.html" class="summary-name">ClipSH3Tuple</a><br />
+        <a href="pygeodesy3.polygonal.clipy.ClipSH3Tuple-class.html" class="summary-name">ClipSH3Tuple</a><br />
       3-Tuple <code>(start, end, original)</code> for each edge of a 
         <i>clipped</i> polygon, the <code>start</code> and <code>end</code>
         points (<code>LatLon</code>) of the portion of the edge inside or 
@@ -1036,7 +1036,7 @@
     </ul></dd>
     <dt>Returns:</dt>
         <dd>Yield a <a 
-          href="pygeodesy3.polygonal.clippers.ClipCS4Tuple-class.html" 
+          href="pygeodesy3.polygonal.clipy.ClipCS4Tuple-class.html" 
           class="link">ClipCS4Tuple</a><code>(start, end, i, j)</code> for 
           each edge of the <i>clipped</i> path.</dd>
     <dt>Raises:</dt>
@@ -1090,7 +1090,7 @@
     </ul></dd>
     <dt>Returns:</dt>
         <dd>Yield a <a 
-          href="pygeodesy3.polygonal.clippers.ClipFHP4Tuple-class.html" 
+          href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html" 
           class="link">ClipFHP4Tuple</a><code>(lat, lon, height, 
           clipid)</code> for each clipped point.  The result may consist of
           several clips, each a (closed) polygon with a unique 
@@ -1107,7 +1107,7 @@
         target="_top">Forster, Hormann and Popa</a>, class <a 
         href="pygeodesy3.polygonal.booleans.BooleanFHP-class.html" 
         class="link">BooleanFHP</a> and function <a 
-        href="pygeodesy3.polygonal.clippers-module.html#clipGH4" 
+        href="pygeodesy3.polygonal.clipy-module.html#clipGH4" 
         class="link">clipGH4</a>.
       </p>
 </div></td></tr></table>
@@ -1158,7 +1158,7 @@
     </ul></dd>
     <dt>Returns:</dt>
         <dd>Yield a <a 
-          href="pygeodesy3.polygonal.clippers.ClipGH4Tuple-class.html" 
+          href="pygeodesy3.polygonal.clipy.ClipGH4Tuple-class.html" 
           class="link">ClipGH4Tuple</a><code>(lat, lon, height, 
           clipid)</code> for each clipped point.  The result may consist of
           several clips, each a (closed) polygon with a unique 
@@ -1173,7 +1173,7 @@
 <div class="fields">      <p><strong>Note:</strong>
         To handle <i>degenerate cases</i> like <code>point-edge</code> and 
         <code>point-point</code> intersections, use function <a 
-        href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        href="pygeodesy3.polygonal.clipy-module.html#clipFHP4" 
         class="link">clipFHP4</a>.
       </p>
       <p><strong>See Also:</strong>
@@ -1186,7 +1186,7 @@
         target="_top">univ-polyclip</a>, class <a 
         href="pygeodesy3.polygonal.booleans.BooleanGH-class.html" 
         class="link">BooleanGH</a> and function <a 
-        href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        href="pygeodesy3.polygonal.clipy-module.html#clipFHP4" 
         class="link">clipFHP4</a>.
       </p>
 </div></td></tr></table>
@@ -1223,7 +1223,7 @@
     </ul></dd>
     <dt>Returns:</dt>
         <dd>Yield a <a 
-          href="pygeodesy3.polygonal.clippers.ClipLB6Tuple-class.html" 
+          href="pygeodesy3.polygonal.clipy.ClipLB6Tuple-class.html" 
           class="link">ClipLB6Tuple</a><code>(start, end, i, fi, fj, 
           j)</code> for each edge of the <i>clipped</i> path.</dd>
     <dt>Raises:</dt>
@@ -1317,7 +1317,7 @@
     </ul></dd>
     <dt>Returns:</dt>
         <dd>Yield a <a 
-          href="pygeodesy3.polygonal.clippers.ClipSH3Tuple-class.html" 
+          href="pygeodesy3.polygonal.clipy.ClipSH3Tuple-class.html" 
           class="link">ClipSH3Tuple</a><code>(start, end, original)</code> 
           for each edge of the <i>clipped</i> polygon.</dd>
     <dt>Raises:</dt>
@@ -2272,7 +2272,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Dec 19 14:13:30 2023
+    Generated by Epydoc 3.0.1 on Sat Dec 23 11:43:55 2023
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -20,12 +20,10 @@ L{pygeodesy3.base.karney}.
 from pygeodesy3.base.karney import Caps, GeodesicError
 from pygeodesy3.geodesic.exact.gx import GeodesicExact, GeodesicLineExact  # PYCHOK exported
 from pygeodesy3.geodesic.exact.gxarea import GeodesicAreaExact, PolygonArea  # PYCHOK exported
-from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _lazy_aka
+from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY
 
 __all__ = _ALL_LAZY.geodesic_exact + _ALL_DOCS(Caps, GeodesicError)
-__version__ = '23.12.18'
-
-_lazy_aka(__name__)
+__version__ = '23.12.21'
 
 # **) MIT License
 #

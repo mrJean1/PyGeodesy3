@@ -41,8 +41,8 @@ methods or to perform *boolean* operations between (composite) polygons, functio
 to simplify_ or linearize a path of *LatLon* points (or a `numpy array`_), including
 implementations of the `Ramer-Douglas-Peucker`_, `Visvalingam-Whyatt`_ and
 `Reumann-Witkam`_ algorithms and modified versions of the former.  Other classes
-interpolate_ the Height_ of *LatLon* points and Geoid_ models or compute various
-Fréchet_ or Hausdorff_ distances.
+interpolate_ the Height_ of *LatLon* points and Geoid_ models or compute distances
+using Fréchet_, Hausdorff_ and various formulae.
 
 Installation
 ============
@@ -64,27 +64,28 @@ Dependencies
 ============
 
 Installation of *Karney*\'s Python package geographiclib_ is optional, but required
-to use modules ``ellipsoidalKarney`` and ``css``, ``azimuthal`` classes ``EquidistantKarney``
-and ``GnomonicKarney`` and the ``HeightIDWkarney`` interpolator.
+to use modules ``ellipsoidal.karney`` and ``projections.css``, ``projections.azimuthal``
+classes ``EquidistantKarney`` and ``GnomonicKarney`` and the ``HeightIDWkarney``
+interpolator.
 
 Both numpy_ and scipy_ must be installed for most Geoid_ and Height_ interpolators,
 except ``GeoidKarney`` and the ``HeigthIDW...`` ones.
 
 Functions and ``LatLon`` methods ``circin6``, ``circum3``, ``circum4_``, ``soddy4``,
-``trilaterate3d2`` and ``trilaterate5`` and modules ``auxilats`` and ``rhumb.aux_``
+``trilaterate3d2`` and ``trilaterate5`` and modules ``maths.auxilats`` and ``rhumb.aux_``
 require numpy_.
 
-Modules ``ellipsoidalGeodSolve`` and ``geodsolve`` and ``azimuthal`` classes
+Modules ``ellipsoidal.solve`` and ``geodesic.solve`` and ``projections.azimuthal`` classes
 ``EquidistantGeodSolve`` and ``GnomonicGeodSolve`` depend on *Karney*\'s C++ utility
 GeodSolve_ to be executable and set with env variable ``PYGEODESY3_GEODSOLVE`` or with
 property ``Ellipsoid.geodsolve``.
 
-To compare ``MGRS`` results from modules ``mgrs`` and ``testMgrs`` with *Karney*\'s
-C++ utility GeoConvert_, the latter must be executable and set with env variable
-``PYGEODESY3_GEOCONVERT``.
+To compare ``MGRS`` results from modules ``grids.mgrs`` and ``test.testMgrs`` with
+*Karney*\'s C++ utility GeoConvert_, the latter must be executable and set with env
+variable ``PYGEODESY3_GEOCONVERT``.
 
-Module ``rhumbsolve`` needs *Karney*\'s C++ utility RhumbSolve_ to be executable and
-set with env variable ``PYGEODESY3_RHUMBSOLVE`` or with property ``Ellipsoid.rhumbsolve``.
+Module ``rhumb.solve`` needs *Karney*\'s C++ utility RhumbSolve_ to be executable and set
+with env variable ``PYGEODESY3_RHUMBSOLVE`` or with property ``Ellipsoid.rhumbsolve``.
 
 Documentation
 =============
@@ -99,7 +100,7 @@ Tests
 The tests ran with Python 3.12 (with geographiclib_ 2.0), 3.11.5 (with geographiclib_ 2.0,
 numpy_ 1.24.2 and scipy_ 1.10.1), Python 3.10.8 (with geographiclib_ 2.0, numpy_ 1.23.3,
 scipy_ 1.9.1, GeoConvert_ 2.2, GeodSolve_ 2.2 and RhumbSolve_ 2.2) and Python 3.9.6, all
-on macOS 14.1.2 Sonoma, in 64-bit only and on Apple M1 Silicon (``arm64``), *natively*.
+on macOS 14.1.2 Sonoma, Apple M1 Silicon (``arm64``), *natively* and in 64-bit only.
 
 All tests ran with ``lazy import`` enabled and with command line option ``-W default`` and
 env variable ``PYGEODESY_WARNINGS=on``.  The results of those tests are included in the
@@ -126,7 +127,7 @@ For a summary of all *Karney*-based functionality in ``pygeodesy3``, see module 
 License
 =======
 
-``Copyright (C) 2016-2024 -- mrJean1 at Gmail -- All Rights Reserved.``
+``Copyright (C) 2024-2024 -- mrJean1 at Gmail -- All Rights Reserved.``
 
 ``Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),

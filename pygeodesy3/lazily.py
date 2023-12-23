@@ -19,20 +19,19 @@ file name and line number.
        import} of a top-level module invariably loads all sub-modules imported by
        that top-level module.
 
-@note: C{Lazy import} raises a L{LazyAttributeError} or L{LazyImportError} depending
-       on the cause of the error.  Such errors can occur late, after any initial
-       imports.
+@note: C{Lazy import} raises a L{LazyAttributeError} or L{LazyImportError}
+       depending on the cause of the error.  Such errors can occur late,
+       after all initial imports.
 '''
 
 from pygeodesy3.interns import MISSING, NN, __all__ as _interns__all__, \
-                              _areaOf_, _attribute_, _by_, _COLONSPACE_, \
-                              _COMMASPACE_, _doesn_t_exist_, _DOT_, _DDOT_, \
-                              _enabled_, _EQUALSPACED_, _from_, _HASH_, \
-                              _immutable_, _isclockwise_, _ispolar_, _NL_, \
-                              _no_, _NorthPole_, _not_, _or_, _line_, _module_, \
+                              _attribute_, _by_, _COLONSPACE_, _COMMASPACE_, \
+                              _doesn_t_exist_, _DOT_, _DDOT_, _enabled_, \
+                              _EQUALSPACED_, _from_, _HASH_, _immutable_, \
+                              _NL_, _no_, _not_, _or_, _line_, _module_, \
                               _pygeodesy3_, _pygeodesy3_abspath_, _Python_, \
-                              _QUOTE1_, _QUOTE2_, _SouthPole_, _SPACE_, \
-                              _sub_packages, _UNDER_, _version_, \
+                              _QUOTE1_, _QUOTE2_, _SPACE_, _sub_packages, \
+                              _UNDER_, _version_, \
                               _dunder_nameof, _headof, _tailof  # _DEPRECATED_
 from pygeodesy3.interns import _intern  # PYCHOK used!
 # from pygeodesy3.miscs.errors import _xError2  # _ALL_MODS
@@ -51,9 +50,10 @@ except ImportError:  # Python 2.6-
 _a_l_l_                  = '__all__'  # .__main__
 __as__                   = ' as '
 _FOR_DOCS                = _getenv('PYGEODESY3_FOR_DOCS', NN)  # for epydoc ...
+_FOR_PYCHOK              = _getenv('PYGEODESY3_FOR_PYCHOK', NN)  # for pychok/PyChecker ...
 _from_DOT__              = _SPACE_(NN, _from_, _DOT_)
 _i0                      = ()  # PYCHOK empty tuple
-_init__all__             = _FOR_DOCS or _getenv('PYGEODESY3_INIT__ALL__', NN) == _a_l_l_  # PYCHOK exported
+_init__all__             = _FOR_DOCS or _FOR_PYCHOK or _getenv('PYGEODESY3_INIT__ALL__', NN) == _a_l_l_  # PYCHOK exported
 _init__star__            = _getenv('PYGEODESY3_INIT__STAR__', NN) == _a_l_l_  # PYCHOK in .pygeodesy3.*.__init__
 _lazily_                 = 'lazily'
 _lazily_imported__       = _SPACE_(_HASH_, _lazily_, 'imported', NN)
@@ -119,13 +119,13 @@ class _Dict(dict):
         else:
             self[name] = mod_
 
-    def mod_(self, mod):
-        '''Yield all names in module C{mod}.
-        '''
-        mod_ = NN(mod, _DDOT_)  # add '..'
-        for n, m in self.items():
-            if m == mod_:
-                yield n
+#   def mod_(self, mod):
+#       '''Yield all names in module C{mod}.
+#       '''
+#       mod_ = NN(mod, _DDOT_)  # add '..'
+#       for n, m in self.items():
+#           if m == mod_:
+#               yield n
 
     def _NAME(self, which):
         self._name = _intern(which.__name__.upper())
@@ -186,13 +186,13 @@ def _i(*names):
     return tuple(map(_intern, names)) if names else _i0
 
 
-def _ALL_ATTRS(*attrs):
-    '''(INTERNAL) Unravel all exported module attributes.
-    '''
-    t = ()
-    for attr in attrs:
-        t += tuple(map(_attrof, attr))
-    return t
+# def _ALL_ATTRS(*attrs):
+#     '''(INTERNAL) Unravel all exported module attributes.
+#     '''
+#     t = ()
+#     for attr in attrs:
+#         t += tuple(map(_attrof, attr))
+#     return t
 
 
 _ALL_INIT = _i(_pygeodesy3_abspath_, _version_)
@@ -203,7 +203,7 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                  base_cartesian=_i('CartesianBase',),
                     base_karney=_i('Area3Tuple', 'Caps', 'Direct9Tuple', 'GDict', 'Inverse10Tuple', 'Rhumb8Tuple'),
                     base_latlon=_i('LatLonBase',),
-                   base_nvector=_i('LatLonNvectorBase', _NorthPole_, 'NvectorBase', _SouthPole_),
+                   base_nvector=_i('LatLonNvectorBase', 'NorthPole', 'NvectorBase', 'SouthPole'),
                      base_solve=_i(),  # module only
                      base_units=_i('Float', 'Int', 'Radius', 'Str'),
                     base_utmups=_i('UtmUpsBase',),
@@ -392,18 +392,18 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                       polygonal=_i(),  # package only
              polygonal_booleans=_i('BooleanFHP', 'BooleanGH', 'LatLonFHP', 'LatLonGH',
                                    'isBoolean'),
-             polygonal_clippers=_i('ClipCS4Tuple', 'ClipFHP4Tuple', 'ClipGH4Tuple', 'ClipLB6Tuple', 'ClipSH3Tuple',
+                polygonal_clipy=_i('ClipCS4Tuple', 'ClipFHP4Tuple', 'ClipGH4Tuple', 'ClipLB6Tuple', 'ClipSH3Tuple',
                                    'clipCS4', 'clipFHP4', 'clipGH4', 'clipLB6', 'clipSH', 'clipSH3'),
                polygonal_points=_i('LatLon_', 'LatLon2psxy', 'Numpy2LatLon', 'Shape2Tuple', 'Tuple2LatLon',
-                                   _areaOf_, 'boundsOf', 'centroidOf', 'fractional',
-                                   _isclockwise_, 'isconvex', 'isconvex_', 'isenclosedBy', _ispolar_,
+                                   'areaOf', 'boundsOf', 'centroidOf', 'fractional',
+                                   'isclockwise', 'isconvex', 'isconvex_', 'isenclosedBy', 'ispolar',
                                    'luneOf', 'nearestOn5', 'perimeterOf', 'quadOf'),
              polygonal_simplify=_i('simplify1', 'simplifyRDP', 'simplifyRDPm', 'simplifyRW', 'simplifyVW', 'simplifyVWm'),
 
                     projections=_i(),  # package only
              projections_albers=_i('AlbersEqualArea', 'AlbersEqualArea2', 'AlbersEqualArea4',
-                                    'AlbersEqualAreaCylindrical', 'AlbersEqualAreaNorth', 'AlbersEqualAreaSouth',
-                                    'AlbersError', 'Albers7Tuple'),
+                                   'AlbersEqualAreaCylindrical', 'AlbersEqualAreaNorth', 'AlbersEqualAreaSouth',
+                                   'AlbersError', 'Albers7Tuple'),
           projections_azimuthal=_i('AzimuthalError', 'Azimuthal7Tuple',
                                    'Equidistant', 'EquidistantExact', 'EquidistantGeodSolve', 'EquidistantKarney',
                                    'Gnomonic', 'GnomonicExact', 'GnomonicGeodSolve', 'GnomonicKarney',
@@ -437,16 +437,15 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
               spherical_nvector=_i(),   # module only
          spherical_trigonometry=_i(),)  # module only
 
-_ALL_DEPRECATED = _NamedEnum_RO(_name='_ALL_DEPRECATED',
+_ALL_DEPRECATED = _NamedEnum_RO(_name='_ALL_DEPRECATED',  # lift all modules to pygeodesy3.
                                  base=('karney. as karney',),
                             distances=('formy. as formy', 'frechet. as frechet', 'hausdorff. as hausdorff',
                                        'resections. as resections'),
                                 earth=('datums. as datums', 'ecef. as ecef', 'ellipsoids. as ellipsoids',
                                        'trf. as trf', 'triaxials. as triaxials'),
                            elevations=('geoids. as geoids', 'heights. as heights'),  # 'webs. as elevations'),  # BACKWARD
-                          ellipsoidal=('exact. as ellipsoidalExact', 'karney. as ellipsoidalKarney',
-                                       'nvector. as ellipsoidalNvector', 'solve. as ellipsoidalGeodSolve',
-                                       'vincenty. as ellipsoidalVincenty'),
+                          ellipsoidal=('exact. as ellipsoidalExact', 'karney. as ellipsoidalKarney', 'nvector. as ellipsoidalNvector',
+                                       'solve. as ellipsoidalGeodSolve', 'vincenty. as ellipsoidalVincenty'),
                              geodesic=('exact. as geodesicx', 'solve. as geodsolve', 'wrap. as geodesicw',),
                                 grids=('epsg. as epsg', 'gars. as gars', 'geohash. as geohash',
                                        'mgrs. as mgrs', 'osgr. as osgr', 'wgrs. as wgrs'),
@@ -454,11 +453,12 @@ _ALL_DEPRECATED = _NamedEnum_RO(_name='_ALL_DEPRECATED',
                                        'auxilats. as auxilats', 'umath. as utily', 'vector2d. as vector2d', 'vector3d. as vector3d'),
                                 miscs=('basics. as basics', 'dms. as dms', 'errors. as errors', 'iters. as iters', 'named. as named',
                                        'namedTuples. as namedTuples', 'props. as props', 'streprs. as streprs', 'units. as units'),
-                            polygonal=('booleans. as booleans', 'clippers. as clipy',
+                            polygonal=('booleans. as booleans', 'clipy. as clipy',
                                        'points. as points', 'simplify. as simplify'),
                           projections=('albers. as albers', 'azimuthal. as azimuthal', 'css. as css', 'etm. as etm', 'ktm. as ktm',
                                        'lcc. as lcc', 'ltp. as ltp', 'ltpTuples. as ltpTuples', 'ups. as ups', 'utm. as utm',
                                        'utmups. as utmups', 'webmercator. as webmercator'),
+                                rhumb=('aux_. as rhumbaux', 'ekx. as rhumbx', 'solve. as rhumbsolve'),
                             spherical=('nvector. as sphericalNvector', 'trigonometry. as sphericalTrigonometry'),)
 
 
@@ -538,7 +538,7 @@ class _ALL_MODS(object):
 _ALL_MODS = _ALL_MODS()  # PYCHOK singleton
 
 __all__ = _ALL_LAZY.lazily
-__version__ = '23.12.18'
+__version__ = '23.12.22'
 
 
 def _ALL_OTHER(*objs):
@@ -593,14 +593,16 @@ def _all_imports():
 _ALL_IMPORTS = _Dict()  # PYCHOK _ALL_LAZY.imports()
 
 
-def _all_missing2(_all_):
+def _all_missing2(_all_):  # in .testLazily
     '''(INTERNAL) Get diffs between pygeodesy3.__all__ and lazily._all_imports.
     '''
     def _diff(one, two):
         return tuple(sorted(a for a in one if a not in two))
 
     _alzy = _Dict((a, a) for a in _ALL_INIT)
-    _alzy.update(_all_imports())  # without _all_backups!
+    if _init__all__:
+        _alzy.update(_all_imports())
+        _alzy.update(_all_deprecates())
     return ((_DOT_(_lazily_, _all_imports.__name__), _diff(_all_, _alzy)),
             (_DOT_(_pygeodesy3_, _a_l_l_),     _diff(_alzy.keys(), _all_)))
 
@@ -622,24 +624,7 @@ def _caller3(up):  # in .named
             f.f_lineno)  # line number
 
 
-def _import_backward():
-    '''(INTERNAL) Import all DEPRECATED modules, attrs and names
-       for backward compatibility with C{PyGeodesy3}.
-    '''
-    sm = _sys.modules
-    for n, m in _all_deprecates().items():
-        if m.endswith(_DDOT_):
-            n = _DOT_(_pygeodesy3_, n)
-            if n not in sm:
-                m = _DOT_(_pygeodesy3_, m.rstrip(_DOT_))
-                try:
-                    a = import_module(m, _pygeodesy3_)
-                    sm[n] = a
-                except ImportError:
-                    pass
-
-
-def _import_star():
+def _import_all():  # in .__init__
     '''(INTERNAL) Import all modules and attributes.
     '''
     items = list(_all_imports().items()) + \
@@ -671,22 +656,23 @@ def _import_star():
     return tuple(sorted(_PyG.__dict__.keys()))
 
 
-def _lazy_aka(_name_):
-    '''Import BACKWARD compatible module names.
+def _import_backward():  # in .__init__
+    '''(INTERNAL) Import all DEPRECATED modules, attrs and names
+       for backward compatibility with C{PyGeodesy}.
     '''
     sm = _sys.modules
-    sn =  sm.get(_name_, None)
-    if sn:
-        p, _, n = _name_.partition(_DOT_)
-        if p == _pygeodesy3_ and len(n) > 1:
-            for m in _ALL_DEPRECATES.mod_(n):
-                if m != n:
-                    m = _DOT_(p, m)
-                    if m not in sm:
-                        sm[m] = sn
+    for n, m in _all_deprecates().items():
+        if m.endswith(_DDOT_):
+            n = _DOT_(_pygeodesy3_, n)
+            if n not in sm:
+                m = _DOT_(_pygeodesy3_, m.rstrip(_DOT_))
+                try:
+                    sm[n] = import_module(m, _pygeodesy3_)
+                except ImportError:
+                    pass
 
 
-def _lazy_attr(unused):  # PYCHOK overwritten in _lazy_import
+def _lazy_attr(unused):  # PYCHOK overwritten in _lazy_import2
     pass
 
 
@@ -800,13 +786,13 @@ def _lazy_import2(pack):  # MCCABE 14
 
 # def _lazy_import_all(_name_):
 #     '''(INTERNAL) Return a function mimicking C{from B{__name__} import *},
-#        of all items, see .deprecated.__init__
+#        of all items.
 #     '''
 #     if _unlazy:
 #         raise AssertionError(_COMMASPACE_(_name_, _not_(_DEPRECATED_)))
 #
 #     _getattr = _lazy_attributes(_name_)  # _name_.__getattr__
-#     _import_start = _lazy_import_star(_name_, ALL_=_ALL_IMPORTS)
+#     _import_star = _lazy_import_star(_name_, ALL_=_ALL_IMPORTS)
 #
 #     def _import_all(attr, *dflt):
 #         return _import_star(_name_) if attr == _a_l_l_ else \
@@ -817,8 +803,8 @@ def _lazy_import2(pack):  # MCCABE 14
 
 def _lazy_import_as(_name_):
     '''(INTERNAL) Return a function to C{import B{__name__}.mod as mod}
-       I{of modules only}, see .deprecated, .rhumb or get an attribute
-       lazily exported by C{__name__}.
+       I{for modules only}, see .deprecated, .rhumb or get an attribute
+       lazily exported by B{C{__name__}}.
     '''
     if _unlazy:
         return None
@@ -834,7 +820,7 @@ def _lazy_import_as(_name_):
 
 # def _lazy_import_star(_name_, ALL_=_ALL_DEPRECATES):
 #     '''(INTERNAL) Return a function to mimick C{from B{__name__} import *},
-#        of all DEPRECATED items, see .deprecated, .testDeprecated
+#        of any DEPRECATED items and update the package's C{__dict__}.
 #     '''
 #     if _unlazy:
 #         raise AssertionError(_COMMASPACE_(_name_, _not_(_DEPRECATED_)))
@@ -856,31 +842,6 @@ def _lazy_import_as(_name_):
 #         return d.keys()  # imported names
 #
 #     return _import_star
-
-
-# def _lazy_subs(_name_, force=_FOR_DOCS, over=False):
-#     '''(INTERNAL) Return the names of a package's sub-packages and
-#        update the package's C{__dict__} accordingly.
-#     '''
-#     sm = dict()
-#     if force and _name_ != '__main__':
-#         nm = _tailof(_name_)
-#         _a = _ALL_MODS.getattr
-#         _m = _ALL_MODS.getmodule
-#         d  = _a(_name_, '__dict__', {})
-#         for n in _a(_name_, _a_l_l_, ()):
-#             try:  # n is a class name, get its mod name
-#                 m = _a(_name_, n).__module__
-#                 n, s = m.split(_DOT_)[-2:]
-#                 if n == nm and s not in sm:
-#                     # like  import m as s
-#                     m = _m(m)
-#                     sm[s] = m if over else d.get(s, m)
-#             except (AttributeError, ImportError, ValueError) as x:
-#                 pass
-#         d.update(sm)
-#
-#     return _ALL_OTHER(*sm.values())
 
 
 def _lazy_init2(pack):

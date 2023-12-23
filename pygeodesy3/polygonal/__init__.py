@@ -6,18 +6,18 @@ closed lists of points.
 '''
 from pygeodesy3.lazily import _ALL_LAZY, _init__star__, _lazy_import_as, _unLazy0
 
-__version__ = '23.12.18'
+__version__ = '23.12.21'
 
 if _unLazy0:
-    if _init__star__:
+    if _init__star__:  # PYCHOK no cover
         from pygeodesy3.polygonal.booleans import *  # PYCHOK expected
-        from pygeodesy3.polygonal.clippers import *  # PYCHOK expected
+        from pygeodesy3.polygonal.clipy import *  # PYCHOK expected
         from pygeodesy3.polygonal.points import *  # PYCHOK expected
         from pygeodesy3.polygonal.simplify import *  # PYCHOK expected
 
     __all__ = (_ALL_LAZY.polygonal +
                _ALL_LAZY.polygonal_booleans +
-               _ALL_LAZY.polygonal_clippers +
+               _ALL_LAZY.polygonal_clipy +
                _ALL_LAZY.polygonal_points +
                _ALL_LAZY.polygonal_simplify)
 

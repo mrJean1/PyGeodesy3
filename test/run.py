@@ -12,7 +12,7 @@ from os import access, environ, F_OK, linesep as LS, pathsep as PS
 import sys
 
 __all__ = ('run2',)
-__version__ = '23.08.10'
+__version__ = '23.12.21'
 
 NL = '\n'  # pygeodesy3.interns._NL_
 P  = None  # Popen instance
@@ -210,8 +210,10 @@ if __name__ == '__main__':  # MCCABE 19
     while args and args[0].startswith('-'):
         arg = args.pop(0)
         if '-help'.startswith(arg):
-            print('usage: %s [-B] [-failedonly] [-raiser] [-results] [-verbose] [-Z[0-9]] [test/test...py ...]' % (argv0,))
+            print('usage: %s %s [-all] [-B] [-failedonly] [-raiser] [-results] [-verbose] [-Z[0-9]] [test/test...py ...]' % (PythonX, argv0))
             sys.exit(0)
+        elif arg.startswith('-all'):
+            environ['PYGEODESY3_INIT__ALL__'] = '__all__'
         elif arg.startswith('-B'):
             environ['PYTHONDONTWRITEBYTECODE'] = arg[2:]
         elif '-failedonly'.startswith(arg):

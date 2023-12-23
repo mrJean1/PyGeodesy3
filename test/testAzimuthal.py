@@ -4,19 +4,23 @@
 # Test L{azimuthal} projections and intersections2 functions.
 
 __all__ = ('Tests',)
-__version__ = '23.12.17'
+__version__ = '23.12.21'
 
 from bases import GeodSolve, geographiclib, TestsBase, RandomLatLon
 
 from pygeodesy3 import Equidistant, EquidistantExact, EquidistantGeodSolve, \
-                      EquidistantKarney, Gnomonic, GnomonicExact, \
-                      GnomonicGeodSolve, GnomonicKarney, LambertEqualArea, \
-                      Orthographic, Stereographic, F_D, fstr, hypot, \
-                      IntersectionError, latlonDMS, latlonDMS_, vincentys
-from pygeodesy3.ellipsoidal import exact as ellipsoidalExact, \
-                                  karney as ellipsoidalKarney, \
-                                  nvector as ellipsoidalNvector, \
-                                  vincenty as ellipsoidalVincenty
+                       EquidistantKarney, Gnomonic, GnomonicExact, \
+                       GnomonicGeodSolve, GnomonicKarney, LambertEqualArea, \
+                       Orthographic, Stereographic, F_D, fstr, hypot, \
+                       IntersectionError, latlonDMS, latlonDMS_, vincentys
+try:
+    from pygeodesy3 import ellipsoidalExact, ellipsoidalKarney, \
+                           ellipsoidalNvector, ellipsoidalVincenty
+except (AttributeError, ImportError):
+    from pygeodesy3.ellipsoidal import exact as ellipsoidalExact, \
+                                       karney as ellipsoidalKarney, \
+                                       nvector as ellipsoidalNvector, \
+                                       vincenty as ellipsoidalVincenty
 
 
 class Tests(TestsBase):
@@ -137,7 +141,9 @@ class Tests(TestsBase):
 
 if __name__ == '__main__':
 
-    from pygeodesy3 import azimuthal, Azimuthal7Tuple, equidistant, gnomonic, namedTuples, NAN
+    from pygeodesy3 import Azimuthal7Tuple, equidistant, gnomonic, NAN
+    from pygeodesy3.miscs import namedTuples
+    from pygeodesy3.projections import azimuthal
 
     t = Tests(__file__, __version__, azimuthal)
 

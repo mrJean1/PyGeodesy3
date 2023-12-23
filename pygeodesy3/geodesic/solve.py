@@ -18,8 +18,7 @@ from pygeodesy3.interns import NN, _a12_, _azi1_, _azi2_, \
                               _M12_, _M21_, _s12_, _S12_, _UNDER_
 from pygeodesy3.interns import _UNUSED_, _not_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, \
-                              _PYGEODESY3_GEODSOLVE_, _getenv, printf, \
-                              _lazy_aka
+                              _PYGEODESY3_GEODSOLVE_, _getenv, printf
 from pygeodesy3.maths.umath import _unrollon, _Wrap, wrap360
 # from pygeodesy3.miscs.basics import _xinstanceof  # from .base.karney
 # from pygeodesy3.miscs.errors import _xkwds
@@ -28,7 +27,7 @@ from pygeodesy3.miscs.namedTuples import Destination3Tuple, Distance3Tuple
 from pygeodesy3.miscs.props import Property, Property_RO
 
 __all__ = _ALL_LAZY.geodesic_solve
-__version__ = '23.12.18'
+__version__ = '23.12.21'
 
 
 class GeodSolve12Tuple(_GTuple):
@@ -361,9 +360,6 @@ if __name__ == '__main__':
     printf('Position:    %s  %r', p == r, p, nl=1)
     p = glS.ArcPosition(49.475527)
     printf('ArcPosition: %s %r', p == r, p)
-
-else:
-    _lazy_aka(__name__)
 
 # % python3 -m pygeodesy3.geodesic.solve
 

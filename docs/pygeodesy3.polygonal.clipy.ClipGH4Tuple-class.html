@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>pygeodesy3.polygonal.clippers.ClipLB6Tuple</title>
+  <title>pygeodesy3.polygonal.clipy.ClipGH4Tuple</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -44,8 +44,8 @@
       <span class="breadcrumbs">
         <a href="pygeodesy3-module.html">Package&nbsp;pygeodesy3</a> ::
         <a href="pygeodesy3.polygonal-module.html">Package&nbsp;polygonal</a> ::
-        <a href="pygeodesy3.polygonal.clippers-module.html" onclick="show_private();">Module&nbsp;clippers</a> ::
-        Class&nbsp;ClipLB6Tuple
+        <a href="pygeodesy3.polygonal.clipy-module.html" onclick="show_private();">Module&nbsp;clipy</a> ::
+        Class&nbsp;ClipGH4Tuple
       </span>
     </td>
     <td>
@@ -53,45 +53,44 @@
         <!-- hide/show private -->
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="pygeodesy3.polygonal.clippers.ClipLB6Tuple-class.html"
+            >]&nbsp;|&nbsp;<a href="pygeodesy3.polygonal.clipy.ClipGH4Tuple-class.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class ClipLB6Tuple</h1><p class="nomargin-top"></p>
+<h1 class="epydoc">Class ClipGH4Tuple</h1><p class="nomargin-top"></p>
 <pre class="base-tree">
-         object --+        
-                  |        
-              tuple --+    
-                      |    
-         object --+   |    
-                  |   |    
- <a href="pygeodesy3.miscs.named._Named-class.html">miscs.named._Named</a> --+    
-                      |    
-<a href="pygeodesy3.miscs.named._NamedTuple-class.html">miscs.named._NamedTuple</a> --+
-                          |
-                         <strong class="uidshort">ClipLB6Tuple</strong>
+         object --+            
+                  |            
+              tuple --+        
+                      |        
+         object --+   |        
+                  |   |        
+ <a href="pygeodesy3.miscs.named._Named-class.html">miscs.named._Named</a> --+        
+                      |        
+<a href="pygeodesy3.miscs.named._NamedTuple-class.html">miscs.named._NamedTuple</a> --+    
+                          |    
+              <a href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html">ClipFHP4Tuple</a> --+
+                              |
+                             <strong class="uidshort">ClipGH4Tuple</strong>
 </pre>
 
 <hr />
-<p>6-Tuple <code>(start, end, i, fi, fj, j)</code> for each edge of the 
-  <i>clipped</i> path with the <code>start</code> and <code>end</code> 
-  points (<code>LatLon</code>) of the portion of the edge inside or on the 
-  clip box, indices <code>i</code> and <code>j</code> (both 
-  <code>int</code>) of the original path edge start and end points and 
-  <i>fractional</i> indices <code>fi</code> and <code>fj</code> (both <a 
-  href="pygeodesy3.miscs.units.FIx-class.html" class="link">FIx</a>) of the
-  <code>start</code> and <code>end</code> points along the edge of the 
-  original path.</p>
+<p>4-Tuple <code>(lat, lon, height, clipid)</code> for each point of the 
+  <a href="pygeodesy3.polygonal.clipy-module.html#clipGH4" 
+  class="link">clipGH4</a> result with the <code>lat</code>-, 
+  <code>lon</code>gitude, <code>height</code> and <code>clipid</code> of 
+  the polygon or clip.</p>
 
 <hr />
-<div class="fields">      <p><strong>See Also:</strong>
-        Class <a href="pygeodesy3.miscs.units.FIx-class.html" 
-        class="link">FIx</a> and function <a 
-        href="pygeodesy3.polygonal.points-module.html#fractional" 
-        class="link">pygeodesy3.fractional</a>.
+<div class="fields">      <p><strong>Note:</strong>
+        The <code>height</code> is a <a 
+        href="pygeodesy3.miscs.units.HeightX-class.html" 
+        class="link">HeightX</a> instance if this is an intersection, 
+        otherwise a <a href="pygeodesy3.miscs.units.Height-class.html" 
+        class="link">Height</a> or <code>int(0)</code>.
       </p>
 </div><!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
@@ -186,6 +185,10 @@
 </tr>
   <tr>
     <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html">ClipFHP4Tuple</a></code></b>:
+      <code><a href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html#isintersection">isintersection</a></code>,
+      <code><a href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html#ispoint">ispoint</a></code>
+      </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.miscs.named._Named-class.html">miscs.named._Named</a></code></b>:
       <code><a href="pygeodesy3.miscs.named._Named-class.html#classname">classname</a></code>,
       <code><a href="pygeodesy3.miscs.named._Named-class.html#classnaming">classnaming</a></code>,
@@ -234,7 +237,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Dec 19 14:13:32 2023
+    Generated by Epydoc 3.0.1 on Sat Dec 23 11:43:57 2023
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

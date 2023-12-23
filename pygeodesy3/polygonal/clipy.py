@@ -32,8 +32,8 @@ from pygeodesy3.polygonal.points import areaOf, boundsOf, isconvex_, LatLon_, \
 
 # from math import fabs  # from .maths.fmath
 
-__all__ = _ALL_LAZY.polygonal_clippers
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.polygonal_clipy
+__version__ = '23.12.21'
 
 _fj_       = 'fj'
 _original_ = 'original'

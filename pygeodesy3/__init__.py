@@ -96,7 +96,7 @@ interpolators, except L{GeoidKarney} and the L{HeightIDW...<pygeodesy3.elevation
 Functions and C{LatLon} methods L{circin6}, L{circum3}, L{circum4_}, L{soddy4}, L{trilaterate3d2} and
 C{trilaterate5} and modules L{maths.auxilats} and L{rhumb.aux_} require U{numpy<https://PyPI.org/project/numpy>}.
 
-Modules L{ellipsoidal.solve} and L{geodesic.solve} and L{azimuthal} classes L{EquidistantGeodSolve}
+Modules L{ellipsoidal.solve} and L{geodesic.solve} and L{projections.azimuthal} classes L{EquidistantGeodSolve}
 and L{GnomonicGeodSolve} depend on I{Karney}'s C++ utility U{GeodSolve
 <https://GeographicLib.SourceForge.io/C++/doc/GeodSolve.1.html>} to be executable and set with
 env variable C{PYGEODESY3_GEODSOLVE} or with property L{Ellipsoid.geodsolve}.
@@ -186,8 +186,8 @@ plus during development:
 
 and:
 
- - C{PYGEODESY3_INIT__ALL__} - Set env variable C{PYGEODESY3_INIT__ALL__} to C{"__all__"}
-   to import all C{pygeodesy3} modules, named backward compatible with C{pygeodesy}.
+ - C{PYGEODESY3_INIT__ALL__} - Set env variable C{PYGEODESY3_INIT__ALL__=__all__} to import
+   all packages, modules, classes, functions and variables and set variable C{pygeodesy3.__all__}.
 
 License
 =======
@@ -344,7 +344,7 @@ else:
         _lazy_import2 = None
 
 if _init__all__:  # PYCHOK no cover
-    import pygeodesy3.lazily  as lazily  # PYCHOK exported
+    import pygeodesy3.lazily as lazily  # PYCHOK exported
 
     if not _lazy_import2:  # import and set __all__
         import pygeodesy3.base        as base         # PYCHOK INTERNAL
@@ -364,10 +364,10 @@ if _init__all__:  # PYCHOK no cover
         import pygeodesy3.rhumb       as rhumb        # PYCHOK exported
         import pygeodesy3.spherical   as spherical    # PYCHOK exported
 
-#       import pygeodesy3.geodesic.exact as ...  # make
-#       import pygeodesy3.maths.auxilats as ...  # make
+#       import pygeodesy3.geodesic.exact as ... for make dist
+#       import pygeodesy3.maths.auxilats as ... for make dist
 
-        __all__ = lazily._import_star()
+        __all__ = lazily._import_all()
     lazily._import_backward()
 
 # from pygeodesy3.interns import _DOT_  # from .lazily
@@ -383,7 +383,7 @@ del abspath, _ALL_INIT, basename, dirname, _DOT_, _lazy_import2, sys
 
 # **) MIT License
 #
-# Copyright (C) 2016-2024 -- mrJean1 at Gmail -- All Rights Reserved.
+# Copyright (C) 2024-2024 -- mrJean1 at Gmail -- All Rights Reserved.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),

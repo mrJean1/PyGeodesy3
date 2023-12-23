@@ -21,7 +21,7 @@ from pygeodesy3.miscs.namedTuples import Destination3Tuple, Distance3Tuple
 from pygeodesy3.miscs.props import Property, Property_RO  # deprecated_method
 
 __all__ = _ALL_LAZY.rhumb_solve
-__version__ = '23.12.18'
+__version__ = '23.12.23'
 
 
 class _RhumbSolveBase(_SolveBase):
@@ -359,35 +359,39 @@ if __name__ == '__main__':
     from pygeodesy3.lazily import printf
     from sys import argv
 
-    def rhumb_intercept(rS, lat1, lon1, lat2, lon2, azi2, s23):
+    def rhumb_intercept3(rS, lat1, lon1, lat2, lon2, azi2, s23):
         # using RhumbSolve and GeodesicExact for I{Karney}'s C++ U{rhumb-intercept.cpp
         # <https://SourceForge.net/p/geographiclib/discussion/1026620/thread/2ddc295e/>
         from pygeodesy3.constants import EPS4 as _TOL
-        from pygeodesy3.base.karney import _diff182
+        from pygeodesy3.base.karney import _diff182,  fabs
+#       from math import fabs  # from .base.karney
 
         E  = rS.ellipsoid
         gX = E.geodesicx  # == GeodesicExact(E)
         m  = gX.STANDARD | gX.REDUCEDLENGTH | gX.GEODESICSCALE
 
-        rlS = rS.Line(lat2, lon2, azi2)
+        t_    = _0_0
+        rlS   =  rS.Line(lat2, lon2, azi2)
         sa, _ = rlS.azi12_sincos2  # aka _salp, _calp
         for i in range(1, 16):
             p = rlS.Position(s23)  # outmask=gX.LATITUDE_LONGITUDE
             r = gX.Inverse(lat1, lon1, p.lat2, p.lon2, outmask=m)
             d, _ = _diff182(azi2, r.azi2, K_2_0=True)
             s, c = _sincos2d(d)
-            printf('%2d %.3f %.8f, %.8f, %.8e',
-                   i, s23, r.lat2, r.lon2, c)
+            printf('%2d %.3f %.8f, %.8f, %.8e', i, s23, r.lat2, r.lon2, c)
             s2, c2 = _sincos2d(r.lat2)
             c2 *= E.rocTransverse(r.lat2)
             if c2 and r.m12:
                 s *= (s2 * sa) / c2 - s * r.M21 / r.m12
                 t  = (c / s) if s else _0_0
-                if abs(t) < _TOL:
+                if fabs(t) < _TOL or t == t_:  # t toggles
                     break
                 s23 += t
+                if t > 0:
+                    t_ = t
             else:
                 break
+        return s23, r.lat2, r.lon2
 
     rS = RhumbSolve(name='Test')
     rS.verbose = '--verbose' in argv  # or '-v' in argv
@@ -399,7 +403,7 @@ if __name__ == '__main__':
     if len(argv) > 6:  # 60 0 30 0 45 1e6
         t = (14, 's23'), (7, 'lat3'), (11, 'lon3'), (13, 'cos()')
         printf(' '.join('%*s' % _ for _ in t))
-        rhumb_intercept(rS, *map(float, argv[-6:]))
+        rhumb_intercept3(rS, *map(float, argv[-6:]))
         exit()
 
     r = rS.Direct(40.6, -73.8, 51, 5.5e6)
@@ -420,6 +424,7 @@ if __name__ == '__main__':
 #   p = rlS.ArcPosition(49.475527)
 #   printf('ArcPosition: %s %r', p == r, p)
 
+
 # % python3 -m pygeodesy3.rhumb.solve 60 0 30 0 45 1e6
 
 # version: /opt/local/bin/RhumbSolve: GeographicLib version 2.2
@@ -434,11 +439,6 @@ if __name__ == '__main__':
 #  8 3083112.636 49.63458221, 25.76787606, -4.96052409e-16
 #  9 3083112.636 49.63458221, 25.76787606, 4.96052409e-16
 # 10 3083112.636 49.63458221, 25.76787606, -4.96052409e-16
-# 11 3083112.636 49.63458221, 25.76787606, 4.96052409e-16
-# 12 3083112.636 49.63458221, 25.76787606, -4.96052409e-16
-# 13 3083112.636 49.63458221, 25.76787606, 4.96052409e-16
-# 14 3083112.636 49.63458221, 25.76787606, -4.96052409e-16
-# 15 3083112.636 49.63458221, 25.76787606, 4.96052409e-16
 
 
 # % python3 -m pygeodesy3.rhumb.solve

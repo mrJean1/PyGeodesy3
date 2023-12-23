@@ -8,7 +8,7 @@ from pygeodesy3.lazily import _ALL_LAZY, _init__star__, _lazy_import_as, _unLazy
 __version__ = '23.12.18'
 
 if _unLazy0:
-    if _init__star__:
+    if _init__star__:  # PYCHOK no cover
         from pygeodesy3.maths.auxilats import *  # PYCHOK expected
         from pygeodesy3.maths.elliptic import *  # PYCHOK expected
         from pygeodesy3.maths.fmath import *  # PYCHOK expected

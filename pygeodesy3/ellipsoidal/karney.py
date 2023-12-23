@@ -35,7 +35,7 @@ from pygeodesy3.ellipsoidal.base import CartesianEllipsoidalBase, _nearestOn
 from pygeodesy3.ellipsoidal.baseDI import LatLonEllipsoidalBaseDI, \
                                          _intersection3, _intersections2, \
                                          _TOL_M, intersecant2
-from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER, _lazy_aka
+from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
 # from pygeodesy3.miscs.errors import _xkwds  # from .base.karney
 # from pygeodesy3.miscs.props import Property_RO  # from .points
 from pygeodesy3.polygonal.points import _areaError, ispolar, \
@@ -45,7 +45,7 @@ from pygeodesy3.polygonal.points import _areaError, ispolar, \
 # from math import fabs  # from .base.karney
 
 __all__ = _ALL_LAZY.ellipsoidal_karney
-__version__ = '23.12.18'
+__version__ = '23.12.21'
 
 
 class Cartesian(CartesianEllipsoidalBase):
@@ -375,7 +375,6 @@ __all__ += _ALL_OTHER(Cartesian, LatLon,  # classes
                       areaOf, intersecant2,  # from .base.ellipsoidal
                       intersection3, intersections2, isclockwise, ispolar,
                       nearestOn, perimeterOf)
-_lazy_aka(__name__)
 
 # **) MIT License
 #

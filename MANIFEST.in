@@ -17,7 +17,6 @@ graft pygeodesy3/projections
 graft pygeodesy3/rhumb
 graft pygeodesy3/spherical
 graft test
-include test/testRoutesMap.jpg
 graft testcoverage
 include testcoverage.pdf
 include testcoverage.rc

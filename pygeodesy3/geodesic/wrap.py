@@ -21,7 +21,7 @@ from pygeodesy3.earth.datums import _earth_datum, _WGS84,  _EWGS84
 # from pygeodesy3.ellipsoids import _EWGS84  # from .earth.datums
 from pygeodesy3.interns import NN, _DOT_, _dunder_nameof, _SPACE_, \
                               _to_, _too_,_under
-from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _lazy_aka
+from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.umath import _unrollon, _Wrap, wrap360,  fabs  # PYCHOK used!
 from pygeodesy3.miscs.basics import _copysign, _xinstanceof
 # from pygeodesy3.miscs.dms import F_D  # from .base.latlon
@@ -36,7 +36,7 @@ from contextlib import contextmanager
 # from math import fabs  # from .maths.umath
 
 __all__ = _ALL_LAZY.geodesic_wrap
-__version__ = '23.12.18'
+__version__ = '23.12.21'
 
 _plumb_ = 'plumb'
 _TRIPS  =  129
@@ -541,9 +541,6 @@ def _PlumbTo(gl, lat0, lon0, est=None, tol=_TOL):
     pl = _MODS.rhumb.bases._PseudoRhumbLine(gl)
     return pl.PlumbTo(lat0, lon0, exact=gl.geodesic,
                                   est=est, tol=tol)
-
-
-_lazy_aka(__name__)
 
 # **) MIT License
 #

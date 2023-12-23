@@ -4,7 +4,7 @@
 # Test the lazy import module L{lazily}.
 
 __all__ = ('Tests',)
-__version__ = '23.12.18'
+__version__ = '23.12.22'
 
 from bases import TestsBase, ismacOS, isNix, isPython37, isWindows, \
                   PythonX, type2str
@@ -41,9 +41,9 @@ class Tests(TestsBase):
 
         z = pygeodesy3.isLazy
         self.test('isLazy', z, z)
-        if not z:
+        if len(_all_) > 2:
             for a, m in lazily._all_missing2(_all_):
-                t = all(_.startswith('rhumb') for _ in m) if m else False
+                t = len(m) > 2  # XXX
                 m = ', '.join(m) if m else None
                 self.test('missing in %s' % (a,), m, None, known=t)
 

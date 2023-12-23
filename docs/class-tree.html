@@ -1228,6 +1228,13 @@
         with <i>overloaded</i> <code>Direct</code> and <code>Inverse</code>
         methods.</em>
     <ul>
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.vincenty.LatLon-class.html">pygeodesy3.ellipsoidal.vincenty.LatLon</a></strong>:
+      <em class="summary">New point on an (oblate) ellipsoidal earth model, using the 
+        formulae devised by <a 
+        href="https://WikiPedia.org/wiki/Vincenty's_formulae" 
+        target="_top"><i>Thaddeus Vincenty</i></a> (1975) to compute 
+        geodesic distances, bearings (azimuths), etc.</em>
+    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.solve.LatLon-class.html">pygeodesy3.ellipsoidal.solve.LatLon</a></strong>:
       <em class="summary">An ellipsoidal <a 
         href="pygeodesy3.ellipsoidal.solve.LatLon-class.html" 
@@ -1239,13 +1246,6 @@
         class="link">GeodesicSolve</a> to compute the geodesic distance, 
         initial and final bearing (azimuths) between two given points or 
         the destination point given a start point and an (initial) bearing.</em>
-    </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.vincenty.LatLon-class.html">pygeodesy3.ellipsoidal.vincenty.LatLon</a></strong>:
-      <em class="summary">New point on an (oblate) ellipsoidal earth model, using the 
-        formulae devised by <a 
-        href="https://WikiPedia.org/wiki/Vincenty's_formulae" 
-        target="_top"><i>Thaddeus Vincenty</i></a> (1975) to compute 
-        geodesic distances, bearings (azimuths), etc.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact.LatLon-class.html">pygeodesy3.ellipsoidal.exact.LatLon</a></strong>:
       <em class="summary">An ellipsoidal <a 
@@ -1405,13 +1405,6 @@
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html">pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for ellipsoidal <code>Cartesian</code>s.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.solve.Cartesian-class.html">pygeodesy3.ellipsoidal.solve.Cartesian</a></strong>:
-      <em class="summary">Extended to convert exact <a 
-        href="pygeodesy3.ellipsoidal.solve.Cartesian-class.html" 
-        class="link">Cartesian</a> to exact <a 
-        href="pygeodesy3.ellipsoidal.solve.LatLon-class.html" 
-        class="link">LatLon</a> points.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.vincenty.Cartesian-class.html">pygeodesy3.ellipsoidal.vincenty.Cartesian</a></strong>:
       <em class="summary">Extended to convert geocentric, <a 
         href="pygeodesy3.ellipsoidal.vincenty.Cartesian-class.html" 
@@ -1420,19 +1413,11 @@
         href="pygeodesy3.ellipsoidal.vincenty.LatLon-class.html" 
         class="link">LatLon</a>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.nvector.Cartesian-class.html">pygeodesy3.ellipsoidal.nvector.Cartesian</a></strong>:
-      <em class="summary">Extended to convert geocentric, <a 
-        href="pygeodesy3.ellipsoidal.nvector.Cartesian-class.html" 
-        class="link">Cartesian</a> points to <code>Nvector</code> and 
-        n-vector-based, geodetic <a 
-        href="pygeodesy3.ellipsoidal.nvector.LatLon-class.html" 
-        class="link">LatLon</a>.</em>
-    </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney.Cartesian-class.html">pygeodesy3.ellipsoidal.karney.Cartesian</a></strong>:
-      <em class="summary">Extended to convert <code>Karney</code>-based <a 
-        href="pygeodesy3.ellipsoidal.karney.Cartesian-class.html" 
-        class="link">Cartesian</a> to <code>Karney</code>-based <a 
-        href="pygeodesy3.ellipsoidal.karney.LatLon-class.html" 
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.solve.Cartesian-class.html">pygeodesy3.ellipsoidal.solve.Cartesian</a></strong>:
+      <em class="summary">Extended to convert exact <a 
+        href="pygeodesy3.ellipsoidal.solve.Cartesian-class.html" 
+        class="link">Cartesian</a> to exact <a 
+        href="pygeodesy3.ellipsoidal.solve.LatLon-class.html" 
         class="link">LatLon</a> points.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact.Cartesian-class.html">pygeodesy3.ellipsoidal.exact.Cartesian</a></strong>:
@@ -1441,6 +1426,21 @@
         class="link">Cartesian</a> to exact <a 
         href="pygeodesy3.ellipsoidal.exact.LatLon-class.html" 
         class="link">LatLon</a> points.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney.Cartesian-class.html">pygeodesy3.ellipsoidal.karney.Cartesian</a></strong>:
+      <em class="summary">Extended to convert <code>Karney</code>-based <a 
+        href="pygeodesy3.ellipsoidal.karney.Cartesian-class.html" 
+        class="link">Cartesian</a> to <code>Karney</code>-based <a 
+        href="pygeodesy3.ellipsoidal.karney.LatLon-class.html" 
+        class="link">LatLon</a> points.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.nvector.Cartesian-class.html">pygeodesy3.ellipsoidal.nvector.Cartesian</a></strong>:
+      <em class="summary">Extended to convert geocentric, <a 
+        href="pygeodesy3.ellipsoidal.nvector.Cartesian-class.html" 
+        class="link">Cartesian</a> points to <code>Nvector</code> and 
+        n-vector-based, geodetic <a 
+        href="pygeodesy3.ellipsoidal.nvector.LatLon-class.html" 
+        class="link">LatLon</a>.</em>
     </li>
     </ul>
     </li>
@@ -2083,7 +2083,7 @@
         href="https://NumPy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html"
         target="_top">numpy.linalg.lstsq</a>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipCS4Tuple-class.html">pygeodesy3.polygonal.clippers.ClipCS4Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipCS4Tuple-class.html">pygeodesy3.polygonal.clipy.ClipCS4Tuple</a></strong>:
       <em class="summary">4-Tuple <code>(start, end, i, j)</code> for each edge of a 
         <i>clipped</i> path with the <code>start</code> and 
         <code>end</code> points (<code>LatLon</code>) of the portion of the
@@ -2091,23 +2091,23 @@
         <code>j</code> (<code>int</code>) of the edge start and end points 
         in the original path.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipFHP4Tuple-class.html">pygeodesy3.polygonal.clippers.ClipFHP4Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html">pygeodesy3.polygonal.clipy.ClipFHP4Tuple</a></strong>:
       <em class="summary">4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
-        the <a href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        the <a href="pygeodesy3.polygonal.clipy-module.html#clipFHP4" 
         class="link">clipFHP4</a> result with the <code>lat</code>-, 
         <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
         of the polygon or clip.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipGH4Tuple-class.html">pygeodesy3.polygonal.clippers.ClipGH4Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipGH4Tuple-class.html">pygeodesy3.polygonal.clipy.ClipGH4Tuple</a></strong>:
       <em class="summary">4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
-        the <a href="pygeodesy3.polygonal.clippers-module.html#clipGH4" 
+        the <a href="pygeodesy3.polygonal.clipy-module.html#clipGH4" 
         class="link">clipGH4</a> result with the <code>lat</code>-, 
         <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
         of the polygon or clip.</em>
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipLB6Tuple-class.html">pygeodesy3.polygonal.clippers.ClipLB6Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipLB6Tuple-class.html">pygeodesy3.polygonal.clipy.ClipLB6Tuple</a></strong>:
       <em class="summary">6-Tuple <code>(start, end, i, fi, fj, j)</code> for each edge of 
         the <i>clipped</i> path with the <code>start</code> and 
         <code>end</code> points (<code>LatLon</code>) of the portion of the
@@ -2119,7 +2119,7 @@
         of the <code>start</code> and <code>end</code> points along the 
         edge of the original path.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipSH3Tuple-class.html">pygeodesy3.polygonal.clippers.ClipSH3Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipSH3Tuple-class.html">pygeodesy3.polygonal.clipy.ClipSH3Tuple</a></strong>:
       <em class="summary">3-Tuple <code>(start, end, original)</code> for each edge of a 
         <i>clipped</i> polygon, the <code>start</code> and <code>end</code>
         points (<code>LatLon</code>) of the portion of the edge inside or 
@@ -3345,7 +3345,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         href="https://NumPy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html"
         target="_top">numpy.linalg.lstsq</a>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipCS4Tuple-class.html">pygeodesy3.polygonal.clippers.ClipCS4Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipCS4Tuple-class.html">pygeodesy3.polygonal.clipy.ClipCS4Tuple</a></strong>:
       <em class="summary">4-Tuple <code>(start, end, i, j)</code> for each edge of a 
         <i>clipped</i> path with the <code>start</code> and 
         <code>end</code> points (<code>LatLon</code>) of the portion of the
@@ -3353,23 +3353,23 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         <code>j</code> (<code>int</code>) of the edge start and end points 
         in the original path.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipFHP4Tuple-class.html">pygeodesy3.polygonal.clippers.ClipFHP4Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipFHP4Tuple-class.html">pygeodesy3.polygonal.clipy.ClipFHP4Tuple</a></strong>:
       <em class="summary">4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
-        the <a href="pygeodesy3.polygonal.clippers-module.html#clipFHP4" 
+        the <a href="pygeodesy3.polygonal.clipy-module.html#clipFHP4" 
         class="link">clipFHP4</a> result with the <code>lat</code>-, 
         <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
         of the polygon or clip.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipGH4Tuple-class.html">pygeodesy3.polygonal.clippers.ClipGH4Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipGH4Tuple-class.html">pygeodesy3.polygonal.clipy.ClipGH4Tuple</a></strong>:
       <em class="summary">4-Tuple <code>(lat, lon, height, clipid)</code> for each point of 
-        the <a href="pygeodesy3.polygonal.clippers-module.html#clipGH4" 
+        the <a href="pygeodesy3.polygonal.clipy-module.html#clipGH4" 
         class="link">clipGH4</a> result with the <code>lat</code>-, 
         <code>lon</code>gitude, <code>height</code> and <code>clipid</code>
         of the polygon or clip.</em>
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipLB6Tuple-class.html">pygeodesy3.polygonal.clippers.ClipLB6Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipLB6Tuple-class.html">pygeodesy3.polygonal.clipy.ClipLB6Tuple</a></strong>:
       <em class="summary">6-Tuple <code>(start, end, i, fi, fj, j)</code> for each edge of 
         the <i>clipped</i> path with the <code>start</code> and 
         <code>end</code> points (<code>LatLon</code>) of the portion of the
@@ -3381,7 +3381,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         of the <code>start</code> and <code>end</code> points along the 
         edge of the original path.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clippers.ClipSH3Tuple-class.html">pygeodesy3.polygonal.clippers.ClipSH3Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.polygonal.clipy.ClipSH3Tuple-class.html">pygeodesy3.polygonal.clipy.ClipSH3Tuple</a></strong>:
       <em class="summary">3-Tuple <code>(start, end, original)</code> for each edge of a 
         <i>clipped</i> polygon, the <code>start</code> and <code>end</code>
         points (<code>LatLon</code>) of the portion of the edge inside or 
@@ -4002,7 +4002,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Dec 19 14:13:28 2023
+    Generated by Epydoc 3.0.1 on Sat Dec 23 11:43:53 2023
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -57,8 +57,7 @@ from pygeodesy3.ellipsoidal.baseDI import LatLonEllipsoidalBaseDI, \
                                          _TOL_M, intersecant2
 from pygeodesy3.interns import _ambiguous_, _antipodal_, _COLONSPACE_, \
                                _to_, _SPACE_,  _limit_  # PYCHOK used!
-from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER, \
-                              _lazy_aka
+from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
 from pygeodesy3.maths.fmath import Fpolynomial, hypot, hypot1
 from pygeodesy3.maths.umath import atan2b, atan2d, sincos2, sincos2d, \
                                    unroll180, wrap180
@@ -73,7 +72,7 @@ from pygeodesy3.polygonal.points import Fmt, ispolar  # PYCHOK exported
 from math import atan2, cos, degrees, fabs, radians, tan
 
 __all__ = _ALL_LAZY.ellipsoidal_vincenty
-__version__ = '23.12.18'
+__version__ = '23.12.21'
 
 _antipodal_to_ = _SPACE_(_antipodal_, _to_)
 
@@ -561,7 +560,6 @@ def perimeterOf(points, **closed_datum_wrap):
 __all__ += _ALL_OTHER(Cartesian, LatLon, intersecant2,  # from .ellipsoidal.baseDI
                       intersection3, intersections2, ispolar,  # from .points
                       areaOf, nearestOn, perimeterOf)
-_lazy_aka(__name__)
 
 # **) MIT License
 #

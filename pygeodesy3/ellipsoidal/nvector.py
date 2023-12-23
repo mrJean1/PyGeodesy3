@@ -30,7 +30,7 @@ from pygeodesy3.ellipsoidal.base import CartesianEllipsoidalBase, _nearestOn, \
                                         LatLonEllipsoidalBase, _TOL_M,  _Wrap
 from pygeodesy3.interns import NN, _Nv00_
 from pygeodesy3.interns import _down_, _east_, _north_, _pole_  # PYCHOK used!
-from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER, _lazy_aka
+from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
 # from pygeodesy3.maths.fmath import fdot  # from .base.nvector
 # from pygeodesy3.maths.umath import _Wrap  # from .base.ellipsoidal
 from pygeodesy3.miscs.basics import issubclassof, map2, _xinstanceof
@@ -45,7 +45,7 @@ from pygeodesy3.projections.ltpTuples import Aer, Ned, Ned4Tuple  # XXX sincos2d
 # from math import fabs  # from .base.nvector
 
 __all__ = _ALL_LAZY.ellipsoidal_nvector
-__version__ = '23.12.18'
+__version__ = '23.12.21'
 
 
 class Cartesian(CartesianEllipsoidalBase):
@@ -610,7 +610,6 @@ def toNed(distance, bearing, elevation, **Ned_and_kwds):  # BACKWARD
 
 __all__ += _ALL_OTHER(Cartesian, LatLon, Nvector,  # classes
                       meanOf, sumOf, toNed)
-_lazy_aka(__name__)
 
 # **) MIT License
 #
