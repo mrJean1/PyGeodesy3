@@ -632,23 +632,21 @@ def _import_all():  # in .__init__
     trips = len(items) * 4
 
     _app =  items.append
-    _mod = _ALL_MODS.getmodule
     _pop =  items.pop
+    _mod = _ALL_MODS.getmodule
     _PyG = _mod(_pygeodesy3_)
     while items and trips > 0:
         name, mod = name_mod = _pop(0)
         if mod.endswith(_DOT_):
-            mod, _, attr = mod[:-1].rpartition(_DOT_)
-        else:
-            attr = name
+            mod, _, name = mod[:-1].rpartition(_DOT_)
         try:
             m = _mod(mod)
-            if attr:
-                a = getattr(m, attr)
-                setattr(_PyG, attr, a)
+            if name:
+                a = getattr(m, name)
+                setattr(_PyG, name, a)
                 pkg = _headof(mod)
                 if pkg != mod:
-                    setattr(_mod(pkg), attr, a)
+                    setattr(_mod(pkg), name, a)
             setattr(_PyG, _tailof(mod), m)
         except (AttributeError, ImportError):
             _app(name_mod)
@@ -656,20 +654,26 @@ def _import_all():  # in .__init__
     return tuple(sorted(_PyG.__dict__.keys()))
 
 
-def _import_backward():  # in .__init__
-    '''(INTERNAL) Import all DEPRECATED modules, attrs and names
-       for backward compatibility with C{PyGeodesy}.
+def _import_all_backward():  # in .__init__
+    '''(INTERNAL) Import all modules, for backward
+       compatibility with C{PyGeodesy}.
     '''
-    sm = _sys.modules
-    for n, m in _all_deprecates().items():
-        if m.endswith(_DDOT_):
-            n = _DOT_(_pygeodesy3_, n)
-            if n not in sm:
-                m = _DOT_(_pygeodesy3_, m.rstrip(_DOT_))
-                try:
-                    sm[n] = import_module(m, _pygeodesy3_)
-                except ImportError:
-                    pass
+    bw = []
+    if _getenv('PYGEODESY3_ALL_BACKWARD', NN):
+        sm = _sys.modules
+        for name, mod in _all_deprecates().items():
+            if mod.endswith(_DDOT_):
+                nam3 = _DOT_(_pygeodesy3_, name)
+                if nam3 not in sm:
+                    mod3 = _DOT_(_pygeodesy3_, mod.rstrip(_DOT_))
+                    try:
+                        sm[nam3] = import_module(mod3, _pygeodesy3_)
+                    except ImportError:
+                        name = NN
+                if name:
+                    bw.append(_i(name))
+        bw = sorted(bw)
+    return _ALL_INIT + tuple(bw)
 
 
 def _lazy_attr(unused):  # PYCHOK overwritten in _lazy_import2

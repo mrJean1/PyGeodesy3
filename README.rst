@@ -72,8 +72,8 @@ Both numpy_ and scipy_ must be installed for most Geoid_ and Height_ interpolato
 except ``GeoidKarney`` and the ``HeigthIDW...`` ones.
 
 Functions and ``LatLon`` methods ``circin6``, ``circum3``, ``circum4_``, ``soddy4``,
-``trilaterate3d2`` and ``trilaterate5`` and modules ``maths.auxilats`` and ``rhumb.aux_``
-require numpy_.
+``trilaterate3d2`` and ``trilaterate5`` do and modules ``maths.auxilats`` and ``rhumb.aux_``
+may require numpy_.
 
 Modules ``ellipsoidal.solve`` and ``geodesic.solve`` and ``projections.azimuthal`` classes
 ``EquidistantGeodSolve`` and ``GnomonicGeodSolve`` depend on *Karney*\'s C++ utility
@@ -122,7 +122,7 @@ in 64-bit on macOS 14.1.2 Sonoma.
 
 For a summary of all *Karney*-based functionality in ``pygeodesy3``, see module karney_.
 
-*Last updated: Dec 23, 2023.*
+*Last updated: Dec 28, 2023.*
 
 License
 =======

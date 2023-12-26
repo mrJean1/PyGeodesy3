@@ -2497,7 +2497,6 @@ pygeodesy3.lazily._headof	pygeodesy3.interns-module.html#_headof
 pygeodesy3.lazily._PYGEODESY3_GEOCONVERT_	pygeodesy3.lazily-module.html#_PYGEODESY3_GEOCONVERT_
 pygeodesy3.lazily._unLazy0	pygeodesy3.lazily-module.html#_unLazy0
 pygeodesy3.lazily._from_	pygeodesy3.lazily-module.html#_from_
-pygeodesy3.lazily._import_backward	pygeodesy3.lazily-module.html#_import_backward
 pygeodesy3.lazily._all_deprecates	pygeodesy3.lazily-module.html#_all_deprecates
 pygeodesy3.lazily._PYTHON_X_DEV	pygeodesy3.lazily-module.html#_PYTHON_X_DEV
 pygeodesy3.lazily.isLazy	pygeodesy3.lazily-module.html#isLazy
@@ -2535,6 +2534,7 @@ pygeodesy3.lazily._COMMASPACE_	pygeodesy3.lazily-module.html#_COMMASPACE_
 pygeodesy3.lazily._sub_packages	pygeodesy3.lazily-module.html#_sub_packages
 pygeodesy3.lazily._tailof	pygeodesy3.interns-module.html#_tailof
 pygeodesy3.lazily._init__all__	pygeodesy3.lazily-module.html#_init__all__
+pygeodesy3.lazily._import_all_backward	pygeodesy3.lazily-module.html#_import_all_backward
 pygeodesy3.lazily._lazy_attr	pygeodesy3.lazily-module.html#_lazy_attr
 pygeodesy3.lazily._WARNINGS_X_DEV	pygeodesy3.lazily-module.html#_WARNINGS_X_DEV
 pygeodesy3.lazily._by_	pygeodesy3.lazily-module.html#_by_

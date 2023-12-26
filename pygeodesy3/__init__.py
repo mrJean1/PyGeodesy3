@@ -178,6 +178,7 @@ and these to control standard or I{named} C{repr}esentations:
 
 plus during development:
 
+ - C{PYGEODESY3_ALL_BACKWARD} - import all modules for backward compatibility.
  - C{PYGEODESY3_FOR_DOCS} - for extended documentation by C{epydoc}.
  - C{PYGEODESY3_GEOGRAPHICLIB} - see module L{base.karney}.
  - C{PYGEODESY3_WARNINGS} - see module L{miscs.props} and function L{DeprecationWarnings}.
@@ -310,15 +311,15 @@ OTHER DEALINGS IN THE SOFTWARE.}
 @var version: Normalized C{PyGeodesy3} version (C{str}).
 '''
 
-from os.path import abspath, basename, dirname
-import sys
+import os.path as _pth
+import sys as _sys
 
 __all__            = ()
 _init__all__       = False
 # <https://PyInstaller.ReadTheDocs.io/en/stable/runtime-information.html>
-_isfrozen          = getattr(sys, 'frozen', False)
-pygeodesy3_abspath = dirname(abspath(__file__))  # sys._MEIPASS + '/pygeodesy3'
-_pygeodesy3_       = __package__ or basename(pygeodesy3_abspath)
+_isfrozen          = getattr(_sys, 'frozen', False)
+pygeodesy3_abspath = _pth.dirname(_pth.abspath(__file__))  # _sys._MEIPASS + '/pygeodesy3'
+_pygeodesy3_       = __package__ or _pth.basename(pygeodesy3_abspath)
 
 if _isfrozen:  # avoid lazy import
     _lazy_import2 = None
@@ -328,10 +329,10 @@ else:
     try:  # ... make this import work, ...
         from pygeodesy3 import lazily as _
     except (AttributeError, ImportError):  # ... if it doesn't, extend
-        # sys.path to include this very directory such
+        # _sys.path to include this very directory such
         # that all public and private sub-modules can
         # be imported (and checked by PyChecker, etc.)
-        sys.path.insert(0, pygeodesy3_abspath)  # XXX __path__[0]
+        _sys.path.insert(0, pygeodesy3_abspath)  # XXX __path__[0]
 
     try:  # lazily requires Python 3.7+, see lazily.__doc__
         from pygeodesy3.lazily import _init__all__, _lazy_import2  # PYCHOK expected
@@ -343,43 +344,39 @@ else:
             raise
         _lazy_import2 = None
 
-if _init__all__:  # PYCHOK no cover
-    import pygeodesy3.lazily as lazily  # PYCHOK exported
+if _init__all__ and not _lazy_import2:  # PYCHOK no cover
+    import pygeodesy3.lazily      as lazily       # PYCHOK exported
+    import pygeodesy3.base        as base         # PYCHOK INTERNAL
+    import pygeodesy3.constants   as constants    # PYCHOK exported
+    import pygeodesy3.deprecated  as deprecated   # PYCHOK exported
+    import pygeodesy3.distances   as distances    # PYCHOK exported
+    import pygeodesy3.earth       as earth        # PYCHOK exported
+    import pygeodesy3.elevations  as elevations   # PYCHOK exported
+    import pygeodesy3.ellipsoidal as ellipsoidal  # PYCHOK exported
+    import pygeodesy3.geodesic    as geodesic     # PYCHOK exported
+    import pygeodesy3.grids       as grids        # PYCHOK exported
+    import pygeodesy3.interns     as interns      # PYCHOK exported
+    import pygeodesy3.maths       as maths        # PYCHOK exported
+    import pygeodesy3.miscs       as miscs        # PYCHOK exported
+    import pygeodesy3.polygonal   as polygonal    # PYCHOK exported
+    import pygeodesy3.projections as polygonal    # PYCHOK exported
+    import pygeodesy3.rhumb       as rhumb        # PYCHOK exported
+    import pygeodesy3.spherical   as spherical    # PYCHOK exported
 
-    if not _lazy_import2:  # import and set __all__
-        import pygeodesy3.base        as base         # PYCHOK INTERNAL
-        import pygeodesy3.constants   as constants    # PYCHOK exported
-        import pygeodesy3.deprecated  as deprecated   # PYCHOK exported
-        import pygeodesy3.distances   as distances    # PYCHOK exported
-        import pygeodesy3.earth       as earth        # PYCHOK exported
-        import pygeodesy3.elevations  as elevations   # PYCHOK exported
-        import pygeodesy3.ellipsoidal as ellipsoidal  # PYCHOK exported
-        import pygeodesy3.geodesic    as geodesic     # PYCHOK exported
-        import pygeodesy3.grids       as grids        # PYCHOK exported
-        import pygeodesy3.interns     as interns      # PYCHOK exported
-        import pygeodesy3.maths       as maths        # PYCHOK exported
-        import pygeodesy3.miscs       as miscs        # PYCHOK exported
-        import pygeodesy3.polygonal   as polygonal    # PYCHOK exported
-        import pygeodesy3.projections as polygonal    # PYCHOK exported
-        import pygeodesy3.rhumb       as rhumb        # PYCHOK exported
-        import pygeodesy3.spherical   as spherical    # PYCHOK exported
+#   import pygeodesy3.geodesic.exact as ... for make dist
+#   import pygeodesy3.maths.auxilats as ... for make dist
 
-#       import pygeodesy3.geodesic.exact as ... for make dist
-#       import pygeodesy3.maths.auxilats as ... for make dist
-
-        __all__ = lazily._import_all()
-    lazily._import_backward()
+    __all__ = lazily._import_all()
 
 # from pygeodesy3.interns import _DOT_  # from .lazily
-from pygeodesy3.lazily import _ALL_INIT, _DOT_, isLazy  # PYCHOK import
+from pygeodesy3.lazily import _DOT_, _import_all_backward, isLazy  # PYCHOK import
 
-__all__    += _ALL_INIT
-__version__ = '23.12.23'
+__all__    += _import_all_backward()
+__version__ = '23.12.28'
 # see setup.py for similar logic
 version     = _DOT_(*map(int, __version__.split(_DOT_)))
 
-del abspath, _ALL_INIT, basename, dirname, _DOT_, _lazy_import2, sys
-
+del _DOT_, _import_all_backward, _lazy_import2, _pth, _sys
 
 # **) MIT License
 #

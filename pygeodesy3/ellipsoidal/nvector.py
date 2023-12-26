@@ -45,7 +45,7 @@ from pygeodesy3.projections.ltpTuples import Aer, Ned, Ned4Tuple  # XXX sincos2d
 # from math import fabs  # from .base.nvector
 
 __all__ = _ALL_LAZY.ellipsoidal_nvector
-__version__ = '23.12.21'
+__version__ = '23.12.24'
 
 
 class Cartesian(CartesianEllipsoidalBase):
@@ -142,10 +142,9 @@ class LatLon(LatLonNvectorBase, LatLonEllipsoidalBase):
            @arg other: The other point (L{LatLon}).
            @kwarg wrap: If C{True}, wrap or I{normalize} the B{C{other}}
                         point (C{bool}).
-           @kwarg Ned_name: Optional keyword arguments C{B{Ned}=L{Ned},
-                            B{name}=NN} with the class to return delta,
-                            name and and possibly other B{C{Ned}} keyword
-                            arguments.
+           @kwarg Ned_and_kwds: Optional keyword arguments C{B{Ned}=L{Ned},
+                          B{name}=NN} with the class to return delta, name
+                          and and possibly other B{C{Ned}} keyword arguments.
 
            @return: Delta from this to the other point (B{C{Ned}}).
 
