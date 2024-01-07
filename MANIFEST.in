@@ -1,6 +1,6 @@
 graft docs
 include docs.html
-graft pygeodesy3/base
+graft pygeodesy3/Base
 graft pygeodesy3/deprecated
 graft pygeodesy3/distances
 graft pygeodesy3/earth
