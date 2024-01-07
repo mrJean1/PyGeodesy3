@@ -22,7 +22,7 @@ from pygeodesy3.maths.auxilats.auxAngle import AuxAngle, AuxBeta, AuxChi, AuxMu,
                                                AuxPhi, AuxTheta, AuxXi  # PYCHOK exported
 from pygeodesy3.maths.auxilats.auxDLat import AuxDLat  # PYCHOK exported
 from pygeodesy3.maths.auxilats.auxDST import AuxDST  # PYCHOK exported
-from pygeodesy3.maths.auxilats.auxily import Aux  # PYCHOK exported
+from pygeodesy3.maths.auxilats.auxily import Aux, AuxError  # PYCHOK exported
 from pygeodesy3.maths.auxilats.auxLat import AuxLat  # PYCHOK exported
 from pygeodesy3.lazily import _ALL_LAZY
 

@@ -11,7 +11,7 @@ from bases import endswith, GeodSolve, geographiclib, TestsBase
 from pygeodesy3 import karney, LatLon_, NEG0, unroll180, wrap180
 from pygeodesy3.constants import _0_0, _360_0
 from pygeodesy3.geodesic import exact as geodesicx, solve as geodsolve, \
-                               wrap as geodesicw
+                                wrap as geodesicw
 
 # some tests from <https://PyPI.org/project/geographiclib>
 _testCases = ((35.60777, -139.44815, 111.098748429560326,

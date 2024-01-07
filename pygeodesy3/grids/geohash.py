@@ -16,28 +16,28 @@ See also U{Geohash<https://WikiPedia.org/wiki/Geohash>}, U{Geohash
 <https://GitHub.com/DaveTroy/geohash-js>}.
 '''
 
+from pygeodesy3.basics import isodd, isstr, map2, _xkwds
 from pygeodesy3.constants import EPS, R_M, _floatuple, _0_0, _0_5, _180_0, \
                                 _360_0,  _90_0, _N_90_0, _N_180_0  # PYCHOK used!
 # from pygeodesy3.distances import formy as _formy  # _MODS
 from pygeodesy3.interns import NN, _COMMA_, _DOT_, _E_, _N_, _NE_, _NW_, \
                               _S_, _SE_, _SW_, _W_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
-from pygeodesy3.maths.fmath import favg
-from pygeodesy3.miscs.basics import isodd, isstr, map2
+from pygeodesy3.maths.fmath import favg, _ValueError
 from pygeodesy3.miscs.dms import parse3llh  # parseDMS2
-from pygeodesy3.miscs.errors import _ValueError, _xkwds
+# from pygeodesy3.miscs.errors import _ValueError  # from .maths.fmath
 from pygeodesy3.miscs.named import _NamedDict, _NamedTuple, nameof, _xnamed
 from pygeodesy3.miscs.namedTuples import Bounds2Tuple, Bounds4Tuple, \
                                          LatLon2Tuple, PhiLam2Tuple
 from pygeodesy3.miscs.props import Property_RO, property_RO
-from pygeodesy3.miscs.streprs import fstr
+# from pygeodesy3.miscs.streprs import fstr  # _MODS
 from pygeodesy3.miscs.units import Degrees_, Int, Lat, Lon, Precision_, Str, \
                                   _xStrError
 
 from math import fabs, ldexp, log10, radians
 
 __all__ = _ALL_LAZY.grids_geohash
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 
 class _GH(object):
@@ -546,8 +546,9 @@ def decode(geohash):
 
     # round to near centre without excessive precision to
     # ⌊2-log10(Δ°)⌋ decimal places, strip trailing zeros
-    return (fstr(lat, prec=int(2 - log10(h))),
-            fstr(lon, prec=int(2 - log10(w))))  # strs!
+    f = _MODS.miscs.streprs.fstr
+    return (f(lat, prec=int(2 - log10(h))),
+            f(lon, prec=int(2 - log10(w))))  # strs!
 
 
 def decode2(geohash, LatLon=None, **LatLon_kwds):

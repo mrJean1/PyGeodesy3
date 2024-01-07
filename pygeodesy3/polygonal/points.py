@@ -25,7 +25,10 @@ each 2+tuple in a sequence of such 2+tuples using the C{ilat} lat- and
 C{ilon} longitude index in each 2+tuple.
 '''
 
-from pygeodesy3.base.latlon import LatLonBase, _latlonheight3
+from pygeodesy3.Base.latlon import LatLonBase, _latlonheight3
+from pygeodesy3.basics import isclass, isint, isscalar, issequence, issubclassof, \
+                             _Sequence, _xattr, _xcopy, _xdup, _xinstanceof, \
+                             _xkwds, _xkwds_pop
 from pygeodesy3.constants import EPS, EPS1, PI_2, R_M, isnear0, isnear1, \
                                 _umod_360, _0_0, _0_5, _1_0, _2_0, _6_0, \
                                 _90_0, _N_90_0, _180_0, _360_0
@@ -41,13 +44,9 @@ from pygeodesy3.maths.fmath import favg, fdot, hypot,  Fsum, fsum
 # from pygeodesy3.maths.fsums import Fsum, fsum  # from .maths.fmath
 from pygeodesy3.maths.umath import atan2b, degrees90, degrees180, degrees2m, \
                                    unroll180, _unrollon, unrollPI, _Wrap, wrap180
-from pygeodesy3.miscs.basics import isclass, isint, isscalar, issequence, \
-                                    issubclassof, _Sequence, _xcopy, _xdup, \
-                                    _xinstanceof
 from pygeodesy3.miscs.dms import F_D, parseDMS
 from pygeodesy3.miscs.errors import CrossError, crosserrors, _IndexError, \
-                                   _IsnotError, _TypeError, _ValueError, \
-                                   _xattr, _xkwds, _xkwds_pop
+                                   _IsnotError, _TypeError, _ValueError
 from pygeodesy3.miscs.iters import LatLon2PsxyIter, PointsIter, points2
 from pygeodesy3.miscs.named import classname, nameof, notImplemented, \
                                    notOverloaded, _NamedTuple
@@ -63,7 +62,7 @@ from pygeodesy3.miscs.units import Number_, Radius, Scalar, Scalar_
 from math import cos, fabs, fmod, radians, sin
 
 __all__ = _ALL_LAZY.polygonal_points
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _ilat_  = 'ilat'
 _ilon_  = 'ilon'
@@ -99,7 +98,7 @@ class LatLon_(LatLonBase):  # XXX in heights._HeightBase.height
            @note: The lat- and longitude values are taken I{as-given,
                   un-clipped and un-validated}.
 
-           @see: L{base.latlon.LatLonBase} for further details.
+           @see: L{Base.latlon.LatLonBase} for further details.
         '''
         if name:
             self.name = name
@@ -172,7 +171,7 @@ class LatLon_(LatLonBase):  # XXX in heights._HeightBase.height
         '''This L{LatLon_} as a string "class(<degrees>, ...)",
            ignoring keyword argument C{B{std}=N/A}.
 
-           @see: L{base.latlon.LatLonBase.toRepr} for further details.
+           @see: L{Base.latlon.LatLonBase.toRepr} for further details.
         '''
         _ = _xkwds_pop(kwds, std=NotImplemented)
         return LatLonBase.toRepr(self, **kwds)
@@ -181,7 +180,7 @@ class LatLon_(LatLonBase):  # XXX in heights._HeightBase.height
         '''Convert this point to a "lat, lon[, height][, name][, ...]"
            string, formatted in the given C{B{form}at}.
 
-           @see: L{base.latlon.LatLonBase.toStr} for further details.
+           @see: L{Base.latlon.LatLonBase.toStr} for further details.
         '''
         t = LatLonBase.toStr(self, form=form, joined=NN,
                                 **_xkwds(m_prec_sep_s_D_M_S, m=NN))
@@ -193,7 +192,7 @@ class LatLon_(LatLonBase):  # XXX in heights._HeightBase.height
 def _isLatLon(inst):
     '''(INTERNAL) Check a C{LatLon} or C{LatLon_} instance.
     '''
-    return isinstance(inst, (LatLon_, _MODS.base.latlon.LatLonBase))
+    return isinstance(inst, (LatLon_, _MODS.Base.latlon.LatLonBase))
 
 
 def _isLatLon_(LL):

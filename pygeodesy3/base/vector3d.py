@@ -8,16 +8,15 @@ A pure Python implementation of vector-based functions by I{(C) Chris Veness
 <https://www.Movable-Type.co.UK/scripts/latlong-vectors.html>}.
 '''
 
-# from pygeodesy3.base.nvector import _N_vector_  # _MODS
+# from pygeodesy3.Base.nvector import _N_vector_  # _MODS
+from pygeodesy3.basics import _copysign, islistuple, isscalar, map1, map2, _zip
 from pygeodesy3.constants import EPS, EPS0, INT0, PI, PI2, _copysignINF, \
-                                _float0, isnear0, isnear1, isneg0, \
-                                _pos_self, _0_0, _1_0
+                                _float0, isnear0, isnear1, isneg0, _pos_self, \
+                                _0_0, _1_0
 from pygeodesy3.interns import NN, _coincident_, _colinear_, _COMMASPACE_, _xyz_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _sys_version_info2
 from pygeodesy3.maths.fmath import euclid_, fdot, hypot_, hypot2_
 # from pygeodesy3.maths.umath import sincos2  # _MODS
-from pygeodesy3.miscs.basics import _copysign, islistuple, isscalar, map1, \
-                                     map2, _zip
 from pygeodesy3.miscs.errors import CrossError, _IsnotError, VectorError, _xError
 from pygeodesy3.miscs.named import _NamedBase, _NotImplemented, _xother3
 # from pygeodesy3.miscs.namedTuples import Vector3Tuple  # _MODS
@@ -28,8 +27,8 @@ from pygeodesy3.miscs.units import Float, Scalar
 
 from math import atan2, ceil, fabs, floor, trunc
 
-__all__ = _ALL_LAZY.base_vector3d
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.Base_vector3d
+__version__ = '24.01.05'
 
 
 class Vector3dBase(_NamedBase):  # sync __methods__ with .maths.fsums.Fsum
@@ -752,7 +751,7 @@ class Vector3dBase(_NamedBase):  # sync __methods__ with .maths.fsums.Fsum
     def _N_vector(self):
         '''(INTERNAL) Get the (C{base.nvector._N_vector_})
         '''
-        return _MODS.base.nvector._N_vector_(*self.xyz, name=self.name)
+        return _MODS.Base.nvector._N_vector_(*self.xyz, name=self.name)
 
     def others(self, *other, **name_other_up):
         '''Refined class comparison.

@@ -4,13 +4,13 @@
 # Test L{resections} module.
 
 __all__ = ('Tests',)
-__version__ = '23.12.08'
+__version__ = '24.01.05'
 
 from bases import endswith, isWindows, TestsBase
 
 from pygeodesy3 import EPS0, PI, PI_4, cassini, collins5, fstr, pierlot, pierlotx, \
-                      ResectionError, snellius3, tienstra7, triAngle, triAngle5, \
-                      triArea, triSide, triSide2, triSide4, Vector3d, wildberger3
+                        ResectionError, snellius3, tienstra7, triAngle, triAngle5, \
+                        triArea, triSide, triSide2, triSide4, Vector3d, wildberger3
 # from pygeodesy3.deprecated import collins, tienstra, triAngle4  # DEPRECATED
 from math import degrees
 
@@ -160,7 +160,7 @@ class Tests(TestsBase):
 
 if __name__ == '__main__':
 
-    from pygeodesy3.base.cartesian import CartesianBase
+    from pygeodesy3.Base.cartesian import CartesianBase
 
     class Cartesian_(CartesianBase):
         pass

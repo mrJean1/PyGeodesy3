@@ -67,14 +67,15 @@ breaking} and C{random sampling} as in U{Abdel Aziz Taha, Allan Hanbury
 Analysis Machine Intelligence (PAMI), vol 37, no 11, pp 2153-2163, Nov 2015.
 '''
 
-from pygeodesy3.base.units import _Str_degrees, _Str_degrees2, _Str_meter, _Str_NN, \
+from pygeodesy3.Base.units import _Str_degrees, _Str_degrees2, _Str_meter, _Str_NN, \
                                   _Str_radians, _Str_radians2
+from pygeodesy3.basics import _xattr, _xkwds, _xkwds_get
 from pygeodesy3.constants import INF, NINF, _0_0
 # import pygeodesy3.distances.formy as _formy  # _MODS
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
 from pygeodesy3.interns import NN, _i_, _j_, _units_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _FOR_DOCS
-from pygeodesy3.miscs.errors import _IsnotError, PointsError, _xattr, _xkwds, _xkwds_get
+from pygeodesy3.miscs.errors import _IsnotError, PointsError
 # from pygeodesy3.miscs.iters import points2  # from .points
 from pygeodesy3.miscs.named import _Named, _NamedTuple, notOverloaded, _Pass
 # from pygeodesy3.miscs.namedTuples import PhiLam2Tuple  # from .polygonal.points
@@ -87,7 +88,7 @@ from pygeodesy3.polygonal.points import _distanceTo, points2 as _points2, \
 from random import Random
 
 __all__ = _ALL_LAZY.distances_hausdorff
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 class HausdorffError(PointsError):

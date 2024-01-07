@@ -147,7 +147,7 @@ Notes
 =====
 
 For a summary of all I{Karney}-based functionality in C{pygeodesy3}, see module U{karney
-<https://mrJean1.GitHub.io/PyGeodesy3/docs/pygeodesy3.base.karney-module.html>}.
+<https://mrJean1.GitHub.io/PyGeodesy3/docs/pygeodesy3.Base.karney-module.html>}.
 
 Env variables
 =============
@@ -180,9 +180,9 @@ plus during development:
 
  - C{PYGEODESY3_ALL_BACKWARD} - import all modules for backward compatibility.
  - C{PYGEODESY3_FOR_DOCS} - for extended documentation by C{epydoc}.
- - C{PYGEODESY3_GEOGRAPHICLIB} - see module L{base.karney}.
+ - C{PYGEODESY3_GEOGRAPHICLIB} - see module L{Base.karney}.
  - C{PYGEODESY3_WARNINGS} - see module L{miscs.props} and function L{DeprecationWarnings}.
- - C{PYGEODESY3_XPACKAGES} - see module L{miscs.basics}.
+ - C{PYGEODESY3_XPACKAGES} - see module L{basics}.
  - C{PYTHONDEVMODE} - see modules L{miscs.errors} and L{miscs.props}.
 
 and:
@@ -315,23 +315,22 @@ import os.path as _pth
 import sys as _sys
 
 __all__            = ()
-_init__all__       = False
 # <https://PyInstaller.ReadTheDocs.io/en/stable/runtime-information.html>
-_isfrozen          = getattr(_sys, 'frozen', False)
+_isfrozen          = _init__all__ = getattr(_sys, 'frozen', False)  # in .lazily
 pygeodesy3_abspath = _pth.dirname(_pth.abspath(__file__))  # _sys._MEIPASS + '/pygeodesy3'
 _pygeodesy3_       = __package__ or _pth.basename(pygeodesy3_abspath)
 
-if _isfrozen:  # avoid lazy import
+if _isfrozen:  # avoid lazy import and import *
     _lazy_import2 = None
 else:
     # setting __path__ should ...
     __path__ = [pygeodesy3_abspath]
     try:  # ... make this import work, ...
         from pygeodesy3 import lazily as _
-    except (AttributeError, ImportError):  # ... if it doesn't, extend
-        # _sys.path to include this very directory such
-        # that all public and private sub-modules can
-        # be imported (and checked by PyChecker, etc.)
+    except (AttributeError, ImportError):  # ... if it doesn't,
+        # extend _sys.path to include this very directory such
+        # that all public and private sub-modules can be
+        # imported (and checked by PyChecker, etc.)
         _sys.path.insert(0, pygeodesy3_abspath)  # XXX __path__[0]
 
     try:  # lazily requires Python 3.7+, see lazily.__doc__
@@ -345,8 +344,11 @@ else:
         _lazy_import2 = None
 
 if _init__all__ and not _lazy_import2:  # PYCHOK no cover
-    import pygeodesy3.lazily      as lazily       # PYCHOK exported
-    import pygeodesy3.base        as base         # PYCHOK INTERNAL
+    import pygeodesy3.lazily as lazily  # PYCHOK exported
+    __all__ = lazily._import_all()
+
+    import pygeodesy3.Base        as Base         # PYCHOK INTERNAL
+    import pygeodesy3.basics      as basics       # PYCHOK exported
     import pygeodesy3.constants   as constants    # PYCHOK exported
     import pygeodesy3.deprecated  as deprecated   # PYCHOK exported
     import pygeodesy3.distances   as distances    # PYCHOK exported
@@ -359,20 +361,18 @@ if _init__all__ and not _lazy_import2:  # PYCHOK no cover
     import pygeodesy3.maths       as maths        # PYCHOK exported
     import pygeodesy3.miscs       as miscs        # PYCHOK exported
     import pygeodesy3.polygonal   as polygonal    # PYCHOK exported
-    import pygeodesy3.projections as polygonal    # PYCHOK exported
+    import pygeodesy3.projections as projections  # PYCHOK exported
     import pygeodesy3.rhumb       as rhumb        # PYCHOK exported
     import pygeodesy3.spherical   as spherical    # PYCHOK exported
 
 #   import pygeodesy3.geodesic.exact as ... for make dist
 #   import pygeodesy3.maths.auxilats as ... for make dist
 
-    __all__ = lazily._import_all()
-
 # from pygeodesy3.interns import _DOT_  # from .lazily
 from pygeodesy3.lazily import _DOT_, _import_all_backward, isLazy  # PYCHOK import
 
 __all__    += _import_all_backward()
-__version__ = '23.12.28'
+__version__ = '24.01.07'
 # see setup.py for similar logic
 version     = _DOT_(*map(int, __version__.split(_DOT_)))
 

@@ -13,16 +13,16 @@ also U{World Geographic Reference System
 <https://WikiPedia.org/wiki/World_Geographic_Reference_System>}.
 '''
 
+from pygeodesy3.basics import isstr, _xattr, _xkwds
 from pygeodesy3.constants import INT0, _float, _off90, _0_001, \
                                 _0_5, _1_0, _2_0, _60_0, _1000_0
 from pygeodesy3.interns import NN, _0to9_, _AtoZnoIO_, _COMMA_, \
                               _height_, _radius_, _SPACE_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_OTHER
 from pygeodesy3.maths.umath import ft2m, m2ft, m2NM
-# from pygeodesy3.miscs.basics import isstr  # from .named
 from pygeodesy3.miscs.dms import parse3llh  # parseDMS2
-from pygeodesy3.miscs.errors import _ValueError, _xattr, _xkwds
-from pygeodesy3.miscs.named import nameof,  isstr, Property_RO
+# from pygeodesy3.miscs.errors import _ValueError  # from .miscs.named
+from pygeodesy3.miscs.named import nameof,  Property_RO, _ValueError
 from pygeodesy3.miscs.namedTuples import LatLon2Tuple, LatLonPrec3Tuple
 # from pygeodesy3.miscs.props import Property_RO  # from .named
 from pygeodesy3.miscs.streprs import Fmt, _0wd
@@ -32,7 +32,7 @@ from pygeodesy3.miscs.units import Height, Int, Lat, Lon, Precision_, \
 from math import floor
 
 __all__ = _ALL_LAZY.grids_wgrs
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _Base    =  10
 _BaseLen =  4

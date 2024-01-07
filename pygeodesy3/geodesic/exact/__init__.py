@@ -14,16 +14,16 @@ and the background information at U{Geodesics on an ellipsoid of revolution
 Also, compare C{GeodesicExact} and C{GeodesicLineExact} to I{standard} classes C{Geodesic}
 respectively C{GeodesicLine} from I{Karney}'s Python implementation U{geographiclib
 <https://GeographicLib.SourceForge.io/C++/doc/other.html#python>}, see module
-L{pygeodesy3.base.karney}.
+L{pygeodesy3.Base.karney}.
 '''
 
-from pygeodesy3.base.karney import Caps, GeodesicError
+from pygeodesy3.Base.karney import Caps, GeodesicError
 from pygeodesy3.geodesic.exact.gx import GeodesicExact, GeodesicLineExact  # PYCHOK exported
 from pygeodesy3.geodesic.exact.gxarea import GeodesicAreaExact, PolygonArea  # PYCHOK exported
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY
 
 __all__ = _ALL_LAZY.geodesic_exact + _ALL_DOCS(Caps, GeodesicError)
-__version__ = '23.12.21'
+__version__ = '24.01.05'
 
 # **) MIT License
 #

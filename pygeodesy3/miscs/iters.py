@@ -9,13 +9,12 @@ the initial items, skipping of duplicate items and copying of the
 iterated items.
 '''
 
+from pygeodesy3.basics import islistuple, issubclassof, len2, map2, _passarg
 from pygeodesy3.constants import _1_0
 from pygeodesy3.interns import NN, _0_, _composite_, _few_, \
                               _latlon_, _points_, _too_
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS
 # from pygeodesy3.maths.umath import degrees2m, _Wrap  # _MODS cicular
-from pygeodesy3.miscs.basics import islistuple, issubclassof, \
-                                    len2, map2, _passarg
 from pygeodesy3.miscs.errors import _IndexError, LenError, PointsError, \
                                     _TypeError, _ValueError
 from pygeodesy3.miscs.named import Fmt, _Named, property_RO
@@ -26,7 +25,7 @@ from pygeodesy3.miscs.units import Int, Radius
 # from pygeodesy3.polygonal.booleans import isBoolean  # _MODS
 
 __all__ = _ALL_LAZY.miscs_iters
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _items_        = 'items'
 _iterNumpy2len =  1  # adjustable for testing purposes

@@ -15,7 +15,8 @@ and the Albers Conical Equal-Area examples on pp 291-294.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _diff182, _norm180, _signBit
+from pygeodesy3.Base.karney import _diff182, _norm180, _signBit
+from pygeodesy3.basics import neg, neg_, _xkwds
 from pygeodesy3.constants import EPS0, EPS02, _EPSqrt as _TOL, \
                                 _0_0, _0_5, _1_0, _N_1_0, _2_0, \
                                 _N_2_0, _4_0, _6_0, _90_0, _N_90_0
@@ -28,9 +29,8 @@ from pygeodesy3.maths.fmath import hypot, hypot1, sqrt3
 from pygeodesy3.maths.fsums import Fsum, fsum1f_
 from pygeodesy3.maths.umath import atan1, atan1d, degrees360, sincos2, \
                                    sincos2d, sincos2d_
-from pygeodesy3.miscs.basics import neg, neg_
-from pygeodesy3.miscs.errors import _ValueError, _xkwds
-from pygeodesy3.miscs.named import _NamedBase, _NamedTuple, _Pass
+# from pygeodesy3.miscs.errors import _ValueError  # from .miscs.named
+from pygeodesy3.miscs.named import _NamedBase, _NamedTuple, _Pass,  _ValueError
 from pygeodesy3.miscs.props import deprecated_Property_RO, Property_RO, _update_all
 from pygeodesy3.miscs.streprs import Fmt, strs, unstr
 from pygeodesy3.miscs.units import Bearing, Float_, Lat, Lat_, Lon, Meter, Scalar_
@@ -38,7 +38,7 @@ from pygeodesy3.miscs.units import Bearing, Float_, Lat, Lat_, Lon, Meter, Scala
 from math import atan2, atanh, degrees, fabs, radians, sqrt
 
 __all__ = _ALL_LAZY.projections_albers
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _k1_    = 'k1'
 _NUMIT  =   8  # XXX 4?

@@ -50,6 +50,7 @@ or by converting to anothor datum:
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+# from pygeodesy3.basics import _xkwds  # from .miscs.errors
 from pygeodesy3.constants import EPS, EPS0, _0_0, _1_0, _2_0, _3_0, _4_0, _6_0
 from pygeodesy3.ellipsoidal.base import CartesianEllipsoidalBase, _nearestOn
 from pygeodesy3.ellipsoidal.baseDI import LatLonEllipsoidalBaseDI, \
@@ -61,7 +62,7 @@ from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
 from pygeodesy3.maths.fmath import Fpolynomial, hypot, hypot1
 from pygeodesy3.maths.umath import atan2b, atan2d, sincos2, sincos2d, \
                                    unroll180, wrap180
-from pygeodesy3.miscs.errors import _and, _ValueError, _xkwds
+from pygeodesy3.miscs.errors import _and, _ValueError,  _xkwds
 from pygeodesy3.miscs.namedTuples import Destination2Tuple, Destination3Tuple, \
                                          Distance3Tuple
 from pygeodesy3.miscs.props import property_doc_, property_RO
@@ -72,7 +73,7 @@ from pygeodesy3.polygonal.points import Fmt, ispolar  # PYCHOK exported
 from math import atan2, cos, degrees, fabs, radians, tan
 
 __all__ = _ALL_LAZY.ellipsoidal_vincenty
-__version__ = '23.12.21'
+__version__ = '23.12.31'
 
 _antipodal_to_ = _SPACE_(_antipodal_, _to_)
 

@@ -42,24 +42,23 @@ altitude in Earth radii<https://WikiPedia.org/wiki/Azimuthal_equidistant_project
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _norm180,  euclid, Fsum, _hypot
-from pygeodesy3.base.latlon import LatLonBase as _LLB
+from pygeodesy3.Base.karney import _norm180,  euclid, Fsum, _hypot
+from pygeodesy3.Base.latlon import LatLonBase as _LLB
+from pygeodesy3.basics import _xinstanceof, _xkwds
 from pygeodesy3.constants import EPS, EPS0, EPS1, NAN, isnon0, \
                                 _EPStol, _umod_360, _0_0, _0_1, \
                                 _0_5, _1_0, _N_1_0, _2_0
 # from pygeodesy3.distances.formy import antipode  # _MODS
 from pygeodesy3.earth.datums import _spherical_datum, _WGS84
-from pygeodesy3.ellipsoidal.base import LatLonEllipsoidalBase as _LLEB, \
-                                       _xinstanceof
+from pygeodesy3.ellipsoidal.base import LatLonEllipsoidalBase as _LLEB
 from pygeodesy3.interns import NN, _azimuth_, _datum_, _lat_, _lon_, \
                               _scale_, _SPACE_, _x_, _y_
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _FOR_DOCS
-# from pygeodesy3.maths.fmath import euclid, hypot as _hypot  # from .base.karney
-# from pygeodesy3.maths.fsums import Fsum  # from .base.karney
+# from pygeodesy3.maths.fmath import euclid, hypot as _hypot  # from .Base.karney
+# from pygeodesy3.maths.fsums import Fsum  # from .Base.karney
 from pygeodesy3.maths.umath import asin1, atan1, atan2b, atan2d, sincos2, \
                                    sincos2d, sincos2d_
-# from pygeodesy3.miscs.basics import _xinstanceof  # from .ellipsoidal.bases
-from pygeodesy3.miscs.errors import _ValueError, _xdatum, _xkwds
+from pygeodesy3.miscs.errors import _ValueError, _xdatum
 from pygeodesy3.miscs.named import _NamedBase, _NamedTuple, notOverloaded, _Pass
 from pygeodesy3.miscs.namedTuples import LatLon2Tuple, LatLon4Tuple
 from pygeodesy3.miscs.props import deprecated_Property_RO, Property_RO, \
@@ -71,7 +70,7 @@ from pygeodesy3.miscs.units import Bearing, Easting, Lat_, Lon_, Northing, \
 from math import acos, atan2, degrees, fabs, sin, sqrt
 
 __all__ = _ALL_LAZY.projections_azimuthal
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _EPS_K         = _EPStol * _0_1  # Karney's eps_ or _EPSmin * _0_1?
 _over_horizon_ = 'over horizon'

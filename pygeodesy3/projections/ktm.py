@@ -42,21 +42,21 @@ U{GeographicLib<https://GeographicLib.SourceForge.io>} documentation.
 # make sure int/int division yields float quotient
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _atan2d, _diff182, _fix90, _norm180, \
+from pygeodesy3.Base.karney import _atan2d, _diff182, _fix90, _norm180, \
                                    _polynomial, _unsigned2,  _NamedBase
-from pygeodesy3.constants import INF, _K0_UTM, PI, PI_2, _0_0s, _0_0, \
-                                _1_0, _90_0, _copysignINF
+from pygeodesy3.basics import copysign0, isodd, neg, neg_, _reverange, \
+                             _xinstanceof, _xkwds_get
+from pygeodesy3.constants import INF, _K0_UTM, PI, PI_2, _copysignINF, _0_0s, \
+                                _0_0, _1_0, _90_0
 from pygeodesy3.earth.datums import Datum, _spherical_datum, _WGS84,  _EWGS84
 # from pygeodesy3.earth.ellipsoids import _EWGS84  # from .earth.datums
 from pygeodesy3.interns import NN, _COMMASPACE_, _singular_
-# from pygeodesy3.lazily import _ALL_LAZY,  _pairs  # from .errors, .maths.fsums
+from pygeodesy3.lazily import _ALL_LAZY, _pairs
 from pygeodesy3.maths.fmath import hypot, hypot1
-from pygeodesy3.maths.fsums import fsum1f_,  _ALL_LAZY
+from pygeodesy3.maths.fsums import fsum1f_
 from pygeodesy3.maths.umath import atan1d, _loneg, sincos2, sincos2d_
-from pygeodesy3.miscs.basics import copysign0, isodd, neg, neg_, \
-                                   _reverange, _xinstanceof
-from pygeodesy3.miscs.errors import _ValueError, _xkwds_get, _Xorder,  _pairs
-# from pygeodesy3.miscs.named import _NamedBase  # from .base.karney
+from pygeodesy3.miscs.errors import _ValueError, _Xorder
+# from pygeodesy3.miscs.named import _NamedBase  # from .Base.karney
 from pygeodesy3.miscs.namedTuples import Forward4Tuple, Reverse4Tuple
 from pygeodesy3.miscs.props import property_doc_, Property, Property_RO, \
                                   _update_all
@@ -67,7 +67,7 @@ from cmath import polar
 from math import atan2, asinh, cos, cosh, degrees, fabs, sin, sinh, sqrt, tanh
 
 __all__ = _ALL_LAZY.projections_ktm
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 class KTMError(_ValueError):

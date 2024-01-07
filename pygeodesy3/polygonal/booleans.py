@@ -17,21 +17,22 @@ C{reverse-difference}, C{sum} and C{union}.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.latlon import LatLonBase,  LatLon2Tuple, \
+from pygeodesy3.Base.latlon import LatLonBase,  LatLon2Tuple, \
                                    Property_RO, property_RO
+from pygeodesy3.basics import isodd, isscalar, issubclassof, map2, \
+                             _xattr, _xkwds_get
 from pygeodesy3.constants import EPS, EPS2, INT0, _0_0, _0_5, _1_0
 from pygeodesy3.interns import NN, _BANG_, _clip_, _clipid_, _COMMASPACE_, \
                               _composite_, _DOT_, _e_, _ELLIPSIS_, _few_, \
-                              _height_, _lat_,_LatLon_, _lon_, _not_, \
+                              _height_, _lat_, _LatLon_, _lon_, _not_, \
                               _points_, _scalar_,_SPACE_, _too_, _X_, _x_, \
                               _B_, _d_, _R_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.fmath import favg, hypot, hypot2
 # from pygeodesy3.maths.fsums import fsum1  # _MODS
 from pygeodesy3.maths.umath import fabs, _unrollon, _Wrap
-from pygeodesy3.miscs.basics import isodd, isscalar, issubclassof, map2
 from pygeodesy3.miscs.errors import ClipError, _IsnotError, _TypeError, \
-                                   _ValueError, _xattr, _xkwds_get
+                                   _ValueError
 from pygeodesy3.miscs.named import _Named, _NotImplemented,  Fmt, pairs, unstr
 # from pygeodesy3.miscs.namedTuples import LatLon2Tupe  # from .base.latlon
 # from pygeodesy3.miscs.props import Property_RO, property_RO  # from .base.latlon
@@ -42,7 +43,7 @@ from pygeodesy3.miscs.units import Height, HeightX
 # from math import fabs  # from .maths.umath
 
 __all__ = _ALL_LAZY.polygonal_booleans
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _0_EPS =  EPS  # near-zero, positive
 _EPS_0 = -EPS  # near-zero, negative
@@ -1129,7 +1130,7 @@ class _CompositeBase(_Named):
                 sid += 1
         return sp
 
-    def _sum1(self, _a_p, *args, **kwds):  # in .base.karney, .points
+    def _sum1(self, _a_p, *args, **kwds):  # in .Base.karney, .points
         # Sum the area or perimeter of all clips
         return _MODS.maths.fsums.fsum1((_a_p(c, *args, **kwds) for c in self._clips), floats=True)
 

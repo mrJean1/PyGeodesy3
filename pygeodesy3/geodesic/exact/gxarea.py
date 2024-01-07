@@ -8,7 +8,7 @@ I{Karney}'s Python U{geographiclib
 
 Class L{GeodesicAreaExact} is intended to work with instances
 of class L{GeodesicExact} and of I{wrapped} class C{Geodesic},
-see module L{pygeodesy3.base.karney}.
+see module L{pygeodesy3.Base.karney}.
 
 Copyright (C) U{Charles Karney<mailto:Karney@Alum.MIT.edu>} (2008-2023)
 and licensed under the MIT/X11 License.  For more information, see the
@@ -17,12 +17,12 @@ U{GeographicLib<https://GeographicLib.SourceForge.io>} documentation.
 # make sure int/int division yields float quotient
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import Area3Tuple, _diff182, GeodesicError, \
+from pygeodesy3.Base.karney import Area3Tuple, _diff182, GeodesicError, \
                                   _norm180, _remainder, _sum2_
+from pygeodesy3.basics import isodd, unsigned0
 from pygeodesy3.constants import NAN, _0_0, _0_5, _720_0
 from pygeodesy3.interns import NN, _COMMASPACE_
 from pygeodesy3.lazily import _ALL_DOCS, printf
-from pygeodesy3.miscs.basics import isodd, unsigned0
 from pygeodesy3.miscs.named import callername, _Dict, _NamedBase, pairs
 from pygeodesy3.miscs.props import Property, Property_RO, property_RO
 # from pygeodesy3.miscs.streprs import pairs  # from .named
@@ -30,7 +30,7 @@ from pygeodesy3.miscs.props import Property, Property_RO, property_RO
 from math import fmod
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 class GeodesicAreaExact(_NamedBase):

@@ -10,7 +10,7 @@ from bases import numpy, TestsBase
 
 from pygeodesy3 import NN, PI_2, PI_4, Fsum, fsum, printf, sincos2
 from pygeodesy3 import Aux, AuxAngle, AuxDST, AuxLat, \
-                      AuxBeta, AuxChi, AuxMu, AuxPhi, AuxTheta, AuxXi
+                       AuxBeta, AuxChi, AuxMu, AuxPhi, AuxTheta, AuxXi
 from math import fabs
 
 

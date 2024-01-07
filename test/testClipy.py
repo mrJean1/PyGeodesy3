@@ -9,8 +9,8 @@ __version__ = '23.03.27'
 from bases import TestsBase
 
 from pygeodesy3 import F_D, F__F_, boundsOf, clipCS4, \
-               ClipError, clipFHP4, ClipFHP4Tuple, \
-               clipGH4, clipLB6, clipSH, clipSH3
+                ClipError, clipFHP4, ClipFHP4Tuple, \
+                clipGH4, clipLB6, clipSH, clipSH3
 
 
 def _lles3(*lles):
@@ -286,7 +286,7 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import ellipsoidalNvector, ellipsoidalVincenty, \
-                          sphericalNvector, sphericalTrigonometry
+                           sphericalNvector, sphericalTrigonometry
 
     t = Tests(__file__, __version__)
     t.testClipy(ellipsoidalNvector)

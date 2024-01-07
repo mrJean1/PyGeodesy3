@@ -36,11 +36,12 @@ from __future__ import division as _; del _  # PYCHOK semicolon
 # - a 12 suffix means a difference, e.g., s12 = s2 - s1.
 # - s and c prefixes mean sin and cos
 
-from pygeodesy3.base.karney import _around, _atan2d, Caps, _copysign, \
+from pygeodesy3.Base.karney import _around, _atan2d, Caps, _copysign, \
                                    _diff182, _fix90, GDict, GeodesicError, \
                                    _K_2_0, _norm2, _norm180, _polynomial, \
                                    _signBit, _sincos2, _sincos2d, _sincos2de, \
                                    _unsigned2,  _cbrt, _hypot
+from pygeodesy3.basics import _xinstanceof, _xor, unsigned0
 from pygeodesy3.constants import EPS, EPS0, EPS02, MANT_DIG, NAN, PI, _EPSqrt, \
                                 _SQRT2_2, isnan, _0_0, _0_001, _0_01, _0_1, _0_5, \
                                 _1_0, _N_1_0, _1_75, _2_0, _N_2_0, _2__PI, _3_0, \
@@ -53,10 +54,9 @@ from pygeodesy3.geodesic.exact.gxline import _GeodesicLineExact, _TINY, _update_
 from pygeodesy3.interns import NN, _COMMASPACE_, _DOT_, _UNDER_
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_MODS as _MODS
 # from pygeodesy3.maths.elliptic import Elliptic  # _MODS
-# from pygeodesy3.maths.fmath import cbrt as _cbrt, hypot as _hypot  # from .base.karney
+# from pygeodesy3.maths.fmath import cbrt as _cbrt, hypot as _hypot  # from .Base.karney
 from pygeodesy3.maths.fsums import fsumf_, fsum1f_
 from pygeodesy3.maths.umath import atan2d as _atan2d_reverse, _unrollon, _Wrap, wrap360
-from pygeodesy3.miscs.basics import _xinstanceof, _xor, unsigned0
 from pygeodesy3.miscs.namedTuples import Destination3Tuple, Distance3Tuple
 from pygeodesy3.miscs.props import Property, Property_RO, property_RO
 from pygeodesy3.miscs.streprs import Fmt, pairs
@@ -64,7 +64,7 @@ from pygeodesy3.miscs.streprs import Fmt, pairs
 from math import atan2, copysign, cos, degrees, fabs, radians, sqrt
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _MAXIT1 = 20
 _MAXIT2 = 10 + _MAXIT1 + MANT_DIG  # MANT_DIG == C++ digits

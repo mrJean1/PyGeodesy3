@@ -10,7 +10,8 @@ and published under the same MIT Licence**, see U{Vector-based geodesy
 <https://www.Movable-Type.co.UK/scripts/latlong-vectors.html>}.
 '''
 
-from pygeodesy3.base.latlon import LatLonBase
+from pygeodesy3.Base.latlon import LatLonBase
+from pygeodesy3.basics import map1, _xkwds, _xkwds_pop
 from pygeodesy3.constants import EPS, EPS1, EPS_2, R_M, _2_0, _N_2_0
 from pygeodesy3.distances.formy import _isequalTo, n_xyz2latlon, n_xyz2philam, \
                                        _spherical_datum
@@ -24,19 +25,17 @@ from pygeodesy3.maths.fmath import fdot, fidw, hypot_  # PYCHOK fdot shared
 from pygeodesy3.maths.fsums import Fsum, fsumf_
 from pygeodesy3.maths.umath import sincos2d, _unrollon, _unrollon3
 from pygeodesy3.maths.vector3d import Vector3d, _xyzhdn3
-# from pygeodesy3.miscs.basics import map1  # from .miscs.namedTuples
-from pygeodesy3.miscs.errors import IntersectionError, _ValueError, VectorError, \
-                                   _xkwds, _xkwds_pop
+from pygeodesy3.miscs.errors import IntersectionError, _ValueError, VectorError
 from pygeodesy3.miscs.named import notImplemented, _xother3  # notOverloaded
-from pygeodesy3.miscs.namedTuples import Trilaterate5Tuple, Vector3Tuple,  map1
+from pygeodesy3.miscs.namedTuples import Trilaterate5Tuple, Vector3Tuple
 from pygeodesy3.miscs.props import Property_RO, property_doc_, property_RO, _update_all
 from pygeodesy3.miscs.streprs import Fmt, hstr, unstr, _xattrs
 from pygeodesy3.miscs.units import Bearing, Height, Radius_, Scalar
 
 from math import fabs, sqrt
 
-__all__ = _ALL_LAZY.base_nvector
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.Base_nvector
+__version__ = '24.01.05'
 
 
 class NvectorBase(Vector3d):  # XXX kept private

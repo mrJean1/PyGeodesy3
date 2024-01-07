@@ -10,7 +10,7 @@ from math import log, radians, tan
 from bases import startswith, TestsBase
 
 from pygeodesy3 import F_D, F_DMS, R_M, R_MA, Datums, \
-                      fstr, toWm, webmercator, Wm
+                       fstr, toWm, webmercator, Wm
 
 
 class Tests(TestsBase):

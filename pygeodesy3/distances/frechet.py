@@ -81,16 +81,15 @@ location and ordering of the points.  Therefore, it is often a better metric
 than the well-known C{Hausdorff} distance, see the L{hausdorff} module.
 '''
 
-from pygeodesy3.base.units import _Str_degrees, _Str_meter, _Str_NN, \
+from pygeodesy3.Base.units import _Str_degrees, _Str_meter, _Str_NN, \
                                   _Str_radians, _Str_radians2
+from pygeodesy3.basics import isscalar, _xattr, _xkwds, _xkwds_get
 from pygeodesy3.constants import EPS, EPS1, INF, NINF
 # from pygeodesy3.distances import formy as _formy  # _MODS
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
 from pygeodesy3.interns import NN, _DOT_, _n_, _units_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _FOR_DOCS
-# from pygeodesy3.miscs.basics import isscalar  # from .polygonal.points
-from pygeodesy3.miscs.errors import _IsnotError, PointsError, _xattr, \
-                                    _xkwds, _xkwds_get
+from pygeodesy3.miscs.errors import _IsnotError, PointsError
 # from pygeodesy3.miscs.iters import points2 as _points2  # from .points
 from pygeodesy3.miscs.named import _Named, _NamedTuple, notOverloaded, _Pass
 # from pygeodesy3.miscs.namedTuples import PhiLam2Tuple  # from .points
@@ -98,13 +97,13 @@ from pygeodesy3.miscs.props import property_doc_, property_RO
 from pygeodesy3.miscs.units import FIx, Float, Number_, _xUnit, _xUnits
 from pygeodesy3.polygonal.points import _distanceTo, _fractional, \
                                          PhiLam2Tuple, radians, \
-                                         points2 as _points2,  isscalar
+                                         points2 as _points2
 
 from collections import defaultdict as _defaultdict
 # from math import radians  # from .points
 
 __all__ = _ALL_LAZY.distances_frechet
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 def _fraction(fraction, n):

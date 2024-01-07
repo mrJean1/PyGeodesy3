@@ -33,11 +33,10 @@ PyGeodesy3_dir = dirname(test_dir)
 if PyGeodesy3_dir not in sys.path:  # Python 3+ ModuleNotFoundError
     sys.path.insert(0, PyGeodesy3_dir)
 
-from pygeodesy3 import interns, lazily, version as PyGeodesy3_version
-# from pygeodesy3.interns import NN  # from .lazily
-from pygeodesy3.lazily import isLazy, LazyImportError, NN, printf
-from pygeodesy3.miscs import basics
-from pygeodesy3.miscs.basics import clips, isint, issubclassof, map2  # PYCHOK .run
+from pygeodesy3 import basics, interns, lazily, version as PyGeodesy3_version
+from pygeodesy3.basics import clips, isint, issubclassof, map2  # PYCHOK .run
+# from pygeodesy3.interns import _DOT_, NN, _SPACE_, _TILDE_  # from .lazily
+from pygeodesy3.lazily import isLazy, LazyImportError, printf,  NN, _SPACE_
 from pygeodesy3.miscs.dms import normDMS
 from pygeodesy3.miscs.iters import iterNumpy2over
 from pygeodesy3.miscs.props import DeprecationWarnings, property_RO
@@ -46,7 +45,6 @@ from pygeodesy3.miscs.streprs import anstr, pairs
 _DOT_     = interns._DOT_
 _SIsecs   = 'fs', 'ps', 'ns', 'us', 'ms', 'sec'  # reversed
 _skipped_ = 'skipped'  # in .run
-_SPACE_   = interns._SPACE_
 _TILDE_   = interns._TILDE_
 
 __all__ = ('coverage', 'GeodSolve', 'geographiclib',  # constants
@@ -56,7 +54,7 @@ __all__ = ('coverage', 'GeodSolve', 'geographiclib',  # constants
            'RandomLatLon', 'TestsBase',  # classes
            'ios_ver', 'nix_ver', 'secs2str',  # functions
            'tilde', 'type2str', 'versions')
-__version__ = '23.12.17'
+__version__ = '24.01.05'
 
 try:
     geographiclib = basics._xgeographiclib(basics, 1, 50)
@@ -413,6 +411,23 @@ class TestError(RuntimeError):  # ValueError's are often caught
         RuntimeError.__init__(self, fmt % args)
 
 
+def _env_c2(c):  # .testFrozen, .testLazily
+    cmd = _SPACE_(PythonX, c)
+
+    if ismacOS or isNix:
+        env_cmd = _SPACE_('env %s', cmd, '>>/dev/null')
+    elif isWindows:  # XXX UNTESTED
+        env_cmd = _SPACE_('set %s;', cmd)
+    else:
+        env_cmd =  NN
+
+    H = getenv('HOME', NN)
+    if H and cmd.startswith(H):
+        cmd = NN(_TILDE_, cmd[len(H):])
+
+    return env_cmd, cmd
+
+
 def _fLate(f):
     t = 'proLate' if f < 0 else \
         ('obLate' if f > 0 else 'sphere')
@@ -454,7 +469,7 @@ def _name_version2(path):
     '''(INTERNAL) Get the C{(name, version)} of an executable.
     '''
     if path:
-        from pygeodesy3.base.solve import _popen2
+        from pygeodesy3.Base.solve import _popen2
         try:
             _, r = _popen2((path, '--version'))
             return basename(path), r.split()[-1]
@@ -565,7 +580,7 @@ def versions():
                 vs += t.__name__, t.__version__
 
         if geographiclib:
-            from pygeodesy3.base.karney import _K_2_0, _wrapped
+            from pygeodesy3.Base.karney import _K_2_0, _wrapped
             if _wrapped.Math:
                 vs += 'Math', ('_K_2_0' if _K_2_0 else '_K_1_0')
 

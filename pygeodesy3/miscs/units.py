@@ -6,8 +6,10 @@ C{Str} from basic C{float}, C{int} respectively C{str} to
 named units as L{Degrees}, L{Feet}, L{Meter}, L{Radians}, etc.
 '''
 
-from pygeodesy3.base.units import _Error, Float, Int, _NamedUnit, Radius, Str, \
+from pygeodesy3.Base.units import _Error, Float, Int, _NamedUnit, Radius, Str, \
                                    Fmt, fstr  # PYCHOK shared .namedTuples
+from pygeodesy3.basics import isinstanceof, isscalar, isstr, issubclassof, \
+                              signOf, _xkwds_popitem
 from pygeodesy3.constants import EPS, EPS1, PI, PI2, PI_2, \
                                 _umod_360, _0_0, _0_001, \
                                 _0_5, INT0  # PYCHOK for .mgrs, .namedTuples
@@ -20,11 +22,10 @@ from pygeodesy3.interns import NN, _band_, _bearing_, _degrees_, _degrees2_, \
                               _radius_, _S_, _scalar_, _units_, \
                               _W_, _zone_,  _std_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _getenv
-from pygeodesy3.miscs.basics import isscalar, isstr, issubclassof, signOf
 from pygeodesy3.miscs.dms import F__F, F__F_, parseDMS, parseRad, \
                                  S_NUL, S_SEP, _toDMS
 from pygeodesy3.miscs.errors import _AssertionError, _IsnotError, TRFError, \
-                                     UnitError, _xkwds_popitem
+                                     UnitError
 from pygeodesy3.miscs.props import Property_RO
 # from pygeodesy3.miscs.streprs import Fmt, fstr  # from .base.units
 # from pygeodesy3.polygonal.points import fractional  # _MODS
@@ -32,7 +33,7 @@ from pygeodesy3.miscs.props import Property_RO
 from math import degrees, radians
 
 __all__ = _ALL_LAZY.miscs_units
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _negative_falsed_ = 'negative, falsed'
 
@@ -850,6 +851,7 @@ class Zone(Int):
 _Scalars =  Float, Float_, Scalar, Scalar_
 _Degrees = (Bearing, Bearing_, Degrees, Degrees_) + _Scalars
 _Meters  = (Distance, Distance_, Meter, Meter_) + _Scalars
+_Radians = (Radians, Radians_) + _Scalars
 _Radii   = _Meters + (Radius, Radius_)
 
 
@@ -868,6 +870,11 @@ def _isMeter(obj):
     return isinstance(obj, _Meters) or _isScalar(obj)
 
 
+def _isRadians(obj):
+    # Check for valid radians types.
+    return isinstance(obj, _Radians) or _isScalar(obj)
+
+
 def _isRadius(obj):
     # Check for valid earth radius types.
     return isinstance(obj, _Radii) or _isScalar(obj)
@@ -876,6 +883,34 @@ def _isRadius(obj):
 def _isScalar(obj):
     # Check for pure scalar types.
     return isscalar(obj) and not isinstance(obj, _NamedUnit)
+
+
+def _toDegrees(s, *xs, **toDMS_kwds):
+    '''(INTERNAL) Convert C{xs} from C{Radians} to C{Degrees} or C{toDMS}.
+    '''
+    if toDMS_kwds:
+        s, toDMS = None, _MODS.miscs.dms.toDMS
+    else:
+        def toDMS(d, **unused):
+            return d
+
+    for x in xs:
+        if not isinstanceof(x, Degrees, Degrees_):
+            s = None
+            x = x.toDegrees()
+        yield toDMS(x, **toDMS_kwds)
+    yield s
+
+
+def _toRadians(s, *xs):
+    '''(INTERNAL) Convert C{xs} from C{Degrees} to C{Radians}.
+    '''
+    for x in xs:
+        if not isinstanceof(x, Radians, Radians_):
+            s = None
+            x = x.toRadians()
+        yield x
+    yield s
 
 
 def _xStrError(*Refs, **name_value_Error):

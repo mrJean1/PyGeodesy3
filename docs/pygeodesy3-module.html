@@ -315,7 +315,7 @@
   <h1 class="heading">Notes</h1>
     <p>For a summary of all <i>Karney</i>-based functionality in 
     <code>pygeodesy3</code>, see module <a 
-    href="https://mrJean1.GitHub.io/PyGeodesy3/docs/pygeodesy3.base.karney-module.html"
+    href="https://mrJean1.GitHub.io/PyGeodesy3/docs/pygeodesy3.Base.karney-module.html"
     target="_top">karney</a>.</p>
   <h1 class="heading">Env variables</h1>
     <p>The following environment variables are observed by 
@@ -398,12 +398,12 @@
       </li>
       <li>
         <code>PYGEODESY3_FLOAT_STD_REPR</code> - see method <a 
-        href="pygeodesy3.base.units.Float-class.html" 
+        href="pygeodesy3.Base.units.Float-class.html" 
         class="link">miscs.units.Float</a><code>.__repr__</code>.
       </li>
       <li>
         <code>PYGEODESY3_INT_STD_REPR</code> - see method <a 
-        href="pygeodesy3.base.units.Int-class.html" 
+        href="pygeodesy3.Base.units.Int-class.html" 
         class="link">miscs.units.Int</a><code>.__repr__</code>.
       </li>
       <li>
@@ -418,7 +418,7 @@
       </li>
       <li>
         <code>PYGEODESY3_STR_STD_REPR</code> - see method <a 
-        href="pygeodesy3.base.units.Str-class.html" 
+        href="pygeodesy3.Base.units.Str-class.html" 
         class="link">miscs.units.Str</a><code>.__repr__</code>.
       </li>
     </ul>
@@ -434,8 +434,8 @@
       </li>
       <li>
         <code>PYGEODESY3_GEOGRAPHICLIB</code> - see module <a 
-        href="pygeodesy3.base.karney-module.html" class="link" 
-        onclick="show_private();">base.karney</a>.
+        href="pygeodesy3.Base.karney-module.html" class="link" 
+        onclick="show_private();">Base.karney</a>.
       </li>
       <li>
         <code>PYGEODESY3_WARNINGS</code> - see module <a 
@@ -446,8 +446,7 @@
       </li>
       <li>
         <code>PYGEODESY3_XPACKAGES</code> - see module <a 
-        href="pygeodesy3.miscs.basics-module.html" class="link" 
-        onclick="show_private();">miscs.basics</a>.
+        href="pygeodesy3.basics-module.html" class="link">basics</a>.
       </li>
       <li>
         <code>PYTHONDEVMODE</code> - see modules <a 
@@ -491,7 +490,7 @@
 
 <hr />
 <div class="fields">      <p><strong>Version:</strong>
-        23.12.28
+        24.01.07
       </p>
 </div><!-- ==================== SUBMODULES ==================== -->
 <a name="section-Submodules"></a>
@@ -503,37 +502,35 @@
 </tr>
   <tr><td class="summary">
   <ul class="nomargin">
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.__main__-module.html">pygeodesy3.__main__</a></strong>: <em class="summary">Print <a href="pygeodesy3-module.html" class="link">pygeodesy3</a> 
-        version, etc.</em>    </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base-module.html">pygeodesy3.base</a></strong>
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base-module.html">pygeodesy3.Base</a></strong>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.cartesian-module.html" onclick="show_private();">pygeodesy3.base.cartesian</a></strong>: <em class="summary">(INTERNAL) Private base classes for elliposiodal, spherical and 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian-module.html" onclick="show_private();">pygeodesy3.Base.cartesian</a></strong>: <em class="summary">(INTERNAL) Private base classes for elliposiodal, spherical and 
         N-/vectorial <code>Cartesian</code>s.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.karney-module.html" onclick="show_private();">pygeodesy3.base.karney</a></strong>: <em class="summary">Wrapper around several <code>geomath.Math</code> functions from 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.karney-module.html" onclick="show_private();">pygeodesy3.Base.karney</a></strong>: <em class="summary">Wrapper around several <code>geomath.Math</code> functions from 
         <i>Karney</i>'s Python package <a 
         href="https://PyPI.org/project/geographiclib" 
         target="_top">geographiclib</a>, provided that package is 
         installed.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.latlon-module.html" onclick="show_private();">pygeodesy3.base.latlon</a></strong>: <em class="summary">(INTERNAL) Base class <a 
-        href="pygeodesy3.base.latlon.LatLonBase-class.html" 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.latlon-module.html" onclick="show_private();">pygeodesy3.Base.latlon</a></strong>: <em class="summary">(INTERNAL) Base class <a 
+        href="pygeodesy3.Base.latlon.LatLonBase-class.html" 
         class="link">LatLonBase</a> for all elliposiodal, spherical and 
         N-vectorial <code>LatLon</code> classes.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.nvector-module.html" onclick="show_private();">pygeodesy3.base.nvector</a></strong>: <em class="summary">(INTERNAL) Private elliposiodal and spherical <code>Nvector</code> 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.nvector-module.html" onclick="show_private();">pygeodesy3.Base.nvector</a></strong>: <em class="summary">(INTERNAL) Private elliposiodal and spherical <code>Nvector</code> 
         base classes <a 
-        href="pygeodesy3.base.nvector.LatLonNvectorBase-class.html" 
+        href="pygeodesy3.Base.nvector.LatLonNvectorBase-class.html" 
         class="link">LatLonNvectorBase</a> and <a 
-        href="pygeodesy3.base.nvector.NvectorBase-class.html" 
+        href="pygeodesy3.Base.nvector.NvectorBase-class.html" 
         class="link">NvectorBase</a> and function <a 
-        href="pygeodesy3.base.nvector-module.html#sumOf" 
+        href="pygeodesy3.Base.nvector-module.html#sumOf" 
         class="link">sumOf</a>.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.solve-module.html" onclick="show_private();">pygeodesy3.base.solve</a></strong>: <em class="summary">(INTERNAL) Private base classes for <a 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.solve-module.html" onclick="show_private();">pygeodesy3.Base.solve</a></strong>: <em class="summary">(INTERNAL) Private base classes for <a 
         href="pygeodesy3.geodesic.solve-module.html" class="link" 
         onclick="show_private();">pygeodesy3.geodesic.solve</a> and <a 
         href="pygeodesy3.rhumb.solve-module.html" class="link" 
         onclick="show_private();">pygeodesy3.rhumb.solve</a>.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.units-module.html" onclick="show_private();">pygeodesy3.base.units</a></strong>: <em class="summary">Basic <code>Float</code>, <code>Int</code> and <code>Str</code>ing 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.units-module.html" onclick="show_private();">pygeodesy3.Base.units</a></strong>: <em class="summary">Basic <code>Float</code>, <code>Int</code> and <code>Str</code>ing 
         units classes.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.utmups-module.html" onclick="show_private();">pygeodesy3.base.utmups</a></strong>: <em class="summary">(INTERNAL) Private class <code>UtmUpsBase</code>, functions and 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.utmups-module.html" onclick="show_private();">pygeodesy3.Base.utmups</a></strong>: <em class="summary">(INTERNAL) Private class <code>UtmUpsBase</code>, functions and 
         constants for <a href="pygeodesy3.grids.epsg-module.html" 
         class="link" onclick="show_private();">epsg</a>, <a 
         href="pygeodesy3.projections.etm-module.html" class="link" 
@@ -544,10 +541,13 @@
         onclick="show_private();">ups</a> and <a 
         href="pygeodesy3.projections.utm-module.html" class="link" 
         onclick="show_private();">utm</a>.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.base.vector3d-module.html" onclick="show_private();">pygeodesy3.base.vector3d</a></strong>: <em class="summary">(INTERNAL) Private, 3-D vector base class 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.vector3d-module.html" onclick="show_private();">pygeodesy3.Base.vector3d</a></strong>: <em class="summary">(INTERNAL) Private, 3-D vector base class 
         <code>Vector3dBase</code>.</em>    </li>
     </ul>
     </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.__main__-module.html">pygeodesy3.__main__</a></strong>: <em class="summary">Print <a href="pygeodesy3-module.html" class="link">pygeodesy3</a> 
+        version, etc.</em>    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.basics-module.html">pygeodesy3.basics</a></strong>: <em class="summary">Some, basic definitions, functions and dependencies.</em>    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.constants-module.html">pygeodesy3.constants</a></strong>: <em class="summary">Single-instance <code>float</code> and <code>int</code> constants 
         across <code>pygeodesy3</code> modules and related functions <a 
         href="pygeodesy3.constants-module.html#float_" 
@@ -834,7 +834,6 @@
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs-module.html">pygeodesy3.miscs</a></strong>: <em class="summary">Miscellaneous classes and functions.</em>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.miscs.basics-module.html" onclick="show_private();">pygeodesy3.miscs.basics</a></strong>: <em class="summary">Some, basic definitions, functions and dependencies.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.miscs.dms-module.html" onclick="show_private();">pygeodesy3.miscs.dms</a></strong>: <em class="summary">Parsers and formatters of angles in degrees, minutes and seconds or
         radians.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.miscs.errors-module.html" onclick="show_private();">pygeodesy3.miscs.errors</a></strong>: <em class="summary">Errors, exceptions, exception formatting and exception chaining.</em>    </li>
@@ -1081,7 +1080,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.karney.Area3Tuple-class.html" class="summary-name">Area3Tuple</a><br />
+        <a href="pygeodesy3.Base.karney.Area3Tuple-class.html" class="summary-name">Area3Tuple</a><br />
       3-Tuple <code>(number, perimeter, area)</code> with the 
         <code>number</code> of points of the polygon or polyline, the 
         <code>perimeter</code> in <code>meter</code> and the 
@@ -1171,11 +1170,16 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.miscs.errors.AuxError-class.html" class="summary-name">AuxError</a><br />
-      Error raised for a <a href="pygeodesy3.rhumb.aux_-module.html" 
-        class="link" onclick="show_private();">rhumb.aux_</a>, 
-        <code>Aux</code>, <code>AuxDLat</code> or <code>AuxLat</code> 
-        issue.
+        <a href="pygeodesy3.maths.auxilats.auxily.AuxError-class.html" class="summary-name">AuxError</a><br />
+      Error raised for an <a 
+        href="pygeodesy3.maths.auxilats.auxily-module.html#Aux" 
+        class="link">Aux</a>, <a 
+        href="pygeodesy3.maths.auxilats.auxDLat.AuxDLat-class.html" 
+        class="link">AuxDLat</a>, <a 
+        href="pygeodesy3.maths.auxilats.auxLat.AuxLat-class.html" 
+        class="link">AuxLat</a> or <a 
+        href="pygeodesy3.rhumb.aux_-module.html" class="link" 
+        onclick="show_private();">rhumb.aux_</a> issue.
     </td>
   </tr>
 <tr>
@@ -1392,7 +1396,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.cartesian.CartesianBase-class.html" class="summary-name">CartesianBase</a><br />
+        <a href="pygeodesy3.Base.cartesian.CartesianBase-class.html" class="summary-name">CartesianBase</a><br />
       (INTERNAL) Base class for ellipsoidal and spherical 
         <code>Cartesian</code>.
     </td>
@@ -1728,7 +1732,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.karney.Direct9Tuple-class.html" class="summary-name">Direct9Tuple</a><br />
+        <a href="pygeodesy3.Base.karney.Direct9Tuple-class.html" class="summary-name">Direct9Tuple</a><br />
       9-Tuple <code>(a12, lat2, lon2, azi2, s12, m12, M12, M21, 
         S12)</code> with arc length <code>a12</code>, angles 
         <code>lat2</code>, <code>lon2</code> and azimuth <code>azi2</code> 
@@ -2230,7 +2234,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.units.Float-class.html" class="summary-name">Float</a><br />
+        <a href="pygeodesy3.Base.units.Float-class.html" class="summary-name">Float</a><br />
       Named <code>float</code>.
     </td>
   </tr>
@@ -2566,7 +2570,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.karney.GDict-class.html" class="summary-name">GDict</a><br />
+        <a href="pygeodesy3.Base.karney.GDict-class.html" class="summary-name">GDict</a><br />
       A <code>dict</code> with both <code>key</code> <i>and</i> 
         <code>attribute</code> access to the <code>dict</code> items.
     </td>
@@ -2619,8 +2623,8 @@
         onclick="show_private();">pygeodesy3.geodesic.exact</a>, <a 
         href="pygeodesy3.geodesic.wrap-module.html" class="link" 
         onclick="show_private();">pygeodesy3.geodesic.wrap</a> or <a 
-        href="pygeodesy3.base.karney-module.html" class="link" 
-        onclick="show_private();">pygeodesy3.base.karney</a>.
+        href="pygeodesy3.Base.karney-module.html" class="link" 
+        onclick="show_private();">pygeodesy3.Base.karney</a>.
     </td>
   </tr>
 <tr>
@@ -3354,7 +3358,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.units.Int-class.html" class="summary-name">Int</a><br />
+        <a href="pygeodesy3.Base.units.Int-class.html" class="summary-name">Int</a><br />
       Named <code>int</code>.
     </td>
   </tr>
@@ -3391,7 +3395,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.karney.Inverse10Tuple-class.html" class="summary-name">Inverse10Tuple</a><br />
+        <a href="pygeodesy3.Base.karney.Inverse10Tuple-class.html" class="summary-name">Inverse10Tuple</a><br />
       10-Tuple <code>(a12, s12, salp1, calp1, salp2, calp2, m12, M12, 
         M21, S12)</code> with arc length <code>a12</code> in 
         <code>degrees</code>, distance <code>s12</code> and reduced length 
@@ -3571,7 +3575,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.latlon.LatLonBase-class.html" class="summary-name">LatLonBase</a><br />
+        <a href="pygeodesy3.Base.latlon.LatLonBase-class.html" class="summary-name">LatLonBase</a><br />
       (INTERNAL) Base class for <code>LatLon</code> points on spherical 
         or ellipsoidal earth models.
     </td>
@@ -3623,7 +3627,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.nvector.LatLonNvectorBase-class.html" class="summary-name">LatLonNvectorBase</a><br />
+        <a href="pygeodesy3.Base.nvector.LatLonNvectorBase-class.html" class="summary-name">LatLonNvectorBase</a><br />
       (INTERNAL) Base class for n-vector-based ellipsoidal and spherical 
         <code>LatLon</code> classes.
     </td>
@@ -4007,7 +4011,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.nvector.NvectorBase-class.html" class="summary-name">NvectorBase</a><br />
+        <a href="pygeodesy3.Base.nvector.NvectorBase-class.html" class="summary-name">NvectorBase</a><br />
       Base class for ellipsoidal and spherical <code>Nvector</code>s.
     </td>
   </tr>
@@ -4186,6 +4190,21 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
+        <a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" class="summary-name">RThetaPhi3Tuple</a><br />
+      3-Tuple <code>(r, theta, phi)</code> with radial distance 
+        <code>r</code> in <code>meter</code>, inclination 
+        <code>theta</code> (with respect to the positive z-axis) and 
+        azimuthal angle <code>phi</code> in <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a> <i>or</i> <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a href="pygeodesy3.miscs.units.Radians-class.html" class="summary-name">Radians</a><br />
       Named <code>float</code> representing a coordinate in 
         <code>radians</code>, optionally clipped.
@@ -4240,7 +4259,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.units.Radius-class.html" class="summary-name">Radius</a><br />
+        <a href="pygeodesy3.Base.units.Radius-class.html" class="summary-name">Radius</a><br />
       Named <code>float</code> representing a radius, conventionally in 
         <code>meter</code>.
     </td>
@@ -4344,7 +4363,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.karney.Rhumb8Tuple-class.html" class="summary-name">Rhumb8Tuple</a><br />
+        <a href="pygeodesy3.Base.karney.Rhumb8Tuple-class.html" class="summary-name">Rhumb8Tuple</a><br />
       8-Tuple <code>(lat1, lon1, lat2, lon2, azi12, s12, S12, a12)</code>
         with lat- <code>lat1</code>, <code>lat2</code> and longitudes 
         <code>lon1</code>, <code>lon2</code> of both points, the azimuth of
@@ -4490,7 +4509,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.units.Str-class.html" class="summary-name">Str</a><br />
+        <a href="pygeodesy3.Base.units.Str-class.html" class="summary-name">Str</a><br />
       Named, callable <code>str</code>.
     </td>
   </tr>
@@ -4767,7 +4786,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.utmups.UtmUpsBase-class.html" class="summary-name">UtmUpsBase</a><br />
+        <a href="pygeodesy3.Base.utmups.UtmUpsBase-class.html" class="summary-name">UtmUpsBase</a><br />
       (INTERNAL) Base class for <a 
         href="pygeodesy3.projections.utm.Utm-class.html" 
         class="link">Utm</a> and <a 
@@ -4837,7 +4856,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.base.vector3d.Vector3dBase-class.html" class="summary-name">Vector3dBase</a><br />
+        <a href="pygeodesy3.Base.vector3d.Vector3dBase-class.html" class="summary-name">Vector3dBase</a><br />
       (INTERNAL) Generic 3-D vector base class.
     </td>
   </tr>
@@ -8240,7 +8259,7 @@
         <span class="summary-sig-arg">seed</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">units</span>=<span class="summary-sig-default">''</span>,
         <span class="summary-sig-arg">distance</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">point</span>=<span class="summary-sig-default">&lt;function _point at 0x7f93005961d0&gt;</span>)</span><br />
+        <span class="summary-sig-arg">point</span>=<span class="summary-sig-default">&lt;function _point at 0x7fd8483858d0&gt;</span>)</span><br />
       Compute the <code>directed</code> or <code>symmetric</code> <a 
       href="https://WikiPedia.org/wiki/Hausdorff_distance" 
       target="_top">Hausdorff</a> distance between 2 sets of points with or
@@ -9452,7 +9471,7 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#itemsorted" class="summary-sig-name">itemsorted</a>(<span class="summary-sig-arg">adict</span>,
-        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">*items_args</span>,
         <span class="summary-sig-arg">**asorted_reverse</span>)</span><br />
       Return the items of <code><b>adict</b></code> sorted 
       <i>alphabetically, case-insensitively</i> and in <i>ascending</i> 
@@ -9921,7 +9940,7 @@
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#map1" class="summary-sig-name">map1</a>(<span class="summary-sig-arg">fun1</span>,
         <span class="summary-sig-arg">*xs</span>)</span><br />
-      Apply each <b><code>xs</code></b> to a single-argument function and 
+      Apply a single-argument function to each <b><code>xs</code></b> and 
       return a <code>tuple</code> of results.</td>
           <td align="right" valign="top">
             
@@ -9938,9 +9957,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pygeodesy3-module.html#map2" class="summary-sig-name">map2</a>(<span class="summary-sig-arg">func</span>,
+          <td><span class="summary-sig"><a href="pygeodesy3-module.html#map2" class="summary-sig-name">map2</a>(<span class="summary-sig-arg">fun</span>,
         <span class="summary-sig-arg">*xs</span>)</span><br />
-      Apply arguments to a function and return a <code>tuple</code> of 
+      Apply a function to arguments and return a <code>tuple</code> of 
       results.</td>
           <td align="right" valign="top">
             
@@ -10180,7 +10199,7 @@
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#neg" class="summary-sig-name">neg</a>(<span class="summary-sig-arg">x</span>,
         <span class="summary-sig-arg">neg0</span>=<span class="summary-sig-default">None</span>)</span><br />
-      Negate <code>x</code> and optionally, negate <code>0.0</code> amd 
+      Negate <code>x</code> and optionally, negate <code>0.0</code> and 
       <code>-0.0</code>.</td>
           <td align="right" valign="top">
             
@@ -10199,7 +10218,7 @@
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#neg_" class="summary-sig-name">neg_</a>(<span class="summary-sig-arg">*xs</span>)</span><br />
       Negate all <code>xs</code> with <a 
-      href="pygeodesy3.miscs.basics-module.html#neg" class="link">neg</a>.</td>
+      href="pygeodesy3.basics-module.html#neg" class="link">neg</a>.</td>
           <td align="right" valign="top">
             
             
@@ -12584,7 +12603,8 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#xyz2rtp" class="summary-sig-name">xyz2rtp</a>(<span class="summary-sig-arg">x_xyz</span>,
-        <span class="summary-sig-arg">*y_z</span>)</span><br />
+        <span class="summary-sig-arg">*y_z</span>,
+        <span class="summary-sig-arg">**toDMS_kwds</span>)</span><br />
       Convert cartesian <code>(x, y, z)</code> to spherical <code>(r, 
       theta, phi)</code> coordinates.</td>
           <td align="right" valign="top">
@@ -12681,31 +12701,10 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="_isfrozen"></a><span class="summary-name">_isfrozen</span> = <code title="False">False</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
         <a href="pygeodesy3-module.html#pygeodesy3_abspath" class="summary-name">pygeodesy3_abspath</a> = <code title="'..../PyGeodesy3/\
 pygeodesy3'"><code class="variable-quote">'</code><code class="variable-string">/Users/jean/Library/CloudStorage/Dropbox</code><code class="variable-ellipsis">...</code></code><br />
       Fully qualified <code>pygeodesy3</code> directory name 
       (<code>str</code>).
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="_pygeodesy3_"></a><span class="summary-name">_pygeodesy3_</span> = <code title="'pygeodesy3'"><code class="variable-quote">'</code><code class="variable-string">pygeodesy3</code><code class="variable-quote">'</code></code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="_init__all__"></a><span class="summary-name">_init__all__</span> = <code title="'1'"><code class="variable-quote">'</code><code class="variable-string">1</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
@@ -12722,7 +12721,7 @@ pygeodesy3'"><code class="variable-quote">'</code><code class="variable-string">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="version"></a><span class="summary-name">version</span> = <code title="'23.12.28'">'23.12.28'</code><br />
+        <a name="version"></a><span class="summary-name">version</span> = <code title="'24.1.7'">'24.1.7'</code><br />
       Normalized <code>PyGeodesy3</code> version (<code>str</code>).
     </td>
   </tr>
@@ -13503,13 +13502,6 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="Triaxials"></a><span class="summary-name">Triaxials</span> = <code title=""></code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'pygeodesy3'"><code class="variable-quote">'</code><code class="variable-string">pygeodesy3</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -20363,7 +20355,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
         <span class="sig-arg">seed</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">units</span>=<span class="sig-default">''</span>,
         <span class="sig-arg">distance</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">point</span>=<span class="sig-default">&lt;function _point at 0x7f93005961d0&gt;</span>)</span>
+        <span class="sig-arg">point</span>=<span class="sig-default">&lt;function _point at 0x7fd8483858d0&gt;</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
@@ -22607,7 +22599,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">itemsorted</span>&nbsp;(<span class="sig-arg">adict</span>,
-        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">*items_args</span>,
         <span class="sig-arg">**asorted_reverse</span>)</span>
   </h3>
   </td><td align="right" valign="top"
@@ -22621,8 +22613,8 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>args</code></strong> - Optional argument(s) for method 
-          <code><b>adict</b>.items(B*{args})</code>.</li>
+        <li><strong class="pname"><code>items_args</code></strong> - Optional positional argument(s) for method 
+          <code><b>adict</b>.items(B*{items_args})</code>.</li>
         <li><strong class="pname"><code>asorted_reverse</code></strong> - Use keyword argument <code><b>asorted</b>=False</code> for 
           <i>case-sensitive</i> sorting and 
           <code><b>reverse</b>=True</code> for results in 
@@ -23662,13 +23654,13 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     </td>
   </tr></table>
   
-  <p>Apply each <b><code>xs</code></b> to a single-argument function and 
+  <p>Apply a single-argument function to each <b><code>xs</code></b> and 
   return a <code>tuple</code> of results.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>fun1</code></strong> - 1-Arg function to apply (<code>callable</code>).</li>
-        <li><strong class="pname"><code>xs</code></strong> - Arguments to apply (<code>any positional</code>).</li>
+        <li><strong class="pname"><code>fun1</code></strong> - 1-Arg function (<code>callable</code>).</li>
+        <li><strong class="pname"><code>xs</code></strong> - Arguments (<code>any positional</code>).</li>
     </ul></dd>
     <dt>Returns:</dt>
         <dd>Function results (<code>tuple</code>).</dd>
@@ -23682,7 +23674,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">map2</span>&nbsp;(<span class="sig-arg">func</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">map2</span>&nbsp;(<span class="sig-arg">fun</span>,
         <span class="sig-arg">*xs</span>)</span>
   </h3>
   </td><td align="right" valign="top"
@@ -23690,7 +23682,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     </td>
   </tr></table>
   
-  <p>Apply arguments to a function and return a <code>tuple</code> of 
+  <p>Apply a function to arguments and return a <code>tuple</code> of 
   results.</p>
   <p>Unlike Python 2's built-in <code class="link">map</code>, Python 3+ 
   <code class="link">map</code> returns a <code class="link">map</code> 
@@ -23700,8 +23692,8 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>func</code></strong> - Function to apply (<code>callable</code>).</li>
-        <li><strong class="pname"><code>xs</code></strong> - Arguments to apply (<code>list, tuple, ...</code>).</li>
+        <li><strong class="pname"><code>fun</code></strong> - Function (<code>callable</code>).</li>
+        <li><strong class="pname"><code>xs</code></strong> - Arguments (<code>list, tuple, ...</code>).</li>
     </ul></dd>
     <dt>Returns:</dt>
         <dd>Function results (<code>tuple</code>).</dd>
@@ -24231,7 +24223,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   </dl>
 <div class="fields">      <p><strong>Note:</strong>
         Distances measured with method <a 
-        href="pygeodesy3.base.vector3d.Vector3dBase-class.html#equirectangular"
+        href="pygeodesy3.Base.vector3d.Vector3dBase-class.html#equirectangular"
         class="link">Vector3d.equirectangular</a>.  For geodetic distances 
         use function <a 
         href="pygeodesy3.polygonal.points-module.html#nearestOn5" 
@@ -24255,7 +24247,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     </td>
   </tr></table>
   
-  <p>Negate <code>x</code> and optionally, negate <code>0.0</code> amd 
+  <p>Negate <code>x</code> and optionally, negate <code>0.0</code> and 
   <code>-0.0</code>.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
@@ -24287,7 +24279,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   </tr></table>
   
   <p>Negate all <code>xs</code> with <a 
-  href="pygeodesy3.miscs.basics-module.html#neg" class="link">neg</a>.</p>
+  href="pygeodesy3.basics-module.html#neg" class="link">neg</a>.</p>
   <dl class="fields">
     <dt>Returns:</dt>
         <dd>A <code>map(neg, <b>xs</b>)</code>.</dd>
@@ -28068,7 +28060,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     </ul></dd>
   </dl>
 <div class="fields">      <p><strong>Note:</strong>
-        If <a href="pygeodesy3.miscs.basics-module.html#isint" 
+        If <a href="pygeodesy3.basics-module.html#isint" 
         class="link">isint</a><code>(<b>prec</b>)</code> both easting and 
         northing are <a href="pygeodesy3.maths.umath-module.html#truncate" 
         class="link">truncate</a>d to the given number of digits.
@@ -29787,7 +29779,8 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">xyz2rtp</span>&nbsp;(<span class="sig-arg">x_xyz</span>,
-        <span class="sig-arg">*y_z</span>)</span>
+        <span class="sig-arg">*y_z</span>,
+        <span class="sig-arg">**toDMS_kwds</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
@@ -29797,12 +29790,29 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <p>Convert cartesian <code>(x, y, z)</code> to spherical <code>(r, theta,
   phi)</code> coordinates.</p>
   <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>toDMS_kwds</code></strong> - Optional keyword arguments for function <a 
+          href="pygeodesy3.miscs.dms-module.html#toDMS" 
+          class="link">toDMS</a> to convert <code>theta</code> and 
+          <code>phi</code> to <code>toDMS</code>.</li>
+    </ul></dd>
     <dt>Returns:</dt>
-        <dd>3-Tuple <code>(r, theta, phi)</code> in <code>degrees</code>.</dd>
+        <dd><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" 
+          class="link">RThetaPhi3Tuple</a><code>(r, theta, phi)</code> with
+          <code>theta</code> and <code>phi</code> both in <a 
+          href="pygeodesy3.miscs.units.Degrees-class.html" 
+          class="link">Degrees</a> or as <a 
+          href="pygeodesy3.miscs.dms-module.html#toDMS" 
+          class="link">toDMS</a> strings provided some 
+          <b><code>toDMS_kwds</code></b> keyword arguments are specified.</dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
         Function <a href="pygeodesy3.distances.formy-module.html#xyz2rtp_" 
-        class="link">xyz2rtp_</a>.
+        class="link">xyz2rtp_</a>, class <a 
+        href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" 
+        class="link">RThetaPhi3Tuple</a> and method <code>toDegrees</code> 
+        thereof.
       </p>
 </div></td></tr></table>
 </div>
@@ -29842,11 +29852,14 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
           <code>x_xyz</code> is not a <code>scalar</code>.</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd>3-Tuple <code>(r, theta, phi)</code> with radial distance 
-          <code>r</code> (<code>meter</code>, same units as <code>x</code>,
-          <code>y</code> and <code>z</code>), inclination 
+        <dd><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" 
+          class="link">RThetaPhi3Tuple</a><code>(r, theta, phi)</code> with
+          radial distance <code>r</code> (<code>meter</code>, same units as
+          <code>x</code>, <code>y</code> and <code>z</code>), inclination 
           <code>theta</code> (with respect to the positive z-axis) and 
-          azimuthal angle <code>phi</code> in <code>radians</code>.</dd>
+          azimuthal angle <code>phi</code> in <a 
+          href="pygeodesy3.miscs.units.Radians-class.html" 
+          class="link">Radians</a>.</dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
         <a href="https://WikiPedia.org/wiki/Spherical_coordinate_system" 
@@ -30110,7 +30123,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0<span clas
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Dec 26 14:12:33 2023
+    Generated by Epydoc 3.0.1 on Sun Jan  7 13:19:54 2024
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

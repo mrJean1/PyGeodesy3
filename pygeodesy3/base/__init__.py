@@ -3,29 +3,29 @@
 
 from pygeodesy3.lazily import _ALL_LAZY, _init__star__, _lazy_import_as, _unLazy0
 
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 if _unLazy0:
     if _init__star__:  # PYCHOK no cover
-        from pygeodesy3.base.cartesian import *  # PYCHOK expected
-        from pygeodesy3.base.karney import *  # PYCHOK expected
-        from pygeodesy3.base.latlon import *  # PYCHOK expected
-        from pygeodesy3.base.nvector import *  # PYCHOK expected
-#       from pygeodesy3.base.solve import *  # PYCHOK expected
-        from pygeodesy3.base.units import *  # PYCHOK expected
-        from pygeodesy3.base.utmups import *  # PYCHOK expected
-        from pygeodesy3.base.vector3d import *  # PYCHOK expected
-        from pygeodesy3.base.units import *  # PYCHOK expected
+        from pygeodesy3.Base.cartesian import *  # PYCHOK expected
+        from pygeodesy3.Base.karney import *  # PYCHOK expected
+        from pygeodesy3.Base.latlon import *  # PYCHOK expected
+        from pygeodesy3.Base.nvector import *  # PYCHOK expected
+#       from pygeodesy3.Base.solve import *  # PYCHOK expected
+        from pygeodesy3.Base.units import *  # PYCHOK expected
+        from pygeodesy3.Base.utmups import *  # PYCHOK expected
+        from pygeodesy3.Base.vector3d import *  # PYCHOK expected
+        from pygeodesy3.Base.units import *  # PYCHOK expected
 
-    __all__ = (_ALL_LAZY.base +
-               _ALL_LAZY.base_cartesian +
-               _ALL_LAZY.base_karney +
-               _ALL_LAZY.base_latlon +
-               _ALL_LAZY.base_nvector +
-            #  _ALL_LAZY.base_solve +
-               _ALL_LAZY.base_units +
-               _ALL_LAZY.base_utmups +
-               _ALL_LAZY.base_vector3d)
+    __all__ = (_ALL_LAZY.Base +
+               _ALL_LAZY.Base_cartesian +
+               _ALL_LAZY.Base_karney +
+               _ALL_LAZY.Base_latlon +
+               _ALL_LAZY.Base_nvector +
+            #  _ALL_LAZY.Base_solve +
+               _ALL_LAZY.Base_units +
+               _ALL_LAZY.Base_utmups +
+               _ALL_LAZY.Base_vector3d)
 
 else:  # lazily import modules only
     __getattr__ = _lazy_import_as(__name__)

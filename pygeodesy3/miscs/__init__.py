@@ -5,11 +5,10 @@ u'''Miscellaneous classes and functions.
 '''
 from pygeodesy3.lazily import _ALL_LAZY, _init__star__, _lazy_import_as, _unLazy0
 
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 if _unLazy0:
     if _init__star__:  # PYCHOK no cover
-        from pygeodesy3.miscs.basics import *  # PYCHOK expected
         from pygeodesy3.miscs.dms import *  # PYCHOK expected
         from pygeodesy3.miscs.errors import *  # PYCHOK expected
         from pygeodesy3.miscs.iters import *  # PYCHOK expected
@@ -20,7 +19,6 @@ if _unLazy0:
         from pygeodesy3.miscs.units import *  # PYCHOK expected
 
     __all__ = (_ALL_LAZY.miscs +
-               _ALL_LAZY.miscs_basics +
                _ALL_LAZY.miscs_dms +
                _ALL_LAZY.miscs_errors +
                _ALL_LAZY.miscs_iters +

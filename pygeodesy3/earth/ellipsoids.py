@@ -63,6 +63,7 @@ Following is the list of predefined L{Ellipsoid}s, all instantiated lazily.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import copysign0, isbool, isint, _xattr, _xkwds_not
 from pygeodesy3.constants import EPS, EPS0, EPS02, EPS1, INF, NINF, PI4, PI_2, PI_3, R_M, R_MA, R_FM, \
                                 _EPSqrt, _EPStol as _TOL, _floatuple as _T, _isfinite, _SQRT2_2, \
                                 _0_0s, _0_0, _0_5, _1_0, _1_EPS, _2_0, _4_0, _90_0, \
@@ -82,9 +83,7 @@ from pygeodesy3.maths.fmath import cbrt, cbrt2, fdot, Fhorner, fpowers, hypot, h
 # from pygeodesy3.maths.vector3d import _otherV3d  # _MODS
 from pygeodesy3.maths.umath import atan1, atan1d, atan2b, degrees90, m2radians, \
                                    radians2m, sincos2d
-from pygeodesy3.miscs.basics import copysign0, isbool, isint
-from pygeodesy3.miscs.errors import _AssertionError, IntersectionError, _ValueError, \
-                                    _xattr, _xkwds_not
+from pygeodesy3.miscs.errors import _AssertionError, IntersectionError, _ValueError
 from pygeodesy3.miscs.named import _lazyNamedEnumItem as _lazy, _NamedEnum, _NamedEnumItem, \
                                    _NamedTuple, _Pass,  _ALL_LAZY, _MODS
 from pygeodesy3.miscs.namedTuples import Distance2Tuple, Vector3Tuple, Vector4Tuple
@@ -97,7 +96,7 @@ from pygeodesy3.miscs.units import Bearing_, Distance, Float, Float_, Height, La
 from math import asinh, atan, atanh, cos, degrees, exp, fabs, radians, sin, sinh, sqrt, tan
 
 __all__ = _ALL_LAZY.earth_ellipsoids
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _f_0_0    = Float(f =_0_0)  # zero flattening
 _f__0_0   = Float(f_=_0_0)  # zero inverse flattening

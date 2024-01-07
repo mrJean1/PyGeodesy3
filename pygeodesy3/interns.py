@@ -13,7 +13,7 @@ _COMMASPACE_  = ', '  # overriden below
 _pf2List      = []    # cached _platform2 list
 _Py3List      = []    # cached _pythonarchine list
 
-_sub_packages = ('base', 'deprecated', 'distances', 'earth', 'elevations', 'ellipsoidal',
+_sub_packages = ('Base', 'deprecated', 'distances', 'earth', 'elevations', 'ellipsoidal',
                  'geodesic', 'geodesic.exact', 'grids', 'maths', 'maths.auxilats', 'miscs',
                  'polygonal', 'projections', 'rhumb', 'spherical')  # PYCHOK in .lazily,
 # ... make._dist, MANIFEST, setup.setup, test.bases, test.testModules
@@ -638,7 +638,7 @@ def _version2(version, n=2):
 __all__ = (_NN_,  # not MISSING!
             Str_.__name__,  # classes
             machine.__name__)  # in .lazily
-__version__ = '23.12.16'
+__version__ = '24.01.05'
 
 if __name__ == '__main__':
 

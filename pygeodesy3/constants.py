@@ -11,7 +11,7 @@ L{pygeodesy3.isnon0} and L{pygeodesy3.remainder}.
 from __future__ import division as _; del _  # PYCHOK semicolon
 
 try:
-    from pygeodesy3.base.units import Float, Int, Radius
+    from pygeodesy3.Base.units import Float, Int, Radius
 except ImportError:
 
     def Float(*arg, **name_arg):
@@ -30,11 +30,11 @@ except ImportError:
 
     Radius = Float
 
+from pygeodesy3.basics import _0_0, _copysign, isbool, \
+                               iscomplex, isint, _xkwds_get
 from pygeodesy3.interns import _INF_, _NAN_, _UNDER_
-# from pygeodesy3.lazily import _ALL_LAZY  # from .miscs.basics
-from pygeodesy3.miscs.basics import _0_0, _copysign, isbool, \
-                                     iscomplex, isint,  _ALL_LAZY
-from pygeodesy3.miscs.errors import _xError, _xError2, _xkwds_get
+# from pygeodesy3.lazily import _ALL_LAZY  # from .miscs.errors
+from pygeodesy3.miscs.errors import _xError, _xError2,  _ALL_LAZY
 # from pygeodesy3.miscs.streprs import Fmt
 
 from math import fabs, isinf, isnan, pi as _PI, sqrt
@@ -44,7 +44,7 @@ except ImportError:  # Python 2-
     _inf, _nan = float(_INF_), float(_NAN_)
 
 __all__ = _ALL_LAZY.constants
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 def _copysign_0_0(y):
@@ -265,7 +265,7 @@ _89_999_ = _Float(_89_999_= EPS1 * _90_0)   # just below 90.0
 _1__90   = _Float(_1__90  =_1_0 / _90_0)    # PYCHOK = 0.011_111_111_111_111_111_111_111_111_111_111_111_111_111_111_11111
 _2__PI   = _Float(_2__PI  =_2_0 / _PI)      # PYCHOK = 0.636_619_772_367_581_343_075_535_053_490_057_448_137_838_582_96182
 
-_1_16th  = _Float(_1_16th =_1_0 / _16_0)  # PYCHOK in .base.karney, .earth.ellipsoids
+_1_16th  = _Float(_1_16th =_1_0 / _16_0)  # PYCHOK in .Base.karney, .earth.ellipsoids
 _1_64th  = _Float(_1_64th =_1_0 /  64)    # PYCHOK in .elliptic, pow(2.0, -6)
 _1_3rd   = _Float(_1_3rd  =_1_0 /  _3_0)  # PYCHOK in .fmath
 _1_6th   = _Float(_1_6th  =_1_0 /  _6_0)  # PYCHOK in .fmath

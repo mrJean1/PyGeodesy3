@@ -14,8 +14,8 @@ from bases import geographiclib, TestsBase
 
 from pygeodesy3 import Ellipsoids, VincentyError
 from pygeodesy3.ellipsoidal import exact as ellipsoidalExact, \
-                                  karney as ellipsoidalKarney, \
-                                  vincenty as ellipsoidalVincenty
+                                   karney as ellipsoidalKarney, \
+                                   vincenty as ellipsoidalVincenty
 _LLX = ellipsoidalExact.LatLon
 _LLK = ellipsoidalKarney.LatLon
 _LLV = ellipsoidalVincenty.LatLon

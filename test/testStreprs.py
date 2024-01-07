@@ -9,7 +9,7 @@ __version__ = '23.12.10'
 from bases import TestsBase
 
 from pygeodesy3 import INF, NEG0, NAN, \
-                      anstr, fstr, fstrzs, instr, LatLon_, unstr
+                       anstr, fstr, fstrzs, instr, LatLon_, unstr
 
 
 class Tests(TestsBase):

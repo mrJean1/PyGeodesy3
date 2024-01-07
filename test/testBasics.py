@@ -4,14 +4,14 @@
 # Test some of the L{basics}.
 
 __all__ = ('Tests',)
-__version__ = '23.03.27'
+__version__ = '23.12.31'
 
 from bases import TestsBase
 
 from pygeodesy3 import EPS, EPS0, INF, INT0, NAN, NEG0, NINF, clips, halfs2, \
-                      isclose, isfinite, isint, isint0, isneg0, isninf, isscalar, \
-                      map1, property_RO, remainder, splice
-from pygeodesy3.miscs.basics import _xdup
+                       isclose, isfinite, isint, isint0, isneg0, isninf, isscalar, \
+                       map1, property_RO, remainder, splice
+from pygeodesy3.basics import _xdup
 
 
 class C(object):
@@ -133,6 +133,22 @@ class Tests(TestsBase):
         self.test('isclose', isclose(0, EPS0), True)
         self.test('isclose', isclose(0, EPS), False)
 
+    def testKwds(self, xkwds):
+        self.test(xkwds.__name__, xkwds({}, test='test1'), 'test1', nl=1)
+        self.test(xkwds.__name__, xkwds({'test': 'test2'}, test='test3'), 'test2')
+        try:
+            x = AssertionError.__name__
+            t = xkwds({})
+        except AssertionError as a:
+            t = x = str(a)
+        self.test(xkwds.__name__, t, x)
+        try:
+            x = AssertionError.__name__
+            t = xkwds({}, n1='d1', n2='d2')
+        except AssertionError as a:
+            t = x = str(a)
+        self.test(xkwds.__name__, t, x)
+
 
 if __name__ == '__main__':
 
@@ -140,5 +156,7 @@ if __name__ == '__main__':
 
     t = Tests(__file__, __version__, basics)
     t.testBasics()
+    t.testKwds(basics._xkwds_get)
+    t.testKwds(basics._xkwds_pop)
     t.results()
     t.exit()

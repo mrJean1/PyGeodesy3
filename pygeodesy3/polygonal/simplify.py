@@ -73,12 +73,12 @@ See:
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+# from pygeodesy3.basics import len2  # from .maths.fmath
 from pygeodesy3.constants import EPS, R_M, _1_0
 from pygeodesy3.distances.formy import equirectangular_
 from pygeodesy3.interns import _small_, _too_
 # from pygeodesy3.lazily import _ALL_LAZY  # from .miscs.units
 from pygeodesy3.maths.fmath import sqrt0,  len2
-# from pygeodesy3.miscs.basics import len2  # from .maths.fmath
 from pygeodesy3.miscs.errors import _AttributeError, _ValueError
 from pygeodesy3.miscs.iters import isNumpy2, isTuple2
 from pygeodesy3.miscs.units import _1mm, Radius_,  _ALL_LAZY
@@ -86,7 +86,7 @@ from pygeodesy3.miscs.units import _1mm, Radius_,  _ALL_LAZY
 from math import degrees, fabs, radians
 
 __all__ = _ALL_LAZY.polygonal_simplify
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 
 # try:

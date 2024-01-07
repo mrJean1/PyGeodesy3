@@ -6,13 +6,13 @@
 from bases import clips, coverage, isiOS, NN, prefix2, PyGeodesy3_dir, \
                   PythonX, secs2str, test_dir, _skipped_, _TILDE_, \
                   tilde, versions, _W_opts  # PYCHOK expected
-from pygeodesy3.miscs.basics import str2ub, ub2str
+from pygeodesy3.basics import str2ub, ub2str
 
 from os import access, environ, F_OK, linesep as LS, pathsep as PS
 import sys
 
 __all__ = ('run2',)
-__version__ = '23.12.21'
+__version__ = '23.12.31'
 
 NL = '\n'  # pygeodesy3.interns._NL_
 P  = None  # Popen instance

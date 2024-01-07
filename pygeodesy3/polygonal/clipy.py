@@ -12,14 +12,13 @@ I{Greiner-Hormann} and L{clipSH} and L{clipSH3} I{Sutherland-Hodgeman}.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import len2
 # from pygeodesy3.constants import EPS, _0_0, _1_0  # from .polygonal.points
 from pygeodesy3.interns import NN, _clipid_, _convex_, _DOT_, _end_, _few_, \
                               _fi_, _height_, _i_, _invalid_, _j_, _lat_, \
                               _lon_, _near_, _not_, _points_, _start_, _too_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
-from pygeodesy3.maths.fmath import  fabs, len2
-from pygeodesy3.maths.fsums import fsumf_,  Property_RO
-# from pygeodesy3.miscs.basics import len2  # from .maths.fmath
+from pygeodesy3.maths.fsums import fsumf_,  fabs, Property_RO
 from pygeodesy3.miscs.errors import _AssertionError, ClipError, PointsError
 from pygeodesy3.miscs.iters import _imdex2, points2
 from pygeodesy3.miscs.named import _Named, _NamedTuple, _Pass
@@ -30,10 +29,10 @@ from pygeodesy3.miscs.units import Bool, FIx, HeightX, Lat, Lon, Number_
 from pygeodesy3.polygonal.points import areaOf, boundsOf, isconvex_, LatLon_, \
                                         EPS, _0_0, _1_0
 
-# from math import fabs  # from .maths.fmath
+# from math import fabs  # from .maths.fsums
 
 __all__ = _ALL_LAZY.polygonal_clipy
-__version__ = '23.12.21'
+__version__ = '23.12.31'
 
 _fj_       = 'fj'
 _original_ = 'original'

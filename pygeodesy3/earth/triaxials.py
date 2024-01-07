@@ -30,6 +30,7 @@ see the U{GeographicLib<https://GeographicLib.SourceForge.io>} documentation.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import isLatLon, isscalar, map2, _zip
 from pygeodesy3.constants import EPS, EPS0, EPS02, EPS4, _EPS2e4, INT0, PI2, PI_3, PI4, \
                                 _0_0, _0_5, _1_0, _N_2_0, float0_, isfinite, isnear1, \
                                 _4_0  # PYCHOK used!
@@ -45,48 +46,37 @@ from pygeodesy3.interns import NN, _a_, _b_, _beta_, _c_, _distant_, _finite_, \
 from pygeodesy3.maths.fmath import Fdot, fdot, fmean_, hypot, hypot_, norm2, sqrt0
 from pygeodesy3.maths.fsums import Fsum, fsumf_, fsum1f_
 from pygeodesy3.maths.umath import asin1, atan2d, km2m, m2km, SinCos2, sincos2d_
-from pygeodesy3.maths.vector3d import _otherV3d, Vector3d,  _ALL_LAZY, _MODS
-from pygeodesy3.miscs.basics import isLatLon, isscalar, map2, _zip,  _ValueError
+from pygeodesy3.maths.vector3d import _otherV3d, Vector3d,  _ALL_LAZY, _MODS, _ValueError
 # from pygeodesy3.miscs.dms import toDMS  # _MODS
-# from pygeodesy3.miscs.errors import _ValueError  # from .basics
+# from pygeodesy3.miscs.errors import _ValueError  # from .maths.vector3d
 from pygeodesy3.miscs.named import _NamedEnum, _NamedEnumItem, _NamedTuple, _Pass, \
                                    _lazyNamedEnumItem as _lazy
 from pygeodesy3.miscs.namedTuples import LatLon3Tuple, Vector3Tuple, Vector4Tuple
 from pygeodesy3.miscs.props import Property_RO, property_RO
 # from pygeodesy3.miscs.streprs import Fmt  # from .earth.datums
-from pygeodesy3.miscs.units import Degrees, Float, Height_, Meter, Meter2, Meter3, \
-                                   Radians, Radius, Scalar_
+from pygeodesy3.miscs.units import Float, Height_, Meter, Meter2, Meter3, Radians, \
+                                   Radius, Scalar_, _toDegrees, _toRadians
 
 from math import atan2, fabs, sqrt
 
 __all__ = _ALL_LAZY.earth_triaxials
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _not_ordered_ = _not_('ordered')
 _omega_       = 'omega'
 _TRIPS        =  537  # 52..58, Eberly 1074?
 
 
-class _NamedTupleTo(_NamedTuple):  # in .testNamedTuples
+class _NamedTupleTo(_NamedTuple):  # in .testNamedTuples, like .distances.formy.RThetaPhi3Tuple
     '''(INTERNAL) Base for C{-.toDegrees}, C{-.toRadians}.
     '''
     def _toDegrees(self, a, b, *c, **toDMS_kwds):
-        if toDMS_kwds:
-            toDMS = _MODS.miscs.dms.toDMS
-            a = toDMS(a.toDegrees(), **toDMS_kwds)
-            b = toDMS(b.toDegrees(), **toDMS_kwds)
-        elif isinstance(a, Degrees) and \
-             isinstance(b, Degrees):
-            return self
-        else:
-            a, b = a.toDegrees(), b.toDegrees()
-        return self.classof(a, b, *c, name=self.name)
+        a, b, _ = _toDegrees(self, a, b, **toDMS_kwds)
+        return _ or self.classof(a, b, *c, name=self.name)
 
     def _toRadians(self, a, b, *c):
-        return self if isinstance(a, Radians) and \
-                       isinstance(b, Radians) else \
-               self.classof(a.toRadians(), b.toRadians(),
-                           *c, name=self.name)
+        a, b, _ = _toRadians(self, a, b)
+        return _ or self.classof(a, b, *c, name=self.name)
 
 
 class BetaOmega2Tuple(_NamedTupleTo):
@@ -427,6 +417,15 @@ class Triaxial_(_NamedEnumItem):
         a, b, c = self._abc3
         return a if a == b == c else INT0
 
+    def _norm2(self, s, c, *a):
+        '''(INTERNAL) Normalize C{s} and C{c} iff not already.
+        '''
+        if fabs(_hypot21(s, c)) > EPS02:
+            s, c = norm2(s, c)
+        if a:
+            s, c = norm2(s * self.b, c * a[0])
+        return float0_(s, c)
+
     def normal3d(self, x_xyz, y=None, z=None, length=_1_0):
         '''Get a 3-D vector perpendicular to at a cartesian on this triaxial's surface.
 
@@ -458,15 +457,6 @@ class Triaxial_(_NamedEnumItem):
         d = max(self._abc3)
         t = tuple(((d / x)**2 if x != d else _1_0) for x in self._abc3)
         return Vector3d(*t, name=self.normal3d.__name__)
-
-    def _norm2(self, s, c, *a):
-        '''(INTERNAL) Normalize C{s} and C{c} iff not already.
-        '''
-        if fabs(_hypot21(s, c)) > EPS02:
-            s, c = norm2(s, c)
-        if a:
-            s, c = norm2(s * self.b, c * a[0])
-        return float0_(s, c)
 
     def _order3(self, *abc, **reverse):  # reverse=False
         '''(INTERNAL) Un-/Order C{a}, C{b} and C{c}.
@@ -1207,7 +1197,7 @@ def _hartzell2(pov, los, Tun):  # in .earth.ellipsoids.hartzell4, .formy.hartzel
         raise _ValueError(_opposite_ if max(ux, vy, wz) > 0 else _outside_)
 
     d = Fdot(t, ux, vy, wz).fadd_(r).fover(m)  # -r for antipode, a2 factored out
-    if d > 0:  # POV inside or LOS missing, outside the triaxial
+    if d > 0:  # POV inside or LOS outside or missing the triaxial
         s = fsumf_(_1_0, x2 / a2, y2 / b2, z2 / c2, _N_2_0)  # like _sideOf
         raise _ValueError(_outside_ if s > 0 else _inside_)
     elif fsum1f_(x2, y2, z2) < d**2:  # d past triaxial's center

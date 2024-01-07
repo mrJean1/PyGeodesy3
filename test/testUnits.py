@@ -9,9 +9,9 @@ __version__ = '23.03.27'
 from bases import TestsBase
 
 from pygeodesy3 import Band, Bearing, Bearing_, Bool, \
-                      Epoch, Epsg, FIx, Garef, Geohash, Georef, \
-                      Int, Int_, Number_, Precision_, Lam_, Phi_, \
-                      Str, Zone, Float, units
+                       Epoch, Epsg, FIx, Garef, Geohash, Georef, \
+                       Int, Int_, Number_, Precision_, Lam_, Phi_, \
+                       Str, Zone, Float, units
 _NamedUnit = units._NamedUnit
 
 

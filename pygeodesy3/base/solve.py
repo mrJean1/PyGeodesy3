@@ -4,7 +4,8 @@
 u'''(INTERNAL) Private base classes for L{pygeodesy3.geodesic.solve} and L{pygeodesy3.rhumb.solve}.
 '''
 
-from pygeodesy3.base.karney import Caps, _CapsBase, GDict, Precision_
+from pygeodesy3.Base.karney import Caps, _CapsBase, GDict, Precision_
+from pygeodesy3.basics import map2, ub2str, _xkwds_get, _zip
 from pygeodesy3.constants import DIG
 from pygeodesy3.earth.datums import _earth_datum, _WGS84,  _EWGS84
 # from pygeodesy3.earth.ellipsoids import _EWGS84  # from .earth.datums
@@ -12,20 +13,19 @@ from pygeodesy3.interns import NN, _0_, _BACKSLASH_, _COMMASPACE_, _enquote, \
                               _EQUAL_, _Error_, _not_, _SPACE_, _UNUSED_
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, printf, _unlazy
 from pygeodesy3.maths.umath import unroll180,  wrap360  # PYCHOK shared
-from pygeodesy3.miscs.basics import map2, ub2str, _zip
-from pygeodesy3.miscs.errors import _AssertionError, _xkwds_get
+from pygeodesy3.miscs.errors import _AssertionError
 from pygeodesy3.miscs.named import callername, notOverloaded
 from pygeodesy3.miscs.props import Property, Property_RO, property_RO, _update_all
 from pygeodesy3.miscs.streprs import Fmt, fstr, fstrzs, pairs, strs
-# from pygeodesy3.miscs.units import Precision_  # from .base.karney
+# from pygeodesy3.miscs.units import Precision_  # from .Base.karney
 
 from subprocess import PIPE as _PIPE, Popen as _Popen, STDOUT as _STDOUT
 
-__all__ = _ALL_LAZY.base_solve
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.Base_solve
+__version__ = '24.01.05'
 
 _ERROR_    = 'ERROR'
-_text_True =  dict() if _unlazy else dict(text=True)
+_text_True = {} if _unlazy else dict(text=True)
 
 
 def _cmd_stdin_(cmd, stdin):  # PYCHOK no cover
@@ -48,7 +48,7 @@ def _popen2(cmd, stdin=None):  # in .mgrs, .test.base, .test.testMgrs
     return p.returncode, ub2str(r).strip()
 
 
-class _SolveLineSolveBase(_CapsBase):
+class _SolveBases(_CapsBase):
     '''(NTERNAL) Base class for C{_Solve} and C{_LineSolve}.
     '''
     _Error         =  None
@@ -269,7 +269,7 @@ class _SolveLineSolveBase(_CapsBase):
         return self.invoke('--version')
 
 
-class _SolveBase(_SolveLineSolveBase):
+class _SolveBase(_SolveBases):
     '''(NTERNAL) Base class for C{_GeodesicSolveBase} and C{_RhumbSolveBase}.
     '''
     _datum = _WGS84
@@ -386,7 +386,7 @@ class _SolveBase(_SolveLineSolveBase):
         return sep.join(pairs(d, prec=prec))
 
 
-class _SolveLineBase(_SolveLineSolveBase):
+class _SolveLineBase(_SolveBases):
     '''(NTERNAL) Base class for C{GeodesicLineSolve} and C{RhumbLineSolve}.
     '''
 #   _caps  =  0
@@ -447,7 +447,7 @@ class _SolveLineBase(_SolveLineSolveBase):
         return sep.join(pairs(d, prec=prec))
 
 
-__all__ += _ALL_DOCS(_SolveBase, _SolveLineBase, _SolveLineSolveBase)
+__all__ += _ALL_DOCS(_SolveBase, _SolveLineBase, _SolveBases)
 
 # **) MIT License
 #

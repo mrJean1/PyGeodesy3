@@ -4,16 +4,16 @@
 # Test L{vector3d} and L{vector3d} modules.
 
 __all__ = ('Tests',)
-__version__ = '23.12.17'
+__version__ = '24.01.05'
 
 from bases import coverage, GeodSolve, numpy, TestsBase
 
 from pygeodesy3 import EPS, EPS4, F_D, NEG0, \
-                      circin6, circum3, circum4_, fstr, \
-                      intersection3d3, IntersectionError, isnear0, \
-                      meeus2, radii11, sincos2d, soddy4, trilaterate2d2, \
-                      trilaterate3d2, vector2d, vector3d, Vector3d as V3d, \
-                      VectorError
+                       circin6, circum3, circum4_, fstr, \
+                       intersection3d3, IntersectionError, isnear0, \
+                       meeus2, radii11, sincos2d, soddy4, trilaterate2d2, \
+                       trilaterate3d2, vector2d, vector3d, Vector3d as V3d, \
+                       VectorError
 from pygeodesy3.interns import _DOT_  # INTERNAL
 from pygeodesy3.spherical import nvector as sphericalNvector
 
@@ -532,8 +532,8 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import Datums, ellipsoidalExact, ellipsoidalKarney, \
-                          ellipsoidalNvector, ellipsoidalVincenty, sphericalTrigonometry
-    from pygeodesy3.base import cartesian as cartesianBase, nvector as nvectorBase  # DEPRECATED
+                           ellipsoidalNvector, ellipsoidalVincenty, sphericalTrigonometry
+    from pygeodesy3.Base import cartesian as cartesianBase, nvector as nvectorBase  # DEPRECATED
 
     t = Tests(__file__, __version__)
 

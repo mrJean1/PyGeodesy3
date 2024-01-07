@@ -172,7 +172,7 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import ellipsoidalExact, ellipsoidalKarney, \
-                          ellipsoidalNvector, ellipsoidalVincenty, trf
+                           ellipsoidalNvector, ellipsoidalVincenty, trf
 
     t = Tests(__file__, __version__, trf)
     t.testTrf(ellipsoidalNvector)

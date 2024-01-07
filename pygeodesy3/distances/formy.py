@@ -6,8 +6,9 @@ u'''Formulary of basic geodesy functions and approximations.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-# from pygeodesy3.base.cartesian import CartesianBase  # _MODS
-# from pygeodesy3.base.vector3d import _xyz_y_z3  # _MODS
+# from pygeodesy3.Base.cartesian import CartesianBase  # _MODS
+# from pygeodesy3.Base.vector3d import _xyz_y_z3  # _MODS
+from pygeodesy3.basics import _xattr, _xkwds, _xkwds_pop
 from pygeodesy3.constants import EPS, EPS0, EPS1, PI, PI2, PI3, PI_2, R_M, \
                                 _isfinite, float0_, isnon0, remainder, _umod_PI2, \
                                 _0_0, _0_125, _0_25, _0_5, _1_0, _2_0, _4_0, \
@@ -17,7 +18,7 @@ from pygeodesy3.earth.datums import Datum, Ellipsoid, _ellipsoidal_datum, \
 # from pygeodesy3.earth.ellipsoids import Ellipsoid, _EWGS84  # from .earth.datums
 # from pygeodesy3.earth.triaxials import _hartzell2  # _MODS
 # from pygeodesy3.ellipsoidal import exact, karney  # _MODS
-from pygeodesy3.interns import NN, _delta_, _distant_, _inside_, _SPACE_, _too_
+from pygeodesy3.interns import NN, _delta_, _distant_, _inside_, _phi_, _SPACE_, _too_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.fmath import euclid, hypot, hypot_, hypot2, sqrt0
 from pygeodesy3.maths.fsums import fsumf_
@@ -25,29 +26,29 @@ from pygeodesy3.maths.fsums import fsumf_
 from pygeodesy3.maths.umath import acos1, atan2b, atan2d, degrees2m, _loneg, \
                                    m2degrees, tan_2, sincos2, sincos2_, \
                                    sincos2d_, _Wrap
-# from pygeodesy3.miscs.basics import isscalar  # from .maths.fsums
 from pygeodesy3.miscs.errors import IntersectionError, LimitError, limiterrors, \
-                                   _TypeError, _ValueError, _xattr, _xError, \
-                                   _xkwds, _xkwds_pop
-from pygeodesy3.miscs.named import _NamedTuple, _xnamed,  Fmt, unstr
+                                   _TypeError, _ValueError, _xError
+from pygeodesy3.miscs.named import _NamedTuple, _Pass, _xnamed,  Fmt, unstr
 from pygeodesy3.miscs.namedTuples import Bearing2Tuple, Distance4Tuple, \
-                                  Intersection3Tuple, LatLon2Tuple, \
-                                  PhiLam2Tuple, Vector3Tuple
+                                         Intersection3Tuple, LatLon2Tuple, \
+                                         PhiLam2Tuple, Vector3Tuple
 # from pygeodesy3.miscs.streprs import Fmt, unstr  # from .miscs.named
-from pygeodesy3.miscs.units import _isHeight, _isRadius, Bearing, Degrees, Degrees_, \
-                                    Distance, Distance_, Height, Lam_, Lat, Lon, \
-                                    Meter_, Phi_, Radians, Radians_, Radius, Radius_, \
-                                    Scalar, _100km
+from pygeodesy3.miscs.units import _isHeight, _isRadius, Bearing, Degrees_, Distance, \
+                                    Distance_, Height, Lam_, Lat, Lon, Meter, Meter_, \
+                                    Phi_, Radians, Radians_, Radius, Radius_, Scalar, \
+                                    _toDegrees, _toRadians, _100km
 # from pygeodesy3.spherical imprt nvector, trigonometry  # _MODS
 
 from contextlib import contextmanager
 from math import asin, atan, atan2, cos, degrees, fabs, radians, sin, sqrt  # pow
 
 __all__ = _ALL_LAZY.distances_formy
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _D2_R2  = (PI / _180_0)**2  # degrees- to radians-squared
+_r_     = 'r'
 _ratio_ = 'ratio'
+_theta_ = 'theta'
 _xline_ = 'xline'
 
 
@@ -993,7 +994,7 @@ def hartzell(pov, los=None, earth=_WGS84, name=NN, **LatLon_and_kwds):
         raise IntersectionError(pov=pov, los=los, earth=earth, cause=x)
 
     r = _xnamed(r, name or n)
-    C = _MODS.base.cartesian.CartesianBase
+    C = _MODS.Base.cartesian.CartesianBase
     if LatLon_and_kwds:
         c = C(r, datum=D, name=r.name)
         r = c.toLatLon(**_xkwds(LatLon_and_kwds, height=h))
@@ -1838,15 +1839,47 @@ def vincentys_(phi2, phi1, lam21):
     return atan2(hypot(c2 * s21, y), x)
 
 
-def xyz2rtp(x_xyz, *y_z):
+class RThetaPhi3Tuple(_NamedTuple):
+    '''3-Tuple C{(r, theta, phi)} with radial distance C{r} in C{meter},
+       inclination C{theta} (with respect to the positive z-axis) and
+       azimuthal angle C{phi} in L{Degrees} I{or} L{Radians}.
+    '''
+    _Names_ = (_r_,    _theta_, _phi_)
+    _Units_ = ( Meter, _Pass,   _Pass)
+
+    def toDegrees(self, **toDMS_kwds):
+        '''Convert this L{RThetaPhi3Tuple} to L{Degrees} or C{toDMS}.
+
+           @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with C{theta} and C{phi}
+                    both in L{Degrees} or as L{toDMS} strings provided some
+                    B{C{toDMS_kwds}} keyword arguments are specified.
+        '''
+        t, p, _ = _toDegrees(self, self.theta, self.phi, **toDMS_kwds)  # PYCHOK named
+        return _ or self.classof(self.r, t, p, name=self.name)  # PYCHOK named
+
+    def toRadians(self):
+        '''Convert this L{RThetaPhi3Tuple} to L{Radians}.
+
+           @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with
+                    C{theta} and C{phi} both in L{Radians}.
+        '''
+        t, p, _ = _toRadians(self, self.theta, self.phi)  # PYCHOK named
+        return _ or self.classof(self.r, t, p, name=self.name)  # PYCHOK named
+
+
+def xyz2rtp(x_xyz, *y_z, **toDMS_kwds):
     '''Convert cartesian C{(x, y, z)} to spherical C{(r, theta, phi)} coordinates.
 
-       @return: 3-Tuple C{(r, theta, phi)} in C{degrees}.
+       @kwarg toDMS_kwds: Optional keyword arguments for function L{toDMS<miscs.dms.toDMS>}
+                          to convert C{theta} and C{phi} to C{toDMS}.
 
-       @see: Function L{xyz2rtp_}.
+       @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with C{theta} and C{phi} both in
+                L{Degrees} or as L{toDMS} strings provided some B{C{toDMS_kwds}} keyword
+                arguments are specified.
+
+       @see: Function L{xyz2rtp_}, class L{RThetaPhi3Tuple} and method C{toDegrees} thereof.
     '''
-    r, t, p = xyz2rtp_(x_xyz, *y_z)
-    return r, Degrees(theta=degrees(t)), Degrees(phi=degrees(p))
+    return xyz2rtp_(x_xyz, *y_z).toDegrees(**toDMS_kwds)
 
 
 def xyz2rtp_(x_xyz, *y_z):
@@ -1857,14 +1890,14 @@ def xyz2rtp_(x_xyz, *y_z):
                    C{tuple} or C{list} of 3+ C{scalar} items) if no C{y_z} specified.
        @arg y_z: Y and Z component (C{scalar}s), ignored if C{x_xyz} is not a C{scalar}.
 
-       @return: 3-Tuple C{(r, theta, phi)} with radial distance C{r} (C{meter}, same
-                units as C{x}, C{y} and C{z}), inclination C{theta} (with respect to
-                the positive z-axis) and azimuthal angle C{phi} in C{radians}.
+       @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with radial distance C{r} (C{meter},
+                same units as C{x}, C{y} and C{z}), inclination C{theta} (with respect to
+                the positive z-axis) and azimuthal angle C{phi} in L{Radians}.
 
        @see: U{Physics<https://WikiPedia.org/wiki/Spherical_coordinate_system>}
              convention (ISO 80000-2:2019).
     '''
-    x, y, z = _MODS.base.vector3d._xyz3(xyz2rtp, x_xyz, *y_z)
+    x, y, z = _MODS.Base.vector3d._xyz3(xyz2rtp, x_xyz, *y_z)
     r = hypot_(x, y, z)
     if r:
         t = acos1(z / r)
@@ -1873,7 +1906,7 @@ def xyz2rtp_(x_xyz, *y_z):
             p += PI2
     else:
         t = p = _0_0
-    return r, Radians(theta=t), Radians(phi=p)
+    return RThetaPhi3Tuple(r, Radians(theta=t), Radians(phi=p))
 
 # **) MIT License
 #

@@ -5,7 +5,7 @@ u'''Print L{pygeodesy3} version, etc. using C{python -m pygeodesy3}.
 '''
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 from os.path import basename
 
@@ -13,12 +13,12 @@ from os.path import basename
 def _main():  # PYCHOK no cover
 
     from pygeodesy3 import _isfrozen, pygeodesy3_abspath, version
+    from pygeodesy3.basics import _xgeographiclib, _xnumpy, _xscipy
     from pygeodesy3.constants import _floats
     from pygeodesy3.interns import _COMMASPACE_, _DEPRECATED_, _pygeodesy3_abspath_, \
                                    _pythonarchine, _SPACE_, _version_
     from pygeodesy3.lazily import _a_l_l_, _all_deprecates, _all_imports, \
                                   isLazy, printf
-    from pygeodesy3.miscs.basics import _xgeographiclib, _xnumpy, _xscipy
     from pygeodesy3.miscs.streprs import Fmt
 
     def _p(name_value):
@@ -57,7 +57,7 @@ except ImportError:
 
 # % python3 -m pygeodesy3
 
-# pygeodesy3.version=23.12.23, .pygeodesy3_abspath=.../PyGeodesy3/pygeodesy3, .isLazy=1, ._isfrozen=False, ._floats=82, .__all__=938, .DEPRECATED=73 (Python 3.12.0, 64bit, arm64, geographiclib 2.0)
+# pygeodesy3.version=24.01.05, .pygeodesy3_abspath=.../PyGeodesy3/pygeodesy3, .isLazy=1, ._isfrozen=False, ._floats=82, .__all__=938, .DEPRECATED=73 (Python 3.12.0, 64bit, arm64, geographiclib 2.0)
 
 # **) MIT License
 #

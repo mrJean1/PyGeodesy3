@@ -63,8 +63,9 @@ which maintains accuracy near C{phi = pi/2}.  Such changes are noted in the code
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _copyBit, _diff182, _fix90, _norm2, \
+from pygeodesy3.Base.karney import _copyBit, _diff182, _fix90, _norm2, \
                                    _norm180, _tand, _unsigned2
+from pygeodesy3.basics import map1, neg, neg_, _xinstanceof
 from pygeodesy3.constants import EPS, EPS02, PI_2, PI_4, _K0_UTM, \
                                 _1_EPS, _0_0, _0_1, _0_5, _1_0, _2_0, \
                                 _3_0, _4_0, _90_0, isnear0, isnear90
@@ -77,7 +78,6 @@ from pygeodesy3.maths.elliptic import  Elliptic,  _ALL_LAZY
 from pygeodesy3.maths.fmath import cbrt, hypot, hypot1, hypot2
 from pygeodesy3.maths.fsums import Fsum, fsum1f_
 from pygeodesy3.maths.umath import atan1d, atan2d, _loneg, sincos2
-from pygeodesy3.miscs.basics import map1, neg, neg_, _xinstanceof
 # from pygeodesy3.miscs.errors import _incompatible  # from .miscs.named
 from pygeodesy3.miscs.named import callername, _NamedBase,  _incompatible
 from pygeodesy3.miscs.namedTuples import Forward4Tuple, Reverse4Tuple
@@ -91,7 +91,7 @@ from pygeodesy3.projections.utm import _cmlon, _LLEB, _parseUTM5, _toBand, \
 from math import asinh, atan2, degrees, radians, sinh, sqrt
 
 __all__ = _ALL_LAZY.projections_etm
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _OVERFLOW = _1_EPS**2  # about 2e+31
 _TAYTOL   =  pow(EPS, 0.6)

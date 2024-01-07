@@ -10,21 +10,21 @@ U{https://www.Movable-Type.co.UK/scripts/latlong-vectors.html} and
 U{https://www.Movable-Type.co.UK/scripts/geodesy/docs/latlon-ellipsoidal.js.html}.
 '''
 
-# from pygeodesy3.base.nvector import _N_vector_  # _MODS
+# from pygeodesy3.Base.nvector import _N_vector_  # _MODS
+from pygeodesy3.basics import _xinstanceof, _xkwds
 from pygeodesy3.constants import EPS, EPS0, isnear0, _1_0, _N_1_0, \
                                 _2_0, _4_0, _6_0
 from pygeodesy3.earth.datums import Datum, _earth_ellipsoid, _spherical_datum, \
-                                   _WGS84,  _xinstanceof
+                                   _WGS84
 # from pygeodesy3.earth.ecef import EcefKarney  # MODS
 # from pygeodesy3.earth.triaxials import Triaxial_ _MODS
-from pygeodesy3.miscs.errors import _IsnotError, _ValueError, _xdatum, _xkwds
+from pygeodesy3.miscs.errors import _IsnotError, _ValueError, _xdatum
 from pygeodesy3.interns import NN, _COMMASPACE_, _height_, _not_
 from pygeodesy3.interns import _ellipsoidal_, _spherical_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.fmath import cbrt, hypot_, hypot2, sqrt  # hypot
 from pygeodesy3.maths.fsums import Fmt, fsumf_
 from pygeodesy3.maths.vector3d import Vector3d, _xyzhdn3
-# from pygeodesy3.miscs.basics import _xinstanceof  # from .earth.datums
 from pygeodesy3.miscs.namedTuples import LatLon4Tuple, Vector4Tuple, \
                                          Bearing2Tuple  # PYCHOK .base.spherical
 from pygeodesy3.miscs.props import Property, Property_RO, property_doc_, \
@@ -36,8 +36,8 @@ from pygeodesy3.miscs.units import Height, _heigHt
 
 # from math import sqrt  # from .fmath
 
-__all__ = _ALL_LAZY.base_cartesian
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.Base_cartesian
+__version__ = '24.01.05'
 
 
 class CartesianBase(Vector3d):
@@ -346,7 +346,7 @@ class CartesianBase(Vector3d):
     def _N_vector(self):
         '''(INTERNAL) Get the (C{base.nvector._N_vector_}).
         '''
-        m = _MODS.base.nvector
+        m = _MODS.Base.nvector
         x, y, z, h = self._n_xyzh4(self.datum)
         return m._N_vector_(x, y, z, h=h, name=self.name)
 

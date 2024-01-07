@@ -8,6 +8,7 @@ are all instances of some C{Named...Tuple} class, all sub-classes
 of C{_NamedTuple} defined in C{pygeodesy3.miscs.named}.
 '''
 
+from pygeodesy3.basics import map1, _xattr, _xinstanceof, _xkwds_not  # _xkwds
 # from pygeodesy3.constants import INT0  # from .miscsc.units
 # from pygeodesy3.earth.datums import Datum  # _MODS
 from pygeodesy3.interns import NN, _1_, _2_, _a_, _A_, _area_, _angle_, _b_, \
@@ -17,9 +18,7 @@ from pygeodesy3.interns import NN, _1_, _2_, _a_, _A_, _area_, _angle_, _b_, \
                               _lon_, _n_, _northing_, _number_, _outside_, \
                               _phi_, _point_, _precision_, _points_, _radius_, \
                               _scale_, _start_, _x_, _y_, _z_, _zone_
-# from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS  # from .miscs.errors
-from pygeodesy3.miscs.basics import map1, _xinstanceof
-from pygeodesy3.miscs.errors import _xattr, _xkwds_not,  _ALL_LAZY, _MODS  # _xkwds
+from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.miscs.named import _NamedTuple, _Pass,  property_RO
 # from pygeodesy3.miscs.props import property_RO  # from .miscs.named
 from pygeodesy3.miscs.units import Band, Bearing, Degrees, Degrees2, Easting, \
@@ -28,7 +27,7 @@ from pygeodesy3.miscs.units import Band, Bearing, Degrees, Degrees2, Easting, \
                                    Radians, Radius, Scalar, Str,  INT0
 
 __all__ = _ALL_LAZY.miscs_namedTuples
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 # __DUNDER gets mangled in class
 _closest_     = 'closest'
@@ -103,7 +102,7 @@ class Destination2Tuple(_NamedTuple):  # .ellipsoidal.karney, -.vincenty
     _Units_ = (_Pass,          Bearing)
 
 
-class Destination3Tuple(_NamedTuple):  # .base.karney
+class Destination3Tuple(_NamedTuple):  # .Base.karney
     '''3-Tuple C{(lat, lon, final)}, destination C{lat}, C{lon} in
        C{degrees90} respectively C{degrees180} and C{final} bearing
        in compass C{degrees360}.

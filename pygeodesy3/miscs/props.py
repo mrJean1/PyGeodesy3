@@ -10,22 +10,21 @@ with command line option C{-X dev} or with one of the C{-W}
 choices, see callable L{DeprecationWarnings} below.
 '''
 
+from pygeodesy3.basics import isclass as _isclass, _xkwds, _xkwds_get
 from pygeodesy3.interns import MISSING, NN, _an_, _COMMASPACE_, \
                               _DEPRECATED_, _DOT_, _EQUALSPACED_, \
                               _immutable_, _invalid_, _module_, _N_A_, \
                               _not_, _SPACE_, _UNDER_,  _DNL_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _FOR_DOCS, \
                               _WARNINGS_X_DEV
-# from pygeodesy3.miscs.basics import isclass  # _MODS
-from pygeodesy3.miscs.errors import _AssertionError, _AttributeError, \
-                                    _xkwds, _xkwds_get
+from pygeodesy3.miscs.errors import _AssertionError, _AttributeError
 # from pygeodesy3.miscs.named import callname  # _MODS, avoid circular
 # from pygeodesy3.miscs.streprs import Fmt  # _MODS
 
 from functools import wraps as _wraps
 
 __all__ = _ALL_LAZY.miscs_props
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _class_       = 'class'
 _dont_use_    = _DEPRECATED_ + ", don't use."
@@ -71,15 +70,6 @@ def _hasProperty(inst, name, *Classes):  # in .named._NamedBase._update
     p = getattr(inst.__class__, name, None)  # walks __class__.__mro__
     return bool(p and isinstance(p, Classes or _PropertyBase)
                   and p.name == name)
-
-
-def _isclass(obj):
-    '''(INTERNAL) Get and overwrite C{_isclass}.
-    '''
-    f = _MODS.miscs.basics.isclass
-    # assert __name__.endswith('.props')
-    _MODS.miscs.props._isclass = f
-    return f(obj)
 
 
 def _update_all(inst, *attrs, **Base):

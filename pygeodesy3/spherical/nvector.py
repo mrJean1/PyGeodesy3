@@ -33,21 +33,21 @@ to a normalised version of an (ECEF) cartesian coordinate.
 # make sure int/int division yields float quosient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.nvector import LatLonNvectorBase, NorthPole, \
+from pygeodesy3.Base.nvector import LatLonNvectorBase, NorthPole, \
                                     notImplemented, NvectorBase, _nsumOf, \
                                     _triangulate, _trilaterate
+from pygeodesy3.basics import _xinstanceof, _xkwds
 from pygeodesy3.constants import EPS, EPS0, PI, PI2, PI_2, R_M, \
                                 _0_0, _0_5, _1_0
 # from pygeodesy3.earth.datums import Datums  # from .spherical.base
 from pygeodesy3.interns import _composite_, _end_, _Nv00_, _other_, \
                                _point_, _pole_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
-from pygeodesy3.maths.fmath import fmean, fsum
+from pygeodesy3.maths.fmath import fmean,  fsum
 # from pygeodesy3.maths.fsums import fsum  # from .fmath
 from pygeodesy3.maths.umath import atan2, degrees360, fabs, sincos2, \
                                    sincos2_, sincos2d, _unrollon, _Wrap
-# from pygeodesy3.miscs.basics import _xinstanceof  # _MODS
-from pygeodesy3.miscs.errors import PointsError, VectorError, _xError, _xkwds
+from pygeodesy3.miscs.errors import PointsError, VectorError, _xError
 # from pygeodesy3.miscs.named import notImplemented  # from .base.nvector
 # from pygeodesy3.miscs.namedTuples import NearestOn3Tuple  # from .polygonal.points
 # from pygeodesy3.miscs.props import property_RO  # from .spherical.base
@@ -61,7 +61,7 @@ from pygeodesy3.spherical.base import _m2radians, CartesianSphericalBase, \
 # from math import atan2, fabs  # from utily
 
 __all__ = _ALL_LAZY.spherical_nvector
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _lines_ = 'lines'
 
@@ -793,7 +793,7 @@ def areaOf(points, radius=R_M, wrap=False):
        @see: Functions L{pygeodesy3.areaOf}, L{spherical.trigonometry.areaOf}
              and L{ellipsoidal.karney.areaOf}.
     '''
-    def _interangles(ps, w):  # like .base.karney._polygon
+    def _interangles(ps, w):  # like .Base.karney._polygon
         Ps = _Nvll.PointsIter(ps, loop=2, wrap=w)
         # use vector to 1st point as plane normal for sign of α
         n0 =  Ps[0].toNvector()
@@ -1053,7 +1053,7 @@ def nearestOn3(point, points, closed=False, radius=R_M, height=None, wrap=False)
 
        @raise TypeError: Some B{C{points}} or B{C{point}} not C{LatLon}.
     '''
-    _MODS.miscs.basics._xinstanceof(LatLon, point=point)
+    _xinstanceof(LatLon, point=point)
 
     return point.nearestOn3(points, closed=closed, radius=radius,
                                     height=height, wrap=wrap)

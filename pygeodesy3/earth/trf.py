@@ -48,6 +48,7 @@ en/how-to-deal-with-etrs89-datum-and-time-dependent-transformation-parameters-45
 @var RefFrames.WGS84g1762: RefFrame(name='WGS84g1762', epoch=2005, ellipsoid=Ellipsoid(name='WGS84')
 '''
 
+from pygeodesy3.basics import map1, _xinstanceof, _zip
 from pygeodesy3.constants import _float as _F, _0_0s, _0_0, _0_001, \
                                  _0_01, _0_1, _0_26, _0_5, _N_0_5, _1_0
 from pygeodesy3.earth.datums import _earth_datum, Transform, _WGS84
@@ -57,7 +58,6 @@ from pygeodesy3.interns import NN, _COMMASPACE_, _cartesian_, _conversion_, \
                               _GRS80_, _NAD83_, _name_, _no_, _s_, _SPACE_, \
                               _sx_, _sy_, _sz_, _to_, _tx_, _ty_, _tz_, _WGS84_
 # from pygeodesy3.lazily import _ALL_LAZY  # from .errors
-from pygeodesy3.miscs.basics import map1, _xinstanceof, _zip
 from pygeodesy3.miscs.errors import _ALL_LAZY, _IsnotError, TRFError
 from pygeodesy3.miscs.named import classname, _lazyNamedEnumItem as _lazy, _NamedEnum, \
                                   _NamedEnumItem, _NamedDict as _XD, _NamedTuple
@@ -68,7 +68,7 @@ from pygeodesy3.miscs.units import Epoch, Float
 from math import ceil
 
 __all__ = _ALL_LAZY.earth_trf
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _0_02  =   0.02
 _0_06  =   0.06

@@ -11,6 +11,7 @@ L{ChLVYX2Tuple}, L{ChLVyx2Tuple} and L{Footprint5Tuple}.
 @see: References in module L{ltp}.
 '''
 
+from pygeodesy3.basics import issubclassof, _xattr, _xkwds
 from pygeodesy3.constants import _0_0, _1_0, _90_0, _N_90_0
 from pygeodesy3.interns import NN, _4_, _azimuth_, _center_, _COMMASPACE_, \
                               _down_, _east_, _ecef_, _elevation_, _height_, \
@@ -20,9 +21,8 @@ from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.fmath import hypot, hypot_
 from pygeodesy3.maths.umath import atan2d, atan2b, sincos2_, sincos2d_,  cos, radians
 from pygeodesy3.maths.vector3d import Vector3d
-from pygeodesy3.miscs.basics import issubclassof
 from pygeodesy3.miscs.dms import F_D, toDMS
-from pygeodesy3.miscs.errors import _TypeError, _TypesError, _xattr, _xkwds
+from pygeodesy3.miscs.errors import _TypeError, _TypesError
 from pygeodesy3.miscs.named import _NamedBase, _NamedTuple, notOverloaded, \
                                    _Pass, _xnamed
 from pygeodesy3.miscs.namedTuples import LatLon2Tuple, PhiLam2Tuple, Vector3Tuple
@@ -35,7 +35,7 @@ from pygeodesy3.miscs.units import Bearing, Degrees, Degrees_, Height, _isDegree
 # from math import cos, radians  # from .maths.umath
 
 __all__ = _ALL_LAZY.projections_ltpTuples
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _aer_        = 'aer'
 _alt_        = 'alt'

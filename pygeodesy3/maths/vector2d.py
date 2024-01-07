@@ -5,6 +5,7 @@ u'''2- or 3-D vectorial functions L{circin6}, L{circum3}, L{circum4_},
 L{iscolinearWith}, L{meeus2}, L{nearestOn}, L{radii11} and L{soddy4}.
 '''
 
+from pygeodesy3.basics import len2, map2, _xkwds, _xnumpy
 from pygeodesy3.constants import EPS, EPS0, EPS02, EPS4, INF, INT0, \
                                 _EPS4e8, isnear0, _0_0, _0_25, _0_5, _N_0_5, \
                                 _1_0, _1_0_1T, _N_1_0, _2_0, _N_2_0, _4_0
@@ -18,9 +19,8 @@ from pygeodesy3.maths.fsums import Fsum, fsumf_, fsum1f_
 from pygeodesy3.maths.vector3d import iscolinearWith, nearestOn, _nearestOn2,  \
                                      _otherV3d, trilaterate2d2, trilaterate3d2, \
                                      _nVc, Vector3d  # PYCHOK unused
-from pygeodesy3.miscs.basics import len2, map2, _xnumpy
 from pygeodesy3.miscs.errors import _and, _AssertionError, IntersectionError, _xError, \
-                                     NumPyError, PointsError, TriangleError, _xkwds
+                                     NumPyError, PointsError, TriangleError
 from pygeodesy3.miscs.named import _NamedTuple, _Pass,  _ALL_LAZY, Property_RO
 from pygeodesy3.miscs.namedTuples import LatLon3Tuple, Vector2Tuple
 # from pygeodesy3.miscs.props import Property_RO  # from .miscs.named
@@ -31,7 +31,7 @@ from contextlib import contextmanager
 # from math import fabs, sqrt  # from .fmath
 
 __all__ = _ALL_LAZY.maths_vector2d
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _cA_        = 'cA'
 _cB_        = 'cB'

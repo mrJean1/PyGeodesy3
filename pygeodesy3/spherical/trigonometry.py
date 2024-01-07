@@ -15,7 +15,8 @@ U{Latitude/Longitude<https://www.Movable-Type.co.UK/scripts/latlong.html>}.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-# from pygeodesy3.base.nvector import NvectorBase, sumOf  # _MODS
+# from pygeodesy3.Base.nvector import NvectorBase, sumOf  # _MODS
+from pygeodesy3.basics import copysign0, map1, signOf, _xkwds, _xkwds_pop  # _xkwds_get
 from pygeodesy3.constants import EPS, EPS1, EPS4, PI, PI2, PI_2, PI_4, R_M, \
                                  isnear0, isnear1, isnon0, \
                                  _0_0, _0_5, _1_0, _2_0, _90_0
@@ -35,10 +36,9 @@ from pygeodesy3.maths.umath import acos1, asin1, atan1d, atan2d, degrees90, \
                                    sincos2_, tan_2, _unrollon, _unrollon3, \
                                    unrollPI, _Wrap, wrap180, wrapPI
 from pygeodesy3.maths.vector3d import sumOf, Vector3d
-from pygeodesy3.miscs.basics import copysign0, map1, signOf
 from pygeodesy3.miscs.errors import _AssertionError, CrossError, crosserrors, \
                                     _TypeError, _ValueError, IntersectionError, \
-                                    _xError, _xkwds, _xkwds_pop  # _xkwds_get
+                                    _xError
 # from pygeodesy3.miscs.named import notImplemented  # from .points
 from pygeodesy3.miscs.namedTuples import LatLon3Tuple, NearestOn3Tuple, \
                                          Triangle7Tuple, Triangle8Tuple
@@ -54,7 +54,7 @@ from pygeodesy3.spherical.base import _m2radians, CartesianSphericalBase, \
 from math import asin, atan2, cos, degrees, fabs, radians, sin
 
 __all__ = _ALL_LAZY.spherical_trigonometry
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _PI_EPS4 = PI - EPS4
 if _PI_EPS4 >= PI:
@@ -950,7 +950,7 @@ def _intersect(start1, end1, start2, end2, height=None, wrap=False,  # in .ellip
             a, b = antipode_(a, b)  # PYCHOK PhiLam2Tuple
 
     else:  # end point(s) or bearing(s)
-        _N_vector_ = _MODS.base.nvector._N_vector_
+        _N_vector_ = _MODS.Base.nvector._N_vector_
 
         x1, d1 = _int3d2(s1, end1, wrap, _1_, _N_vector_, hs)
         x2, d2 = _int3d2(s2, end2, wrap, _2_, _N_vector_, hs)
@@ -1165,7 +1165,7 @@ def meanOf(points, height=None, wrap=False, LatLon=LatLon, **LatLon_kwds):
         for p in Ps.iterate(closed=False):
             yield p._N_vector
 
-    m = _MODS.base.nvector
+    m = _MODS.Base.nvector
     # geographic, vectorial mean
     n =  m.sumOf(_N_vs(points, wrap), h=height, Vector=m.NvectorBase)
     lat, lon, h = n.latlonheight

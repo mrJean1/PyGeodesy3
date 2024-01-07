@@ -15,16 +15,16 @@ under the MIT/X11 License.  For more information, see the U{GeographicLib
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _2cos2x,  Fsum, property_RO
+from pygeodesy3.Base.karney import _2cos2x,  Fsum, property_RO
+from pygeodesy3.basics import isodd, neg, _reverange, _xnumpy
 from pygeodesy3.constants import PI_2, PI_4, isfinite, _0_0, _0_5, _naninf
 # from pygeodesy3.lazily import _ALL_OTHER  # from .maths.auxilats.auxily
 from pygeodesy3.maths.auxilats.auxily import _Dm,  _ALL_OTHER
-# from pygeodesy3.maths.fsums import Fsum   # from .base.karney
-from pygeodesy3.miscs.basics import isodd, neg, _reverange, _xnumpy
-# from pygeodesy3.miscs.props import property_RO  # from .base.karney
+# from pygeodesy3.maths.fsums import Fsum   # from .Base.karney
+# from pygeodesy3.miscs.props import property_RO  # from .Base.karney
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 class AuxDST(object):

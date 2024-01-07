@@ -14,20 +14,27 @@ under the MIT/X11 License.  For more information, see the U{GeographicLib
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _Dict  # PYCHOK used!
 from pygeodesy3.constants import INF, NAN, isinf, isnan, _0_0, _0_5, \
                                 _1_0, _copysign_1_0, _over, _1_over
-# from pygeodesy3.interns import NN  # from .miscs.errors
-from pygeodesy3.lazily import _ALL_MODS as _MODS, _ALL_OTHER  # PYCHOK used!
+# from pygeodesy3.interns import NN  # from .lazily
+from pygeodesy3.lazily import _ALL_MODS as _MODS, _ALL_OTHER,  NN  # PYCHOK used!
 from pygeodesy3.maths.fmath import hypot1 as _sc, hypot2_
 from pygeodesy3.maths.umath import atan1
-from pygeodesy3.miscs.errors import AuxError,  NN
-# from pygeodesy3.miscs.named import _Dict  # from .base.karney
+# from pygeodesy3.miscs.errors import _ValueError  # from .miscs.named
+from pygeodesy3.miscs.named import _Dict,  _ValueError
 
 from math import asinh, copysign
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.03'
+
+
+class AuxError(_ValueError):
+    '''Error raised for an L{Aux<maths.auxilats.auxily.Aux>}, L{AuxDLat
+       <maths.auxilats.auxDLat.AuxDLat>}, L{AuxLat<maths.auxilats.auxLat.AuxLat>}
+       or L{rhumb.aux_} issue.
+    '''
+    pass
 
 
 class Aux(object):

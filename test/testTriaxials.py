@@ -9,9 +9,9 @@ __version__ = '23.12.17'
 from bases import random, startswith, TestsBase
 
 from pygeodesy3 import EPS4, F_DEG_, F_DMS, PI_2, PI_4, Ellipsoids, fstr, \
-                      JacobiConformal, JacobiConformalSpherical, Los, \
-                      map1, map2, signBit, sincos2d_, Triaxial, \
-                      Triaxial_, Triaxials, triaxials, Vector3d
+                       JacobiConformal, JacobiConformalSpherical, Los, \
+                       map1, map2, signBit, sincos2d_, Triaxial, \
+                       Triaxial_, Triaxials, triaxials, Vector3d
 from math import radians
 
 

@@ -9,7 +9,7 @@ __version__ = '23.12.07'
 from bases import GeodSolve, geographiclib, startswith, TestsBase
 
 from pygeodesy3 import F_D, F_DEG, F_DMS, fstr, Datums, \
-                      Osgr, parseOSGR, toOsgr
+                       Osgr, parseOSGR, toOsgr
 
 
 class Tests(TestsBase):
@@ -219,7 +219,7 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import ellipsoidalExact, ellipsoidalKarney, osgr, \
-                          ellipsoidalNvector, ellipsoidalVincenty  # sphericalNvector
+                           ellipsoidalNvector, ellipsoidalVincenty  # sphericalNvector
 
     t = Tests(__file__, __version__, osgr)
     t.testOSgr(ellipsoidalNvector)

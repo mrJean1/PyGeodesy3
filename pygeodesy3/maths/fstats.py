@@ -7,13 +7,13 @@ L{pygeodesy3.Fsum}, precision floating point summation.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import isodd, islistuple, _xinstanceof, \
+                             _xsubclassof, _zip
 from pygeodesy3.constants import _0_0, _2_0, _3_0, _4_0, _6_0,  _xError
 from pygeodesy3.interns import NN, _iadd_op_, _invalid_, _other_, _SPACE_
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY
 from pygeodesy3.maths.fmath import hypot2,  sqrt
 from pygeodesy3.maths.fsums import _2float, Fsum,  Fmt
-from pygeodesy3.miscs.basics import isodd, islistuple, _xinstanceof, \
-                                   _xsubclassof, _zip
 # from pygeodesy3.miscs.errors import _xError  # from .constants
 from pygeodesy3.miscs.named import _Named, _NotImplemented, notOverloaded, \
                                     property_RO
@@ -23,7 +23,7 @@ from pygeodesy3.miscs.named import _Named, _NotImplemented, notOverloaded, \
 # from math import sqrt  # from .maths.fmath
 
 __all__ = _ALL_LAZY.maths_fstats
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _Floats =  Fsum, float
 _Scalar = _Floats + (int,)  # XXX basics._Ints is ABCMeta in Python 2

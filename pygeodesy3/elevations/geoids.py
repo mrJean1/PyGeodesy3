@@ -81,6 +81,7 @@ courtesy of SBFRF.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import len2, map1, map2, isodd, ub2str as _ub2str
 from pygeodesy3.constants import EPS, _float as _F, _0_0, _1_0, _180_0, _360_0
 # from pygoedesy.distances.formy import heightOrthometric  # _MODS
 # from pygeodesy3.earth.datums import _ellipsoidal_datum  # from .elevations.heights
@@ -96,7 +97,6 @@ from pygeodesy3.interns import MISSING, NN, _4_, _COLONSPACE_, _COMMASPACE_, \
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _FOR_DOCS
 from pygeodesy3.maths.fmath import favg, Fdot, fdot, Fhorner, frange
 # from pygeodesy3.maths.umath import _Wrap  # from .elevations.heights
-from pygeodesy3.miscs.basics import len2, map1, map2, isodd, ub2str as _ub2str
 # from pygeodesy3.miscs.dms import parseDMS2  # _MODS
 from pygeodesy3.miscs.errors import _incompatible, LenError, RangeError, \
                                      SciPyError, _SciPyIssue
@@ -118,7 +118,7 @@ except ImportError:  # Python 3+
     from io import BytesIO as _BytesIO  # PYCHOK expected
 
 __all__ = _ALL_LAZY.elevations_geoids
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _assert_ = 'assert'
 _bHASH_  =  b'#'

@@ -26,6 +26,8 @@ and U{Ordnance Survey National Grid<https://WikiPedia.org/wiki/Ordnance_Survey_N
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import halfs2, isbool, isfloat, map1, _splituple, \
+                             _xkwds, _xkwds_get, _xsubclassof
 from pygeodesy3.constants import _1_0, _10_0,  _N_2_0  # PYCHOK used!
 from pygeodesy3.ellipsoidal.base import LatLonEllipsoidalBase as _LLEB
 # from pygeodesy3.grids.osgr import Osgr  # BACKWARD _MODS
@@ -36,12 +38,9 @@ from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.fmath import Fdot, fpowers, Fsum
 # from pygeodesy3.maths.fsums import Fsum  # from .fmath
 from pygeodesy3.maths.umath import degrees90, degrees180, sincostan3, truncate
-from pygeodesy3.miscs.basics import halfs2, isbool, isfloat, map1, \
-                                   _splituple, _xsubclassof
 # from pygeodesy3.miscs.dms import parseDMS2   # _MODS
 from pygeodesy3.earth.datums import Datums, _ellipsoidal_datum, _WGS84
-from pygeodesy3.miscs.errors import _parseX, _TypeError, _ValueError, \
-                                   _xkwds, _xkwds_get
+from pygeodesy3.miscs.errors import _parseX, _TypeError, _ValueError
 from pygeodesy3.miscs.named import _NamedBase, nameof, _xnamed
 from pygeodesy3.miscs.namedTuples import EasNor2Tuple, LatLon2Tuple, \
                                          LatLonDatum3Tuple
@@ -54,7 +53,7 @@ from pygeodesy3.miscs.units import Easting, Lam_, Lat, Lon, Northing, \
 from math import cos, fabs, radians, sin, sqrt
 
 __all__ = _ALL_LAZY.grids_osgr
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _equivalent_ = 'equivalent'
 _OSGR_       = 'OSGR'

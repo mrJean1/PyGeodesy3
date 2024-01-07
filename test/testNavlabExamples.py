@@ -17,10 +17,10 @@ if __name__ == '__main__':
 
     from pygeodesy3 import Datums, F_D, EcefVeness, Ned, Ned4Tuple
     from pygeodesy3.ellipsoidal import exact as ellipsoidalExact, \
-                                      nvector as ellipsoidalNvector, \
-                                      vincenty as ellipsoidalVincenty
+                                       nvector as ellipsoidalNvector, \
+                                       vincenty as ellipsoidalVincenty
     from pygeodesy3.spherical import nvector as sphericalNvector, \
-                                    trigonometry as sphericalTrigonometry
+                                     trigonometry as sphericalTrigonometry
 
     class Examples(TestsBase):  # overload test()
         def test(self, ex, name, *args, **kwds):

@@ -54,7 +54,7 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import Ellipsoids, ExactTransverseMercator as _ETM, \
-                          ktm, KTransverseMercator as _KTM
+                           ktm, KTransverseMercator as _KTM
     from sys import argv
 
     _t = len(argv) > 1 and argv[1] == '-t'

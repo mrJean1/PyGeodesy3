@@ -6,6 +6,8 @@ u'''Utilities using precision floating point summation.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import _copysign, copysign0, isint, len2, \
+                              _xkwds_get, _xkwds_pop
 from pygeodesy3.constants import EPS0, EPS02, EPS1, NAN, PI, PI_2, PI_4, \
                                 _0_0, _0_125, _0_25, _0_5, _1_0, _N_1_0, \
                                 _1_3rd, _1_5, _1_6th, _2_0, _2_3rd, _3_0, \
@@ -15,9 +17,8 @@ from pygeodesy3.interns import MISSING, _few_, _h_, _invokation_, _negative_, \
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _sys_version_info2
 from pygeodesy3.maths.fsums import _2float, _Powers, Fsum, _fsum, fsum, fsum1_, \
                                    _pow_op_,  Fmt, unstr
-from pygeodesy3.miscs.basics import _copysign, copysign0, isint, len2
 from pygeodesy3.miscs.errors import _IsnotError, LenError, _TypeError, _ValueError, \
-                                    _xError, _xkwds_get, _xkwds_pop
+                                    _xError
 # from pygeodesy3.miscs.streprs import Fmt, unstr  # from .maths.fsums
 # from pygeodesy3.miscs.units import Int_, _isHeight, _isRadius  # _MODS circular
 
@@ -25,7 +26,7 @@ from math import fabs, sqrt  # pow
 from operator import mul as _mul  # in .triaxials
 
 __all__ = _ALL_LAZY.maths_fmath
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 # sqrt(2) <https://WikiPedia.org/wiki/Square_root_of_2>
 _0_4142 = 0.414213562373095  # sqrt(_2_0) - _1_0

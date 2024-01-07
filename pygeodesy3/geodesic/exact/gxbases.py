@@ -8,19 +8,19 @@ and licensed under the MIT/X11 License.  For more information, see the
 U{GeographicLib<https://GeographicLib.SourceForge.io>} documentation.
 '''
 
-from pygeodesy3.base.karney import _CapsBase, GeodesicError, isodd, \
+from pygeodesy3.Base.karney import _CapsBase, GeodesicError, isodd, \
                                    _2cos2x, _sum2_,  _hypot, _MODS
+# from pygeodesy3.basics import isodd  # from .Base.karney
 from pygeodesy3.constants import _0_0, _100_0
 # from pygeodesy3.interns import _not_  # from .errors
-# from pygeodesy3.lazily import _ALL_MODS as _MODS, printf  # .base.karney, _MODS
-# from pygeodesy3.maths.fmath import hypot as _hypot  # from .base.karney
-# from pygeodesy3.miscs.basics import isodd  # from .base.karney
+# from pygeodesy3.lazily import _ALL_MODS as _MODS, printf  # .Base.karney, _MODS
+# from pygeodesy3.maths.fmath import hypot as _hypot  # from .Base.karney
 from pygeodesy3.miscs.errors import _not_, _or
 
 from math import ldexp as _ldexp
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 # valid C{nC4}s and C{C4order}s, see _xnC4 below
 _nC4s = {24: 2900, 27: 4032, 30: 5425}

@@ -15,8 +15,8 @@ warnings.filterwarnings('ignore')  # or 'error'
 from bases import coverage, scipy, PyGeodesy3_dir, TestsBase
 
 from pygeodesy3 import fstr, len2, egmGeoidHeights, Fwelford, \
-                      GeoidError, GeoidG2012B, GeoidKarney, GeoidPGM, \
-                      LatLon_, NN, RangeError, reprs
+                       GeoidError, GeoidG2012B, GeoidKarney, GeoidPGM, \
+                       LatLon_, NN, RangeError, reprs
 from pygeodesy3.interns import _DOT_
 
 import os.path as _os_path

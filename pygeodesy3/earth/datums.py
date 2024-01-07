@@ -65,6 +65,7 @@ datum, q.v. U{"A Guide to Coordinate Systems in Great Britain", Section 6
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import islistuple, map2, neg, _xattr, _xinstanceof
 from pygeodesy3.constants import R_M, _float as _F, _0_0, _0_26, _1_0, _2_0, _8_0, _3600_0
 from pygeodesy3.earth.ellipsoids import a_f2Tuple, Ellipsoid, Ellipsoid2, Ellipsoids, _EWGS84
 from pygeodesy3.interns import NN, _a_, _Airy1830_, _AiryModified_, _Bessel1841_, \
@@ -74,13 +75,12 @@ from pygeodesy3.interns import NN, _a_, _Airy1830_, _AiryModified_, _Bessel1841_
                               _NAD83_, _s_, _Sphere_, _spherical_, _sx_, _sy_, _sz_, \
                               _transform_, _tx_, _ty_, _tz_, _UNDER_, _WGS72_, _WGS84_, \
                               _under
-from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
+# from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS  # from miscs.namedTuples
 from pygeodesy3.maths.fmath import fdot, fmean,  Fmt
-from pygeodesy3.miscs.basics import islistuple, map2, neg, _xinstanceof
-from pygeodesy3.miscs.errors import _IsnotError, _TypeError, _xattr
+from pygeodesy3.miscs.errors import _IsnotError, _TypeError
 from pygeodesy3.miscs.named import _lazyNamedEnumItem as _lazy, _NamedEnum, _NamedEnumItem, \
                                     Property_RO, property_RO
-from pygeodesy3.miscs.namedTuples import Vector3Tuple
+from pygeodesy3.miscs.namedTuples import Vector3Tuple,  _ALL_LAZY, _MODS
 # from pygeodesy3.miscs.props import Property_RO, property_RO  # from .miscs.named
 # from pygeodesy3.miscs.streprs import Fmt  # from .maths.fmath
 from pygeodesy3.miscs.units import _isRadius, radians, Radius_
@@ -89,7 +89,7 @@ from pygeodesy3.miscs.units import _isRadius, radians, Radius_
 # from math import radians  # from .units
 
 __all__ = _ALL_LAZY.earth_datums
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _a_ellipsoid_ = _UNDER_(_a_, _ellipsoid_)
 _BD72_        = 'BD72'
@@ -453,7 +453,7 @@ class Datum(_NamedEnumItem):
         return self._transform
 
 
-def _earth_datum(inst, a_earth, f=None, name=NN, raiser=_a_ellipsoid_):  # in .base.karney, .trf, ...
+def _earth_datum(inst, a_earth, f=None, name=NN, raiser=_a_ellipsoid_):  # in .Base.karney, .trf, ...
     '''(INTERNAL) Set C{inst._datum} from C{(B{a_..}, B{f})} or C{B{.._ellipsoid}}
        (L{Ellipsoid}, L{Ellipsoid2}, L{Datum}, C{a_f2Tuple} or C{scalar} earth radius).
 

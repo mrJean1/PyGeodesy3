@@ -93,7 +93,7 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import ellipsoidalExact, ellipsoidalVincenty, \
-                          sphericalNvector, sphericalTrigonometry
+                           sphericalNvector, sphericalTrigonometry
 
     t = Tests(__file__, __version__)
     t.testBooleans(ellipsoidalExact)

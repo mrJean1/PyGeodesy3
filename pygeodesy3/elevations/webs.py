@@ -22,12 +22,12 @@ see also modules L{geoids<pygeodesy3.elevations.geoids>} L{heights
        C{"/Applications/Python\\ X.Y/Install\\ Certificates.command"}
 '''
 
+from pygeodesy3.basics import clips, ub2str, _xkwds_get
 from pygeodesy3.interns import NN, _AMPERSAND_, _COLONSPACE_, \
                               _elevation_, _height_, _LCURLY_, \
                               _n_a_, _no_, _RCURLY_, _SPACE_
-from pygeodesy3.lazily import _ALL_LAZY
-from pygeodesy3.miscs.basics import clips, ub2str
-from pygeodesy3.miscs.errors import ParseError, _xkwds_get
+# from pygeodesy3.lazily import _ALL_LAZY  # from .miscs.errors
+from pygeodesy3.miscs.errors import ParseError,  _ALL_LAZY
 from pygeodesy3.miscs.named import _NamedTuple
 from pygeodesy3.miscs.streprs import Fmt, fstr, lrstrip,  fabs
 from pygeodesy3.miscs.units import Lat, Lon, Meter, Scalar, Str
@@ -35,7 +35,7 @@ from pygeodesy3.miscs.units import Lat, Lon, Meter, Scalar, Str
 # from math import fabs  # from .miscs.streprs
 
 __all__ = _ALL_LAZY.elevations_webs
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 try:
     from urllib2 import urlopen  # quote, urlcleanup

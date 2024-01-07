@@ -122,11 +122,16 @@
         href="pygeodesy3.projections.ltpTuples.Attitude4Tuple-class.html" 
         class="link">Attitude4Tuple</a> issue.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.miscs.errors.AuxError-class.html">pygeodesy3.miscs.errors.AuxError</a></strong>:
-      <em class="summary">Error raised for a <a href="pygeodesy3.rhumb.aux_-module.html" 
-        class="link" onclick="show_private();">rhumb.aux_</a>, 
-        <code>Aux</code>, <code>AuxDLat</code> or <code>AuxLat</code> 
-        issue.</em>
+    <li> <strong class="uidlink"><a href="pygeodesy3.maths.auxilats.auxily.AuxError-class.html" onclick="show_private();">pygeodesy3.maths.auxilats.auxily.AuxError</a></strong>:
+      <em class="summary">Error raised for an <a 
+        href="pygeodesy3.maths.auxilats.auxily-module.html#Aux" 
+        class="link">Aux</a>, <a 
+        href="pygeodesy3.maths.auxilats.auxDLat.AuxDLat-class.html" 
+        class="link">AuxDLat</a>, <a 
+        href="pygeodesy3.maths.auxilats.auxLat.AuxLat-class.html" 
+        class="link">AuxLat</a> or <a 
+        href="pygeodesy3.rhumb.aux_-module.html" class="link" 
+        onclick="show_private();">rhumb.aux_</a> issue.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.projections.azimuthal.AzimuthalError-class.html">pygeodesy3.projections.azimuthal.AzimuthalError</a></strong>:
       <em class="summary">An azimuthal <a 
@@ -181,8 +186,8 @@
         onclick="show_private();">pygeodesy3.geodesic.exact</a>, <a 
         href="pygeodesy3.geodesic.wrap-module.html" class="link" 
         onclick="show_private();">pygeodesy3.geodesic.wrap</a> or <a 
-        href="pygeodesy3.base.karney-module.html" class="link" 
-        onclick="show_private();">pygeodesy3.base.karney</a>.</em>
+        href="pygeodesy3.Base.karney-module.html" class="link" 
+        onclick="show_private();">pygeodesy3.Base.karney</a>.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.grids.geohash.GeohashError-class.html">pygeodesy3.grids.geohash.GeohashError</a></strong>:
       <em class="summary">Geohash encode, decode or other <a 
@@ -1211,7 +1216,7 @@
         target="_top">TransverseMercator</a> transcoded to pure Python, 
         following is a partial copy of <i>Karney</i>'s documentation.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.latlon.LatLonBase-class.html">pygeodesy3.base.latlon.LatLonBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.latlon.LatLonBase-class.html">pygeodesy3.Base.latlon.LatLonBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for <code>LatLon</code> points on spherical 
         or ellipsoidal earth models.</em>
     <ul>
@@ -1247,17 +1252,6 @@
         initial and final bearing (azimuths) between two given points or 
         the destination point given a start point and an (initial) bearing.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney.LatLon-class.html">pygeodesy3.ellipsoidal.karney.LatLon</a></strong>:
-      <em class="summary">An ellipsoidal <a 
-        href="pygeodesy3.ellipsoidal.karney.LatLon-class.html" 
-        class="link">LatLon</a> similar to <a 
-        href="pygeodesy3.ellipsoidal.vincenty.LatLon-class.html" 
-        class="link">ellipsoidal.vincenty.LatLon</a> but using <i>Charles 
-        F. F. Karney</i>'s Python <a 
-        href="https://PyPI.org/project/geographiclib" 
-        target="_top">geographiclib</a> to compute geodesic distances, 
-        bearings (azimuths), etc.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact.LatLon-class.html">pygeodesy3.ellipsoidal.exact.LatLon</a></strong>:
       <em class="summary">An ellipsoidal <a 
         href="pygeodesy3.ellipsoidal.exact.LatLon-class.html" 
@@ -1271,11 +1265,22 @@
         class="link">GeodesicLineExact</a> to compute the geodesic 
         distances, bearings (azimuths), etc.</em>
     </li>
-    </ul>
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney.LatLon-class.html">pygeodesy3.ellipsoidal.karney.LatLon</a></strong>:
+      <em class="summary">An ellipsoidal <a 
+        href="pygeodesy3.ellipsoidal.karney.LatLon-class.html" 
+        class="link">LatLon</a> similar to <a 
+        href="pygeodesy3.ellipsoidal.vincenty.LatLon-class.html" 
+        class="link">ellipsoidal.vincenty.LatLon</a> but using <i>Charles 
+        F. F. Karney</i>'s Python <a 
+        href="https://PyPI.org/project/geographiclib" 
+        target="_top">geographiclib</a> to compute geodesic distances, 
+        bearings (azimuths), etc.</em>
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.nvector.LatLonNvectorBase-class.html">pygeodesy3.base.nvector.LatLonNvectorBase</a></strong>:
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.nvector.LatLonNvectorBase-class.html">pygeodesy3.Base.nvector.LatLonNvectorBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for n-vector-based ellipsoidal and spherical 
         <code>LatLon</code> classes.</em>
     <ul>
@@ -1364,7 +1369,7 @@
         href="https://www.OrdnanceSurvey.co.UK/documents/resources/guide-to-nationalgrid.pdf"
         target="_top">National Grid</a>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.utmups.UtmUpsBase-class.html">pygeodesy3.base.utmups.UtmUpsBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.utmups.UtmUpsBase-class.html">pygeodesy3.Base.utmups.UtmUpsBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for <a 
         href="pygeodesy3.projections.utm.Utm-class.html" 
         class="link">Utm</a> and <a 
@@ -1392,13 +1397,13 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.vector3d.Vector3dBase-class.html">pygeodesy3.base.vector3d.Vector3dBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.vector3d.Vector3dBase-class.html">pygeodesy3.Base.vector3d.Vector3dBase</a></strong>:
       <em class="summary">(INTERNAL) Generic 3-D vector base class.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.maths.vector3d.Vector3d-class.html">pygeodesy3.maths.vector3d.Vector3d</a></strong>:
       <em class="summary">Extended 3-D vector.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.cartesian.CartesianBase-class.html">pygeodesy3.base.cartesian.CartesianBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html">pygeodesy3.Base.cartesian.CartesianBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for ellipsoidal and spherical 
         <code>Cartesian</code>.</em>
     <ul>
@@ -1466,7 +1471,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.nvector.NvectorBase-class.html">pygeodesy3.base.nvector.NvectorBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.nvector.NvectorBase-class.html">pygeodesy3.Base.nvector.NvectorBase</a></strong>:
       <em class="summary">Base class for ellipsoidal and spherical <code>Nvector</code>s.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.spherical.nvector.Nvector-class.html">pygeodesy3.spherical.nvector.Nvector</a></strong>:
@@ -1688,7 +1693,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney._CapsBase-class.html">pygeodesy3.base.karney._CapsBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney._CapsBase-class.html">pygeodesy3.Base.karney._CapsBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for <code>[_]Geodesic*Exact</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.rhumb.bases.RhumbBase-class.html">pygeodesy3.rhumb.bases.RhumbBase</a></strong>:
@@ -1746,11 +1751,11 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.solve._SolveLineSolveBase-class.html">pygeodesy3.base.solve._SolveLineSolveBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.solve._SolveBases-class.html">pygeodesy3.Base.solve._SolveBases</a></strong>:
       <em class="summary">(NTERNAL) Base class for <code>_Solve</code> and 
         <code>_LineSolve</code>.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.solve._SolveBase-class.html">pygeodesy3.base.solve._SolveBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.solve._SolveBase-class.html">pygeodesy3.Base.solve._SolveBase</a></strong>:
       <em class="summary">(NTERNAL) Base class for <code>_GeodesicSolveBase</code> and 
         <code>_RhumbSolveBase</code>.</em>
     <ul>
@@ -1808,7 +1813,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.solve._SolveLineBase-class.html">pygeodesy3.base.solve._SolveLineBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.solve._SolveLineBase-class.html">pygeodesy3.Base.solve._SolveLineBase</a></strong>:
       <em class="summary">(NTERNAL) Base class for <code>GeodesicLineSolve</code> and 
         <code>RhumbLineSolve</code>.</em>
     <ul>
@@ -2000,7 +2005,7 @@
         <code>scale</code> is the azimuthal scale of the projection at 
         point.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Area3Tuple-class.html">pygeodesy3.base.karney.Area3Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Area3Tuple-class.html">pygeodesy3.Base.karney.Area3Tuple</a></strong>:
       <em class="summary">3-Tuple <code>(number, perimeter, area)</code> with the 
         <code>number</code> of points of the polygon or polyline, the 
         <code>perimeter</code> in <code>meter</code> and the 
@@ -2455,6 +2460,16 @@
         of points and -possible reduced- <code>list</code> or 
         <code>tuple</code> of <code>points</code>.</em>
     </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html">pygeodesy3.distances.formy.RThetaPhi3Tuple</a></strong>:
+      <em class="summary">3-Tuple <code>(r, theta, phi)</code> with radial distance 
+        <code>r</code> in <code>meter</code>, inclination 
+        <code>theta</code> (with respect to the positive z-axis) and 
+        azimuthal angle <code>phi</code> in <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a> <i>or</i> <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a>.</em>
+    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.Radical2Tuple-class.html">pygeodesy3.distances.formy.Radical2Tuple</a></strong>:
       <em class="summary">2-Tuple <code>(ratio, xline)</code> of the <i>radical</i> 
         <code>ratio</code> and <i>radical</i> <code>xline</code>, both 
@@ -2610,10 +2625,10 @@
       <em class="summary">4-Tuple <code>(x, y, z, ltp)</code>, all in <code>meter</code> 
         except <code>ltp</code>.</em>
     </li>
-    <li> <strong class="uidlink">pygeodesy3.base.karney._GTuple</strong>:
+    <li> <strong class="uidlink">pygeodesy3.Base.karney._GTuple</strong>:
       <em class="summary">(INTERNAL) Helper.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Direct9Tuple-class.html">pygeodesy3.base.karney.Direct9Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Direct9Tuple-class.html">pygeodesy3.Base.karney.Direct9Tuple</a></strong>:
       <em class="summary">9-Tuple <code>(a12, lat2, lon2, azi2, s12, m12, M12, M21, 
         S12)</code> with arc length <code>a12</code>, angles 
         <code>lat2</code>, <code>lon2</code> and azimuth <code>azi2</code> 
@@ -2635,7 +2650,7 @@
         href="https://GeographicLib.SourceForge.io/C++/doc/GeodSolve.1.html"
         target="_top">GeodSolve</a>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Inverse10Tuple-class.html">pygeodesy3.base.karney.Inverse10Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Inverse10Tuple-class.html">pygeodesy3.Base.karney.Inverse10Tuple</a></strong>:
       <em class="summary">10-Tuple <code>(a12, s12, salp1, calp1, salp2, calp2, m12, M12, 
         M21, S12)</code> with arc length <code>a12</code> in 
         <code>degrees</code>, distance <code>s12</code> and reduced length 
@@ -2645,7 +2660,7 @@
         <code>calp2</code> of the initial <code>1</code> and final 
         <code>2</code> (forward) azimuths.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Rhumb8Tuple-class.html">pygeodesy3.base.karney.Rhumb8Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Rhumb8Tuple-class.html">pygeodesy3.Base.karney.Rhumb8Tuple</a></strong>:
       <em class="summary">8-Tuple <code>(lat1, lon1, lat2, lon2, azi12, s12, S12, a12)</code>
         with lat- <code>lat1</code>, <code>lat2</code> and longitudes 
         <code>lon1</code>, <code>lon2</code> of both points, the azimuth of
@@ -2695,14 +2710,14 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units._NamedUnit-class.html">pygeodesy3.base.units._NamedUnit</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units._NamedUnit-class.html">pygeodesy3.Base.units._NamedUnit</a></strong>:
       <em class="summary">(INTERNAL) Base class for <code>units</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.units.Bool-class.html">pygeodesy3.miscs.units.Bool</a></strong>:
       <em class="summary">Named <code>bool</code>, a sub-class of <code>int</code> like 
         Python's <code>bool</code>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Float-class.html">pygeodesy3.base.units.Float</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Float-class.html">pygeodesy3.Base.units.Float</a></strong>:
       <em class="summary">Named <code>float</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.units.Degrees-class.html">pygeodesy3.miscs.units.Degrees</a></strong>:
@@ -2868,7 +2883,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Radius-class.html">pygeodesy3.base.units.Radius</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Radius-class.html">pygeodesy3.Base.units.Radius</a></strong>:
       <em class="summary">Named <code>float</code> representing a radius, conventionally in 
         <code>meter</code>.</em>
     </li>
@@ -2878,7 +2893,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Int-class.html">pygeodesy3.base.units.Int</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Int-class.html">pygeodesy3.Base.units.Int</a></strong>:
       <em class="summary">Named <code>int</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.units.Bool-class.html">pygeodesy3.miscs.units.Bool</a></strong>:
@@ -2907,7 +2922,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Str-class.html">pygeodesy3.base.units.Str</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Str-class.html">pygeodesy3.Base.units.Str</a></strong>:
       <em class="summary">Named, callable <code>str</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.units.Band-class.html">pygeodesy3.miscs.units.Band</a></strong>:
@@ -2936,7 +2951,7 @@
     <li> <strong class="uidlink">str</strong>:
       <em class="summary">str(object='') -&gt; string</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Str-class.html">pygeodesy3.base.units.Str</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Str-class.html">pygeodesy3.Base.units.Str</a></strong>:
       <em class="summary">Named, callable <code>str</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.units.Band-class.html">pygeodesy3.miscs.units.Band</a></strong>:
@@ -2978,7 +2993,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
       <em class="summary">(INTERNAL) An <code>dict</code> with both key <i>and</i> attribute 
         access to the <code>dict</code> items.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.GDict-class.html">pygeodesy3.base.karney.GDict</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.GDict-class.html">pygeodesy3.Base.karney.GDict</a></strong>:
       <em class="summary">A <code>dict</code> with both <code>key</code> <i>and</i> 
         <code>attribute</code> access to the <code>dict</code> items.</em>
     <ul>
@@ -3007,7 +3022,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
     <li> <strong class="uidlink">float</strong>:
       <em class="summary">float(x) -&gt; floating point number</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Float-class.html">pygeodesy3.base.units.Float</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Float-class.html">pygeodesy3.Base.units.Float</a></strong>:
       <em class="summary">Named <code>float</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.units.Degrees-class.html">pygeodesy3.miscs.units.Degrees</a></strong>:
@@ -3173,7 +3188,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Radius-class.html">pygeodesy3.base.units.Radius</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Radius-class.html">pygeodesy3.Base.units.Radius</a></strong>:
       <em class="summary">Named <code>float</code> representing a radius, conventionally in 
         <code>meter</code>.</em>
     </li>
@@ -3188,7 +3203,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
     <li> <strong class="uidlink">int</strong>:
       <em class="summary">int(x=0) -&gt; int or long int(x, base=10) -&gt; int or long</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.units.Int-class.html">pygeodesy3.base.units.Int</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.units.Int-class.html">pygeodesy3.Base.units.Int</a></strong>:
       <em class="summary">Named <code>int</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.units.Bool-class.html">pygeodesy3.miscs.units.Bool</a></strong>:
@@ -3262,7 +3277,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         <code>scale</code> is the azimuthal scale of the projection at 
         point.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Area3Tuple-class.html">pygeodesy3.base.karney.Area3Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Area3Tuple-class.html">pygeodesy3.Base.karney.Area3Tuple</a></strong>:
       <em class="summary">3-Tuple <code>(number, perimeter, area)</code> with the 
         <code>number</code> of points of the polygon or polyline, the 
         <code>perimeter</code> in <code>meter</code> and the 
@@ -3717,6 +3732,16 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         of points and -possible reduced- <code>list</code> or 
         <code>tuple</code> of <code>points</code>.</em>
     </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html">pygeodesy3.distances.formy.RThetaPhi3Tuple</a></strong>:
+      <em class="summary">3-Tuple <code>(r, theta, phi)</code> with radial distance 
+        <code>r</code> in <code>meter</code>, inclination 
+        <code>theta</code> (with respect to the positive z-axis) and 
+        azimuthal angle <code>phi</code> in <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a> <i>or</i> <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a>.</em>
+    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.Radical2Tuple-class.html">pygeodesy3.distances.formy.Radical2Tuple</a></strong>:
       <em class="summary">2-Tuple <code>(ratio, xline)</code> of the <i>radical</i> 
         <code>ratio</code> and <i>radical</i> <code>xline</code>, both 
@@ -3872,10 +3897,10 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
       <em class="summary">4-Tuple <code>(x, y, z, ltp)</code>, all in <code>meter</code> 
         except <code>ltp</code>.</em>
     </li>
-    <li> <strong class="uidlink">pygeodesy3.base.karney._GTuple</strong>:
+    <li> <strong class="uidlink">pygeodesy3.Base.karney._GTuple</strong>:
       <em class="summary">(INTERNAL) Helper.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Direct9Tuple-class.html">pygeodesy3.base.karney.Direct9Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Direct9Tuple-class.html">pygeodesy3.Base.karney.Direct9Tuple</a></strong>:
       <em class="summary">9-Tuple <code>(a12, lat2, lon2, azi2, s12, m12, M12, M21, 
         S12)</code> with arc length <code>a12</code>, angles 
         <code>lat2</code>, <code>lon2</code> and azimuth <code>azi2</code> 
@@ -3897,7 +3922,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         href="https://GeographicLib.SourceForge.io/C++/doc/GeodSolve.1.html"
         target="_top">GeodSolve</a>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Inverse10Tuple-class.html">pygeodesy3.base.karney.Inverse10Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Inverse10Tuple-class.html">pygeodesy3.Base.karney.Inverse10Tuple</a></strong>:
       <em class="summary">10-Tuple <code>(a12, s12, salp1, calp1, salp2, calp2, m12, M12, 
         M21, S12)</code> with arc length <code>a12</code> in 
         <code>degrees</code>, distance <code>s12</code> and reduced length 
@@ -3907,7 +3932,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         <code>calp2</code> of the initial <code>1</code> and final 
         <code>2</code> (forward) azimuths.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.base.karney.Rhumb8Tuple-class.html">pygeodesy3.base.karney.Rhumb8Tuple</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.Rhumb8Tuple-class.html">pygeodesy3.Base.karney.Rhumb8Tuple</a></strong>:
       <em class="summary">8-Tuple <code>(lat1, lon1, lat2, lon2, azi12, s12, S12, a12)</code>
         with lat- <code>lat1</code>, <code>lat2</code> and longitudes 
         <code>lon1</code>, <code>lon2</code> of both points, the azimuth of
@@ -4002,7 +4027,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Dec 26 14:12:32 2023
+    Generated by Epydoc 3.0.1 on Sun Jan  7 13:19:53 2024
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

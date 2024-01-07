@@ -14,11 +14,11 @@ A pure Python implementation transcoded from I{Charles Karney}'s C++ class U{UTM
 including coverage of UPS as zone C{0}.
 '''
 
-from pygeodesy3.base.utmups import _to3zBhp, _UPS_ZONE, _UTM_ZONE_MIN, \
+from pygeodesy3.Base.utmups import _to3zBhp, _UPS_ZONE, _UTM_ZONE_MIN, \
                                    _UTM_ZONE_MAX, _UTMUPS_ZONE_INVALID
+from pygeodesy3.basics import isint, isstr, _xinstanceof
 from pygeodesy3.interns import NN, _N_, _NS_, _S_, _SPACE_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_OTHER
-from pygeodesy3.miscs.basics import isint, isstr, _xinstanceof
 from pygeodesy3.miscs.errors import _ValueError
 from pygeodesy3.miscs.namedTuples import UtmUps2Tuple
 from pygeodesy3.miscs.props import Property_RO
@@ -28,7 +28,7 @@ from pygeodesy3.projections.ups import Ups
 from pygeodesy3.projections.utm import Utm
 
 __all__ = _ALL_LAZY.grids_epsg
-__version__ = '22.12.18'
+__version__ = '24.01.05'
 
 # _EPSG_INVALID = _UTMUPS_ZONE_INVALID
 _EPSG_N_01 = 32601  # EPSG code for UTM zone 01 N

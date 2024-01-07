@@ -9,19 +9,19 @@ as an (exact) rhumb or rhumb line from I{either GeographicLib 2.0 or 2.2+}.
        path of the C{RhumbSolve} executable.
 '''
 
-from pygeodesy3.base.karney import Caps, GDict, _norm180, _sincos2d,  _xinstanceof
-from pygeodesy3.base.solve import _SolveBase, _SolveLineBase
+from pygeodesy3.Base.karney import Caps, GDict, _norm180, _sincos2d,  _xinstanceof
+from pygeodesy3.Base.solve import _SolveBase, _SolveLineBase
+# from pygeodesy3.basics import _xinstanceof  # from .Base.karney
 from pygeodesy3.constants import _0_0, _180_0, _N_180_0, _over,  _90_0  # PYCHOK used!
 from pygeodesy3.interns import NN, _azi12_, _lat2_, _lon2_, _s12_, _S12_, _UNDER_  # _a12_,
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _getenv, _PYGEODESY3_RHUMBSOLVE_
 from pygeodesy3.maths.umath import _unrollon, _Wrap, wrap360
-# from pygeodesy3.miscs.basics import _xinstanceof  # from .base.karney
 from pygeodesy3.miscs.errors import RhumbError   # PYCHOK used!
 from pygeodesy3.miscs.namedTuples import Destination3Tuple, Distance3Tuple
 from pygeodesy3.miscs.props import Property, Property_RO  # deprecated_method
 
 __all__ = _ALL_LAZY.rhumb_solve
-__version__ = '23.12.23'
+__version__ = '24.01.05'
 
 
 class _RhumbSolveBase(_SolveBase):
@@ -363,8 +363,8 @@ if __name__ == '__main__':
         # using RhumbSolve and GeodesicExact for I{Karney}'s C++ U{rhumb-intercept.cpp
         # <https://SourceForge.net/p/geographiclib/discussion/1026620/thread/2ddc295e/>
         from pygeodesy3.constants import EPS4 as _TOL
-        from pygeodesy3.base.karney import _diff182,  fabs
-#       from math import fabs  # from .base.karney
+        from pygeodesy3.Base.karney import _diff182,  fabs
+#       from math import fabs  # from .Base.karney
 
         E  = rS.ellipsoid
         gX = E.geodesicx  # == GeodesicExact(E)

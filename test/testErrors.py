@@ -4,13 +4,13 @@
 # Test some of the L{errors}.
 
 __all__ = ('Tests',)
-__version__ = '23.03.27'
+__version__ = '23.12.31'
 
 from bases import isPython3, TestsBase
 
 from pygeodesy3 import crosserrors, exception_chaining, LenError, \
-                      LimitError, limiterrors, \
-                      RangeError, rangerrors
+                       LimitError, limiterrors, \
+                       RangeError, rangerrors
 
 from os import getenv
 
@@ -71,33 +71,17 @@ class Tests(TestsBase):
         self.test(exception_chaining.__name__, exception_chaining(RangeError()), None)
         self.test(exception_chaining.__name__, exception_chaining(TypeError()), None)
 
-    def testKwds(self, xkwds):
-        self.test(xkwds.__name__, xkwds({}, test='test1'), 'test1')
-        self.test(xkwds.__name__, xkwds({'test': 'test2'}, test='test3'), 'test2')
-        try:
-            x = AssertionError.__name__
-            t = xkwds({})
-        except AssertionError as a:
-            t = x = str(a)
-        self.test(xkwds.__name__, t, x)
-        try:
-            x = AssertionError.__name__
-            t = xkwds({}, n1='d1', n2='d2')
-        except AssertionError as a:
-            t = x = str(a)
-        self.test(xkwds.__name__, t, x)
-
 
 if __name__ == '__main__':
 
     from pygeodesy3 import errors, ClipError, CrossError, CSSError, EcefError, \
-                                  EllipticError, EPSGError, ETMError, FrechetError, \
-                                  GARSError, GeohashError, GeoidError, HausdorffError, \
-                                  HeightError, LazyImportError, LCCError, MGRSError, \
-                                  OSGRError, PGMError, PointsError, \
-                                  SciPyError, SciPyWarning, TRFError, UnitError, \
-                                  UPSError, UTMError, UTMUPSError, VectorError, \
-                                  VincentyError, WebMercatorError, WGRSError  # ClipError, RefFrameError
+                                   EllipticError, EPSGError, ETMError, FrechetError, \
+                                   GARSError, GeohashError, GeoidError, HausdorffError, \
+                                   HeightError, LazyImportError, LCCError, MGRSError, \
+                                   OSGRError, PGMError, PointsError, \
+                                   SciPyError, SciPyWarning, TRFError, UnitError, \
+                                   UPSError, UTMError, UTMUPSError, VectorError, \
+                                   VincentyError, WebMercatorError, WGRSError  # ClipError, RefFrameError
 
     t = Tests(__file__, __version__, errors)
     for E in (errors._AssertionError, errors._AttributeError, errors._IndexError,
@@ -111,7 +95,5 @@ if __name__ == '__main__':
               WebMercatorError, WGRSError):  # DEPRECATED RefFrameError
         t.testError(E)
     t.testErrors(errors._InvalidError, errors._IsnotError)
-    t.testKwds(errors._xkwds_get)
-    t.testKwds(errors._xkwds_pop)
     t.results()
     t.exit()

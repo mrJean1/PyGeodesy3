@@ -11,9 +11,9 @@ from testLatLon import Tests as _TestsLL
 from testVectorial import Tests as _TestsV
 
 from pygeodesy3 import EPS, F_D, F_D__, F_DMS, bearingDMS, compassDMS, \
-                      Datums, fstr, IntersectionError, \
-                      latlonDMS, latlonDMS_, m2SM, normDMS, PI, PI_4, R_M, \
-                      RefFrames, VincentyError, wrap360
+                       Datums, fstr, IntersectionError, \
+                       latlonDMS, latlonDMS_, m2SM, normDMS, PI, PI_4, R_M, \
+                       RefFrames, VincentyError, wrap360
 
 from math import radians
 from random import random
@@ -751,10 +751,10 @@ class Tests(_TestsLL, _TestsV):
 if __name__ == '__main__':
 
     from pygeodesy3 import Equidistant, EquidistantExact, \
-                          EquidistantGeodSolve, EquidistantKarney
+                           EquidistantGeodSolve, EquidistantKarney
     from pygeodesy3.ellipsoidal import exact as X, \
-                                      nvector as N, \
-                                      vincenty as V
+                                       nvector as N, \
+                                       vincenty as V
 
     t = Tests(__file__, __version__)
 

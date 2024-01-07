@@ -9,7 +9,7 @@ __version__ = '23.03.27'
 from bases import endswith, TestsBase
 
 from pygeodesy3 import degDMS, F_DMS, parseUTMUPS5, RangeError, strs, \
-                      toUps8, toUtmUps8, ups, Ups, UtmUps
+                       toUps8, toUtmUps8, ups, Ups, UtmUps
 
 
 class Tests(TestsBase):

@@ -9,10 +9,10 @@ __version__ = '23.09.28'
 from bases import TestsBase  # RandomLatLon
 
 from pygeodesy3 import albers, AlbersError, AlbersEqualArea, \
-                      AlbersEqualArea2, AlbersEqualArea4, \
-                      AlbersEqualAreaCylindrical, \
-                      AlbersEqualAreaNorth, AlbersEqualAreaSouth, \
-                      Datums, fstr, sincos2d
+                       AlbersEqualArea2, AlbersEqualArea4, \
+                       AlbersEqualAreaCylindrical, \
+                       AlbersEqualAreaNorth, AlbersEqualAreaSouth, \
+                       Datums, fstr, sincos2d
 
 _NAD27 = Datums.NAD27  # Clarke1866
 _WGS84 = Datums.WGS84

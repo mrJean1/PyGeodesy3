@@ -74,7 +74,9 @@ U{22<https://DLMF.NIST.gov/22>}.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _K_2_0, _norm180, _signBit, _sincos2
+from pygeodesy3.Base.karney import _K_2_0, _norm180, _signBit, _sincos2
+from pygeodesy3.basics import copysign0, map2, neg, neg_, _xattr, \
+                             _xkwds_pop,  _ALL_LAZY
 from pygeodesy3.constants import EPS, INF, NAN, PI, PI_2, PI_4, \
                                 _EPStol as _TolJAC, _0_0, _1_64th, \
                                 _0_25, _0_5, _1_0, _2_0, _N_2_0, \
@@ -84,11 +86,10 @@ from pygeodesy3.maths.fmath import fdot, hypot1, zqrt
 from pygeodesy3.maths.fsums import Fsum, _sum
 from pygeodesy3.interns import NN, _delta_, _DOT_, _f_, _invalid_, \
                               _invokation_, _negative_, _SPACE_
-from pygeodesy3.lazily import _ALL_LAZY
-# from pygeodesy3.maths.umath import sincos2 as _sincos2  # from .base.karney
-from pygeodesy3.miscs.basics import copysign0, map2, neg, neg_
-from pygeodesy3.miscs.errors import _ValueError, _xattr, _xkwds_pop
-from pygeodesy3.miscs.named import _Named, _NamedTuple,  Fmt, unstr
+# from pygeodesy3.lazily import _ALL_LAZY  from .basics
+# from pygeodesy3.maths.umath import sincos2 as _sincos2  # from .Base.karney
+# from pygeodesy3.miscs.errors import _ValueError  # from miscs.named
+from pygeodesy3.miscs.named import _Named, _NamedTuple,  Fmt, unstr, _ValueError
 from pygeodesy3.miscs.props import _allPropertiesOf_n, Property_RO, _update_all
 # from pygeodesy3.miscs.streprs import Fmt, unstr  # from .named
 from pygeodesy3.miscs.units import Scalar, Scalar_
@@ -97,7 +98,7 @@ from math import asinh, atan, atan2, ceil, cosh, fabs, floor, \
                  radians, sin, sqrt, tanh
 
 __all__ = _ALL_LAZY.maths_elliptic
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _TolRD  =  zqrt(EPS * 0.002)
 _TolRF  =  zqrt(EPS * 0.030)

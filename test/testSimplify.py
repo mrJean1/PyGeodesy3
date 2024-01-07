@@ -9,10 +9,10 @@ __version__ = '23.03.27'
 from bases import numpy, TestsBase, secs2str
 
 from pygeodesy3 import EPS, R_M, LatLon_, Numpy2LatLon, pairs, \
-                      simplify1, simplifyRW, \
-                      simplifyRDP, simplifyRDPm, \
-                      simplifyVW, simplifyVWm, \
-                      simplify
+                       simplify1, simplifyRW, \
+                       simplifyRDP, simplifyRDPm, \
+                       simplifyVW, simplifyVWm, \
+                       simplify
 
 from math import cos, degrees, radians
 from time import time

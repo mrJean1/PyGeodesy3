@@ -33,11 +33,12 @@ and Henrik Seidel U{'Die Mathematik der Gauß-Krueger-Abbildung'
 <https://DE.WikiPedia.org/wiki/Gauß-Krüger-Koordinatensystem>}, 2006.
 '''
 
-from pygeodesy3.base.utmups import _hemi, _LLEB, _parseUTMUPS5, _to4lldn, \
+from pygeodesy3.Base.utmups import _hemi, _LLEB, _parseUTMUPS5, _to4lldn, \
                                    _to3zBhp, _to3zll, _UPS_LATS, _UPS_ZONE, \
                                    _UTM_LAT_MAX, _UTM_ZONE_MAX, \
                                    _UTM_LAT_MIN, _UTM_ZONE_MIN, \
                                    _UTM_ZONE_OFF_MAX, UtmUpsBase, _xnamed
+from pygeodesy3.basics import len2, map2, neg, _xkwds_get  # splice
 from pygeodesy3.constants import EPS, EPS0, _K0_UTM, _0_0, _0_0001
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
 from pygeodesy3.interns import MISSING, NN, _by_, _COMMASPACE_, _N_, \
@@ -46,10 +47,8 @@ from pygeodesy3.interns import MISSING, NN, _by_, _COMMASPACE_, _N_, \
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.fmath import fdot3, hypot, hypot1
 from pygeodesy3.maths.umath import atan1, degrees90, degrees180, sincos2
-from pygeodesy3.miscs.basics import len2, map2, neg  # splice
 from pygeodesy3.miscs.dms import degDMS, parseDMS2
-from pygeodesy3.miscs.errors import MGRSError, RangeError, _ValueError, \
-                                   _xkwds_get
+from pygeodesy3.miscs.errors import MGRSError, RangeError, _ValueError
 # from pygeodesy3.miscs.named import _xnamed  # from .base.utmups
 from pygeodesy3.miscs.namedTuples import EasNor2Tuple, UtmUps5Tuple, \
                                          UtmUps8Tuple, UtmUpsLatLon5Tuple
@@ -63,7 +62,7 @@ from math import asinh, atanh, atan2, cos, cosh, degrees, fabs, \
 from operator import mul as _mul
 
 __all__ = _ALL_LAZY.projections_utm
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _Bands = 'CDEFGHJKLMNPQRSTUVWXX'  # UTM latitude bands C..X (no
 # I|O) 8° each, covering 80°S to 84°N and X repeated for 80-84°N

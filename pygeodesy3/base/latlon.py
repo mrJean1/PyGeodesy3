@@ -10,8 +10,10 @@ u'''(INTERNAL) Base class L{LatLonBase} for all elliposiodal, spherical and N-ve
       U{RhumbLine<https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1RhumbLine.html>} classes.
 '''
 
-# from pygeodesy3.base.karney import Caps  # _MODS
-# from pygeodesy3.base.nvector import _N_vector_  # _MODS
+# from pygeodesy3.Base.karney import Caps  # _MODS
+# from pygeodesy3.Base.nvector import _N_vector_  # _MODS
+from pygeodesy3.basics import isstr, map1, _xattr, _xinstanceof, \
+                             _xkwds, _xkwds_not
 from pygeodesy3.constants import EPS, EPS0, EPS1, EPS4, INT0, R_M, \
                                 _EPSqrt as _TOL, _0_0, _0_5, _1_0, \
                                 _360_0, _umod_360
@@ -24,15 +26,13 @@ from pygeodesy3.interns import NN, _COMMASPACE_, _concentric_, _height_, \
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 # from pygeodesy3.maths.fmath import favg  # _MODS
 from pygeodesy3.maths.vector2d import _circin6,  Circin6Tuple, _circum3, \
-                                      circum4_, Circum3Tuple, _radii11ABC
+                                       circum4_, Circum3Tuple, _radii11ABC
 from pygeodesy3.maths.vector3d import nearestOn6, Vector3d,  PointsIter
 from pygeodesy3.maths.umath import _unrollon, _unrollon3, _Wrap
-from pygeodesy3.miscs.basics import isstr, map1, _xinstanceof
 from pygeodesy3.miscs.dms import F_D, F_DMS, latDMS, lonDMS, parse3llh
 from pygeodesy3.miscs.errors import _AttributeError, _incompatible, \
                                     _IsnotError, IntersectionError, \
-                                    _ValueError, _xattr, _xdatum, \
-                                    _xError, _xkwds, _xkwds_not
+                                    _ValueError, _xdatum, _xError
 # from pygeodesy3.miscs.iters import PointsIter, points2  # from .maths.vector3d, _MODS
 from pygeodesy3.miscs.named import _NamedBase, notImplemented, notOverloaded,  Fmt
 from pygeodesy3.miscs.namedTuples import Bounds2Tuple, LatLon2Tuple, PhiLam2Tuple, \
@@ -46,8 +46,8 @@ from pygeodesy3.miscs.units import Distance_, Lat, Lon, Height, _isDegrees, \
 from contextlib import contextmanager
 from math import asin, cos, degrees, fabs, radians
 
-__all__ = _ALL_LAZY.base_latlon
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.Base_latlon
+__version__ = '24.01.05'
 
 
 class LatLonBase(_NamedBase):
@@ -1001,7 +1001,7 @@ class LatLonBase(_NamedBase):
         '''(INTERNAL) Get the C{Nvector} (C{nvectorBase._N_vector_})
         '''
         x, y, z = self._n_xyz3
-        return _MODS.base.nvector._N_vector_(x, y, z, h=self.height, name=self.name)
+        return _MODS.Base.nvector._N_vector_(x, y, z, h=self.height, name=self.name)
 
     @Property_RO
     def _n_xyz3(self):
@@ -1110,7 +1110,7 @@ class LatLonBase(_NamedBase):
                 r = D.ellipsoid.rhumb_(exact=exact)  # or D.isSpherical
             except AttributeError as x:
                 raise _AttributeError(datum=D, radius=radius, cause=x)
-            t = r, D, _MODS.base.karney.Caps
+            t = r, D, _MODS.Base.karney.Caps
             while d:
                 d.popitem()
             d[(exact, radius)] = t  # cache 3-tuple

@@ -9,7 +9,7 @@ __version__ = '23.03.27'
 from bases import GeodSolve, TestsBase, geographiclib
 
 from pygeodesy3 import CassiniSoldner, Css, CSSError, \
-                      Ellipsoids, fstr, haversine, hypot, toCss
+                       Ellipsoids, fstr, haversine, hypot, toCss
 
 
 class Tests(TestsBase):
@@ -122,8 +122,8 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import css, ellipsoidalExact, \
-                               ellipsoidalNvector, \
-                               ellipsoidalVincenty
+                                ellipsoidalNvector, \
+                                ellipsoidalVincenty
 
     t = Tests(__file__, __version__, css)
 

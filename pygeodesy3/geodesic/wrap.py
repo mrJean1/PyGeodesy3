@@ -9,13 +9,14 @@ The I{wrapped} class methods return a L{GDict} instance offering access to the C
 either by C{key} or by C{attribute} name.
 
 With env variable C{PYGEODESY3_GEOGRAPHICLIB} left undefined or set to C{"2"}, this module,
-L{pygeodesy3.geodesic.exact} and L{pygeodesy3.base.karney} will use U{GeographicLib 2.0
+L{pygeodesy3.geodesic.exact} and L{pygeodesy3.Base.karney} will use U{GeographicLib 2.0
 <https://GeographicLib.SourceForge.io/C++/doc/>} transcoding, otherwise C{1.52} or older.
 '''
 
-from pygeodesy3.base.karney import _atan2d, Caps, Direct9Tuple, GDict, \
+from pygeodesy3.Base.karney import _atan2d, Caps, Direct9Tuple, GDict, \
                                    _kWrapped, Inverse10Tuple
-from pygeodesy3.base.latlon import LatLonBase as _LLB,  F_D, Radius_
+from pygeodesy3.Base.latlon import LatLonBase as _LLB,  F_D, Radius_
+from pygeodesy3.basics import _copysign, _xinstanceof
 from pygeodesy3.constants import EPS, NAN, _EPSqrt as _TOL, _0_5
 from pygeodesy3.earth.datums import _earth_datum, _WGS84,  _EWGS84
 # from pygeodesy3.ellipsoids import _EWGS84  # from .earth.datums
@@ -23,7 +24,6 @@ from pygeodesy3.interns import NN, _DOT_, _dunder_nameof, _SPACE_, \
                               _to_, _too_,_under
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.umath import _unrollon, _Wrap, wrap360,  fabs  # PYCHOK used!
-from pygeodesy3.miscs.basics import _copysign, _xinstanceof
 # from pygeodesy3.miscs.dms import F_D  # from .base.latlon
 from pygeodesy3.miscs.errors import IntersectionError, GeodesicError
 from pygeodesy3.miscs.named import callername, classname
@@ -36,7 +36,7 @@ from contextlib import contextmanager
 # from math import fabs  # from .maths.umath
 
 __all__ = _ALL_LAZY.geodesic_wrap
-__version__ = '23.12.21'
+__version__ = '24.01.05'
 
 _plumb_ = 'plumb'
 _TRIPS  =  129

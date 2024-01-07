@@ -9,9 +9,9 @@ __version__ = '23.08.23'
 from bases import isPyPy, TestsBase
 
 from pygeodesy3 import Float, Int, Radius, basics, constants, interns, \
-                      float_, isinf, isint0, isnan, \
-                      EPS, EPS0, EPS02, EPS1, EPS2, EPS_2, EPS4, \
-                      INF, INT0, NAN, NEG0, NINF
+                       float_, isinf, isint0, isnan, \
+                       EPS, EPS0, EPS02, EPS1, EPS2, EPS_2, EPS4, \
+                       INF, INT0, NAN, NEG0, NINF
 
 
 class Tests(TestsBase):

@@ -36,10 +36,11 @@ from __future__ import division as _; del _  # PYCHOK semicolon
 # - a 12 suffix means a difference, e.g., s12 = s2 - s1.
 # - s and c prefixes mean sin and cos
 
-from pygeodesy3.base.karney import _around, _atan2d, Caps, GDict, _fix90, \
+from pygeodesy3.Base.karney import _around, _atan2d, Caps, GDict, _fix90, \
                                    _K_2_0, _norm2, _norm180, _sincos2, \
-                                   _sincos2d,  _xinstanceof
-from pygeodesy3.constants import NAN, _EPSmin, _EPSqrt as _TOL, \
+                                   _sincos2d
+from pygeodesy3.basics import _xinstanceof, _xkwds_get
+from pygeodesy3.constants import NAN, _EPSmin, _EPSqrt as _TOL,  _xError, \
                                 _0_0, _1_0, _180_0, _2__PI, _copysign_1_0
 from pygeodesy3.geodesic.exact.gxbases import _cosSeries, _GeodesicBase, \
                                              _sincos12, _sin1cos2
@@ -49,15 +50,14 @@ from pygeodesy3.lazily import _ALL_DOCS, _ALL_MODS as _MODS
 # from pygeodesy3.maths.elliptic import Elliptic  # _MODS
 from pygeodesy3.maths.fsums import fsumf_, fsum1f_
 from pygeodesy3.maths.umath import atan2d as _atan2d_reverse, sincos2
-# from pygeodesy3.miscs.basics import _xinstanceof  # from .base.karney
-from pygeodesy3.miscs.errors import _xError, _xkwds_get
+# from pygeodesy3.miscs.errors import _xError  # from .constants
 from pygeodesy3.miscs.props import Property_RO, _update_all
 # from pygeodesy3.miscs.streprs import pairs  # _MODS
 
 from math import atan2, cos, degrees, fabs, floor, radians, sin
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _glXs = []  # instances of C{[_]GeodesicLineExact} to be updated
 # underflow guard, we require _TINY * EPS > 0, _TINY + EPS == EPS

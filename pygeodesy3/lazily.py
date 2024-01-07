@@ -24,22 +24,22 @@ file name and line number.
        after all initial imports.
 '''
 
+from pygeodesy3 import _isfrozen  # getattr(_sys, 'frozen', False)
 from pygeodesy3.interns import MISSING, NN, __all__ as _interns__all__, \
                               _attribute_, _by_, _COLONSPACE_, _COMMASPACE_, \
                               _doesn_t_exist_, _DOT_, _DDOT_, _enabled_, \
                               _EQUALSPACED_, _from_, _HASH_, _immutable_, \
-                              _NL_, _no_, _not_, _or_, _line_, _module_, \
-                              _pygeodesy3_, _pygeodesy3_abspath_, _Python_, \
-                              _QUOTE1_, _QUOTE2_, _SPACE_, _sub_packages, \
-                              _UNDER_, _version_, \
+                              _intern, _NL_, _no_, _not_, _or_, _line_, \
+                              _module_, _pygeodesy3_, _pygeodesy3_abspath_, \
+                              _Python_, _QUOTE1_, _QUOTE2_, _SPACE_, \
+                              _sub_packages, _UNDER_, _version_, \
                               _dunder_nameof, _headof, _tailof  # _DEPRECATED_
-from pygeodesy3.interns import _intern  # PYCHOK used!
 # from pygeodesy3.miscs.errors import _xError2  # _ALL_MODS
 # from pygeodesy3.miscs.streprs import Fmt, pairs, unstr  # _ALL_MODS
 
 from os import getenv as _getenv  # in .geodesic.solve, .miscs.errors, ...
 from os.path import basename as _basename
-import sys as _sys  # in .miscs.basics._sizeof
+import sys as _sys  # in .basics, ...
 try:
     from importlib import import_module
 except ImportError:  # Python 2.6-
@@ -53,8 +53,10 @@ _FOR_DOCS                = _getenv('PYGEODESY3_FOR_DOCS', NN)  # for epydoc ...
 _FOR_PYCHOK              = _getenv('PYGEODESY3_FOR_PYCHOK', NN)  # for pychok/PyChecker ...
 _from_DOT__              = _SPACE_(NN, _from_, _DOT_)
 _i0                      = ()  # PYCHOK empty tuple
-_init__all__             = _FOR_DOCS or _FOR_PYCHOK or _getenv('PYGEODESY3_INIT__ALL__', NN) == _a_l_l_  # PYCHOK exported
-_init__star__            = _getenv('PYGEODESY3_INIT__STAR__', NN) == _a_l_l_  # PYCHOK in .pygeodesy3.*.__init__
+_init__all__             = _isfrozen or _FOR_DOCS or _FOR_PYCHOK or \
+                           _getenv('PYGEODESY3_INIT__ALL__', NN) == _a_l_l_  # PYCHOK exported
+_init__star__            = _isfrozen or \
+                           _getenv('PYGEODESY3_INIT__STAR__', NN) == _a_l_l_  # PYCHOK in .pygeodesy3.*.__init__
 _lazily_                 = 'lazily'
 _lazily_imported__       = _SPACE_(_HASH_, _lazily_, 'imported', NN)
 _p_a_c_k_a_g_e_          = '__package__'
@@ -65,11 +67,11 @@ _PYGEODESY3_RHUMBSOLVE_  = 'PYGEODESY3_RHUMBSOLVE'  # PYCHOK .rhumb.solve, test.
 _PYTHON_X_DEV            =  getattr(_sys, '_xoptions', {}).get('dev',  # Python 3.2+
                            _getenv('PYTHONDEVMODE', NN))  # PYCHOK exported
 _sys_version_info2       = _sys.version_info[:2]  # in .basics, .fmath, ...
-_unlazy = _unLazy0       = _sys_version_info2 < (3, 7)  # PYCHOK mod.__getattr__ 3.7+
+_unlazy = _unLazy0       = _isfrozen or _sys_version_info2 < (3, 7)  # PYCHOK mod.__getattr__ 3.7+
 _WARNINGS_X_DEV          = _getenv('PYGEODESY3_WARNINGS', NN) and (
                            _PYTHON_X_DEV or bool(_sys.warnoptions))  # PYCHOK .props
 # @module_property[_RO?] <https://GitHub.com/jtushman/proxy_tools/>
-isLazy                   = None  # see @var isLazy in .__init__
+isLazy                   =  None  # see @var isLazy in .__init__
 
 
 class LazyAttributeError(AttributeError):
@@ -199,16 +201,22 @@ _ALL_INIT = _i(_pygeodesy3_abspath_, _version_)
 
 # __all__ value for most modules, accessible as _ALL_LAZY.<module>
 _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
-                           base=_i(),  # package only
-                 base_cartesian=_i('CartesianBase',),
-                    base_karney=_i('Area3Tuple', 'Caps', 'Direct9Tuple', 'GDict', 'Inverse10Tuple', 'Rhumb8Tuple'),
-                    base_latlon=_i('LatLonBase',),
-                   base_nvector=_i('LatLonNvectorBase', 'NorthPole', 'NvectorBase', 'SouthPole'),
-                     base_solve=_i(),  # module only
-                     base_units=_i('Float', 'Int', 'Radius', 'Str'),
-                    base_utmups=_i('UtmUpsBase',),
-                  base_vector3d=_i('Vector3dBase',),
+                           Base=_i(),  # package only
+                 Base_cartesian=_i('CartesianBase',),
+                    Base_karney=_i('Area3Tuple', 'Caps', 'Direct9Tuple', 'GDict', 'Inverse10Tuple', 'Rhumb8Tuple'),
+                    Base_latlon=_i('LatLonBase',),
+                   Base_nvector=_i('LatLonNvectorBase', 'NorthPole', 'NvectorBase', 'SouthPole'),
+                     Base_solve=_i(),  # module only
+                     Base_units=_i('Float', 'Int', 'Radius', 'Str'),
+                    Base_utmups=_i('UtmUpsBase',),
+                  Base_vector3d=_i('Vector3dBase',),
 
+                         basics=_i('clips', 'copysign0', 'copytype', 'halfs2',
+                                   'int1s', 'isbool', 'isCartesian', 'isclass', 'iscomplex', 'isDEPRECATED', 'isfloat',
+                                   'isidentifier', 'isinstanceof', 'isint', 'iskeyword', 'isLatLon', 'islistuple',
+                                   'isNvector', 'isodd', 'isscalar', 'issequence', 'isstr', 'issubclassof', 'itemsorted',
+                                   'len2', 'map1', 'map2', 'neg', 'neg_',
+                                   'signBit', 'signOf', 'splice', 'str2ub', 'ub2str', 'unsigned0'),
                       constants=_i('DIG', 'EPS', 'EPS0', 'EPS02', 'EPS1', 'EPS2', 'EPS4', 'EPS_2',
                                    'INF', 'INT0', 'MANT_DIG', 'MAX', 'MAX_EXP', 'MIN', 'MIN_EXP', 'NAN', 'NEG0', 'NINF',
                                    'PI', 'PI2', 'PI_2', 'PI3', 'PI_3', 'PI3_2', 'PI4', 'PI_4',
@@ -219,7 +227,7 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                      deprecated=_i(),  # package only
 
                       distances=_i(),  # package only
-                distances_formy=_i('Radical2Tuple',
+                distances_formy=_i('Radical2Tuple', 'RThetaPhi3Tuple',
                                    'antipode', 'antipode_', 'bearing', 'bearing_',
                                    'compassAngle', 'cosineForsytheAndoyerLambert', 'cosineForsytheAndoyerLambert_',
                                    'cosineAndoyerLambert', 'cosineAndoyerLambert_', 'cosineLaw', 'cosineLaw_',
@@ -307,7 +315,7 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                          lazily=_i('LazyAttributeError', 'LazyImportError', 'isLazy', 'print_', 'printf'),
 
                           maths=_i(),  # package only
-                 maths_auxilats=_i('Aux', 'AuxAngle', 'AuxDLat', 'AuxDST', 'AuxLat',
+                 maths_auxilats=_i('Aux', 'AuxAngle', 'AuxDLat', 'AuxDST', 'AuxError', 'AuxLat',
                                    'AuxBeta', 'AuxChi', 'AuxMu', 'AuxPhi', 'AuxTheta', 'AuxXi'),
                  maths_elliptic=_i('Elliptic', 'EllipticError', 'Elliptic3Tuple'),
                     maths_fmath=_i('Fdot', 'Fhorner', 'Fhypot', 'Fpolynomial', 'Fpowers', 'Fn_rt', 'Fcbrt', 'Fsqrt',
@@ -341,12 +349,6 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                                    'trilaterate2d2', 'trilaterate3d2'),
 
                           miscs=_i(),  # package only
-                   miscs_basics=_i('clips', 'copysign0', 'copytype', 'halfs2',
-                                   'int1s', 'isbool', 'isCartesian', 'isclass', 'iscomplex', 'isDEPRECATED', 'isfloat',
-                                   'isidentifier', 'isinstanceof', 'isint', 'iskeyword', 'isLatLon', 'islistuple',
-                                   'isNvector', 'isodd', 'isscalar', 'issequence', 'isstr', 'issubclassof',
-                                   'len2', 'map1', 'map2', 'neg', 'neg_',
-                                   'signBit', 'signOf', 'splice', 'str2ub', 'ub2str', 'unsigned0'),
                       miscs_dms=_i('F_D',   'F_DM',   'F_DMS',   'F_DEG',   'F_MIN',   'F_SEC',   'F_D60',   'F__E',   'F__F',   'F__G',   'F_RAD',
                                    'F_D_',  'F_DM_',  'F_DMS_',  'F_DEG_',  'F_MIN_',  'F_SEC_',  'F_D60_',  'F__E_',  'F__F_',  'F__G_',  'F_RAD_',
                                    'F_D__', 'F_DM__', 'F_DMS__', 'F_DEG__', 'F_MIN__', 'F_SEC__', 'F_D60__', 'F__E__', 'F__F__', 'F__G__', 'F_RAD__',
@@ -354,11 +356,11 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                                    'bearingDMS', 'clipDegrees', 'clipRadians', 'compassDMS', 'compassPoint',
                                    'degDMS', 'latDMS', 'latlonDMS', 'latlonDMS_', 'lonDMS', 'normDMS',
                                    'parseDDDMMSS', 'parseDMS', 'parseDMS2', 'parse3llh', 'parseRad', 'precision', 'toDMS'),
-                   miscs_errors=_i('AuxError', 'ClipError', 'CrossError', 'GeodesicError', 'IntersectionError',
+                   miscs_errors=_i('ClipError', 'CrossError', 'GeodesicError', 'IntersectionError',
                                    'NumPyError', 'LenError', 'LimitError', 'MGRSError',
                                    'ParseError', 'PointsError', 'RangeError', 'RhumbError',
                                    'SciPyError', 'SciPyWarning', 'TRFError', 'TriangleError', 'UnitError', 'VectorError',
-                                   'crosserrors', 'exception_chaining', 'isError', 'itemsorted',
+                                   'crosserrors', 'exception_chaining', 'isError',
                                    'limiterrors', 'rangerrors'),
                     miscs_iters=_i('LatLon2PsxyIter', 'PointsIter', 'points2',
                                    'isNumpy2', 'isPoints2', 'isTuple2', 'iterNumpy2', 'iterNumpy2over'),
@@ -438,7 +440,7 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
          spherical_trigonometry=_i(),)  # module only
 
 _ALL_DEPRECATED = _NamedEnum_RO(_name='_ALL_DEPRECATED',  # lift all modules to pygeodesy3.
-                                 base=('karney. as karney',),
+                                 Base=('karney. as karney',),
                             distances=('formy. as formy', 'frechet. as frechet', 'hausdorff. as hausdorff',
                                        'resections. as resections'),
                                 earth=('datums. as datums', 'ecef. as ecef', 'ellipsoids. as ellipsoids',
@@ -451,7 +453,7 @@ _ALL_DEPRECATED = _NamedEnum_RO(_name='_ALL_DEPRECATED',  # lift all modules to 
                                        'mgrs. as mgrs', 'osgr. as osgr', 'wgrs. as wgrs'),
                                 maths=('elliptic. as elliptic', 'fmath. as fmath', 'fstats. as fstats', 'fsums. as fsums',
                                        'auxilats. as auxilats', 'umath. as utily', 'vector2d. as vector2d', 'vector3d. as vector3d'),
-                                miscs=('basics. as basics', 'dms. as dms', 'errors. as errors', 'iters. as iters', 'named. as named',
+                                miscs=('dms. as dms', 'errors. as errors', 'iters. as iters', 'named. as named',
                                        'namedTuples. as namedTuples', 'props. as props', 'streprs. as streprs', 'units. as units'),
                             polygonal=('booleans. as booleans', 'clipy. as clipy',
                                        'points. as points', 'simplify. as simplify'),
@@ -535,10 +537,14 @@ class _ALL_MODS(object):
         for n, m in _sys.modules.items():
             yield n, m
 
+    @property  # property_RO
+    def _name(self):
+        return self.__class__.__name__
+
 _ALL_MODS = _ALL_MODS()  # PYCHOK singleton
 
 __all__ = _ALL_LAZY.lazily
-__version__ = '23.12.22'
+__version__ = '24.01.03'
 
 
 def _ALL_OTHER(*objs):
@@ -600,7 +606,7 @@ def _all_missing2(_all_):  # in .testLazily
         return tuple(sorted(a for a in one if a not in two))
 
     _alzy = _Dict((a, a) for a in _ALL_INIT)
-    if _init__all__:
+    if True:  # _init__all__:
         _alzy.update(_all_imports())
         _alzy.update(_all_deprecates())
     return ((_DOT_(_lazily_, _all_imports.__name__), _diff(_all_, _alzy)),
@@ -634,7 +640,7 @@ def _import_all():  # in .__init__
     _app =  items.append
     _pop =  items.pop
     _mod = _ALL_MODS.getmodule
-    _PyG = _mod(_pygeodesy3_)
+    _all = {}
     while items and trips > 0:
         name, mod = name_mod = _pop(0)
         if mod.endswith(_DOT_):
@@ -643,23 +649,24 @@ def _import_all():  # in .__init__
             m = _mod(mod)
             if name:
                 a = getattr(m, name)
-                setattr(_PyG, name, a)
+                _all[name] = a
                 pkg = _headof(mod)
                 if pkg != mod:
                     setattr(_mod(pkg), name, a)
-            setattr(_PyG, _tailof(mod), m)
-        except (AttributeError, ImportError):
+            _all[_tailof(mod)] = m
+        except (AttributeError, ImportError, RuntimeError):  # RecursionError 3.5+
             _app(name_mod)
         trips -= 1
-    return tuple(sorted(_PyG.__dict__.keys()))
+    _mod(_pygeodesy3_).__dict__.update(_all)
+    return tuple(sorted(_all.keys()))
 
 
-def _import_all_backward():  # in .__init__
+def _import_all_backward(dflt=NN):  # in .__init__
     '''(INTERNAL) Import all modules, for backward
        compatibility with C{PyGeodesy}.
     '''
-    bw = []
-    if _getenv('PYGEODESY3_ALL_BACKWARD', NN):
+    bw = list(_ALL_INIT)
+    if _isfrozen or _getenv('PYGEODESY3_ALL_BACKWARD', dflt):
         sm = _sys.modules
         for name, mod in _all_deprecates().items():
             if mod.endswith(_DDOT_):
@@ -671,9 +678,9 @@ def _import_all_backward():  # in .__init__
                     except ImportError:
                         name = NN
                 if name:
-                    bw.append(_i(name))
+                    bw.append(_intern(name))
         bw = sorted(bw)
-    return _ALL_INIT + tuple(bw)
+    return tuple(bw)
 
 
 def _lazy_attr(unused):  # PYCHOK overwritten in _lazy_import2
@@ -760,7 +767,7 @@ def _lazy_import2(pack):  # MCCABE 14
                     # <https://GitHub.com/mrJean1/PyGeodesy3/issues/76>
                     raise LazyAttributeError(_no_(_attribute_), txt=t)
 
-        elif name in (_a_l_l_,):  # XXX '_d_i_r_', '_m_e_m_b_e_r_s_'?
+        elif name in (_a_l_l_,):  # XXX '__dir__', '__members__'?
             imported = _ALL_INIT + tuple(imports.keys())
         else:  # PYCHOK no cover
             t = _no_(_module_, _or_, _attribute_)
@@ -895,7 +902,7 @@ def _lazy_init2(pack):
     return package, parent
 
 
-def _pairs(*args, **kwds):  # in .errors, .ktm
+def _pairs(*args, **kwds):  # in .ktm
     # from pygeodesy3.miscs.streprs import pairs
     return _ALL_MODS.miscs.streprs.pairs(*args, **kwds)
 

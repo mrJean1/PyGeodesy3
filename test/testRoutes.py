@@ -11,7 +11,7 @@
 from bases import geographiclib, TestsBase
 
 from pygeodesy3 import LatLon_, R_KM, R_M, \
-                      areaOf, isclockwise, perimeterOf, unstr
+                       areaOf, isclockwise, perimeterOf, unstr
 from pygeodesy3.ellipsoidal import vincenty as ellipsoidalVincenty
 from pygeodesy3.spherical import trigonometry as sphericalTrigonometry
 

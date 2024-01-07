@@ -28,7 +28,8 @@ License.  For more information, see the U{GeographicLib<https://GeographicLib.So
 # make sure int/int division yields float quotient
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import Caps, _polynomial
+from pygeodesy3.Base.karney import Caps, _polynomial
+from pygeodesy3.basics import copysign0, _reverange, _xkwds_get
 from pygeodesy3.constants import EPS_2, MANT_DIG, PI4, isinf, \
                                 _0_0, _4_0, _720_0, _log2, _over
 from pygeodesy3.earth.datums import _WGS84,  NN
@@ -39,15 +40,13 @@ from pygeodesy3.maths.auxilats.auxAngle import AuxMu, AuxPhi,  hypot
 from pygeodesy3.maths.auxilats.auxDLat import AuxDLat, _DClenshaw
 # from pygeodesy3.maths.auxilats.auxDST import AuxDST  # _MODS
 from pygeodesy3.maths.auxilats.auxily import _Dlam, _Dp0Dpsi, _Ufloats
-from pygeodesy3.miscs.basics import copysign0, _reverange,  _xkwds_get
-# from pygeodesy3.miscs.errors import _xkwds_get  # from .miscs.basics
-# from pygeodesy3.miscs.props import Property_RO  # from .rhumbBase
+# from pygeodesy3.miscs.props import Property_RO  # from .rhumb.bases
 from pygeodesy3.rhumb.bases import RhumbBase, RhumbLineBase,  Property_RO
 
 from math import ceil as _ceil, fabs, radians
 
 __all__ = _ALL_LAZY.rhumb_aux_
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 # DIGITS = (sizeof(real) * 8) bits
 #        = (ctypes.sizeof(ctypes.c_double(1.0)) * 8) bits

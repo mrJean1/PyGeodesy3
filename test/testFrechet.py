@@ -56,11 +56,11 @@ class Tests(TestsBase):
 if __name__ == '__main__':  # MCCABE 13
 
     from pygeodesy3 import fractional, frechet_, FrechetCosineAndoyerLambert, \
-                          FrechetCosineForsytheAndoyerLambert, FrechetCosineLaw, \
-                          FrechetDegrees, FrechetDistanceTo, FrechetEquirectangular, \
-                          FrechetEuclidean, FrechetExact, FrechetFlatLocal, \
-                          FrechetFlatPolar, FrechetKarney, FrechetHaversine, \
-                          FrechetHubeny, FrechetRadians, FrechetThomas, FrechetVincentys
+                           FrechetCosineForsytheAndoyerLambert, FrechetCosineLaw, \
+                           FrechetDegrees, FrechetDistanceTo, FrechetEquirectangular, \
+                           FrechetEuclidean, FrechetExact, FrechetFlatLocal, \
+                           FrechetFlatPolar, FrechetKarney, FrechetHaversine, \
+                           FrechetHubeny, FrechetRadians, FrechetThomas, FrechetVincentys
 
     def _distance(p1, p2):
         dy, dx = abs(p1.lat - p2.lat), abs(p1.lon - p2.lon)

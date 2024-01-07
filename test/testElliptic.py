@@ -9,7 +9,7 @@ __version__ = '23.08.31'
 from bases import endswith, TestsBase
 
 from pygeodesy3 import elliptic, Elliptic, EllipticError, Elliptic3Tuple, \
-                      EPS, fstr, PI_2, PI_4, radians, Scalar, sincos2
+                       EPS, fstr, PI_2, PI_4, radians, Scalar, sincos2
 
 
 class Tests(TestsBase):

@@ -12,12 +12,13 @@ and published under the same MIT Licence**, see for example U{latlon-ellipsoidal
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.cartesian import CartesianBase  # PYCHOK used!
-from pygeodesy3.base.latlon import LatLonBase,  _trilaterate5,  fabs, _Wrap
-# from pygeodesy3.base.utmups import _lowerleft  # _MODS
+from pygeodesy3.Base.cartesian import CartesianBase  # PYCHOK used!
+from pygeodesy3.Base.latlon import LatLonBase,  _trilaterate5,  fabs, _Wrap
+# from pygeodesy3.Base.utmups import _lowerleft  # _MODS
+from pygeodesy3.basics import _xattr, _xinstanceof, _xkwds, _xkwds_get, _xkwds_not
 from pygeodesy3.constants import EPS, EPS0, EPS1, _0_0, _0_5
 from pygeodesy3.earth.datums import Datum, Datums, _earth_ellipsoid, _ellipsoidal_datum, \
-                                   _WGS84,  _xinstanceof  # _spherical_datum
+                                   _WGS84  # _spherical_datum
 # from pygeodesy3.earth.trf import RefFrame, _reframeTransforms2  # _MODS
 # from pygeodesy3.grids.osgr import toOsgr  # _MODS
 from pygeodesy3.interns import MISSING, NN, _COMMA_, _conversion_, _DOT_, \
@@ -26,10 +27,8 @@ from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS
 # from pygeodesy3.maths.fmath import favg  # _MODS
 # from pygeodesy3.maths.umath import _Wrap  # from .base.latlon
 # from pygeodesy3.maths.vector3d import _intersects2  # _MODS
-# from pygeodesy3.miscs.basics import _xinstanceof  # from .earth.datums
 from pygeodesy3.miscs.errors import _incompatible, _IsnotError, RangeError, TRFError, \
-                                    _TypeError, _ValueError, _xattr, _xellipsoidal, \
-                                    _xError, _xkwds, _xkwds_get, _xkwds_not
+                                    _TypeError, _ValueError, _xellipsoidal, _xError
 # from pygeodesy3.miscs.named import notOverloaded  # _MODS
 from pygeodesy3.miscs.props import Property_RO, property_doc_, property_RO, _update_all
 from pygeodesy3.miscs.units import Epoch, _isDegrees, Radius_, _1mm as _TOL_M
@@ -40,7 +39,7 @@ from pygeodesy3.miscs.units import Epoch, _isDegrees, Radius_, _1mm as _TOL_M
 # from math import fabs  # from .base.latlon
 
 __all__ = _ALL_LAZY.ellipsoidal_base
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 class CartesianEllipsoidalBase(CartesianBase):
@@ -978,7 +977,7 @@ class LatLonEllipsoidalBase(LatLonBase):
         raise _TypeError(bearing1=bearing1, bearing2=bearing2 **height_wrap_tol)
 
     def trilaterate5(self, distance1, point2, distance2, point3, distance3,
-                           area=True, eps=EPS1, wrap=False):
+                                      area=True, eps=EPS1, wrap=False):
         '''Trilaterate three points by I{area overlap} or I{perimeter
            intersection} of three intersecting circles.
 
@@ -1007,11 +1006,11 @@ class LatLonEllipsoidalBase(LatLonBase):
                     If only a single trilaterated point is found, C{min I{is}
                     max}, C{minPoint I{is} maxPoint} and C{n = 1}.
 
-                    For C{B{area}=True}, C{min} and C{max} are the smallest
-                    respectively largest I{radial} overlap found.
-
                     For C{B{area}=False}, C{min} and C{max} represent the
                     nearest respectively farthest intersection margin.
+
+                    For C{B{area}=True}, C{min} and C{max} are the smallest
+                    respectively largest I{radial} overlap found.
 
                     If C{B{area}=True} and all 3 circles are concentric, C{n=0}
                     and C{minPoint} and C{maxPoint} are the B{C{point#}} with
@@ -1033,10 +1032,10 @@ class LatLonEllipsoidalBase(LatLonBase):
                   <https://PyPI.org/project/geographiclib>} if installed, otherwise
                   the accurate (but slower) C{ellipsoidal.exact.LatLon} methods.
         '''
-        return _trilaterate5(self, distance1,
-                             self.others(point2=point2), distance2,
-                             self.others(point3=point3), distance3,
-                             area=area, eps=eps, wrap=wrap)
+        p2 = self.others(point2=point2)
+        p3 = self.others(point3=point3)
+        return _trilaterate5(self, distance1, p2, distance2, p3, distance3,
+                                              area=area, eps=eps, wrap=wrap)
 
     @Property_RO
     def _ups(self):  # __dict__ value overwritten by method C{toUtmUps}
@@ -1082,7 +1081,7 @@ def _lowerleft(utmups, center):
     elif center in (True,):
         u = utmups._lowerleft
     else:
-        u = _MODS.base.utmups._lowerleft(utmups, center)
+        u = _MODS.Base.utmups._lowerleft(utmups, center)
     return u
 
 

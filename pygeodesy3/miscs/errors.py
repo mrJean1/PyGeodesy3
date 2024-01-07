@@ -12,24 +12,22 @@ C{PYTHONDEVMODE=1} or to any non-empyty string I{OR} set env variable
 C{PYGEODESY3_EXCEPTION_CHAINING=std} or to any non-empty string.
 '''
 
-# from pygeodesy3.base.vector3d import Vector3dBase  # _MODS
+# from pygeodesy3.Base.vector3d import Vector3dBase  # _MODS
+from pygeodesy3.basics import isint, isodd, itemsorted, _xkwds, _xkwds_pop, \
+                             _xkwds_pop_, _xkwds_popitem
 from pygeodesy3.interns import MISSING, NN, _a_, _an_, _and_, _clip_, \
                               _COLON_, _COLONSPACE_, _COMMASPACE_, _datum_, \
-                              _ellipsoidal_, _EQUAL_, _incompatible_, _vs_, \
-                              _invalid_, _len_, _name_, _no_, _not_, _or_, \
-                              _SPACE_, _specified_, _UNDER_, _value_, _with_
-from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _getenv, _pairs, \
-                             _PYTHON_X_DEV
-# from pygeodesy3.miscs.basics import isint, isodd, _zip  # _MODS
+                              _ellipsoidal_, _incompatible_, _vs_, \
+                              _invalid_, _len_, _not_, _or_, \
+                              _SPACE_, _specified_, _UNDER_, _with_
+from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _getenv, \
+                              _PYTHON_X_DEV
 
 __all__ = _ALL_LAZY.miscs_errors  # _ALL_DOCS('_InvalidError', '_IsnotError')  _under
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _box_        = 'box'
-_default_    = 'default'
-_kwargs_     = 'kwargs'  # XXX _kwds_?
 _limiterrors =  True  # in .formy
-_multiple_   = 'multiple'
 _name_value_ =  repr('name=value')
 _rangerrors  =  True  # in .dms
 _region_     = 'region'
@@ -157,12 +155,6 @@ class _ZeroDivisionError(ZeroDivisionError):
         _error_init(ZeroDivisionError, self, args, **kwds)
 
 
-class AuxError(_ValueError):
-    '''Error raised for a L{rhumb.aux_}, C{Aux}, C{AuxDLat} or C{AuxLat} issue.
-    '''
-    pass
-
-
 class ClipError(_ValueError):
     '''Clip box or clip region issue.
     '''
@@ -192,7 +184,7 @@ class CrossError(_ValueError):
 
 class GeodesicError(_ValueError):
     '''Error raised for lack of convergence or other issues in L{pygeodesy3.geodesic.exact},
-       L{pygeodesy3.geodesic.wrap} or L{pygeodesy3.base.karney}.
+       L{pygeodesy3.geodesic.wrap} or L{pygeodesy3.Base.karney}.
     '''
     pass
 
@@ -369,7 +361,7 @@ def crosserrors(raiser=None):
 
        @see: Property C{Vector3d[Base].crosserrors}.
     '''
-    B = _MODS.base.vector3d.Vector3dBase
+    B = _MODS.Base.vector3d.Vector3dBase
     t =  B._crosserrors  # XXX class attr!
     if raiser in (True, False):
         B._crosserrors = raiser
@@ -398,9 +390,8 @@ def _error_init(Error, inst, args, fmt_name_value='%s (%r)', txt=NN,
 
     t, n = (), len(args)
     if n > 2:
-        s = _MODS.miscs.basics.isodd(n)
         t = _fmtuple(zip(args[0::2], args[1::2]))
-        if s:  # XXX _xzip(..., strict=s)
+        if isodd(n):  # XXX _xzip(..., strict=isodd(n))
             t += args[-1:]
     elif n == 2:
         t = (fmt_name_value % args),
@@ -502,25 +493,6 @@ def _IsnotError(*nouns, **name_value_Error_cause):  # name=value [, Error=TypeEr
     return _XError(Error, n, txt=t, cause=x)
 
 
-def itemsorted(adict, *args, **asorted_reverse):
-    '''Return the items of C{B{adict}} sorted I{alphabetically, case-insensitively}
-       and in I{ascending} order.
-
-       @arg args: Optional argument(s) for method C{B{adict}.items(B*{args})}.
-       @kwarg asorted_reverse: Use keyword argument C{B{asorted}=False} for
-                      I{case-sensitive} sorting and C{B{reverse}=True} for
-                      results in C{descending} order.
-    '''
-    def _un(item):
-        return item[0].lower()
-
-    # see .rhumb.Rhumb and ._RhumbLine
-    a, r = _xkwds_get_(asorted_reverse, asorted=True, reverse=False) \
-                    if asorted_reverse  else   (True,         False)
-    items = adict.items(*args) if args else adict.items()
-    return sorted(items, reverse=r, key=_un if a else None)
-
-
 def limiterrors(raiser=None):
     '''Get/set the throwing of L{LimitError}s.
 
@@ -587,15 +559,6 @@ def _SciPyIssue(x, *extras):  # PYCHOK no cover
         Error = SciPyError  # PYCHOK not really
     t = _SPACE_(str(x).strip(), *extras)
     return Error(t, cause=x)
-
-
-def _xattr(obj, **name_default):  # see .strerprs._xattrs
-    '''(INTERNAL) Get an C{obj}'s attribute by C{name}.
-    '''
-    if len(name_default) == 1:
-        for n, d in name_default.items():
-            return getattr(obj, n, d)
-    raise _xkwds_Error(_xattr, {}, name_default)
 
 
 def _xdatum(datum1, datum2, Error=None):
@@ -683,117 +646,14 @@ def _xError2(x):  # in .maths.fsums
     return E, t
 
 
-try:
-    _ = {}.__or__  # {} | {}  # Python 3.9+
-
-    def _xkwds(kwds, **dflts):
-        '''(INTERNAL) Override C{dflts} with specified C{kwds}.
-        '''
-        return (dflts | kwds) if kwds else dflts
-
-except AttributeError:
-    from copy import copy as _copy
-
-    def _xkwds(kwds, **dflts):  # PYCHOK expected
-        '''(INTERNAL) Override C{dflts} with specified C{kwds}.
-        '''
-        d = dflts
-        if kwds:
-            d = _copy(d)
-            d.update(kwds)
-        return d
-
-
-def _xkwds_bool(inst, **kwds):  # in .frechet, .hausdorff, .heights
-    '''(INTERNAL) Set applicable C{bool} properties/attributes.
-    '''
-    for n, v in kwds.items():
-        b = getattr(inst, n, None)
-        if b is None:  # invalid bool attr
-            t = _SPACE_(_EQUAL_(n, repr(v)), 'for', inst.__class__.__name__)  # XXX .classname
-            raise _AttributeError(t, txt=_not_('applicable'))
-        if v in (False, True) and v != b:
-            setattr(inst, NN(_UNDER_, n), v)
-
-
-def _xkwds_Error(where, kwds, name_txt, txt=_default_):
-    # Helper for _xkwds_get, _xkwds_pop and _xkwds_popitem below
-    f = _COMMASPACE_.join(_pairs(kwds) + _pairs(name_txt))
-    f = _MODS.miscs.streprs.Fmt.PAREN(where.__name__, f)
-    t = _multiple_ if name_txt else _no_
-    t = _SPACE_(t, _EQUAL_(_name_, txt), _kwargs_)
-    return _AssertionError(f, txt=t)
-
-
-def _xkwds_get(kwds, **name_default):
-    '''(INTERNAL) Get a C{kwds} value by C{name}, or the C{default}.
-    '''
-    if len(name_default) == 1:
-        for n, d in name_default.items():
-            return kwds.get(n, d)
-    raise _xkwds_Error(_xkwds_get, kwds, name_default)
-
-
-def _xkwds_get_(kwds, **names_defaults):
-    '''(INTERNAL) Yield each C{kwds} value or its C{default}
-       in I{case-insensitive, alphabetical} order.
-    '''
-    for n, d in itemsorted(names_defaults):
-        yield kwds.get(n, d)
-
-
-def _xkwds_not(*args, **kwds):
-    '''(INTERNAL) Return C{kwds} with a value not in C{args}.
-    '''
-    return dict((n, v) for n, v in kwds.items() if v not in args)
-
-
-def _xkwds_pop(kwds, **name_default):
-    '''(INTERNAL) Pop a C{kwds} value by C{name}, or the C{default}.
-    '''
-    if len(name_default) == 1:
-        for n, d in name_default.items():
-            return kwds.pop(n, d)
-    raise _xkwds_Error(_xkwds_pop, kwds, name_default)
-
-
-def _xkwds_pop_(kwds, **names_defaults):
-    '''(INTERNAL) Pop and yield each C{kwds} value or its C{default}
-       in I{case-insensitive, alphabetical} order.
-    '''
-    for n, d in itemsorted(names_defaults):
-        yield kwds.pop(n, d)
-
-
-def _xkwds_popitem(name_value):
-    '''(INTERNAL) Return exactly one C{(name, value)} item.
-    '''
-    if len(name_value) == 1:  # XXX TypeError
-        return name_value.popitem()  # XXX AttributeError
-    raise _xkwds_Error(_xkwds_popitem, (), name_value, txt=_value_)
-
-
-def _Xorder(_Coeffs, Error, **Xorder):  # in .ktm, .rhumbBase
+def _Xorder(_Coeffs, Error, **Xorder):  # in .ktm, .rhumb.bases
     '''(INTERNAL) Validate C{RAorder} or C{TMorder}.
     '''
     X, m = Xorder.popitem()
-    if m in _Coeffs and _MODS.miscs.basics.isint(m):
+    if m in _Coeffs and isint(m):
         return m
     t = sorted(map(str, _Coeffs.keys()))
     raise Error(X, m, txt=_not_(_or(*t)))
-
-
-def _xzip(*args, **strict):  # PYCHOK no cover
-    '''(INTERNAL) Standard C{zip(..., strict=True)}.
-    '''
-    s = _xkwds_get(strict, strict=True)
-    if s:
-        _zip = _MODS.miscs.basics._zip
-        if _zip is zip:  # < (3, 10)
-            t = _MODS.miscs.streprs.unstr(_xzip.__name__, *args, strict=s)
-            raise _NotImplementedError(t, txt=None)
-        return _zip(*args)
-    return zip(*args)
 
 # **) MIT License
 #

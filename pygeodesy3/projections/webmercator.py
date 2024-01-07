@@ -18,15 +18,15 @@ http://earth-info.nga.mil/GandG/wgs84/web_mercator/(U)%20NGA_SIG_0011_1.0.0_WEBM
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import _splituple, _xattr, _xinstanceof, _xkwds
 from pygeodesy3.constants import PI_2, R_MA, _2_0
 from pygeodesy3.earth.datums import Datum, _spherical_datum
 from pygeodesy3.interns import NN, _COMMASPACE_, _datum_, _earth_, _easting_, \
                               _northing_, _radius_, _SPACE_, _x_, _y_
 # from pygeodesy3.lazily import _ALL_LAZY  from .named
 from pygeodesy3.maths.umath import degrees90, degrees180
-from pygeodesy3.miscs.basics import _splituple, _xinstanceof
 from pygeodesy3.miscs.dms import clipDegrees, parseDMS2
-from pygeodesy3.miscs.errors import _parseX, _ValueError, _xattr, _xkwds
+from pygeodesy3.miscs.errors import _parseX, _ValueError
 from pygeodesy3.miscs.named import _NamedBase, _NamedTuple,  _ALL_LAZY
 from pygeodesy3.miscs.namedTuples import LatLon2Tuple, LatLonDatum3Tuple, PhiLam2Tuple
 from pygeodesy3.miscs.props import Property_RO
@@ -36,7 +36,7 @@ from pygeodesy3.miscs.units import Easting, _isRadius, Lat, Northing, Radius
 from math import atan, atanh, exp, radians, sin, tanh
 
 __all__ = _ALL_LAZY.projections_webmercator
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 # _FalseEasting  = 0   # false Easting (C{meter})
 # _FalseNorthing = 0   # false Northing (C{meter})

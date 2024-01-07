@@ -13,25 +13,25 @@ standard Python C{namedtuple}s.
 @see: Module L{pygeodesy3.miscs.namedTuples} for (most of) the C{Named-Tuples}.
 '''
 
+from pygeodesy3.basics import isclass, isidentifier, iskeyword, isstr, issubclassof, len2, \
+                              _sizeof, _xattr, _xcopy, _xdup, _xkwds, _xkwds_get, \
+                              _xkwds_pop, _xkwds_popitem, _zip
 from pygeodesy3.interns import NN, _at_, _AT_, _COLON_, _COLONSPACE_, _COMMA_, \
                               _COMMASPACE_, _doesn_t_exist_, _DOT_, _DUNDER_, \
                               _EQUAL_, _EQUALSPACED_, _exists_, _immutable_, _name_, \
                               _NL_, _NN_, _not_, _other_, _s_, _SPACE_, _std_, \
                               _UNDER_, _valid_, _vs_,  _dunder_nameof, _isPyPy, _under
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _caller3, _getenv
-from pygeodesy3.miscs.basics import isclass, isidentifier, iskeyword, isstr, issubclassof, \
-                                    len2, _sizeof, _xcopy, _xdup, _zip
 from pygeodesy3.miscs.errors import _AssertionError, _AttributeError, _incompatible, \
                                     _IndexError, _IsnotError, itemsorted, LenError, \
                                     _NameError, _NotImplementedError, _TypeError, \
-                                    _TypesError, _ValueError, UnitError, _xattr, _xkwds, \
-                                    _xkwds_get, _xkwds_pop, _xkwds_popitem
+                                    _TypesError, _ValueError, UnitError
 from pygeodesy3.miscs.props import _allPropertiesOf_n, _hasProperty, property_doc_, \
                                     Property_RO, property_RO, _update_all, _update_attrs
 from pygeodesy3.miscs.streprs import attrs, Fmt, lrstrip, pairs, reprs, unstr
 
 __all__ = _ALL_LAZY.miscs_named
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _COMMANL_           = _COMMA_ + _NL_
 _COMMASPACEDOT_     = _COMMASPACE_ + _DOT_
@@ -303,7 +303,7 @@ class _Named(object):
         return _COMMASPACE_.join(t[1:] if name is None else t)
 
     @property_RO
-    def iteration(self):  # see .base.karney.GDict
+    def iteration(self):  # see .Base.karney.GDict
         '''Get the most recent iteration number (C{int}) or C{None}
            if not available or not applicable.
 

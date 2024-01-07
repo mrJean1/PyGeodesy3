@@ -9,16 +9,16 @@ __version__ = '23.10.21'
 from bases import TestsBase, geographiclib
 
 from pygeodesy3 import EPS, INF, NEG0, NINF, PI, PI2, PI_2, PI3_2, \
-                      acre2ha, acre2m2, atan1, atan2d, chain2m, cot_, cotd_, \
-                      degrees90, degrees180, degrees360, degrees2m, \
-                      fathom2m, ft2m, furlong2m, \
-                      grades400, degrees2grades, grades2degrees, grades2radians, \
-                      isPoints2, map1, \
-                      m2chain, m2degrees, m2fathom, m2ft, m2furlong, m2toise, m2yard, \
-                      radiansPI, radiansPI2, radiansPI_2, \
-                      sincos2, sincos2d, sincostan3, tan_2, unroll180, \
-                      wrap90, wrap180, wrap360, wrapPI, wrapPI2, wrapPI_2, \
-                      toise2m, yard2m, fstr  # DEPRECATED, use fstr
+                       acre2ha, acre2m2, atan1, atan2d, chain2m, cot_, cotd_, \
+                       degrees90, degrees180, degrees360, degrees2m, \
+                       fathom2m, ft2m, furlong2m, \
+                       grades400, degrees2grades, grades2degrees, grades2radians, \
+                       isPoints2, map1, \
+                       m2chain, m2degrees, m2fathom, m2ft, m2furlong, m2toise, m2yard, \
+                       radiansPI, radiansPI2, radiansPI_2, \
+                       sincos2, sincos2d, sincostan3, tan_2, unroll180, \
+                       wrap90, wrap180, wrap360, wrapPI, wrapPI2, wrapPI_2, \
+                       toise2m, yard2m, fstr  # DEPRECATED, use fstr
 
 from math import cos, fabs, radians, sin, tan
 

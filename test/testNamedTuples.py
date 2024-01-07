@@ -4,14 +4,14 @@
 # Test L{namedTuples} module.
 
 __all__ = ('Tests',)
-__version__ = '23.12.13'
+__version__ = '24.01.05'
 
 from bases import TestsBase
 from pygeodesy3 import FIx, issubclassof
-from pygeodesy3.base.karney import _GTuple
-from pygeodesy3.earth.triaxials import _NamedTupleTo
+from pygeodesy3.Base.karney import _GTuple
 from pygeodesy3.distances.frechet import Frechet6Tuple
 from pygeodesy3.distances.hausdorff import Hausdorff6Tuple
+from pygeodesy3.earth.triaxials import _NamedTupleTo
 from pygeodesy3.interns import _DOT_
 from pygeodesy3.maths.fsums import _Float_Int
 from pygeodesy3.miscs.named import _NamedTuple, _Pass

@@ -7,8 +7,9 @@ Function L{intersection3d3}, L{intersections2}, L{parse3d}, L{sumOf},
 L{trilaterate2d2} and L{trilaterate3d2}.
 '''
 
-# from pygeodesy3.base.nvector import _nsumOf  # _MODS
-from pygeodesy3.base.vector3d import Vector3dBase,  property_RO
+# from pygeodesy3.Base.nvector import _nsumOf  # _MODS
+from pygeodesy3.Base.vector3d import Vector3dBase,  property_RO
+from pygeodesy3.basics import _xattr, _xkwds, _xkwds_get, _xkwds_popitem
 from pygeodesy3.constants import EPS, EPS0, EPS1, EPS4, INT0, isnear0, \
                                 _0_0, _1_0
 # from pygeodesy3.distances.formy import _radical2  # _MODS
@@ -20,7 +21,7 @@ from pygeodesy3.maths.fmath import euclid, fabs, fdot, hypot, sqrt,  fsum1_
 from pygeodesy3.maths.umath import atan2b, sincos2d
 # from pygeodesy3.maths import vector2d as _vector2d  # _MODS
 from pygeodesy3.miscs.errors import IntersectionError, _ValueError, VectorError, \
-                                   _xattr, _xError, _xkwds_get, _xkwds, _xkwds_popitem
+                                   _xError
 from pygeodesy3.miscs.iters import PointsIter,  Fmt
 from pygeodesy3.miscs.named import _xnamed, _xotherError
 from pygeodesy3.miscs.namedTuples import Intersection3Tuple, NearestOn2Tuple, \
@@ -32,7 +33,7 @@ from pygeodesy3.miscs.units import _fi_j2, _isDegrees, Radius, Radius_
 # from math import fabs, sqrt  # from .fmath
 
 __all__ = _ALL_LAZY.maths_vector3d
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 class Vector3d(Vector3dBase):
@@ -838,7 +839,7 @@ def sumOf(vectors, Vector=Vector3d, **Vector_kwds):
        @raise VectorError: No B{C{vectors}}.
     '''
     try:
-        n = _MODS.base.nvector
+        n = _MODS.Base.nvector
         t =  n._nsumOf(vectors, 0, None, {})  # no H
     except (TypeError, ValueError) as x:
         raise VectorError(vectors=vectors, Vector=Vector, cause=x)

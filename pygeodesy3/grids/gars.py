@@ -13,13 +13,13 @@ by I{Charles Karney}.  See also U{Global Area Reference System
 <https://Earth-Info.NGA.mil/GandG/coordsys/grids/gars.html>}.
 '''
 
+from pygeodesy3.basics import isstr, _xkwds
 from pygeodesy3.constants import _off90, _1_over, _0_5, _1_0  # PYCHOK used!
 from pygeodesy3.interns import NN, _0to9_, _AtoZnoIO_, _COMMA_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_OTHER
-# from pygeodesy3.miscs.basics import isstr  # from .dms
-from pygeodesy3.miscs.dms import parse3llh,   Fmt, isstr  # parseDMS2
-from pygeodesy3.miscs.errors import _ValueError, _xkwds
-from pygeodesy3.miscs.named import nameof, Property_RO
+from pygeodesy3.miscs.dms import parse3llh,   Fmt  # parseDMS2
+# from pygeodesy3.miscs.errors import _ValueError  # from .miscs.named
+from pygeodesy3.miscs.named import nameof, Property_RO,  _ValueError
 from pygeodesy3.miscs.namedTuples import LatLon2Tuple, LatLonPrec3Tuple
 # from pygeodesy3.miscs.props import Property_RO  # from .named
 # from pygeodesy3.miscs.streprs import Fmt  # from .dms
@@ -29,7 +29,7 @@ from pygeodesy3.miscs.units import Int_, Lat, Lon, Precision_, Scalar_, \
 from math import floor
 
 __all__ = _ALL_LAZY.grids_gars
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _Digits  = _0to9_
 _LatLen  =    2

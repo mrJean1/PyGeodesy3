@@ -136,6 +136,10 @@ in C{pygeodesy3} are based on I{Karney}'s post U{Area of a spherical polygon
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import _copysign, int1s, isint, neg, unsigned0, \
+                              _xgeographiclib, _xkwds, _xkwds_get, \
+                              _xversion_info, _zip,  isodd, \
+                              _xImportError, _xinstanceof  # PYCHOK shared
 from pygeodesy3.constants import NAN, _isfinite as _math_isfinite, _0_0, \
                                 _1_16th,  _1_0, _2_0, _180_0, _N_180_0, _360_0
 from pygeodesy3.interns import NN, _2_, _a12_, _area_, _azi2_, _azi12_, \
@@ -143,15 +147,11 @@ from pygeodesy3.interns import NN, _2_, _a12_, _area_, _azi2_, _azi12_, \
                               _m12_, _M12_, _M21_, _number_, _s12_, _S12_, \
                               _UNDER_,  _BAR_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _getenv
-from pygeodesy3.maths.fmath import cbrt, fremainder, hypot as _hypot, norm2, \
-                                   euclid, Fsum, unstr  # PYCHOK shared
+from pygeodesy3.maths.fmath import cbrt, fremainder, norm2,  euclid, \
+                                   hypot as _hypot, Fsum, unstr  # PYCHOK shared
 # from pygeodesy3.maths.fsums import Fsum  # from .maths.fmath
 from pygeodesy3.maths.umath import atan2d, sincos2d, tand, _unrollon,  fabs
-from pygeodesy3.miscs.basics import _copysign, int1s, isint, neg, unsigned0, \
-                                    _xgeographiclib, _xImportError, _xversion_info, \
-                                    _xinstanceof, _zip,  isodd  # PYCHOK shared
-from pygeodesy3.miscs.errors import GeodesicError, itemsorted, _ValueError, _xkwds, \
-                                   _xkwds_get
+from pygeodesy3.miscs.errors import GeodesicError, itemsorted, _ValueError
 # from pygeodesy3.miscs.iters import PointsIter  # _MODS
 from pygeodesy3.miscs.named import _Dict, _NamedBase, _NamedTuple, notImplemented, _Pass
 from pygeodesy3.miscs.props import Property_RO,  property_RO  # PYCHOK shared
@@ -163,8 +163,8 @@ from pygeodesy3.miscs.units import Bearing as _Azi, Degrees as _Deg, Lat, Lon, \
 
 # from math import fabs  # from .maths.umath
 
-__all__ = _ALL_LAZY.base_karney
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.Base_karney
+__version__ = '24.01.05'
 
 _K_2_0      = _getenv('PYGEODESY3_GEOGRAPHICLIB', _2_) == _2_
 _perimeter_ = 'perimeter'
@@ -766,7 +766,7 @@ if _K_2_0:
     def _sincos2(rad):
         return _sin(rad), _cos(rad)
 
-    _signBit = _MODS.miscs.basics.signBit
+    _signBit = _MODS.basics.signBit
 else:
     _sincos2 = _MODS.maths.umath.sincos2  # PYCHOK shared
 

@@ -10,13 +10,13 @@ from bases import GeodSolve, geographiclib, isPyPy, isPython2, \
                   startswith, TestsBase
 
 from pygeodesy3 import F_D, F_DM, F_DMS, F_RAD, R_M, R_NM, \
-                      degrees, fstr, Height, isclockwise, isconvex, \
-                      isenclosedBy, isnear0, ispolar, m2km, m2NM, \
-                      IntersectionError, VincentyError  # PYCHOK expected
+                       degrees, fstr, Height, isclockwise, isconvex, \
+                       isenclosedBy, isnear0, ispolar, m2km, m2NM, \
+                       IntersectionError, VincentyError  # PYCHOK expected
 from pygeodesy3.miscs.namedTuples import Bounds2Tuple, \
-                                  LatLon2Tuple, LatLon3Tuple, \
-                                  PhiLam2Tuple, PhiLam3Tuple, \
-                                  Vector3Tuple, Vector4Tuple
+                                         LatLon2Tuple, LatLon3Tuple, \
+                                         PhiLam2Tuple, PhiLam3Tuple, \
+                                         Vector3Tuple, Vector4Tuple
 
 
 class Tests(TestsBase):
@@ -630,7 +630,7 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import ellipsoidalExact, ellipsoidalNvector, ellipsoidalVincenty, \
-                          sphericalNvector, sphericalTrigonometry
+                           sphericalNvector, sphericalTrigonometry
 
     t = Tests(__file__, __version__)
 

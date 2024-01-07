@@ -10,16 +10,16 @@ from bases import GeodSolve, geographiclib, isPython3, isWindows, \
                   TestsBase
 
 from pygeodesy3 import Datums, fstr, hausdorff_, \
-                      HausdorffCosineAndoyerLambert, \
-                      HausdorffCosineForsytheAndoyerLambert, \
-                      HausdorffDegrees, HausdorffDistanceTo, \
-                      HausdorffRadians, HausdorffCosineLaw, \
-                      HausdorffEquirectangular, HausdorffEuclidean, \
-                      HausdorffExact, HausdorffFlatLocal, \
-                      HausdorffFlatPolar, HausdorffHaversine, \
-                      HausdorffHubeny, HausdorffKarney, \
-                      HausdorffThomas, HausdorffVincentys, \
-                      LatLon_, randomrangenerator
+                       HausdorffCosineAndoyerLambert, \
+                       HausdorffCosineForsytheAndoyerLambert, \
+                       HausdorffDegrees, HausdorffDistanceTo, \
+                       HausdorffRadians, HausdorffCosineLaw, \
+                       HausdorffEquirectangular, HausdorffEuclidean, \
+                       HausdorffExact, HausdorffFlatLocal, \
+                       HausdorffFlatPolar, HausdorffHaversine, \
+                       HausdorffHubeny, HausdorffKarney, \
+                       HausdorffThomas, HausdorffVincentys, \
+                       LatLon_, randomrangenerator
 
 
 class HausdorffDegrees_(HausdorffDegrees):

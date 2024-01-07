@@ -10,10 +10,10 @@ from bases import GeodSolve, geographiclib, isPython37, \
                   startswith, TestsBase
 
 from pygeodesy3 import EPS, NN, R_M, R_MA, LatLon_, LatLon2psxy, \
-                      Numpy2LatLon, Tuple2LatLon, areaOf, boundsOf, \
-                      centroidOf, classname, fstr, \
-                      isclockwise, isconvex, ispolar, luneOf, \
-                      nearestOn5, perimeterOf, points, quadOf
+                       Numpy2LatLon, Tuple2LatLon, areaOf, boundsOf, \
+                       centroidOf, classname, fstr, \
+                       isclockwise, isconvex, ispolar, luneOf, \
+                       nearestOn5, perimeterOf, points, quadOf
 
 try:
     if isPython37:

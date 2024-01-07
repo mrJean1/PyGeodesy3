@@ -13,6 +13,8 @@ and L{ChLVe} and L{Ltp}, L{ChLV}, L{LocalError}, L{Attitude} and L{Frustum}.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import issubclassof, map1, map2, _xargs_kwds_names, \
+                             _xattr, _xkwds, _xkwds_get
 from pygeodesy3.constants import EPS, INT0, _umod_360, _0_0, _0_01, _0_5, _1_0, \
                                 _2_0, _60_0, _90_0, _100_0, _180_0, _3600_0, \
                                 _N_1_0  # PYCHOK used!
@@ -26,9 +28,7 @@ from pygeodesy3.maths.fsums import _floor, Fsum, fsumf_, fsum1f_
 from pygeodesy3.maths.umath import cotd, _loneg, sincos2d, sincos2d_, \
                                    tand, tand_, wrap180, wrap360
 from pygeodesy3.maths.vector3d import _ALL_LAZY, Vector3d
-from pygeodesy3.miscs.basics import issubclassof, map1, map2, _xargs_kwds_names
-from pygeodesy3.miscs.errors import _NotImplementedError, _TypesError, _ValueError, \
-                                    _xattr, _xkwds, _xkwds_get
+from pygeodesy3.miscs.errors import _NotImplementedError, _TypesError, _ValueError
 from pygeodesy3.miscs.named import _NamedBase, notOverloaded
 from pygeodesy3.miscs.namedTuples import LatLon3Tuple, LatLon4Tuple, Vector3Tuple
 from pygeodesy3.miscs.props import Property, Property_RO, property_doc_, property_RO, \
@@ -43,7 +43,7 @@ from pygeodesy3.projections.ltpTuples import Attitude4Tuple, Footprint5Tuple, \
 # from math import fabs, floor as _floor  # from .fmath, .maths.fsums
 
 __all__ = _ALL_LAZY.projections_ltp
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _height0_ = _height_ + _0_
 _narrow_  = 'narrow'

@@ -8,9 +8,9 @@ u'''Package of lazily imported C{rhumb} modules L{rhumb.aux_}, L{rhumb.ekx} and 
 '''
 from pygeodesy3.lazily import _ALL_LAZY, _init__star__, _lazy_import_as, _unLazy0
 
-__version__ = '23.12.18'
+__version__ = '23.12.29'
 
-if _unLazy0:
+if _unLazy0:  # or _isfrozen
     if _init__star__:  # PYCHOK no cover
         from pygeodesy3.rhumb.aux_ import RhumbAux, RhumbLineAux  # PYCHOK expected
         from pygeodesy3.rhumb.ekx import Rhumb, RhumbLine  # PYCHOK expected

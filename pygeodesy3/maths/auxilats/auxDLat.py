@@ -11,6 +11,7 @@ under the MIT/X11 License.  For more information, see the U{GeographicLib
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import map1, _reverange
 from pygeodesy3.constants import INF, NAN, isfinite, isinf, isnan, _0_0, _0_5, \
                                 _1_0, _2_0, _N_2_0, _naninf, _over, _1_over
 # from pygeodesy3.lazily import _ALL_OTHER  # from .maths.auxilats.auxLat
@@ -20,13 +21,11 @@ from pygeodesy3.maths.auxilats.auxLat import AuxLat,  _ALL_OTHER
 from pygeodesy3.maths.elliptic import Elliptic as _Ef,  Fsum
 # from pygeodesy3.maths.fsums import Fsum  # from .maths.elliptic
 # from pygeodesy3.maths.umath import atan1  # from .maths.auxilats.auxily
-from pygeodesy3.miscs.basics import map1, _reverange
-# from pygeodesy3.miscs.errors import AuxError  # from .maths.auxilats.auxily
 
 from math import atan2, cos, sin, sqrt
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.03'
 
 
 class AuxDLat(AuxLat):

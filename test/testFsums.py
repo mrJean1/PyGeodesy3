@@ -4,7 +4,7 @@
 # Test L{fsums} module.
 
 __all__ = ('Tests',)
-__version__ = '23.11.30'
+__version__ = '24.01.05'
 
 from bases import endswith, isPython2, randoms, startswith, TestsBase
 
@@ -296,8 +296,8 @@ class Tests(TestsBase):
 
         s, r = t.toUnits()
         t = t.__class__.__name__
-        self.test(t, (s.name, s, s.__class__), "('fsum', 5.0, <class 'pygeodesy3.base.units.Float'>)")
-        self.test(t, (r.name, r, r.__class__), "('residual', 0, <class 'pygeodesy3.base.units.Int'>)")
+        self.test(t, (s.name, s, s.__class__), "('fsum', 5.0, <class 'pygeodesy3.Base.units.Float'>)")
+        self.test(t, (r.name, r, r.__class__), "('residual', 0, <class 'pygeodesy3.Base.units.Int'>)")
 
         self.test('fmul(x)', x.fmul(x),          '25.0', prec=1)
         self.test('fmul(F)', x.fmul(Fsum(2.5)),  '62.5', prec=1)

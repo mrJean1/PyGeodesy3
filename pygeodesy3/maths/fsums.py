@@ -26,6 +26,8 @@ and L{Fsum.__itruediv__}.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
+from pygeodesy3.basics import iscomplex, isint, isscalar, signOf, _signOf, \
+                             _xkwds_get, _xkwds_get_
 from pygeodesy3.constants import INT0, _isfinite, isinf, isnan, _pos_self, \
                                 _0_0, _1_0, _N_1_0,  Float, Int
 from pygeodesy3.interns import NN, _arg_, _COMMASPACE_, _DASH_, _EQUAL_, \
@@ -34,10 +36,8 @@ from pygeodesy3.interns import NN, _arg_, _COMMASPACE_, _DASH_, _EQUAL_, \
                               _not_scalar_, _PERCENT_, _PLUS_, _R_, _RANGLE_, \
                               _SLASH_, _SPACE_, _STAR_, _UNDER_
 from pygeodesy3.lazily import _ALL_LAZY, _getenv, _sys_version_info2
-from pygeodesy3.miscs.basics import iscomplex, isint, isscalar, signOf, _signOf
 from pygeodesy3.miscs.errors import itemsorted, _OverflowError, _TypeError, \
-                             _ValueError, _xError2, _xkwds_get, _xkwds_get_, \
-                             _ZeroDivisionError
+                             _ValueError, _xError2, _ZeroDivisionError
 from pygeodesy3.miscs.named import _Named, _NamedTuple, _NotImplemented,  Fmt, unstr
 from pygeodesy3.miscs.props import _allPropertiesOf_n, Property_RO, property_RO
 # from pygeodesy3.miscs.streprs import Fmt, unstr  # from .miscs.named
@@ -46,7 +46,7 @@ from pygeodesy3.miscs.props import _allPropertiesOf_n, Property_RO, property_RO
 from math import ceil as _ceil, fabs, floor as _floor  # PYCHOK used! .ltp
 
 __all__ = _ALL_LAZY.maths_fsums
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _add_op_       = _PLUS_  # in .maths.auxilats.auxAngle
 _eq_op_        = _EQUAL_ * 2  # _DEQUAL_

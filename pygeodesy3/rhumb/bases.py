@@ -23,8 +23,10 @@ License.  For more information, see the U{GeographicLib<https://GeographicLib.So
 # make sure int/int division yields float quotient
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.base.karney import _atan2d, Caps, _CapsBase, _diff182, \
+from pygeodesy3.Base.karney import _atan2d, Caps, _CapsBase, _diff182, \
                                    _fix90, _norm180, GDict
+from pygeodesy3.basics import _copysign, unsigned0, _xinstanceof, _xkwds, \
+                              _xkwds_pop
 from pygeodesy3.constants import EPS, EPS0, EPS1, INT0, NAN, _over, \
                                 _EPSqrt as _TOL, _0_0, _0_01, _1_0, _90_0
 # from pygeodesy3.distances.formy import opposing  # _MODS
@@ -37,9 +39,8 @@ from pygeodesy3.maths.fmath import euclid, favg, sqrt_a,  Fsum
 from pygeodesy3.maths.umath import acos1, _azireversed, _loneg, sincos2d, \
                                   sincos2d_, _unrollon, _Wrap
 from pygeodesy3.maths.vector3d import _intersect3d3, Vector3d  # in .Intersection below
-from pygeodesy3.miscs.basics import _copysign, unsigned0, _xinstanceof
-from pygeodesy3.miscs.errors import IntersectionError, itemsorted, RhumbError, \
-                                   _xdatum, _xkwds, _xkwds_pop, _Xorder
+from pygeodesy3.miscs.errors import IntersectionError, itemsorted, RhumbError,\
+                                   _xdatum, _Xorder
 # from pygeodesy3.miscs.named import notOverloaded  # _MODS
 from pygeodesy3.miscs.namedTuples import Distance2Tuple, LatLon2Tuple
 from pygeodesy3.miscs.props import deprecated_method, Property, Property_RO, \
@@ -52,7 +53,7 @@ from pygeodesy3.miscs.units import Float_, Lat, Lon, Meter, Radius_,  Int  # PYC
 from math import cos, fabs
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _anti_ = _Dash('anti')
 _rls   = []  # instances of C{RbumbLine...} to be updated
@@ -1036,7 +1037,7 @@ __all__ += _ALL_DOCS(RhumbBase, RhumbLineBase)
 if __name__ == '__main__':
 
     from pygeodesy3 import printf, Rhumb as Rh, RhumbAux as Ah
-    from pygeodesy3.miscs.basics import _zip
+    from pygeodesy3.basics import _zip
     from pygeodesy3.earth.ellipsoids import _EWGS84
 
     Al = Ah(_EWGS84).Line(30, 0, 45)

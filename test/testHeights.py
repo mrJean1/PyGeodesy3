@@ -15,14 +15,14 @@ warnings.filterwarnings('ignore')  # or 'error'
 from bases import coverage, geographiclib, startswith, TestsBase
 
 from pygeodesy3 import Datums, fstr, HeightError, SciPyError, \
-                      HeightCubic, HeightIDWcosineAndoyerLambert, \
-                      HeightIDWcosineForsytheAndoyerLambert, HeightIDWcosineLaw, \
-                      HeightIDWdistanceTo, HeightIDWequirectangular, \
-                      HeightIDWeuclidean, HeightIDWexact, HeightIDWflatLocal, \
-                      HeightIDWflatPolar, HeightIDWhaversine, HeightIDWhubeny, \
-                      HeightIDWkarney, HeightIDWthomas, HeightIDWvincentys, \
-                      HeightLinear, HeightLSQBiSpline, HeightSmoothBiSpline
-#                     HeightIDW, HeightIDW2, HeightIDW3
+                       HeightCubic, HeightIDWcosineAndoyerLambert, \
+                       HeightIDWcosineForsytheAndoyerLambert, HeightIDWcosineLaw, \
+                       HeightIDWdistanceTo, HeightIDWequirectangular, \
+                       HeightIDWeuclidean, HeightIDWexact, HeightIDWflatLocal, \
+                       HeightIDWflatPolar, HeightIDWhaversine, HeightIDWhubeny, \
+                       HeightIDWkarney, HeightIDWthomas, HeightIDWvincentys, \
+                       HeightLinear, HeightLSQBiSpline, HeightSmoothBiSpline
+#                      HeightIDW, HeightIDW2, HeightIDW3
 from pygeodesy3.interns import _DOT_
 from pygeodesy3.spherical.trigonometry import LatLon
 

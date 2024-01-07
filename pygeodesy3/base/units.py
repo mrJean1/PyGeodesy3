@@ -4,17 +4,18 @@
 u'''Basic C{Float}, C{Int} and C{Str}ing units classes.
 '''
 
+# from pygeodesy3.basics import _xkwds_popitem  # from .miscs.errors
 from pygeodesy3.interns import NN, _degrees_, _degrees2_, _invalid_, \
                               _meter_, _radians_, _radians2_, \
                               _radius_, _UNDER_,  _std_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY
-from pygeodesy3.miscs.errors import UnitError, _XError, _xkwds_popitem
+from pygeodesy3.miscs.errors import UnitError, _XError,  _xkwds_popitem
 from pygeodesy3.miscs.named import modulename, _Named, property_doc_
 # from pygeodesy3.miscs.props import property_doc_  # from .miscs.named
 from pygeodesy3.miscs.streprs import Fmt, fstr
 
-__all__ = _ALL_LAZY.base_units
-__version__ = '23.12.18'
+__all__ = _ALL_LAZY.Base_units
+__version__ = '24.01.05'
 
 
 class _NamedUnit(_Named):

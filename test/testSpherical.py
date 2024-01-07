@@ -11,8 +11,8 @@ from testLatLon import Tests as _TestsLL
 from testVectorial import Tests as _TestsV
 
 from pygeodesy3 import F_D, F_DEG_, F_DMS, PI_4, R_M, \
-                      classname, degrees2m, Ellipsoids, \
-                      IntersectionError, latlonDMS, lonDMS
+                       classname, degrees2m, Ellipsoids, \
+                       IntersectionError, latlonDMS, lonDMS
 from math import radians
 
 # <https://GeographicLib.SourceForge.io/html/python/examples.html>

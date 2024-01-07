@@ -9,10 +9,10 @@ __version__ = '23.12.17'
 from bases import GeodSolve, TestsBase
 
 from pygeodesy3 import Datums, EcefError, EcefFarrell21, EcefFarrell22, EcefKarney, \
-                      EcefMatrix, EcefSudano, EcefVeness, EcefYou, Ellipsoids, \
-                      fstr, latDMS, lonDMS, parse3llh
+                       EcefMatrix, EcefSudano, EcefVeness, EcefYou, Ellipsoids, \
+                       fstr, latDMS, lonDMS, parse3llh
 from pygeodesy3.spherical import nvector as sphericalNvector, \
-                                trigonometry as sphericalTrigonometry
+                                 trigonometry as sphericalTrigonometry
 from math import radians
 
 
@@ -242,9 +242,9 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3.ellipsoidal import exact as ellipsoidalExact, \
-                                      karney as ellipsoidalKarney, \
-                                      nvector as ellipsoidalNvector, \
-                                      vincenty as ellipsoidalVincenty
+                                       karney as ellipsoidalKarney, \
+                                       nvector as ellipsoidalNvector, \
+                                       vincenty as ellipsoidalVincenty
 
     t = Tests(__file__, __version__)
     t.testEcef(EcefKarney)

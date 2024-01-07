@@ -9,10 +9,10 @@ __version__ = '23.03.27'
 from bases import TestsBase
 
 from pygeodesy3 import F_D,   F_DM,   F_DMS,   F_DEG,   F_MIN,   F_SEC,   F_RAD,   F_D60, \
-                      F_D_,  F_DM_,  F_DMS_,  F_DEG_,  F_MIN_,  F_SEC_,  F_RAD_,  F_D60_, \
-                      F_D__, F_DM__, F_DMS__, F_DEG__, F_MIN__, F_SEC__, F_RAD__, F_D60__, \
-                      compassPoint, degDMS, fstr, normDMS, parseDDDMMSS, parseDMS, \
-                      ParseError, parse3llh, RangeError, rangerrors, toDMS
+                       F_D_,  F_DM_,  F_DMS_,  F_DEG_,  F_MIN_,  F_SEC_,  F_RAD_,  F_D60_, \
+                       F_D__, F_DM__, F_DMS__, F_DEG__, F_MIN__, F_SEC__, F_RAD__, F_D60__, \
+                       compassPoint, degDMS, fstr, normDMS, parseDDDMMSS, parseDMS, \
+                       ParseError, parse3llh, RangeError, rangerrors, toDMS
 
 
 class Tests(TestsBase):

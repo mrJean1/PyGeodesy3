@@ -6,12 +6,12 @@
 # classes, like LatLon.
 
 __all__ = ('Tests',)
-__version__ = '23.11.30'
+__version__ = '24.01.05'
 
 from bases import GeodSolve, TestsBase, type2str
 
 from pygeodesy3 import itemsorted, Property, Property_RO, property_RO, \
-                      SciPyWarning, Str_
+                       SciPyWarning, Str_
 
 from inspect import isclass
 from os.path import basename
@@ -76,9 +76,9 @@ class Tests(TestsBase):
 if __name__ == '__main__':
 
     from pygeodesy3 import ellipsoidalExact, ellipsoidalKarney, \
-                          ellipsoidalNvector, ellipsoidalVincenty, \
-                          sphericalNvector, sphericalTrigonometry, vector3d
-    from pygeodesy3.base import nvector as nvectorBase  # DEPRECATED
+                           ellipsoidalNvector, ellipsoidalVincenty, \
+                           sphericalNvector, sphericalTrigonometry, vector3d
+    from pygeodesy3.Base import nvector as nvectorBase  # DEPRECATED
 
     t = Tests(__file__, __version__)
 

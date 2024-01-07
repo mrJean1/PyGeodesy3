@@ -4,7 +4,9 @@
 u'''Floating point and other formatting utilities.
 '''
 
-# from pygeodesy3.constants import _0_0  # from .miscs.basics
+from pygeodesy3.basics import isint, islistuple, isscalar, isstr, _zip, \
+                             _xkwds_get, _xkwds_pop,  _0_0
+# from pygeodesy3.constants import _0_0  # from .basics
 from pygeodesy3.interns import NN, _0_, _0to9_, MISSING, _BAR_, _COMMASPACE_, \
                               _DOT_, _dunder_nameof, _E_, _ELLIPSIS_, _EQUAL_, \
                               _H_, _LR_PAIRS, _N_, _name_, _not_, _not_scalar_, \
@@ -13,15 +15,14 @@ from pygeodesy3.interns import _convergence_, _distant_, _e_, _eps_, _exceeds_, 
                                _EQUALSPACED_, _f_, _F_, _g_, _limit_, _no_, \
                                _tolerance_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _getenv
-from pygeodesy3.miscs.basics import isint, islistuple, isscalar, isstr, _zip,   _0_0
-from pygeodesy3.miscs.errors import _AttributeError, _IsnotError, itemsorted, _or, \
-                                    _TypeError, _ValueError, _xkwds_get, _xkwds_pop
+from pygeodesy3.miscs.errors import _AttributeError, _IsnotError, itemsorted, \
+                                    _or, _TypeError, _ValueError
 # from pygeodesy3.miscs.units import Meter  # _MODS
 
 from math import fabs, log10 as _log10
 
 __all__ = _ALL_LAZY.miscs_streprs
-__version__ = '23.12.18'
+__version__ = '23.12.31'
 
 _EN_PREC    =  6           # max MGRS/OSGR precision, 1 micrometer
 _EN_WIDE    =  5           # number of MGRS/OSGR units, log10(_100km)

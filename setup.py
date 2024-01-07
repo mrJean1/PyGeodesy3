@@ -19,7 +19,7 @@
 from setuptools import setup
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 
 def _c2(*names):
@@ -98,7 +98,7 @@ _KeyWords = ('AER', 'Albers', 'altitude', 'Andoyer', 'annulus', 'antipode', 'are
              'XYZ', 'yaw', 'You')
 
 setup(name='PyGeodesy3',
-      packages=['pygeodesy3', 'pygeodesy3.base', 'pygeodesy3.deprecated', 'pygeodesy3.distances', 'pygeodesy3.earth',
+      packages=['pygeodesy3', 'pygeodesy3.Base', 'pygeodesy3.deprecated', 'pygeodesy3.distances', 'pygeodesy3.earth',
                               'pygeodesy3.elevations', 'pygeodesy3.ellipsoidal', 'pygeodesy3.geodesic',
                               'pygeodesy3.geodesic.exact', 'pygeodesy3.grids', 'pygeodesy3.maths',
                               'pygeodesy3.maths.auxilats', 'pygeodesy3.miscs', 'pygeodesy3.polygonal',

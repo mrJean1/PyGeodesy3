@@ -5,12 +5,12 @@
 # and Python C{geographiclib} tests.
 
 __all__ = ('Tests',)
-__version__ = '23.12.16'
+__version__ = '24.01.05'
 
 from bases import _fLate, GeodSolve, geographiclib, isPython2, TestsBase
 
 from pygeodesy3 import classname, DIG, Ellipsoid, Ellipsoids, GDict, GeodesicLineExact, \
-                      itemsorted, map2, NN
+                       itemsorted, map2, NN
 from pygeodesy3.geodesic import exact as geodesicx, solve as geodsolve, wrap as geodesicw
 from pygeodesy3.interns import _DOT_
 
@@ -215,7 +215,7 @@ class Tests(TestsBase):
         self.test('AddPoints',  _t3(p.Compute()),        '(4, 29506941, 65690027591346)', known=isPython2)
         self.test('TestPoint',  _t3(p.TestPoint(52, 0)), '(5, 29506941, 65690027591346)', known=isPython2)
 
-        if not K:  # coverage, but not for pygeodesy3.base.karney.PolygonArea
+        if not K:  # coverage, but not for pygeodesy3.Base.karney.PolygonArea
             t = p.toStr()
             self.test(p.toStr.__name__, t, t)
 

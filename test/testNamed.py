@@ -8,7 +8,7 @@ __version__ = '23.09.13'
 
 from bases import endswith, TestsBase
 from pygeodesy3 import geohash, Datum, Datums, named, \
-                      namedTuples, nameof, NN, ub2str
+                       namedTuples, nameof, NN, ub2str
 
 from os import linesep
 

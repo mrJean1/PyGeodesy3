@@ -21,7 +21,7 @@ other than C{"std"}, zones C{'A'} and C{'Y'} are used for negative, west longitu
 90°S respectively 90°N (for backward compatibility).
 '''
 
-from pygeodesy3.base.utmups import _LLEB, _hemi, _parseUTMUPS5, _to4lldn, \
+from pygeodesy3.Base.utmups import _LLEB, _hemi, _parseUTMUPS5, _to4lldn, \
                                    _to3zBhp, _to3zll, _UPS_BANDS as _Bands, \
                                    _UPS_LAT_MAX, _UPS_LAT_MIN, _UPS_ZONE, \
                                    _UPS_ZONE_STR, UtmUpsBase,  Fmt
@@ -34,7 +34,7 @@ from pygeodesy3.interns import NN, _COMMASPACE_, _inside_, _N_, _pole_, \
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _getenv
 from pygeodesy3.maths.fmath import hypot, hypot1, sqrt0
 from pygeodesy3.maths.umath import atan1d, degrees180, sincos2d
-# from pygeodesy3.miscs.basics import neg as _neg  # from .miscs.dms
+# from pygeodesy3.basics import neg as _neg  # from .miscs.dms
 from pygeodesy3.miscs.dms import degDMS, parseDMS2,  _neg
 from pygeodesy3.miscs.errors import RangeError, _ValueError
 from pygeodesy3.miscs.named import nameof, _xnamed
@@ -47,7 +47,7 @@ from pygeodesy3.miscs.units import Float, Float_, Meter, Lat
 from math import atan2, fabs, radians, tan
 
 __all__ = _ALL_LAZY.projections_ups
-__version__ = '23.12.18'
+__version__ = '24.01.05'
 
 _BZ_UPS  = _getenv('PYGEODESY3_UPS_POLES', _std_) == _std_
 _Falsing =  Meter(2000e3)  # false easting and northing (C{meter})

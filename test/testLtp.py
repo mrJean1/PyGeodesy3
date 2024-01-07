@@ -9,10 +9,10 @@ __version__ = '23.12.17'
 from bases import startswith, TestsBase
 
 from pygeodesy3 import Aer, Attitude, ChLV, ChLVa, ChLVe, \
-                      EcefFarrell21, EcefFarrell22, EcefKarney, \
-                      EcefVeness, EcefSudano, Ecef9Tuple, EcefYou, \
-                      Enu, Frustum, fstr, LatLon_, LocalCartesian, \
-                      Local9Tuple, Ltp, Ned, tyr3d, XyzLocal, latDMS, lonDMS
+                       EcefFarrell21, EcefFarrell22, EcefKarney, \
+                       EcefVeness, EcefSudano, Ecef9Tuple, EcefYou, \
+                       Enu, Frustum, fstr, LatLon_, LocalCartesian, \
+                       Local9Tuple, Ltp, Ned, tyr3d, XyzLocal, latDMS, lonDMS
 EcefCartesian = LocalCartesian  # DEPRECATED, use L{LocalCartesian}
 
 
