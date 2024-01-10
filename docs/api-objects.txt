@@ -3707,6 +3707,7 @@ pygeodesy3.miscs.streprs._dunder_nameof	pygeodesy3.interns-module.html#_dunder_n
 pygeodesy3.miscs.streprs._fstrENH2	pygeodesy3.miscs.streprs-module.html#_fstrENH2
 pygeodesy3.miscs.units	pygeodesy3.miscs.units-module.html
 pygeodesy3.miscs.units._isRadius	pygeodesy3.miscs.units-module.html#_isRadius
+pygeodesy3.miscs.units._xkwds	pygeodesy3.basics-module.html#_xkwds
 pygeodesy3.miscs.units._Scalars	pygeodesy3.miscs.units-module.html#_Scalars
 pygeodesy3.miscs.units._2000km	pygeodesy3.miscs.units-module.html#_2000km
 pygeodesy3.miscs.units._xUnit	pygeodesy3.miscs.units-module.html#_xUnit
@@ -3737,6 +3738,7 @@ pygeodesy3.miscs.units._Error	pygeodesy3.Base.units-module.html#_Error
 pygeodesy3.miscs.units._isDegrees	pygeodesy3.miscs.units-module.html#_isDegrees
 pygeodesy3.miscs.units._xkwds_popitem	pygeodesy3.basics-module.html#_xkwds_popitem
 pygeodesy3.miscs.units._fi_j2	pygeodesy3.miscs.units-module.html#_fi_j2
+pygeodesy3.miscs.units.toDMS	pygeodesy3.miscs.dms-module.html#toDMS
 pygeodesy3.miscs.units._Radians	pygeodesy3.miscs.units-module.html#_Radians
 pygeodesy3.miscs.units.signOf	pygeodesy3.basics-module.html#signOf
 pygeodesy3.miscs.units._isRadians	pygeodesy3.miscs.units-module.html#_isRadians

@@ -24,8 +24,8 @@ from pygeodesy3.maths.fmath import euclid, hypot, hypot_, hypot2, sqrt0
 from pygeodesy3.maths.fsums import fsumf_
 # from pygeodesy3.maths import vector3d  # _MODS
 from pygeodesy3.maths.umath import acos1, atan2b, atan2d, degrees2m, _loneg, \
-                                   m2degrees, tan_2, sincos2, sincos2_, \
-                                   sincos2d_, _Wrap
+                                   m2degrees, sincos2, sincos2_, sincos2d_, \
+                                   tan_2, _Wrap
 from pygeodesy3.miscs.errors import IntersectionError, LimitError, limiterrors, \
                                    _TypeError, _ValueError, _xError
 from pygeodesy3.miscs.named import _NamedTuple, _Pass, _xnamed,  Fmt, unstr
@@ -1847,39 +1847,34 @@ class RThetaPhi3Tuple(_NamedTuple):
     _Names_ = (_r_,    _theta_, _phi_)
     _Units_ = ( Meter, _Pass,   _Pass)
 
-    def toDegrees(self, **toDMS_kwds):
-        '''Convert this L{RThetaPhi3Tuple} to L{Degrees} or C{toDMS}.
+    def toDegrees(self):
+        '''Convert this L{RThetaPhi3Tuple}'s angles to L{Degrees}.
 
            @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with C{theta} and C{phi}
-                    both in L{Degrees} or as L{toDMS} strings provided some
-                    B{C{toDMS_kwds}} keyword arguments are specified.
+                    both in L{Degrees}.
         '''
-        t, p, _ = _toDegrees(self, self.theta, self.phi, **toDMS_kwds)  # PYCHOK named
+        t, p, _ = _toDegrees(self, self.theta, self.phi)  # PYCHOK named
         return _ or self.classof(self.r, t, p, name=self.name)  # PYCHOK named
 
     def toRadians(self):
-        '''Convert this L{RThetaPhi3Tuple} to L{Radians}.
+        '''Convert this L{RThetaPhi3Tuple}'s angles to L{Radians}.
 
-           @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with
-                    C{theta} and C{phi} both in L{Radians}.
+           @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with C{theta} and C{phi}
+                    both in L{Radians}.
         '''
         t, p, _ = _toRadians(self, self.theta, self.phi)  # PYCHOK named
         return _ or self.classof(self.r, t, p, name=self.name)  # PYCHOK named
 
 
-def xyz2rtp(x_xyz, *y_z, **toDMS_kwds):
+def xyz2rtp(x_xyz, *y_z):
     '''Convert cartesian C{(x, y, z)} to spherical C{(r, theta, phi)} coordinates.
 
-       @kwarg toDMS_kwds: Optional keyword arguments for function L{toDMS<miscs.dms.toDMS>}
-                          to convert C{theta} and C{phi} to C{toDMS}.
-
-       @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with C{theta} and C{phi} both in
-                L{Degrees} or as L{toDMS} strings provided some B{C{toDMS_kwds}} keyword
-                arguments are specified.
+       @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with C{theta} and C{phi}
+                both in L{Degrees}.
 
        @see: Function L{xyz2rtp_}, class L{RThetaPhi3Tuple} and method C{toDegrees} thereof.
     '''
-    return xyz2rtp_(x_xyz, *y_z).toDegrees(**toDMS_kwds)
+    return xyz2rtp_(x_xyz, *y_z).toDegrees()
 
 
 def xyz2rtp_(x_xyz, *y_z):
@@ -1892,7 +1887,7 @@ def xyz2rtp_(x_xyz, *y_z):
 
        @return: L{RThetaPhi3Tuple}C{(r, theta, phi)} with radial distance C{r} (C{meter},
                 same units as C{x}, C{y} and C{z}), inclination C{theta} (with respect to
-                the positive z-axis) and azimuthal angle C{phi} in L{Radians}.
+                the positive z-axis) and azimuthal angle C{phi} both in L{Radians}.
 
        @see: U{Physics<https://WikiPedia.org/wiki/Spherical_coordinate_system>}
              convention (ISO 80000-2:2019).

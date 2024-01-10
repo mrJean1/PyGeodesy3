@@ -9,7 +9,7 @@ named units as L{Degrees}, L{Feet}, L{Meter}, L{Radians}, etc.
 from pygeodesy3.Base.units import _Error, Float, Int, _NamedUnit, Radius, Str, \
                                    Fmt, fstr  # PYCHOK shared .namedTuples
 from pygeodesy3.basics import isinstanceof, isscalar, isstr, issubclassof, \
-                              signOf, _xkwds_popitem
+                              signOf, _xkwds, _xkwds_popitem
 from pygeodesy3.constants import EPS, EPS1, PI, PI2, PI_2, \
                                 _umod_360, _0_0, _0_001, \
                                 _0_5, INT0  # PYCHOK for .mgrs, .namedTuples
@@ -23,7 +23,7 @@ from pygeodesy3.interns import NN, _band_, _bearing_, _degrees_, _degrees2_, \
                               _W_, _zone_,  _std_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _getenv
 from pygeodesy3.miscs.dms import F__F, F__F_, parseDMS, parseRad, \
-                                 S_NUL, S_SEP, _toDMS
+                                 S_NUL, S_SEP, _toDMS, toDMS
 from pygeodesy3.miscs.errors import _AssertionError, _IsnotError, TRFError, \
                                      UnitError
 from pygeodesy3.miscs.props import Property_RO
@@ -33,7 +33,7 @@ from pygeodesy3.miscs.props import Property_RO
 from math import degrees, radians
 
 __all__ = _ALL_LAZY.miscs_units
-__version__ = '24.01.05'
+__version__ = '24.01.10'
 
 _negative_falsed_ = 'negative, falsed'
 
@@ -889,17 +889,14 @@ def _toDegrees(s, *xs, **toDMS_kwds):
     '''(INTERNAL) Convert C{xs} from C{Radians} to C{Degrees} or C{toDMS}.
     '''
     if toDMS_kwds:
-        s, toDMS = None, _MODS.miscs.dms.toDMS
-    else:
-        def toDMS(d, **unused):
-            return d
+        toDMS_kwds = _xkwds(toDMS_kwds, ddd=1, pos=NN)
 
     for x in xs:
         if not isinstanceof(x, Degrees, Degrees_):
             s = None
             x = x.toDegrees()
-        yield toDMS(x, **toDMS_kwds)
-    yield s
+        yield toDMS(x, **toDMS_kwds) if toDMS_kwds else x
+    yield None if toDMS_kwds else s
 
 
 def _toRadians(s, *xs):

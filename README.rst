@@ -122,7 +122,7 @@ in 64-bit on macOS 14.1.2 Sonoma.
 
 For a summary of all *Karney*-based functionality in ``pygeodesy3``, see module karney_.
 
-*Last updated: Jan 07, 2024.*
+*Last updated: Jan 10, 2024.*
 
 License
 =======

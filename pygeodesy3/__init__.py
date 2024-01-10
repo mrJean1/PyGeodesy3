@@ -372,7 +372,7 @@ if _init__all__ and not _lazy_import2:  # PYCHOK no cover
 from pygeodesy3.lazily import _DOT_, _import_all_backward, isLazy  # PYCHOK import
 
 __all__    += _import_all_backward()
-__version__ = '24.01.07'
+__version__ = '24.01.10'
 # see setup.py for similar logic
 version     = _DOT_(*map(int, __version__.split(_DOT_)))
 
