@@ -219,14 +219,14 @@ class TestSuite(unittest.TestCase):
     def test_Triaxials(self):
         self._run('testTriaxials')
 
+    def test_Umath(self):
+        self._run('testUmath')
+
     def test_Units(self):
         self._run('testUnits')
 
     def test_Ups(self):
         self._run('testUps')
-
-    def test_Utily(self):
-        self._run('testUtily')
 
     def test_Utm(self):
         self._run('testUtm')

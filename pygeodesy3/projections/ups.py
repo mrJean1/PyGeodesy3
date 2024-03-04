@@ -41,13 +41,13 @@ from pygeodesy3.miscs.named import nameof, _xnamed
 from pygeodesy3.miscs.namedTuples import EasNor2Tuple, UtmUps5Tuple, \
                                          UtmUps8Tuple, UtmUpsLatLon5Tuple
 from pygeodesy3.miscs.props import Property_RO, property_doc_, _update_all
-# from pygeodesy3.miscs.streprs import Fmt  # from .base.utmups
+# from pygeodesy3.miscs.streprs import Fmt  # from .Base.utmups
 from pygeodesy3.miscs.units import Float, Float_, Meter, Lat
 
 from math import atan2, fabs, radians, tan
 
 __all__ = _ALL_LAZY.projections_ups
-__version__ = '24.01.05'
+__version__ = '24.01.11'
 
 _BZ_UPS  = _getenv('PYGEODESY3_UPS_POLES', _std_) == _std_
 _Falsing =  Meter(2000e3)  # false easting and northing (C{meter})

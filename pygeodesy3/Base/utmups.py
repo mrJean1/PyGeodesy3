@@ -6,11 +6,10 @@ for L{epsg}, L{etm}, L{mgrs}, L{ups} and L{utm}.
 '''
 
 from pygeodesy3.basics import isint, isscalar, isstr, neg_, \
-                             _xkwds, _xkwds_get, _xkwds_not, \
                              _xinstanceof, _xsubclassof
 from pygeodesy3.constants import _float, _0_0, _0_5, _N_90_0, _180_0
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
-from pygeodesy3.ellipsoidal.base import LatLonEllipsoidalBase as _LLEB
+from pygeodesy3.ellipsoidal.Base import LatLonEllipsoidalBase as _LLEB
 # from pygoedesy.grids.epsg import Epsg  # _MODS
 # from pygoedesy.grids.mgrs import toMgrs  # _MODS
 from pygeodesy3.interns import NN, _A_, _B_, _COMMA_, _Error_, \
@@ -19,7 +18,8 @@ from pygeodesy3.interns import NN, _A_, _B_, _COMMA_, _Error_, \
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 from pygeodesy3.maths.umath import _Wrap, wrap360
 from pygeodesy3.miscs.dms import degDMS, parseDMS2
-from pygeodesy3.miscs.errors import _or, ParseError, _parseX, _ValueError
+from pygeodesy3.miscs.errors import _or, ParseError, _parseX, _ValueError, \
+                                    _xkwds, _xkwds_get, _xkwds_not
 from pygeodesy3.miscs.named import _NamedBase, nameof, notOverloaded, _xnamed
 from pygeodesy3.miscs.namedTuples import EasNor2Tuple, LatLonDatum5Tuple
 from pygeodesy3.miscs.props import property_doc_, _update_all, \
@@ -28,7 +28,7 @@ from pygeodesy3.miscs.streprs import Fmt, fstr, _fstrENH2, _xattrs, _xzipairs
 from pygeodesy3.miscs.units import Band, Easting, Northing, Scalar, Zone
 
 __all__ = _ALL_LAZY.Base_utmups
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _UPS_BANDS = _A_, _B_, _Y_, _Z_  # UPS polar bands SE, SW, NE, NW
 # _UTM_BANDS = _MODS.projections.utm._Bands
@@ -316,7 +316,7 @@ class UtmUpsBase(_NamedBase):
         self._latlon = ll
 
     @Property_RO
-    def _lowerleft(self):  # by .base.ellipsoidal._lowerleft
+    def _lowerleft(self):  # by .Base.ellipsoidal._lowerleft
         '''Get this UTM or UPS C{un}-centered (L{Utm} or L{Ups}) to its C{lowerleft}.
         '''
         return _lowerleft(self, 0)
@@ -404,7 +404,7 @@ class UtmUpsBase(_NamedBase):
         return t if sep is None else sep.join(t)
 
 
-def _lowerleft(utmups, center):  # by .base.ellipsoidal._lowerleft
+def _lowerleft(utmups, center):  # by .Base.ellipsoidal._lowerleft
     '''(INTERNAL) I{Un}-center a B{C{utmups}} to its C{lowerleft} by
        C{B{center} meter} or by a I{guess} if B{C{center}} is C{0}.
     '''

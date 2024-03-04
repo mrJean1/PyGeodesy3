@@ -5,7 +5,7 @@ u'''2- or 3-D vectorial functions L{circin6}, L{circum3}, L{circum4_},
 L{iscolinearWith}, L{meeus2}, L{nearestOn}, L{radii11} and L{soddy4}.
 '''
 
-from pygeodesy3.basics import len2, map2, _xkwds, _xnumpy
+from pygeodesy3.basics import len2, map2, _xnumpy
 from pygeodesy3.constants import EPS, EPS0, EPS02, EPS4, INF, INT0, \
                                 _EPS4e8, isnear0, _0_0, _0_25, _0_5, _N_0_5, \
                                 _1_0, _1_0_1T, _N_1_0, _2_0, _N_2_0, _4_0
@@ -19,8 +19,9 @@ from pygeodesy3.maths.fsums import Fsum, fsumf_, fsum1f_
 from pygeodesy3.maths.vector3d import iscolinearWith, nearestOn, _nearestOn2,  \
                                      _otherV3d, trilaterate2d2, trilaterate3d2, \
                                      _nVc, Vector3d  # PYCHOK unused
-from pygeodesy3.miscs.errors import _and, _AssertionError, IntersectionError, _xError, \
-                                     NumPyError, PointsError, TriangleError
+from pygeodesy3.miscs.errors import _and, IntersectionError, NumPyError, \
+                                    _AssertionError, PointsError, TriangleError, \
+                                    _xError, _xkwds
 from pygeodesy3.miscs.named import _NamedTuple, _Pass,  _ALL_LAZY, Property_RO
 from pygeodesy3.miscs.namedTuples import LatLon3Tuple, Vector2Tuple
 # from pygeodesy3.miscs.props import Property_RO  # from .miscs.named
@@ -31,7 +32,7 @@ from contextlib import contextmanager
 # from math import fabs, sqrt  # from .fmath
 
 __all__ = _ALL_LAZY.maths_vector2d
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 _cA_        = 'cA'
 _cB_        = 'cB'
@@ -57,7 +58,7 @@ class Circin6Tuple(_NamedTuple):
     _Units_ = ( Radius,  _Pass,    _Pass,    _Pass, _Pass, _Pass)
 
 
-class Circum3Tuple(_NamedTuple):  # in .base.latlon
+class Circum3Tuple(_NamedTuple):  # in .Base.latlon
     '''3-Tuple C{(radius, center, deltas)} with the C{circumradius} and trilaterated
        C{circumcenter} of the C{circumcircle} through 3 points (aka {Meeus}' Type II
        circle) or the C{radius} and C{center} of the smallest I{Meeus}' Type I circle.
@@ -221,7 +222,7 @@ def circum3(point1, point2, point3, circum=True, eps=EPS4, useZ=True):
 
 
 def _circum3(p1, point2, point3, circum=True, eps=EPS4, useZ=True, dLL3=False,
-                                 clas=Vector3d, **clas_kwds):  # in .base.latlon
+                                 clas=Vector3d, **clas_kwds):  # in .Base.latlon
     # (INTERNAL) Radius, center, deltas
     r, d, p2, p3 = _meeus4(p1, point2, point3, circum=circum, useZ=useZ,
                                                clas=clas, **clas_kwds)
@@ -372,7 +373,7 @@ def _meeus4(A, point2, point3, circum=False, useZ=True, clas=None, **clas_kwds):
     return r, t, p2, p3
 
 
-class _numpy(object):  # see also .base.latlon._toCartesian3, .formy._idllmn6, .geodesicw._wargs
+class _numpy(object):  # see also .Base.latlon._toCartesian3, .formy._idllmn6, .geodesicw._wargs
     '''(INTERNAL) Partial C{NumPy} wrapper.
     '''
     @contextmanager  # <https://www.Python.org/dev/peps/pep-0343/> Examples

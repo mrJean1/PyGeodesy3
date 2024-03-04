@@ -842,6 +842,10 @@
     </li>
     </ul>
     </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.earth.trf.TRFXform-class.html">pygeodesy3.earth.trf.TRFXform</a></strong>:
+      <em class="summary">A Terrestrial Reference Frame (TRF) converter between two reference
+        frames observed at an <code>epoch</code>.</em>
+    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.iters._BaseIter-class.html">pygeodesy3.miscs.iters._BaseIter</a></strong>:
       <em class="summary">(INTERNAL) Iterator over items with loop-back and de-duplication.</em>
     <ul>
@@ -1220,7 +1224,7 @@
       <em class="summary">(INTERNAL) Base class for <code>LatLon</code> points on spherical 
         or ellipsoidal earth models.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.base.LatLonEllipsoidalBase-class.html">pygeodesy3.ellipsoidal.base.LatLonEllipsoidalBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.Base.LatLonEllipsoidalBase-class.html">pygeodesy3.ellipsoidal.Base.LatLonEllipsoidalBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for ellipsoidal <code>LatLon</code>s.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.nvector.LatLon-class.html">pygeodesy3.ellipsoidal.nvector.LatLon</a></strong>:
@@ -1228,7 +1232,7 @@
         href="pygeodesy3.ellipsoidal.nvector.LatLon-class.html" 
         class="link">LatLon</a> point.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.baseDI.LatLonEllipsoidalBaseDI-class.html">pygeodesy3.ellipsoidal.baseDI.LatLonEllipsoidalBaseDI</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.BaseDI.LatLonEllipsoidalBaseDI-class.html">pygeodesy3.ellipsoidal.BaseDI.LatLonEllipsoidalBaseDI</a></strong>:
       <em class="summary">(INTERNAL) Base class for <code>ellipsoidal*.LatLon</code> classes 
         with <i>overloaded</i> <code>Direct</code> and <code>Inverse</code>
         methods.</em>
@@ -1252,17 +1256,6 @@
         initial and final bearing (azimuths) between two given points or 
         the destination point given a start point and an (initial) bearing.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney.LatLon-class.html">pygeodesy3.ellipsoidal.karney.LatLon</a></strong>:
-      <em class="summary">An ellipsoidal <a 
-        href="pygeodesy3.ellipsoidal.karney.LatLon-class.html" 
-        class="link">LatLon</a> similar to <a 
-        href="pygeodesy3.ellipsoidal.vincenty.LatLon-class.html" 
-        class="link">ellipsoidal.vincenty.LatLon</a> but using <i>Charles 
-        F. F. Karney</i>'s Python <a 
-        href="https://PyPI.org/project/geographiclib" 
-        target="_top">geographiclib</a> to compute geodesic distances, 
-        bearings (azimuths), etc.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact.LatLon-class.html">pygeodesy3.ellipsoidal.exact.LatLon</a></strong>:
       <em class="summary">An ellipsoidal <a 
         href="pygeodesy3.ellipsoidal.exact.LatLon-class.html" 
@@ -1275,6 +1268,17 @@
         href="pygeodesy3.geodesic.exact.gx.GeodesicLineExact-class.html" 
         class="link">GeodesicLineExact</a> to compute the geodesic 
         distances, bearings (azimuths), etc.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney.LatLon-class.html">pygeodesy3.ellipsoidal.karney.LatLon</a></strong>:
+      <em class="summary">An ellipsoidal <a 
+        href="pygeodesy3.ellipsoidal.karney.LatLon-class.html" 
+        class="link">LatLon</a> similar to <a 
+        href="pygeodesy3.ellipsoidal.vincenty.LatLon-class.html" 
+        class="link">ellipsoidal.vincenty.LatLon</a> but using <i>Charles 
+        F. F. Karney</i>'s Python <a 
+        href="https://PyPI.org/project/geographiclib" 
+        target="_top">geographiclib</a> to compute geodesic distances, 
+        bearings (azimuths), etc.</em>
     </li>
     </ul>
     </li>
@@ -1294,7 +1298,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.spherical.base.LatLonSphericalBase-class.html">pygeodesy3.spherical.base.LatLonSphericalBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.spherical.Base.LatLonSphericalBase-class.html">pygeodesy3.spherical.Base.LatLonSphericalBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for spherical <code>LatLon</code>s.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.spherical.nvector.LatLon-class.html">pygeodesy3.spherical.nvector.LatLon</a></strong>:
@@ -1407,7 +1411,7 @@
       <em class="summary">(INTERNAL) Base class for ellipsoidal and spherical 
         <code>Cartesian</code>.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html">pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html">pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for ellipsoidal <code>Cartesian</code>s.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.vincenty.Cartesian-class.html">pygeodesy3.ellipsoidal.vincenty.Cartesian</a></strong>:
@@ -1425,13 +1429,6 @@
         href="pygeodesy3.ellipsoidal.solve.LatLon-class.html" 
         class="link">LatLon</a> points.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact.Cartesian-class.html">pygeodesy3.ellipsoidal.exact.Cartesian</a></strong>:
-      <em class="summary">Extended to convert exact <a 
-        href="pygeodesy3.ellipsoidal.exact.Cartesian-class.html" 
-        class="link">Cartesian</a> to exact <a 
-        href="pygeodesy3.ellipsoidal.exact.LatLon-class.html" 
-        class="link">LatLon</a> points.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.nvector.Cartesian-class.html">pygeodesy3.ellipsoidal.nvector.Cartesian</a></strong>:
       <em class="summary">Extended to convert geocentric, <a 
         href="pygeodesy3.ellipsoidal.nvector.Cartesian-class.html" 
@@ -1439,6 +1436,13 @@
         n-vector-based, geodetic <a 
         href="pygeodesy3.ellipsoidal.nvector.LatLon-class.html" 
         class="link">LatLon</a>.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact.Cartesian-class.html">pygeodesy3.ellipsoidal.exact.Cartesian</a></strong>:
+      <em class="summary">Extended to convert exact <a 
+        href="pygeodesy3.ellipsoidal.exact.Cartesian-class.html" 
+        class="link">Cartesian</a> to exact <a 
+        href="pygeodesy3.ellipsoidal.exact.LatLon-class.html" 
+        class="link">LatLon</a> points.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney.Cartesian-class.html">pygeodesy3.ellipsoidal.karney.Cartesian</a></strong>:
       <em class="summary">Extended to convert <code>Karney</code>-based <a 
@@ -1449,7 +1453,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.spherical.base.CartesianSphericalBase-class.html">pygeodesy3.spherical.base.CartesianSphericalBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.spherical.Base.CartesianSphericalBase-class.html">pygeodesy3.spherical.Base.CartesianSphericalBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for spherical <code>Cartesian</code>s.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.spherical.nvector.Cartesian-class.html">pygeodesy3.spherical.nvector.Cartesian</a></strong>:
@@ -1696,7 +1700,7 @@
     <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney._CapsBase-class.html">pygeodesy3.Base.karney._CapsBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for <code>[_]Geodesic*Exact</code>.</em>
     <ul>
-    <li> <strong class="uidlink"><a href="pygeodesy3.rhumb.bases.RhumbBase-class.html">pygeodesy3.rhumb.bases.RhumbBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.rhumb.Bases.RhumbBase-class.html">pygeodesy3.rhumb.Bases.RhumbBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for <code>rhumb.aux_.RhumbAux</code> and 
         <code>rhumb.ekx.Rhumb</code>.</em>
     <ul>
@@ -1711,7 +1715,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.rhumb.bases.RhumbLineBase-class.html">pygeodesy3.rhumb.bases.RhumbLineBase</a></strong>:
+    <li> <strong class="uidlink"><a href="pygeodesy3.rhumb.Bases.RhumbLineBase-class.html">pygeodesy3.rhumb.Bases.RhumbLineBase</a></strong>:
       <em class="summary">(INTERNAL) Base class for <code>rhumb.aux_.RhumbLineAux</code> and 
         <code>rhumb.ekx.RhumbLine</code>.</em>
     <ul>
@@ -1723,7 +1727,7 @@
     </li>
     </ul>
     </li>
-    <li> <strong class="uidlink">pygeodesy3.geodesic.exact.gxbases._GeodesicBase</strong>:
+    <li> <strong class="uidlink">pygeodesy3.geodesic.exact.gxBases._GeodesicBase</strong>:
       <em class="summary">(INTERNAL) Base class for <code>[_]Geodesic*Exact</code>.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gx.GeodesicExact-class.html">pygeodesy3.geodesic.exact.gx.GeodesicExact</a></strong>:
@@ -1942,7 +1946,13 @@
       <em class="summary">Terrestrial Reference Frame (TRF) parameters.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.earth.datums.Transform-class.html">pygeodesy3.earth.datums.Transform</a></strong>:
-      <em class="summary">Helmert transformation.</em>
+      <em class="summary">Helmert <i>datum</i> transformation.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="pygeodesy3.earth.trf.TransformXform-class.html">pygeodesy3.earth.trf.TransformXform</a></strong>:
+      <em class="summary">Helmert transformation, extended with an <code>Xform</code> TRF 
+        converter.</em>
+    </li>
+    </ul>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.earth.triaxials.Triaxial_-class.html">pygeodesy3.earth.triaxials.Triaxial_</a></strong>:
       <em class="summary"><i>Unordered</i> triaxial ellipsoid and base class.</em>
@@ -2282,14 +2292,6 @@
         the <code><i>mean</i> Hausdorff</code> distance <code>md</code> and
         the class or name of both distance <code>units</code>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.earth.trf.Helmert7Tuple-class.html" onclick="show_private();">pygeodesy3.earth.trf.Helmert7Tuple</a></strong>:
-      <em class="summary">7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of Helmert 
-        transform parameters with translations <code>tx</code>, 
-        <code>ty</code> and <code>tz</code> in <code>millimeter</code>, 
-        scale <code>s</code> in <code>ppb</code> and rotations 
-        <code>sx</code>, <code>sy</code> and <code>sz</code> in 
-        <code>milliarcseconds</code>.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.namedTuples.Intersection3Tuple-class.html">pygeodesy3.miscs.namedTuples.Intersection3Tuple</a></strong>:
       <em class="summary">3-Tuple <code>(point, outside1, outside2)</code> of an intersection
         <code>point</code> and <code>outside1</code>, the position of the 
@@ -2460,16 +2462,6 @@
         of points and -possible reduced- <code>list</code> or 
         <code>tuple</code> of <code>points</code>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html">pygeodesy3.distances.formy.RThetaPhi3Tuple</a></strong>:
-      <em class="summary">3-Tuple <code>(r, theta, phi)</code> with radial distance 
-        <code>r</code> in <code>meter</code>, inclination 
-        <code>theta</code> (with respect to the positive z-axis) and 
-        azimuthal angle <code>phi</code> in <a 
-        href="pygeodesy3.miscs.units.Degrees-class.html" 
-        class="link">Degrees</a> <i>or</i> <a 
-        href="pygeodesy3.miscs.units.Radians-class.html" 
-        class="link">Radians</a>.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.Radical2Tuple-class.html">pygeodesy3.distances.formy.Radical2Tuple</a></strong>:
       <em class="summary">2-Tuple <code>(ratio, xline)</code> of the <i>radical</i> 
         <code>ratio</code> and <i>radical</i> <code>xline</code>, both 
@@ -2485,6 +2477,18 @@
         <code>a</code>, <code>b</code> and <code>c</code> and 
         semi-perimeter <code>s</code> of a triangle, all in 
         <code>meter</code> conventionally.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html">pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple</a></strong>:
+      <em class="summary">3-Tuple <code>(r, theta, phi)</code> with radial distance 
+        <code>r</code> in <code>meter</code>, inclination 
+        <code>theta</code> (with respect to the positive z-axis) and 
+        azimuthal angle <code>phi</code> in <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a> <i>or</i> <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a> representing a <a 
+        href="https://WikiPedia.org/wiki/Spherical_coordinate_system" 
+        target="_top">spherical, polar position</a>.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.grids.geohash.Resolutions2Tuple-class.html">pygeodesy3.grids.geohash.Resolutions2Tuple</a></strong>:
       <em class="summary">2-Tuple <code>(res1, res2)</code> with the primary 
@@ -2513,6 +2517,13 @@
         <code>P</code> to each of the triangle corners <code>A</code>, 
         <code>B</code> and <code>C</code> in <code>meter</code>, 
         conventionally.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html">pygeodesy3.earth.trf.TRFXform7Tuple</a></strong>:
+      <em class="summary">7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of conversion 
+        parameters with translations <code>tx</code>, <code>ty</code> and 
+        <code>tz</code> in <code>milli-meter</code>, scale <code>s</code> 
+        in <code>ppb</code> and rates <code>sx</code>, <code>sy</code> and 
+        <code>sz</code> in <code>milli-arc-seconds-per-year</code>.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.distances.resections.Tienstra7Tuple-class.html">pygeodesy3.distances.resections.Tienstra7Tuple</a></strong>:
       <em class="summary">7-Tuple <code>(pointP, A, B, C, a, b, c)</code> with survey 
@@ -2989,9 +3000,9 @@ dict(iterable) -&gt; new dictionary initialized as if via:
 dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
     in the keyword argument list.</em>
     <ul>
-    <li> <strong class="uidlink">pygeodesy3.miscs.named._Dict</strong>:
-      <em class="summary">(INTERNAL) An <code>dict</code> with both key <i>and</i> attribute 
-        access to the <code>dict</code> items.</em>
+    <li> <strong class="uidlink"><a href="pygeodesy3.miscs.named.ADict-class.html">pygeodesy3.miscs.named.ADict</a></strong>:
+      <em class="summary">A <code>dict</code> with both key <i>and</i> attribute access to 
+        the <code>dict</code> items.</em>
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.Base.karney.GDict-class.html">pygeodesy3.Base.karney.GDict</a></strong>:
       <em class="summary">A <code>dict</code> with both <code>key</code> <i>and</i> 
@@ -3554,14 +3565,6 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         the <code><i>mean</i> Hausdorff</code> distance <code>md</code> and
         the class or name of both distance <code>units</code>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.earth.trf.Helmert7Tuple-class.html" onclick="show_private();">pygeodesy3.earth.trf.Helmert7Tuple</a></strong>:
-      <em class="summary">7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of Helmert 
-        transform parameters with translations <code>tx</code>, 
-        <code>ty</code> and <code>tz</code> in <code>millimeter</code>, 
-        scale <code>s</code> in <code>ppb</code> and rotations 
-        <code>sx</code>, <code>sy</code> and <code>sz</code> in 
-        <code>milliarcseconds</code>.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.miscs.namedTuples.Intersection3Tuple-class.html">pygeodesy3.miscs.namedTuples.Intersection3Tuple</a></strong>:
       <em class="summary">3-Tuple <code>(point, outside1, outside2)</code> of an intersection
         <code>point</code> and <code>outside1</code>, the position of the 
@@ -3732,16 +3735,6 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         of points and -possible reduced- <code>list</code> or 
         <code>tuple</code> of <code>points</code>.</em>
     </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html">pygeodesy3.distances.formy.RThetaPhi3Tuple</a></strong>:
-      <em class="summary">3-Tuple <code>(r, theta, phi)</code> with radial distance 
-        <code>r</code> in <code>meter</code>, inclination 
-        <code>theta</code> (with respect to the positive z-axis) and 
-        azimuthal angle <code>phi</code> in <a 
-        href="pygeodesy3.miscs.units.Degrees-class.html" 
-        class="link">Degrees</a> <i>or</i> <a 
-        href="pygeodesy3.miscs.units.Radians-class.html" 
-        class="link">Radians</a>.</em>
-    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.distances.formy.Radical2Tuple-class.html">pygeodesy3.distances.formy.Radical2Tuple</a></strong>:
       <em class="summary">2-Tuple <code>(ratio, xline)</code> of the <i>radical</i> 
         <code>ratio</code> and <i>radical</i> <code>xline</code>, both 
@@ -3757,6 +3750,18 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         <code>a</code>, <code>b</code> and <code>c</code> and 
         semi-perimeter <code>s</code> of a triangle, all in 
         <code>meter</code> conventionally.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html">pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple</a></strong>:
+      <em class="summary">3-Tuple <code>(r, theta, phi)</code> with radial distance 
+        <code>r</code> in <code>meter</code>, inclination 
+        <code>theta</code> (with respect to the positive z-axis) and 
+        azimuthal angle <code>phi</code> in <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a> <i>or</i> <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a> representing a <a 
+        href="https://WikiPedia.org/wiki/Spherical_coordinate_system" 
+        target="_top">spherical, polar position</a>.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.grids.geohash.Resolutions2Tuple-class.html">pygeodesy3.grids.geohash.Resolutions2Tuple</a></strong>:
       <em class="summary">2-Tuple <code>(res1, res2)</code> with the primary 
@@ -3785,6 +3790,13 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
         <code>P</code> to each of the triangle corners <code>A</code>, 
         <code>B</code> and <code>C</code> in <code>meter</code>, 
         conventionally.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html">pygeodesy3.earth.trf.TRFXform7Tuple</a></strong>:
+      <em class="summary">7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of conversion 
+        parameters with translations <code>tx</code>, <code>ty</code> and 
+        <code>tz</code> in <code>milli-meter</code>, scale <code>s</code> 
+        in <code>ppb</code> and rates <code>sx</code>, <code>sy</code> and 
+        <code>sz</code> in <code>milli-arc-seconds-per-year</code>.</em>
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.distances.resections.Tienstra7Tuple-class.html">pygeodesy3.distances.resections.Tienstra7Tuple</a></strong>:
       <em class="summary">7-Tuple <code>(pointP, A, B, C, a, b, c)</code> with survey 
@@ -4027,7 +4039,7 @@ dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Wed Jan 10 12:48:42 2024
+    Generated by Epydoc 3.0.1 on Mon Mar  4 16:45:43 2024
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

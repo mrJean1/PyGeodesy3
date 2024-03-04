@@ -63,7 +63,7 @@ Following is the list of predefined L{Ellipsoid}s, all instantiated lazily.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import copysign0, isbool, isint, _xattr, _xkwds_not
+from pygeodesy3.basics import copysign0, isbool, isint
 from pygeodesy3.constants import EPS, EPS0, EPS02, EPS1, INF, NINF, PI4, PI_2, PI_3, R_M, R_MA, R_FM, \
                                 _EPSqrt, _EPStol as _TOL, _floatuple as _T, _isfinite, _SQRT2_2, \
                                 _0_0s, _0_0, _0_5, _1_0, _1_EPS, _2_0, _4_0, _90_0, \
@@ -83,7 +83,7 @@ from pygeodesy3.maths.fmath import cbrt, cbrt2, fdot, Fhorner, fpowers, hypot, h
 # from pygeodesy3.maths.vector3d import _otherV3d  # _MODS
 from pygeodesy3.maths.umath import atan1, atan1d, atan2b, degrees90, m2radians, \
                                    radians2m, sincos2d
-from pygeodesy3.miscs.errors import _AssertionError, IntersectionError, _ValueError
+from pygeodesy3.miscs.errors import _AssertionError, IntersectionError, _ValueError, _xattr, _xkwds_not
 from pygeodesy3.miscs.named import _lazyNamedEnumItem as _lazy, _NamedEnum, _NamedEnumItem, \
                                    _NamedTuple, _Pass,  _ALL_LAZY, _MODS
 from pygeodesy3.miscs.namedTuples import Distance2Tuple, Vector3Tuple, Vector4Tuple
@@ -96,7 +96,7 @@ from pygeodesy3.miscs.units import Bearing_, Distance, Float, Float_, Height, La
 from math import asinh, atan, atanh, cos, degrees, exp, fabs, radians, sin, sinh, sqrt, tan
 
 __all__ = _ALL_LAZY.earth_ellipsoids
-__version__ = '23.12.31'
+__version__ = '24.02.27'
 
 _f_0_0    = Float(f =_0_0)  # zero flattening
 _f__0_0   = Float(f_=_0_0)  # zero inverse flattening
@@ -826,8 +826,8 @@ class Ellipsoid(_NamedEnumItem):
     def _elliptic_e12(self):  # see I{Karney}'s Ellipsoid._e12
         '''(INTERNAL) Elliptic helper for C{rhumbx.Rhumb}.
         '''
-        e12 = self.e2 / (_1_0 - self.e2)  # NOT DEPRECATED .e12!
-        return _MODS.maths.elliptic.Elliptic(-e12)
+        e12 = self.e2 / (self.e2 - _1_0)  # NOT DEPRECATED .e12!
+        return _MODS.maths.elliptic.Elliptic(e12)
 
     @Property_RO
     def _elliptic_e22(self):  # aka ._elliptic_ep2
@@ -1111,8 +1111,8 @@ class Ellipsoid(_NamedEnumItem):
                           line to this ellipsoid's center (C{bool}).
 
            @return: L{Vector4Tuple}C{(x, y, z, h)} with the cartesian coordinates C{x},
-                    C{y} and C{z} of the projection on and with the height C{h} above
-                    the ellipsoid's surface, all in C{meter}, conventionally.
+                    C{y} and C{z} of the projection on and the height C{h} above or
+                    below this ellipsoid's surface, all in C{meter}, conventionally.
 
            @raise ValueError: Null B{C{xyz}}.
 
@@ -1483,7 +1483,7 @@ class Ellipsoid(_NamedEnumItem):
 
     @property_RO
     def rhumbekx(self):
-        '''Get this ellipsoid's I{Elliptic} C{rhumb.Rhumb}.
+        '''Get this ellipsoid's I{Elliptic, Krüger} C{rhumb.Rhumb}.
         '''
         # if not self.isEllipsoidal:
         #     raise _IsnotError(_ellipsoidal_, ellipsoid=self)
@@ -1494,9 +1494,8 @@ class Ellipsoid(_NamedEnumItem):
         '''(INTERNAL) Get all C{Rhumb...} classes, I{once}.
         '''
         p = _MODS.rhumb
-        Ellipsoid._Rhumbs = t = (p.aux.RhumbAux,  # overwrite property_RO
-                                 p.ekx.Rhumb,
-                                 p.solve.RhumbSolve)
+        Ellipsoid._Rhumbs = t = (p.aux_.RhumbAux,  # overwrite property_RO
+                                 p.ekx.Rhumb, p.solve.RhumbSolve)
         return t
 
     @property
@@ -2224,38 +2223,40 @@ def n2f_(n):
     return f2f_(n2f(n))
 
 
-def _normalTo3(px, py, E):  # in .height4 above
+def _normalTo3(px, py, E, eps=EPS):  # in .height4 above
     '''(INTERNAL) Nearest point on a 2-D ellipse in 1st quadrant.
 
-       @see: Functions C{.triaxial._normalTo4} and C{-To5}.
+       @see: Functions C{pygeodesy3.earth.triaxial._normalTo4} and C{-To5}.
     '''
-    a, b = E.a, E.b
-    if min(px, py, a, b) < EPS0:
+    a, b, e0 = E.a, E.b, EPS0
+    if min(px, py, a, b) < e0:
         raise _AssertionError(px=px, py=py, a=a, b=b, E=E)
 
     a2 = a - b * E.b_a
     b2 = b - a * E.a_b
     tx = ty = _SQRT2_2
+    _a,  _h =  fabs, hypot
     for i in range(16):  # max 5
         ex = a2 * tx**3
         ey = b2 * ty**3
 
-        qx = px - ex
-        qy = py - ey
-        q  = hypot(qx, qy)
-        if q < EPS0:  # PYCHOK no cover
+        qx =  px - ex
+        qy =  py - ey
+        q  = _h(qx, qy)
+        if q < e0:  # PYCHOK no cover
             break
-        r = hypot(ex - tx * a, ey - ty * b) / q
+        r = _h(ex - tx * a,
+               ey - ty * b) / q
 
         sx, tx = tx, min(_1_0, max(0, (ex + qx * r) / a))
         sy, ty = ty, min(_1_0, max(0, (ey + qy * r) / b))
-        t = hypot(ty, tx)
-        if t < EPS0:  # PYCHOK no cover
+        t = _h(ty, tx)
+        if t < e0:  # PYCHOK no cover
             break
         tx = tx / t  # /= chokes PyChecker
         ty = ty / t
-        if fabs(sx - tx) < EPS and \
-           fabs(sy - ty) < EPS:
+        if _a(sx - tx) < eps and \
+           _a(sy - ty) < eps:
             break
 
     tx *= a / px
@@ -2281,7 +2282,7 @@ Ellipsoids = Ellipsoids(Ellipsoid)  # PYCHOK singleton
 # <https://w3.Energistics.org/archive/Epicentre/Epicentre_v3.0/DataModel/LogicalDictionary/StandardValues/ellipsoid.html>
 # <https://GitHub.com/locationtech/proj4j/blob/master/src/main/java/org/locationtech/proj4j/datum/Ellipsoid.java>
 Ellipsoids._assert(  # <https://WikiPedia.org/wiki/Earth_ellipsoid>
-    Airy1830       = _lazy(_Airy1830_,       *_T(6377563.396, _0_0,               299.3249646)),   # b=6356256.909
+    Airy1830       = _lazy(_Airy1830_,       *_T(6377563.396, _0_0,               299.3249646)),  # b=6356256.909
     AiryModified   = _lazy(_AiryModified_,   *_T(6377340.189, _0_0,               299.3249646)),  # b=6356034.448
 #   APL4_9         = _lazy('APL4_9',         *_T(6378137.0,   _0_0,               298.24985392)),  # Appl. Phys. Lab. 1965
 #   ANS            = _lazy('ANS',            *_T(6378160.0,   _0_0,               298.25)),  # Australian Nat. Spheroid
@@ -2336,21 +2337,21 @@ Ellipsoids._assert(  # <https://WikiPedia.org/wiki/Earth_ellipsoid>
     OSU91A         = _lazy('OSU91A',         *_T(6378136.3,    6356751.6165948,   298.2572236)),
 #   Plessis1817    = _lazy('Plessis1817',    *_T(6397523.0,    6355863.0,         153.56512242)),  # XXX incorrect?
     Plessis1817    = _lazy('Plessis1817',    *_T(6376523.0,    6355862.93325557,  308.64)),  # XXX IGN France 1972
+#   Prolate        = _lazy('Prolate',        *_T(6356752.3,    R_MA,             _0_0)),
     PZ90           = _lazy('PZ90',           *_T(6378136.0,   _0_0,               298.257839303)),  # GLOSNASS PZ-90 and PZ-90.11
 #   SEAsia         = _lazy('SEAsia',         *_T(6378155.0,   _0_0,               298.3)),  # SouthEast Asia
     SGS85          = _lazy('SGS85',          *_T(6378136.0,    6356751.30156878,  298.257)),  # Soviet Geodetic System
     SoAmerican1969 = _lazy('SoAmerican1969', *_T(6378160.0,    6356774.71919531,  298.25)),  # South American
+    Sphere         = _lazy(_Sphere_,         *_T(R_M,          R_M,              _0_0)),  # pseudo
+    SphereAuthalic = _lazy('SphereAuthalic', *_T(R_FM,         R_FM,             _0_0)),  # pseudo
+    SpherePopular  = _lazy('SpherePopular',  *_T(R_MA,         R_MA,             _0_0)),  # EPSG:3857 Spheroid
     Struve1860     = _lazy('Struve1860',     *_T(6378298.3,    6356657.14266956,  294.73)),
 #   Walbeck        = _lazy('Walbeck',        *_T(6376896.0,   _0_0,               302.78)),
 #   WarOffice      = _lazy('WarOffice',      *_T(6378300.0,   _0_0,               296.0)),
     WGS60          = _lazy('WGS60',          *_T(6378165.0,    6356783.28695944,  298.3)),
     WGS66          = _lazy('WGS66',          *_T(6378145.0,    6356759.76948868,  298.25)),
     WGS72          = _lazy(_WGS72_,          *_T(6378135.0,   _0_0,               298.26)),  # b=6356750.52
-    WGS84          = _lazy(_WGS84_,          *_T(R_MA,        _0_0,           _f__WGS84)),  # GPS b=6356752.3142451793
-#   Prolate        = _lazy('Prolate',        *_T(6356752.3,    R_MA,             _0_0)),
-    Sphere         = _lazy(_Sphere_,         *_T(R_M,          R_M,              _0_0)),  # pseudo
-    SphereAuthalic = _lazy('SphereAuthalic', *_T(R_FM,         R_FM,             _0_0)),  # pseudo
-    SpherePopular  = _lazy('SpherePopular',  *_T(R_MA,         R_MA,             _0_0))   # EPSG:3857 Spheroid
+    WGS84          = _lazy(_WGS84_,          *_T(R_MA,        _0_0,           _f__WGS84))  # GPS b=6356752.3142451793
 )
 
 _EWGS84 = Ellipsoids.WGS84  # (INTERNAL) shared

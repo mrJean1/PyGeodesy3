@@ -21,12 +21,12 @@ from pygeodesy3.lazily import _ALL_MODS as _MODS, _ALL_OTHER,  NN  # PYCHOK used
 from pygeodesy3.maths.fmath import hypot1 as _sc, hypot2_
 from pygeodesy3.maths.umath import atan1
 # from pygeodesy3.miscs.errors import _ValueError  # from .miscs.named
-from pygeodesy3.miscs.named import _Dict,  _ValueError
+from pygeodesy3.miscs.named import ADict,  _ValueError
 
 from math import asinh, copysign
 
 __all__ = ()
-__version__ = '24.01.03'
+__version__ = '24.02.02'
 
 
 class AuxError(_ValueError):
@@ -97,11 +97,11 @@ _Greek2Aux = dict(map(reversed, _Aux2Greek.items()))  # PYCHOK exported
 # _Greek2Aux.update((_g.upper(), _x) for _g, _x in _Greek2Aux.items())
 
 
-class _Coeffs(_Dict):
+class _Coeffs(ADict):
     '''(INTERNAL) With C{items keys} string-ified.
     '''
     def items(self):
-        for n, v in _Dict.items(self):
+        for n, v in ADict.items(self):
             yield str(n), v
 
 

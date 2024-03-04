@@ -21,14 +21,14 @@ from pygeodesy3.miscs.errors import CrossError, _IsnotError, VectorError, _xErro
 from pygeodesy3.miscs.named import _NamedBase, _NotImplemented, _xother3
 # from pygeodesy3.miscs.namedTuples import Vector3Tuple  # _MODS
 from pygeodesy3.miscs.props import Property, Property_RO, \
-                            property_doc_, property_RO, _update_all
+                                   property_doc_, property_RO, _update_all
 from pygeodesy3.miscs.streprs import Fmt, strs, unstr
 from pygeodesy3.miscs.units import Float, Scalar
 
 from math import atan2, ceil, fabs, floor, trunc
 
 __all__ = _ALL_LAZY.Base_vector3d
-__version__ = '24.01.05'
+__version__ = '24.02.28'
 
 
 class Vector3dBase(_NamedBase):  # sync __methods__ with .maths.fsums.Fsum
@@ -943,7 +943,7 @@ class Vector3dBase(_NamedBase):  # sync __methods__ with .maths.fsums.Fsum
         self._x, self._y, self._z = _xyz3(_xyz_, x_xyz, *y_z)
         return self
 
-    @Property_RO
+    @property_RO
     def x2y2z2(self):
         '''Get the X, Y and Z components I{squared} (3-tuple C{(x**2, y**2, z**2)}).
         '''
@@ -980,16 +980,16 @@ class Vector3dBase(_NamedBase):  # sync __methods__ with .maths.fsums.Fsum
             self._z = z
 
 
-def _xyz3(where, x_xyz, *y_z):  # in .formy.xyz2rtp_
+def _xyz3(where, x_xyz, *y_z):  # in .Base.cartesian._rtp3
     '''(INTERNAL) Helper for C{Vector3dBase.__init__}, C{-.apply}, C{-.times_} and C{-._xyz}.
     '''
     try:
-        x, y, z = map1(_float0, x_xyz, *y_z) if y_z else (  # islistuple for VectorXTuple
-                  map2(_float0, x_xyz[:3]) if islistuple(x_xyz, minum=3) else
-                  x_xyz.xyz)
+        x_y_z = map1(_float0, x_xyz, *y_z) if y_z else (  # islistuple for VectorXTuple
+                map2(_float0, x_xyz[:3]) if islistuple(x_xyz, minum=3) else
+                x_xyz.xyz)
     except (AttributeError, TypeError, ValueError) as x:
         raise _xError(x, unstr(where, x_xyz, *y_z))
-    return x, y, z
+    return x_y_z
 
 
 # __all__ += _ALL_DOCS(Vector3dBase)

@@ -16,7 +16,7 @@ under the MIT/X11 License.  For more information, see the U{GeographicLib
 from __future__ import division as _; del _  # PYCHOK semicolon
 
 from pygeodesy3.Base.karney import _2cos2x, _polynomial,  cbrt
-from pygeodesy3.basics import _passarg, _reverange, _xinstanceof, _xkwds, _xkwds_get
+from pygeodesy3.basics import _passarg, _reverange, _xinstanceof
 from pygeodesy3.constants import INF, MAX_EXP, MIN_EXP, NAN, PI_2, PI_4, _EPSqrt, \
                                 _0_0, _0_0s, _0_1, _0_25, _0_5, _1_0, _2_0, _3_0, \
                                 _360_0, isfinite, isinf, isnan, _log2, _over
@@ -31,7 +31,7 @@ from pygeodesy3.maths.elliptic import Elliptic as _Ef
 # from pygeodesy3.maths.fmath import cbrt  # from .Base.karney
 from pygeodesy3.maths.fsums import Fsum, _sum
 # from pygeodesy3.maths.umath import atan1  # from .auxily
-from pygeodesy3.miscs.errors import _Xorder
+from pygeodesy3.miscs.errors import _xkwds, _xkwds_get, _Xorder
 from pygeodesy3.miscs.props import Property, Property_RO, _update_all
 from pygeodesy3.miscs.units import _isDegrees, _isRadius, Degrees, Meter
 
@@ -44,7 +44,7 @@ except ImportError:  # Python 3.11-
         return pow(_2_0, x)
 
 __all__ = ()
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _TRIPS = 1024  # XXX 2 or 3?
 

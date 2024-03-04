@@ -28,7 +28,7 @@ from pygeodesy3.basics import copysign0, _xinstanceof, _xsubclassof
 from pygeodesy3.constants import EPS, EPS02, PI_2, _float as _F, _0_0, _0_5, \
                                 _1_0, _2_0, _90_0
 from pygeodesy3.earth.datums import Datums, _ellipsoidal_datum
-from pygeodesy3.ellipsoidal.base import LatLonEllipsoidalBase as _LLEB
+from pygeodesy3.ellipsoidal.Base import LatLonEllipsoidalBase as _LLEB
 from pygeodesy3.interns import NN, _COMMASPACE_, _ellipsoidal_, _GRS80_, _k0_, \
                               _lat0_, _lon0_, _m_, _NAD83_, _NTF_, _SPACE_, _WGS84_, \
                               _C_  # PYCHOK used!
@@ -48,7 +48,7 @@ from pygeodesy3.miscs.units import Easting, Height, _heigHt,  Lam_, Northing, \
 from math import atan, fabs, log, radians, sin, sqrt
 
 __all__ = _ALL_LAZY.projections_lcc
-__version__ = '23.12.31'
+__version__ = '24.01.11'
 
 _E0_   = 'E0'
 _N0_   = 'N0'

@@ -13,9 +13,8 @@ standard Python C{namedtuple}s.
 @see: Module L{pygeodesy3.miscs.namedTuples} for (most of) the C{Named-Tuples}.
 '''
 
-from pygeodesy3.basics import isclass, isidentifier, iskeyword, isstr, issubclassof, len2, \
-                              _sizeof, _xattr, _xcopy, _xdup, _xkwds, _xkwds_get, \
-                              _xkwds_pop, _xkwds_popitem, _zip
+from pygeodesy3.basics import isclass, isidentifier, iskeyword, isstr, issubclassof, \
+                              itemsorted, len2, _sizeof, _xcopy, _xdup, _zip
 from pygeodesy3.interns import NN, _at_, _AT_, _COLON_, _COLONSPACE_, _COMMA_, \
                               _COMMASPACE_, _doesn_t_exist_, _DOT_, _DUNDER_, \
                               _EQUAL_, _EQUALSPACED_, _exists_, _immutable_, _name_, \
@@ -23,15 +22,16 @@ from pygeodesy3.interns import NN, _at_, _AT_, _COLON_, _COLONSPACE_, _COMMA_, \
                               _UNDER_, _valid_, _vs_,  _dunder_nameof, _isPyPy, _under
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _caller3, _getenv
 from pygeodesy3.miscs.errors import _AssertionError, _AttributeError, _incompatible, \
-                                    _IndexError, _IsnotError, itemsorted, LenError, \
-                                    _NameError, _NotImplementedError, _TypeError, \
-                                    _TypesError, _ValueError, UnitError
+                                    _IndexError, _IsnotError, LenError, _NameError, \
+                                    _NotImplementedError, _TypeError, _TypesError, \
+                                    _ValueError, UnitError, _xattr, _xkwds, _xkwds_get, \
+                                    _xkwds_item2, _xkwds_pop2
 from pygeodesy3.miscs.props import _allPropertiesOf_n, _hasProperty, property_doc_, \
                                     Property_RO, property_RO, _update_all, _update_attrs
 from pygeodesy3.miscs.streprs import attrs, Fmt, lrstrip, pairs, reprs, unstr
 
 __all__ = _ALL_LAZY.miscs_named
-__version__ = '23.12.31'
+__version__ = '24.02.27'
 
 _COMMANL_           = _COMMA_ + _NL_
 _COMMASPACEDOT_     = _COMMASPACE_ + _DOT_
@@ -74,7 +74,7 @@ def _xother3(inst, other, name=_other_, up=1, **name_other):
     '''(INTERNAL) Get C{name} and C{up} for a named C{other}.
     '''
     if name_other:  # and not other and len(name_other) == 1
-        name, other = _xkwds_popitem(name_other)
+        name, other = _xkwds_item2(name_other)
     elif other and len(other) == 1:
         other = other[0]
     else:
@@ -99,9 +99,9 @@ def _xvalid(name, _OK=False):
                          and isidentifier(name)) else False
 
 
-class _Dict(dict):
-    '''(INTERNAL) An C{dict} with both key I{and}
-       attribute access to the C{dict} items.
+class ADict(dict):
+    '''A C{dict} with both key I{and} attribute access to
+       the C{dict} items.
     '''
     _iteration = None  # Iteration number (C{int}) or C{None}
 
@@ -253,7 +253,7 @@ class _Named(object):
                         a shallow copy (C{bool}).
            @kwarg name: Optional, non-empty name (C{str}).
 
-           @return: The copy (C{This class} or sub-class thereof).
+           @return: The copy (C{This class}).
         '''
         c = _xcopy(self, deep=deep)
         if name:
@@ -271,12 +271,12 @@ class _Named(object):
            @kwarg deep: If C{True} duplicate deep, otherwise shallow.
            @kwarg items: Attributes to be changed (C{any}).
 
-           @return: The duplicate (C{This class} or sub-class thereof).
+           @return: The duplicate (C{This class}).
 
            @raise AttributeError: Some B{C{items}} invalid.
         '''
-        n =  self.name
-        m = _xkwds_pop(items, name=n)
+        n = self.name
+        m, items = _xkwds_pop2(items, name=n)
         d = _xdup(self, deep=deep, **items)
         if m != n:
             d.rename(m)
@@ -284,17 +284,18 @@ class _Named(object):
 #           _update_all(d)
         return d
 
-    def _instr(self, name, prec, *attrs, **props_kwds):
+    def _instr(self, name, prec, *attrs, **fmt_props_kwds):
         '''(INTERNAL) Format, used by C{Conic}, C{Ellipsoid}, C{Transform}, C{Triaxial}.
         '''
-        def _props_kwds(props=(), **kwds):
-            return props, kwds
+        def _fmt_props_kwds(fmt=Fmt.F, props=(), **kwds):
+            return fmt, props, kwds
+
+        fmt, props, kwds =_fmt_props_kwds(**fmt_props_kwds)
 
         t = Fmt.EQUAL(_name_, repr(name or self.name)),
         if attrs:
             t += pairs(((a, getattr(self, a)) for a in attrs),
-                       prec=prec, ints=True)
-        props, kwds =_props_kwds(**props_kwds)
+                       prec=prec, fmt=fmt, ints=True)
         if props:
             t += pairs(((p.name, getattr(self, p.name)) for p in props),
                        prec=prec, ints=True)
@@ -376,7 +377,7 @@ class _Named(object):
 
            @arg name: The new name (C{str}).
 
-           @return: The old name (C{str}).
+           @return: The previous name (C{str}).
         '''
         m, n = self._name, str(name)
         if n != m:
@@ -534,30 +535,31 @@ class _NamedBase(_Named):
         return u
 
 
-class _NamedDict(_Dict, _Named):
+class _NamedDict(ADict, _Named):
     '''(INTERNAL) Named C{dict} with key I{and} attribute
        access to the items.
     '''
     def __init__(self, *args, **kwds):
         if args:  # args override kwds
-            if len(args) != 1:
+            if len(args) != 1:  # or not isinstance(args[0], dict)
                 t = unstr(self.classname, *args, **kwds)  # PYCHOK no cover
                 raise _ValueError(args=len(args), txt=t)
             kwds = _xkwds(dict(args[0]), **kwds)
-        if _name_ in kwds:
-            _Named.name.fset(self, kwds.pop(_name_))  # see _Named.name
-        _Dict.__init__(self, kwds)
+        n, kwds = _xkwds_pop2(kwds, name=NN)
+        if n:
+            _Named.name.fset(self, n)  # see _Named.name
+        ADict.__init__(self, kwds)
 
     def __delattr__(self, name):
         '''Delete an attribute or item by B{C{name}}.
         '''
-        if name in _Dict.keys(self):
-            _Dict.pop(name)
+        if name in self:  # in ADict.keys(self):
+            ADict.pop(name)
         elif name in (_name_, _name):
-            # _Dict.__setattr__(self, name, NN)
+            # ADict.__setattr__(self, name, NN)
             _Named.rename(self, NN)
         else:
-            _Dict.__delattr__(self, name)
+            ADict.__delattr__(self, name)
 
     def __getattr__(self, name):
         '''Get an attribute or item by B{C{name}}.
@@ -574,22 +576,22 @@ class _NamedDict(_Dict, _Named):
         '''
         if key == _name_:
             raise KeyError(Fmt.SQUARE(self.classname, key))
-        return _Dict.__getitem__(self, key)
+        return ADict.__getitem__(self, key)
 
     def __setattr__(self, name, value):
         '''Set attribute or item B{C{name}} to B{C{value}}.
         '''
-        if name in _Dict.keys(self):
-            _Dict.__setitem__(self, name, value)  # self[name] = value
+        if name in self:  # in ADict.keys(self):
+            ADict.__setitem__(self, name, value)  # self[name] = value
         else:
-            _Dict.__setattr__(self, name, value)
+            ADict.__setattr__(self, name, value)
 
     def __setitem__(self, key, value):
         '''Set item B{C{key}} to B{C{value}}.
         '''
         if key == _name_:
             raise KeyError(_EQUAL_(Fmt.SQUARE(self.classname, key), repr(value)))
-        _Dict.__setitem__(self, key, value)
+        ADict.__setitem__(self, key, value)
 
     def toRepr(self, **prec_fmt):  # PYCHOK signature
         '''Like C{repr(dict)} but with C{name} prefix and with
@@ -666,7 +668,7 @@ class _NamedEnum(_NamedDict):
            @return: The B{C{item}}'s name if found (C{str}), or C{{dflt}} if
                     there is no such I{registered} B{C{item}}.
         '''
-        for k, v in self.items():  # or _Dict.items(self)
+        for k, v in self.items():  # or ADict.items(self)
             if v is item:
                 return k
         return dflt
@@ -696,7 +698,7 @@ class _NamedEnum(_NamedDict):
             for n in tuple(n for n, p in self.__class__.__dict__.items()
                                       if isinstance(p, _LazyNamedEnumItem)):
                 _ = getattr(self, n)
-        return itemsorted(self) if asorted else _Dict.items(self)
+        return itemsorted(self) if asorted else ADict.items(self)
 
     def keys(self, **all_asorted):
         '''Yield the keys (C{str}) of all or only the I{registered} items,
@@ -712,7 +714,7 @@ class _NamedEnum(_NamedDict):
 
            @return: The removed item.
         '''
-        return self._zapitem(*_Dict.pop(self))
+        return self._zapitem(*ADict.pop(self))
 
     def register(self, item):
         '''Registed a new item.
@@ -755,7 +757,7 @@ class _NamedEnum(_NamedDict):
         else:
             name = self.find(name_or_item)
         try:
-            item = _Dict.pop(self, name)
+            item = ADict.pop(self, name)
         except KeyError:
             raise _NameError(item=self._DOT_(name), txt=_doesn_t_exist_)
         return self._zapitem(name, item)
@@ -806,7 +808,7 @@ def _lazyNamedEnumItem(name, *args, **kwds):
     def _fget(inst):
         # assert isinstance(inst, _NamedEnum)
         try:  # get the item from the instance' __dict__
-            # item = inst.__dict__[name]  # ... or _Dict
+            # item = inst.__dict__[name]  # ... or ADict
             item = inst[name]
         except KeyError:
             # instantiate an _NamedEnumItem, it self-registers
@@ -814,7 +816,7 @@ def _lazyNamedEnumItem(name, *args, **kwds):
             # assert inst[name] is item  # MUST be registered
             # store the item in the instance' __dict__ ...
             # inst.__dict__[name] = item  # ... or update the
-            inst.update({name: item})  # ... _Dict for Triaxials
+            inst.update({name: item})  # ... ADict for Triaxials
             # remove the property from the registry class, such that
             # (a) the property no longer overrides the instance' item
             # in inst.__dict__ and (b) _NamedEnum.items(all=True) only
@@ -961,6 +963,9 @@ class _NamedTuple(tuple, _Named):
 #       '''
 #       return tuple.__getitem__(self, index)
 
+    def __hash__(self):
+        return tuple.__hash__(self)
+
     def __repr__(self):
         '''Default C{repr(self)}.
         '''
@@ -1026,7 +1031,7 @@ class _NamedTuple(tuple, _Named):
                         Trailing zero decimals are stripped for B{C{prec}} values
                         of 1 and above, but kept for negative B{C{prec}} values.
            @kwarg sep: Separator to join (C{str}).
-           @kwarg fmt: Optional, C{float} format (C{str}).
+           @kwarg fmt: Optional C{float} format (C{letter}).
 
            @return: Tuple items (C{str}).
         '''

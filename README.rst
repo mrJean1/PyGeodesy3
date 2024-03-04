@@ -3,147 +3,130 @@
 PyGeodesy3
 ==========
 
-A pure Python implementation of ``geodesy`` tools for various ellipsoidal and
-spherical earth models using precision trigonometric, vector-based, exact,
-elliptic, iterative and approximate methods for geodetic (lat-/longitude),
-geocentric (ECEF_ cartesian) and certain `triaxial ellipsoidal`_ coordinates,
+A pure Python implementation of ``geodesy`` tools for various ellipsoidal and spherical earth models
+using precision trigonometric, vector-based, exact, elliptic, iterative and approximate methods for
+geodetic (lat-/longitude), geocentric (ECEF_ cartesian) and certain `triaxial ellipsoidal`_ coordinates,
 supported *only on Python 3.7 or newer*.
 
-Transcoded from `JavaScript originals`_ by *Chris Veness (C) 2005-2022* and from
-several `C++ classes`_ by *Charles F.F. Karney (C) 2008-2023* and published under
-the same `MIT License`_.
+Transcoded from `JavaScript originals`_ by *Chris Veness (C) 2005-2022* and from several `C++ classes`_
+by *Charles F.F. Karney (C) 2008-2023* and published under the same `MIT License`_.
 
-There are four modules for ellipsoidal earth models, *ellipsoidal.exact*, *.karney*,
-*.vincenty* and *.nvector* and two for spherical ones, *spherical.trigonometry* and
-*.nvector*.  Each module provides a geodetic LatLon_ and a geocentric Cartesian_
-class with methods and functions to compute distance, surface area, perimeter,
-initial and final bearing, intermediate and nearest points, circle intersections
-and secants, path intersections, `3-point resections`_, rhumb and rhumb lines,
-triangulation, trilateration (by intersection, by overlap and in 3d), conversions
-and unrolling, among other things.  For more information and further details see
-the documentation_, the descriptions of `Latitude/Longitude`_, Vincenty_ and
-`Vector-based`_ geodesy, the original `JavaScript source`_ or docs_ and *Karney*\'s
+There are four modules for ellipsoidal earth models, *ellipsoidal.exact*, *.karney*, *.vincenty* and
+*.nvector* and two for spherical ones, *spherical.trigonometry* and *.nvector*.  Each module provides
+a geodetic LatLon_ and a geocentric Cartesian_ class with methods and functions to compute distance,
+surface area, perimeter, initial and final bearing, intermediate and nearest points, circle intersections
+and secants, path intersections, `3-point resections`_, rhumb and rhumb lines, triangulation, trilateration
+(by intersection, by overlap and in 3d), conversions and unrolling, among other things.  For more
+information and further details see the documentation_, the descriptions of `Latitude/Longitude`_,
+Vincenty_ and  `Vector-based`_ geodesy, the original `JavaScript source`_ or docs_ and *Karney*\'s
 Python geographiclib_ and `C++ GeographicLib`_.
 
-Also included are modules for conversions to and from `Cassini-Soldner`_, ECEF_
-(Earth-Centered, Earth-Fixed cartesian), UTM_ (Universal Transverse Mercator and
-Exact_), UPS_ (Universal Polar Stereographic) and `Web Mercator`_ (Pseudo-Mercator)
-coordinates, MGRS_ (Military Grid Reference System, UTM *and* UPS) and OSGR_
-(British Ordinance Survery Grid Reference) grid references, TRF_ (Terrestrial
-Reference Frames) and modules to encode and decode EPSG_, Geohashes_, `Georefs
-(WGRS)`_ and `Garefs (GARS)`_.
+Also included are modules for conversions to and from `Cassini-Soldner`_, ECEF_ (Earth-Centered,
+Earth-Fixed cartesian), UTM_ (Universal Transverse Mercator and Exact_), UPS_ (Universal Polar
+Stereographic) and `Web Mercator`_ (Pseudo-Mercator) coordinates, MGRS_ (Military Grid Reference System,
+UTM *and* UPS) and OSGR_ (British Ordinance Survery Grid Reference) grid references, TRF_ (Terrestrial
+Reference Frames) and modules to encode and decode EPSG_, Geohashes_, `Georefs (WGRS)`_ and `Garefs (GARS)`_.
 
-Other modules provide `Albers equal-area`_ projections, equidistant_ and other
-*azimuthal* projections, Lambert *conformal conic* projections and positions,
-functions to clip paths or polygons of *LatLon* points using the `Cohen-Sutherland`_,
-`Forster-Hormann-Popa`_, `Greiner-Hormann`_, `Liang-Barsky`_ and `Sutherland-Hodgman`_
-methods or to perform *boolean* operations between (composite) polygons, functions
-to simplify_ or linearize a path of *LatLon* points (or a `numpy array`_), including
-implementations of the `Ramer-Douglas-Peucker`_, `Visvalingam-Whyatt`_ and
-`Reumann-Witkam`_ algorithms and modified versions of the former.  Other classes
-interpolate_ the Height_ of *LatLon* points and Geoid_ models or compute distances
-using Fréchet_, Hausdorff_ and various formulae.
+Other modules provide `Albers equal-area`_ projections, equidistant_ and other *azimuthal* projections,
+Lambert *conformal conic* projections and positions, functions to clip paths or polygons of *LatLon*
+points using the `Cohen-Sutherland`_, `Forster-Hormann-Popa`_, `Greiner-Hormann`_, `Liang-Barsky`_ and
+`Sutherland-Hodgman`_ methods or to perform *boolean* operations between (composite) polygons, functions
+to simplify_ or linearize a path of *LatLon* points (or a `numpy array`_), including implementations of
+the `Ramer-Douglas-Peucker`_, `Visvalingam-Whyatt`_ and `Reumann-Witkam`_ algorithms and modified
+versions of the former.  Other classes interpolate_ the Height_ of *LatLon* points and Geoid_ models or
+compute distances using Fréchet_, Hausdorff_ and various formulae.
 
 Installation
 ============
 
-To install PyGeodesy3, type ``python3 -m pip install PyGeodesy3`` or ``python3 -m
-easy_install PyGeodesy3`` in a terminal or command window.
+To install PyGeodesy3, type ``python3 -m pip install PyGeodesy3`` or ``python3 -m easy_install PyGeodesy3``
+in a terminal or command window.
 
-If the wheel ``PyGeodesy3-yy.m.d-py3-none-any.whl`` is missing in `PyPI Download files`_,
-download the file from `GitHub/dist`_.  Install that with ``python3 -m pip install
-<path-to-downloaded-wheel>`` and verify with ``python3 -m pygeodesy3``.
+If the wheel ``PyGeodesy3-yy.m.d-py3-none-any.whl`` is missing in `PyPI Download files`_, download
+the file from `GitHub/dist`_.  Install that with ``python3 -m pip install <path-to-downloaded-wheel>``
+and verify with ``python3 -m pygeodesy3``.
 
-Alternatively, download ``PyGeodesy3-yy.m.d.zip`` from PyPI_ or GitHub_, ``unzip`` the
-downloaded file, ``cd`` to directory ``PyGeodesy3-yy.m.d`` and type ``python3 setup.py
-install``.
+Alternatively, download ``PyGeodesy3-yy.m.d.zip`` from PyPI_ or GitHub_, ``unzip`` the downloaded file,
+``cd`` to directory ``PyGeodesy3-yy.m.d`` and type ``python3 setup.py install``.
 
 To run all PyGeodesy3 tests, type ``python3 test/run.py`` before or after installation.
 
 Dependencies
 ============
 
-Installation of *Karney*\'s Python package geographiclib_ is optional, but required
-to use modules ``ellipsoidal.karney`` and ``projections.css``, ``projections.azimuthal``
-classes ``EquidistantKarney`` and ``GnomonicKarney`` and the ``HeightIDWkarney``
-interpolator.
+Installation of *Karney*\'s Python package geographiclib_ is optional, but required to use modules
+``ellipsoidal.karney`` and ``projections.css``, ``projections.azimuthal`` classes ``EquidistantKarney``
+and ``GnomonicKarney`` and the ``HeightIDWkarney`` interpolator.
 
-Both numpy_ and scipy_ must be installed for most Geoid_ and Height_ interpolators,
-except ``GeoidKarney`` and the ``HeigthIDW...`` ones.
+Both numpy_ and scipy_ must be installed for most Geoid_ and Height_ interpolators, except ``GeoidKarney``
+and the ``HeigthIDW...`` ones.
 
-Functions and ``LatLon`` methods ``circin6``, ``circum3``, ``circum4_``, ``soddy4``,
-``trilaterate3d2`` and ``trilaterate5`` do and modules ``maths.auxilats`` and ``rhumb.aux_``
-may require numpy_.
+Functions and ``LatLon`` methods ``circin6``, ``circum3``, ``circum4_``, ``soddy4``, ``trilaterate3d2``
+and ``trilaterate5`` do and modules ``maths.auxilats`` and ``rhumb.aux_`` may require numpy_.
 
 Modules ``ellipsoidal.solve`` and ``geodesic.solve`` and ``projections.azimuthal`` classes
-``EquidistantGeodSolve`` and ``GnomonicGeodSolve`` depend on *Karney*\'s C++ utility
-GeodSolve_ to be executable and set with env variable ``PYGEODESY3_GEODSOLVE`` or with
-property ``Ellipsoid.geodsolve``.
+``EquidistantGeodSolve`` and ``GnomonicGeodSolve`` depend on *Karney*\'s C++ utility GeodSolve_
+to be executable and set with env variable ``PYGEODESY3_GEODSOLVE`` or with property ``Ellipsoid.geodsolve``.
 
-To compare ``MGRS`` results from modules ``grids.mgrs`` and ``test.testMgrs`` with
-*Karney*\'s C++ utility GeoConvert_, the latter must be executable and set with env
-variable ``PYGEODESY3_GEOCONVERT``.
+To compare ``MGRS`` results from modules ``grids.mgrs`` and ``test.testMgrs`` with *Karney*\'s
+C++ utility GeoConvert_, the latter must be executable and set with env variable ``PYGEODESY3_GEOCONVERT``.
 
-Module ``rhumb.solve`` needs *Karney*\'s C++ utility RhumbSolve_ to be executable and set
-with env variable ``PYGEODESY3_RHUMBSOLVE`` or with property ``Ellipsoid.rhumbsolve``.
+Module ``rhumb.solve`` needs *Karney*\'s C++ utility RhumbSolve_ to be executable and set with
+env variable ``PYGEODESY3_RHUMBSOLVE`` or with property ``Ellipsoid.rhumbsolve``.
 
 Documentation
 =============
 
-In addition to the ``pygeodesy3`` package, the PyGeodesy3_ `distribution files`_ contain
-the tests, the test results (on macOS only) and the documentation_ generated by Epydoc_
-using command line: ``epydoc --html --no-private --no-source --name=PyGeodesy3 --url=... -v pygeodesy3``.
+In addition to the ``pygeodesy3`` package, the PyGeodesy3_ `distribution files`_ contain the tests, the test
+results (on macOS only) and the documentation_ generated by Epydoc_ using command line:
+``epydoc --html --no-private --no-source --name=PyGeodesy3 --url=... -v pygeodesy3``.
 
 Tests
 =====
 
-The tests ran with Python 3.12 (with geographiclib_ 2.0), 3.11.5 (with geographiclib_ 2.0,
-numpy_ 1.24.2 and scipy_ 1.10.1), Python 3.10.8 (with geographiclib_ 2.0, numpy_ 1.23.3,
-scipy_ 1.9.1, GeoConvert_ 2.2, GeodSolve_ 2.2 and RhumbSolve_ 2.2) and Python 3.9.6, all
-on macOS 14.1.2 Sonoma, Apple M1 Silicon (``arm64``), *natively* and in 64-bit only.
+The tests ran with Python 3.12.2 (with geographiclib_ 2.0), 3.11.5 (with geographiclib_ 2.0, numpy_ 1.24.2
+and scipy_ 1.10.1), Python 3.10.8 (with geographiclib_ 2.0, numpy_ 1.23.3, scipy_ 1.9.1, GeoConvert_ 2.2,
+GeodSolve_ 2.2 and RhumbSolve_ 2.2) and Python 3.9.6, all on macOS 14.3.1 Sonoma, Apple M1 Silicon
+(``arm64``), *natively* and in 64-bit only.
 
-All tests ran with ``lazy import`` enabled and with command line option ``-W default`` and
-env variable ``PYGEODESY_WARNINGS=on``.  The results of those tests are included in the
-distribution files.
+All tests ran with ``lazy import`` enabled and with command line option ``-W default`` and env variable
+``PYGEODESY_WARNINGS=on``.  The results of those tests are included in the distribution files.
 
-Test coverage has been measured with coverage_ 7.2.2.  The complete coverage report in HTML
-and a PDF summary are included in the distribution files.
+Test coverage has been measured with coverage_ 7.2.2.  The complete coverage report in HTML and a PDF
+summary are included in the distribution files.
 
-The tests also ran with Python 3.11.5 (and geographiclib_ 2.0) on `Debian 11`_ in 64-bit
-only and with Python 3.11.5 and 3.10.10 (all with geographiclib_ 1.52) on `Windows 10`_
-in 64- and/or 32-bit.
+The tests also ran with Python 3.11.5 (and geographiclib_ 2.0) on `Debian 11`_ in 64-bit only and with
+Python 3.11.5 and 3.10.10 (all with geographiclib_ 1.52) on `Windows 10`_ in 64- and/or 32-bit.
 
 Notes
 =====
 
-All Python source code has been statically checked_ with PyChecker_, PyFlakes_, PyCodeStyle_
-(formerly Pep8) and McCabe_ using Python 2.7.18 and with Flake8_ using Python 3.11.5, both
-in 64-bit on macOS 14.1.2 Sonoma.
+All Python source code has been statically checked_ with PyChecker_, PyFlakes_, PyCodeStyle_ (formerly Pep8)
+and McCabe_ using Python 2.7.18 and with Flake8_ using Python 3.11.5, both in 64-bit on macOS 14.3.1 Sonoma.
 
 For a summary of all *Karney*-based functionality in ``pygeodesy3``, see module karney_.
 
-*Last updated: Jan 10, 2024.*
+*Last updated: March 03, 2024.*
 
 License
 =======
 
 Copyright (C) 2024-2024 -- mrJean1 at Gmail -- All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this
-software and associated documentation files (the "Software"), to deal in the Software
-without restriction, including without limitation the rights to use, copy, modify, merge,
-publish, distribute, sublicense, and/or sell copies of the Software, and to permit
-persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so, subject to the following
+conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or
-substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
-FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .. image:: https://Img.Shields.io/pypi/pyversions/PyGeodesy3.svg?label=Python
   :target: https://PyPI.org/project/PyGeodesy3

@@ -18,21 +18,21 @@ by I{Charles Karney}.
 from pygeodesy3.Base.utmups import _to4lldn, _to3zBhp, _UPS_ZONE, \
                                    _UPS_ZONE_STR, _UTMUPS_ZONE_MIN, \
                                    _UTMUPS_ZONE_MAX, _WGS84,  Fmt
-from pygeodesy3.basics import map1, _xkwds_get
-# from pygeodesy3.earth.datums import _WGS84  # from .base.utmups
+# from pygeodesy3.basics import map1  # from .miscs.namedTuples
+# from pygeodesy3.earth.datums import _WGS84  # from .Base.utmups
 from pygeodesy3.interns import NN, _easting_, _MGRS_, _northing_, _NS_, \
                               _outside_, _range_, _SPACE_, _UPS_, _UTM_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
-from pygeodesy3.miscs.errors import _IsnotError, RangeError, _ValueError
+from pygeodesy3.miscs.errors import _IsnotError, RangeError, _ValueError, _xkwds_get
 # from pygeodesy3.miscs.named import modulename  # _MODS
-from pygeodesy3.miscs.namedTuples import UtmUps5Tuple, UtmUps8Tuple
-# from pygeodesy3.miscs.streprs import Fmt  # from .base.utmups
+from pygeodesy3.miscs.namedTuples import UtmUps5Tuple, UtmUps8Tuple,  map1
+# from pygeodesy3.miscs.streprs import Fmt  # from .Base.utmups
 from pygeodesy3.miscs.units import Northing, _100km
 from pygeodesy3.projections.ups import parseUPS5, toUps8, Ups, UPSError, upsZoneBand5
 from pygeodesy3.projections.utm import parseUTM5, toUtm8, Utm, UTMError, utmZoneBand5
 
 __all__ = _ALL_LAZY.projections_utmups
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _MGRS_TILE = _100km  # in .mgrs.Mgrs.tile
 

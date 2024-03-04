@@ -4,8 +4,8 @@
 u'''(INTERNAL) Private base classes for L{pygeodesy3.geodesic.solve} and L{pygeodesy3.rhumb.solve}.
 '''
 
-from pygeodesy3.Base.karney import Caps, _CapsBase, GDict, Precision_
-from pygeodesy3.basics import map2, ub2str, _xkwds_get, _zip
+from pygeodesy3.Base.karney import Caps, _CapsBase, GDict
+from pygeodesy3.basics import map2, ub2str, _zip
 from pygeodesy3.constants import DIG
 from pygeodesy3.earth.datums import _earth_datum, _WGS84,  _EWGS84
 # from pygeodesy3.earth.ellipsoids import _EWGS84  # from .earth.datums
@@ -13,16 +13,16 @@ from pygeodesy3.interns import NN, _0_, _BACKSLASH_, _COMMASPACE_, _enquote, \
                               _EQUAL_, _Error_, _not_, _SPACE_, _UNUSED_
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, printf, _unlazy
 from pygeodesy3.maths.umath import unroll180,  wrap360  # PYCHOK shared
-from pygeodesy3.miscs.errors import _AssertionError
+from pygeodesy3.miscs.errors import _AssertionError, _xkwds_get
 from pygeodesy3.miscs.named import callername, notOverloaded
 from pygeodesy3.miscs.props import Property, Property_RO, property_RO, _update_all
 from pygeodesy3.miscs.streprs import Fmt, fstr, fstrzs, pairs, strs
-# from pygeodesy3.miscs.units import Precision_  # from .Base.karney
+from pygeodesy3.miscs.units import Precision_
 
 from subprocess import PIPE as _PIPE, Popen as _Popen, STDOUT as _STDOUT
 
 __all__ = _ALL_LAZY.Base_solve
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 _ERROR_    = 'ERROR'
 _text_True = {} if _unlazy else dict(text=True)
@@ -36,7 +36,7 @@ def _cmd_stdin_(cmd, stdin):  # PYCHOK no cover
     return _SPACE_.join(cmd + t)
 
 
-def _popen2(cmd, stdin=None):  # in .mgrs, .test.base, .test.testMgrs
+def _popen2(cmd, stdin=None):  # in .mgrs, .test.bases, .test.testMgrs
     '''(INTERNAL) Invoke C{B{cmd} tuple} and return C{exitcode}
        and all output to C{stdout/-err}.
     '''

@@ -24,29 +24,29 @@ from __future__ import division as _; del _  # PYCHOK semicolon
 
 from pygeodesy3.Base.nvector import fabs, fdot, NorthPole, LatLonNvectorBase, \
                                     NvectorBase, sumOf as _sumOf
-from pygeodesy3.basics import issubclassof, map2, _xinstanceof, _xkwds, _xkwds_pop
+from pygeodesy3.basics import issubclassof, map2, _xinstanceof
 # from pygeodesy3.distances.formy import _isequalTo  # _MODS
 from pygeodesy3.earth.datums import _earth_ellipsoid, _ellipsoidal_datum, \
-                                    _WGS84,  _IsnotError
-from pygeodesy3.ellipsoidal.base import CartesianEllipsoidalBase, _nearestOn, \
+                                    _WGS84
+from pygeodesy3.ellipsoidal.Base import CartesianEllipsoidalBase, _nearestOn, \
                                         LatLonEllipsoidalBase, _TOL_M,  _Wrap
 from pygeodesy3.interns import NN, _Nv00_
 from pygeodesy3.interns import _down_, _east_, _north_, _pole_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
-# from pygeodesy3.maths.fmath import fdot  # from .base.nvector
-# from pygeodesy3.maths.umath import _Wrap  # from .base.ellipsoidal
+# from pygeodesy3.maths.fmath import fdot  # from .Base.nvector
+# from pygeodesy3.maths.umath import _Wrap  # from .Base.ellipsoidal
 # from pygeodesy3.miscs.dms import toDMS  # _MODS
-# from pygeodesy3.miscs.errors import _IsnotError  # from .earth.datums
+from pygeodesy3.miscs.errors import _IsnotError, _xkwds, _xkwds_pop2
 from pygeodesy3.miscs.props import deprecated_function, Property_RO, property_RO
 from pygeodesy3.miscs.streprs import Fmt  # XXX fstr, _xzipairs
 from pygeodesy3.miscs.units import Scalar  # XXX Bearing, Distance, Height, Scalar
 # from pygeodesy3.projections.ltp import Ltp  # _MODS
 from pygeodesy3.projections.ltpTuples import Aer, Ned, Ned4Tuple  # XXX sincos2d_
 
-# from math import fabs  # from .base.nvector
+# from math import fabs  # from .Base.nvector
 
 __all__ = _ALL_LAZY.ellipsoidal_nvector
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 
 class Cartesian(CartesianEllipsoidalBase):
@@ -165,13 +165,13 @@ class LatLon(LatLonNvectorBase, LatLonEllipsoidalBase):
         # frame using the rotation matrix row vectors
         ned_ = map2(dc.dot, self._rotation3)
 
-        C = _xkwds_pop(Ned_and_kwds, Ned=Ned)
-        if issubclassof(C, Ned4Tuple):
-            ltp = _MODS.projections.ltp
-            ned_ += (ltp.Ltp(self, ecef=self.Ecef(self.datum)),)
-        elif not issubclassof(C, Ned):
-            raise _IsnotError(Fmt.sub_class(Ned, Ned4Tuple), Ned=C)
-        return C(*ned_, **_xkwds(Ned_and_kwds, name=NN))
+        N, kwds = _xkwds_pop2(Ned_and_kwds, Ned=Ned)
+        if issubclassof(N, Ned4Tuple):
+            Ltp = _MODS.projections.ltp.Ltp
+            ned_ += Ltp(self, ecef=self.Ecef(self.datum)),
+        elif not issubclassof(N, Ned):
+            raise _IsnotError(Fmt.sub_class(Ned, Ned4Tuple), Ned=N)
+        return N(*ned_, **_xkwds(kwds, name=NN))
 
 #     def destination(self, distance, bearing, radius=R_M, height=None):
 #         '''Return the destination point after traveling from this
@@ -604,8 +604,8 @@ def toNed(distance, bearing, elevation, **Ned_and_kwds):  # BACKWARD
     '''
     n, e, d, _ = Aer(bearing, elevation, distance).xyz4
 
-    C = _xkwds_pop(Ned_and_kwds, Ned=Ned)
-    return C(n, e, -d, **_xkwds(Ned_and_kwds, name=NN))  # XXX neg(d)
+    N, kwds = _xkwds_pop2(Ned_and_kwds, Ned=Ned)
+    return N(n, e, -d, **_xkwds(kwds, name=NN))  # XXX neg(d)
 
 
 __all__ += _ALL_OTHER(Cartesian, LatLon, Nvector,  # classes

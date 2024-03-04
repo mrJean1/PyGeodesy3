@@ -164,7 +164,7 @@
   href="pygeodesy3.elevations.heights-module.html" class="link" 
   onclick="show_private();">height</a> of <code>LatLon</code> points and <a
   href="pygeodesy3.elevations.geoids-module.html" class="link" 
-  onclick="show_private();">Geoid</a> models, compute various <a 
+  onclick="show_private();">Geoid</a> models and compute various <a 
   href="https://WikiPedia.org/wiki/Frechet_distance" 
   target="_top">Fr&#233;chet</a> and <a 
   href="https://WikiPedia.org/wiki/Hausdorff_distance" 
@@ -275,7 +275,7 @@
     command line: <code>epydoc --html --no-private --no-source 
     --name=PyGeodesy3 --url=... -v pygeodesy3</code>).</p>
   <h1 class="heading">Tests</h1>
-    <p>The tests ran with Python 3.12 (with <a 
+    <p>The tests ran with Python 3.12.2 (with <a 
     href="https://PyPI.org/project/geographiclib" 
     target="_top">geographiclib</a> 2.0, Python 3.11.5 (with <a 
     href="https://PyPI.org/project/geographiclib" 
@@ -292,7 +292,7 @@
     href="https://GeographicLib.SourceForge.io/html/utilities.html" 
     target="_top">GeodSolve</a> 2.2 and <a 
     href="https://GeographicLib.SourceForge.io/html/utilities.html" 
-    target="_top">RhumbSolve</a> 2.2) and Python 3.9.6, all on macOS 14.1.2
+    target="_top">RhumbSolve</a> 2.2) and Python 3.9.6, all on macOS 14.3.1
     Sonoma, Apple M1 Silicon (<code>arm64</code>), <i>natively</i> and in 
     64-bit only.</p>
     <p>All tests ran with and without <code>lazy import</code> for Python 3
@@ -425,8 +425,8 @@
     <p>plus during development:</p>
     <ul>
       <li>
-        <code>PYGEODESY3_ALL_BACKWARD</code> - import all modules for 
-        backward compatibility.
+        <code>PYGEODESY3_BACKWARD</code> - import all modules for 
+        <code>PyGeodesy</code> compatibility.
       </li>
       <li>
         <code>PYGEODESY3_FOR_DOCS</code> - for extended documentation by 
@@ -482,7 +482,7 @@
     <p><code>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY 
     OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
     WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-    NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE 
     LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
@@ -490,7 +490,7 @@
 
 <hr />
 <div class="fields">      <p><strong>Version:</strong>
-        24.01.10
+        24.03.03
       </p>
 </div><!-- ==================== SUBMODULES ==================== -->
 <a name="section-Submodules"></a>
@@ -504,8 +504,17 @@
   <ul class="nomargin">
     <li> <strong class="uidlink"><a href="pygeodesy3.Base-module.html">pygeodesy3.Base</a></strong>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian-module.html" onclick="show_private();">pygeodesy3.Base.cartesian</a></strong>: <em class="summary">(INTERNAL) Private base classes for elliposiodal, spherical and 
-        N-/vectorial <code>Cartesian</code>s.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian-module.html" onclick="show_private();">pygeodesy3.Base.cartesian</a></strong>: <em class="summary">(INTERNAL) Private <code>CartesianBase</code> class for 
+        elliposiodal, spherical and N-/vectorial <code>Cartesian</code>s 
+        and public functions <a 
+        href="pygeodesy3.Base.cartesian-module.html#rtp2xyz" 
+        class="link">rtp2xyz</a>, <a 
+        href="pygeodesy3.Base.cartesian-module.html#rtp2xyz_" 
+        class="link">rtp2xyz_</a>, <a 
+        href="pygeodesy3.Base.cartesian-module.html#xyz2rtp" 
+        class="link">xyz2rtp</a> and <a 
+        href="pygeodesy3.Base.cartesian-module.html#xyz2rtp_" 
+        class="link">xyz2rtp_</a>.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.karney-module.html" onclick="show_private();">pygeodesy3.Base.karney</a></strong>: <em class="summary">Wrapper around several <code>geomath.Math</code> functions from 
         <i>Karney</i>'s Python package <a 
         href="https://PyPI.org/project/geographiclib" 
@@ -650,10 +659,10 @@
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal-module.html">pygeodesy3.ellipsoidal</a></strong>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.base-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.base</a></strong>: <em class="summary">(INTERNAL) Private ellipsoidal base classes 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.Base-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.Base</a></strong>: <em class="summary">(INTERNAL) Private ellipsoidal base classes 
         <code>CartesianEllipsoidalBase</code> and 
         <code>LatLonEllipsoidalBase</code>.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.baseDI-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.baseDI</a></strong>: <em class="summary">(INTERNAL) Private, ellipsoidal Direct/Inverse geodesy base class 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.BaseDI-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.BaseDI</a></strong>: <em class="summary">(INTERNAL) Private, ellipsoidal Direct/Inverse geodesy base class 
         <code>LatLonEllipsoidalBaseDI</code> and functions.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.exact</a></strong>: <em class="summary">Exact ellipsoidal geodesy using <i>Karney</i>'s Exact Geodesic.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.karney</a></strong>: <em class="summary">Ellipsoidal, <i>Karney</i>-based geodesy.</em>    </li>
@@ -693,15 +702,15 @@
     <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gx-module.html">pygeodesy3.geodesic.exact.gx</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s C++ class <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1GeodesicExact.html"
         target="_top">GeodesicExact</a>.</em>    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxBases-module.html">pygeodesy3.geodesic.exact.gxBases</a></strong>: <em class="summary">(INTERNAL) Private <a href="pygeodesy3.geodesic.wrap-module.html" 
+        class="link" onclick="show_private();">geodesic.wrap</a> base 
+        class, functions and constants.</em>    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxarea-module.html">pygeodesy3.geodesic.exact.gxarea</a></strong>: <em class="summary">Slightly enhanced versions of classes <a 
         href="https://GeographicLib.SourceForge.io/1.52/python/code.html#module-geographiclib.polygonarea"
         target="_top">PolygonArea</a> and <code>Accumulator</code> from 
         <i>Karney</i>'s Python <a 
         href="https://GeographicLib.SourceForge.io/1.52/python/index.html" 
         target="_top">geographiclib</a>.</em>    </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxbases-module.html">pygeodesy3.geodesic.exact.gxbases</a></strong>: <em class="summary">(INTERNAL) Private <a href="pygeodesy3.geodesic.wrap-module.html" 
-        class="link" onclick="show_private();">geodesic.wrap</a> base 
-        class, functions and constants.</em>    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxline-module.html">pygeodesy3.geodesic.exact.gxline</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s C++ class <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1GeodesicLineExact.html"
         target="_top">GeodesicLineExact</a>.</em>    </li>
@@ -896,6 +905,16 @@
         href="pygeodesy3.rhumb.solve-module.html" class="link" 
         onclick="show_private();">rhumb.solve</a>.</em>
     <ul>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.Bases-module.html" onclick="show_private();">pygeodesy3.rhumb.Bases</a></strong>: <em class="summary">(INTERNAL) base classes <code>RhumbBase</code> and 
+        <code>RhumbLineBase</code>, pure Python version of <i>Karney</i>'s 
+        C++ classes <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
+        target="_top">Rhumb</a> and <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1RhumbLine.html"
+        target="_top">RhumbLine</a> from <i>GeographicLib versions 2.0</i> 
+        and <i>2.2</i> and <i>Karney</i>'s C++ example <a 
+        href="https://SourceForge.net/p/geographiclib/discussion/1026620/thread/2ddc295e/"
+        target="_top">Rhumb intersect</a>.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.aux_-module.html" onclick="show_private();">pygeodesy3.rhumb.aux_</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s <i>Auxiliary 
         Latitudes</i>, C++ classes <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
@@ -906,16 +925,6 @@
         class="link">RhumbAux</a> respectively <a 
         href="pygeodesy3.rhumb.aux_.RhumbLineAux-class.html" 
         class="link">RhumbLineAux</a>.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.bases-module.html" onclick="show_private();">pygeodesy3.rhumb.bases</a></strong>: <em class="summary">(INTERNAL) base classes <code>RhumbBase</code> and 
-        <code>RhumbLineBase</code>, pure Python version of <i>Karney</i>'s 
-        C++ classes <a 
-        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
-        target="_top">Rhumb</a> and <a 
-        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1RhumbLine.html"
-        target="_top">RhumbLine</a> from <i>GeographicLib versions 2.0</i> 
-        and <i>2.2</i> and <i>Karney</i>'s C++ example <a 
-        href="https://SourceForge.net/p/geographiclib/discussion/1026620/thread/2ddc295e/"
-        target="_top">Rhumb intersect</a>.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.ekx-module.html" onclick="show_private();">pygeodesy3.rhumb.ekx</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s <i>elliptic functions</i>,
         <i>Kr&#252;ger series expansion</i>, C++ classes <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
@@ -931,7 +940,7 @@
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.spherical-module.html">pygeodesy3.spherical</a></strong>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.spherical.base-module.html" onclick="show_private();">pygeodesy3.spherical.base</a></strong>: <em class="summary">(INTERNAL) Private spherical base classes 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.spherical.Base-module.html" onclick="show_private();">pygeodesy3.spherical.Base</a></strong>: <em class="summary">(INTERNAL) Private spherical base classes 
         <code>CartesianSphericalBase</code> and 
         <code>LatLonSphericalBase</code> for <code>spherical.nvector</code>
         and c{spherical.trigonometry}.</em>    </li>
@@ -951,6 +960,15 @@
   <td align="left" colspan="2" class="table-header">
     <span class="table-header">Classes</span></td>
 </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.miscs.named.ADict-class.html" class="summary-name">ADict</a><br />
+      A <code>dict</code> with both key <i>and</i> attribute access to 
+        the <code>dict</code> items.
+    </td>
+  </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
@@ -3345,19 +3363,6 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.earth.trf.Helmert7Tuple-class.html" class="summary-name">Helmert7Tuple</a><br />
-      7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of Helmert 
-        transform parameters with translations <code>tx</code>, 
-        <code>ty</code> and <code>tz</code> in <code>millimeter</code>, 
-        scale <code>s</code> in <code>ppb</code> and rotations 
-        <code>sx</code>, <code>sy</code> and <code>sz</code> in 
-        <code>milliarcseconds</code>.
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
         <a href="pygeodesy3.Base.units.Int-class.html" class="summary-name">Int</a><br />
       Named <code>int</code>.
     </td>
@@ -4190,21 +4195,6 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" class="summary-name">RThetaPhi3Tuple</a><br />
-      3-Tuple <code>(r, theta, phi)</code> with radial distance 
-        <code>r</code> in <code>meter</code>, inclination 
-        <code>theta</code> (with respect to the positive z-axis) and 
-        azimuthal angle <code>phi</code> in <a 
-        href="pygeodesy3.miscs.units.Degrees-class.html" 
-        class="link">Degrees</a> <i>or</i> <a 
-        href="pygeodesy3.miscs.units.Radians-class.html" 
-        class="link">Radians</a>.
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
         <a href="pygeodesy3.miscs.units.Radians-class.html" class="summary-name">Radians</a><br />
       Named <code>float</code> representing a coordinate in 
         <code>radians</code>, optionally clipped.
@@ -4262,6 +4252,23 @@
         <a href="pygeodesy3.Base.units.Radius-class.html" class="summary-name">Radius</a><br />
       Named <code>float</code> representing a radius, conventionally in 
         <code>meter</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" class="summary-name">RadiusThetaPhi3Tuple</a><br />
+      3-Tuple <code>(r, theta, phi)</code> with radial distance 
+        <code>r</code> in <code>meter</code>, inclination 
+        <code>theta</code> (with respect to the positive z-axis) and 
+        azimuthal angle <code>phi</code> in <a 
+        href="pygeodesy3.miscs.units.Degrees-class.html" 
+        class="link">Degrees</a> <i>or</i> <a 
+        href="pygeodesy3.miscs.units.Radians-class.html" 
+        class="link">Radians</a> representing a <a 
+        href="https://WikiPedia.org/wiki/Spherical_coordinate_system" 
+        target="_top">spherical, polar position</a>.
     </td>
   </tr>
 <tr>
@@ -4550,6 +4557,27 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.TRFXform-class.html" class="summary-name">TRFXform</a><br />
+      A Terrestrial Reference Frame (TRF) converter between two reference
+        frames observed at an <code>epoch</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html" class="summary-name">TRFXform7Tuple</a><br />
+      7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of conversion 
+        parameters with translations <code>tx</code>, <code>ty</code> and 
+        <code>tz</code> in <code>milli-meter</code>, scale <code>s</code> 
+        in <code>ppb</code> and rates <code>sx</code>, <code>sy</code> and 
+        <code>sz</code> in <code>milli-arc-seconds-per-year</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a href="pygeodesy3.distances.resections.Tienstra7Tuple-class.html" class="summary-name">Tienstra7Tuple</a><br />
       7-Tuple <code>(pointP, A, B, C, a, b, c)</code> with survey 
         <code>pointP</code>, interior triangle angles <code>A</code>, 
@@ -4563,7 +4591,16 @@
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a href="pygeodesy3.earth.datums.Transform-class.html" class="summary-name">Transform</a><br />
-      Helmert transformation.
+      Helmert <i>datum</i> transformation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.TransformXform-class.html" class="summary-name">TransformXform</a><br />
+      Helmert transformation, extended with an <code>Xform</code> TRF 
+        converter.
     </td>
   </tr>
 <tr>
@@ -6502,7 +6539,7 @@
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#date2epoch" class="summary-sig-name">date2epoch</a>(<span class="summary-sig-arg">year</span>,
         <span class="summary-sig-arg">month</span>,
         <span class="summary-sig-arg">day</span>)</span><br />
-      Return the reference frame <code>epoch</code> for a calendar day.</td>
+      Return the <code>epoch</code> for a calendar day.</td>
           <td align="right" valign="top">
             
             
@@ -8210,7 +8247,7 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#hartzell" class="summary-sig-name">hartzell</a>(<span class="summary-sig-arg">pov</span>,
-        <span class="summary-sig-arg">los</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">los</span>=<span class="summary-sig-default">True</span>,
         <span class="summary-sig-arg">earth</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
         <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>,
         <span class="summary-sig-arg">**LatLon_and_kwds</span>)</span><br />
@@ -8232,7 +8269,7 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#hartzell4" class="summary-sig-name">hartzell4</a>(<span class="summary-sig-arg">pov</span>,
-        <span class="summary-sig-arg">los</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">los</span>=<span class="summary-sig-default">True</span>,
         <span class="summary-sig-arg">tri_biax</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
         <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
       Compute the intersection of a tri-/biaxial ellipsoid and a 
@@ -8259,7 +8296,7 @@
         <span class="summary-sig-arg">seed</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">units</span>=<span class="summary-sig-default">''</span>,
         <span class="summary-sig-arg">distance</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">point</span>=<span class="summary-sig-default">&lt;function _point at 0x7fc200493850&gt;</span>)</span><br />
+        <span class="summary-sig-arg">point</span>=<span class="summary-sig-default">&lt;function _point at 0x7fd2088b4dd0&gt;</span>)</span><br />
       Compute the <code>directed</code> or <code>symmetric</code> <a 
       href="https://WikiPedia.org/wiki/Hausdorff_distance" 
       target="_top">Hausdorff</a> distance between 2 sets of points with or
@@ -8716,7 +8753,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pygeodesy3-module.html#isError" class="summary-sig-name">isError</a>(<span class="summary-sig-arg">obj</span>)</span><br />
+          <td><span class="summary-sig"><a href="pygeodesy3-module.html#isError" class="summary-sig-name">isError</a>(<span class="summary-sig-arg">exc</span>)</span><br />
       Check a (caught) exception.</td>
           <td align="right" valign="top">
             
@@ -9107,7 +9144,7 @@
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#isinstanceof" class="summary-sig-name">isinstanceof</a>(<span class="summary-sig-arg">obj</span>,
         <span class="summary-sig-arg">*classes</span>)</span><br />
-      Is <b><code>ob</code></b> an intance of one of the 
+      Is <b><code>ob</code></b> an instance of one of the 
       <code>classes</code>?</td>
           <td align="right" valign="top">
             
@@ -11138,11 +11175,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pygeodesy3-module.html#rtp2xyz" class="summary-sig-name">rtp2xyz</a>(<span class="summary-sig-arg">r</span>,
-        <span class="summary-sig-arg">theta</span>,
-        <span class="summary-sig-arg">phi</span>)</span><br />
-      Convert spherical <code>(r, theta, phi)</code> to cartesian <code>(x,
-      y, z)</code> coordinates.</td>
+          <td><span class="summary-sig"><a href="pygeodesy3-module.html#rtp2xyz" class="summary-sig-name">rtp2xyz</a>(<span class="summary-sig-arg">r_rtp</span>,
+        <span class="summary-sig-arg">*theta_phi</span>,
+        <span class="summary-sig-arg">**name_Cartesian_and_kwds</span>)</span><br />
+      Convert <i>spherical, polar</i> <code>(r, theta, phi)</code> to 
+      cartesian <code>(x, y, z)</code> coordinates.</td>
           <td align="right" valign="top">
             
             
@@ -11158,11 +11195,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="pygeodesy3-module.html#rtp2xyz_" class="summary-sig-name">rtp2xyz_</a>(<span class="summary-sig-arg">r</span>,
-        <span class="summary-sig-arg">theta</span>,
-        <span class="summary-sig-arg">phi</span>)</span><br />
-      Convert spherical <code>(r, theta, phi)</code> to cartesian <code>(x,
-      y, z)</code> coordinates.</td>
+          <td><span class="summary-sig"><a href="pygeodesy3-module.html#rtp2xyz_" class="summary-sig-name">rtp2xyz_</a>(<span class="summary-sig-arg">r_rtp</span>,
+        <span class="summary-sig-arg">*theta_phi</span>,
+        <span class="summary-sig-arg">**name_Cartesian_and_kwds</span>)</span><br />
+      Convert <i>spherical, polar</i> <code>(r, theta, phi)</code> to 
+      cartesian <code>(x, y, z)</code> coordinates.</td>
           <td align="right" valign="top">
             
             
@@ -11991,12 +12028,64 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3-module.html#trfTransform0" class="summary-sig-name">trfTransform0</a>(<span class="summary-sig-arg">reframe</span>,
+        <span class="summary-sig-arg">reframe2</span>,
+        <span class="summary-sig-arg">epoch</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">epoch2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">indirect</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">inverse</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">exhaust</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Get a Helmert transform to convert one <code>reframe</code> observed 
+      at <code>epoch</code> to an other <code>reframe2</code> at observed 
+      at <code>epoch2 or epoch</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3-module.html#trfTransforms" class="summary-sig-name">trfTransforms</a>(<span class="summary-sig-arg">reframe</span>,
+        <span class="summary-sig-arg">reframe2</span>,
+        <span class="summary-sig-arg">epoch</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">epoch2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">indirect</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">inverse</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">exhaust</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Yield all Helmert transform to convert one <code>reframe</code> 
+      observed at <code>epoch</code> to an other <code>reframe2</code> at 
+      observed at <code>epoch2 or epoch</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#trfXform" class="summary-sig-name">trfXform</a>(<span class="summary-sig-arg">reframe1</span>,
         <span class="summary-sig-arg">reframe2</span>,
         <span class="summary-sig-arg">epoch</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">xform</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">rates</span>=<span class="summary-sig-default">None</span>)</span><br />
-      Define a new Terrestrial Reference Frame (TRF) conversion.</td>
+        <span class="summary-sig-arg">rates</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">raiser</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Define a new Terrestrial Reference Frame (TRF) converter or get an 
+      existing one.</td>
           <td align="right" valign="top">
             
             
@@ -12603,9 +12692,10 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#xyz2rtp" class="summary-sig-name">xyz2rtp</a>(<span class="summary-sig-arg">x_xyz</span>,
-        <span class="summary-sig-arg">*y_z</span>)</span><br />
-      Convert cartesian <code>(x, y, z)</code> to spherical <code>(r, 
-      theta, phi)</code> coordinates.</td>
+        <span class="summary-sig-arg">*y_z</span>,
+        <span class="summary-sig-arg">**name</span>)</span><br />
+      Convert cartesian <code>(x, y, z)</code> to <i>spherical, polar</i> 
+      <code>(r, theta, phi)</code> coordinates.</td>
           <td align="right" valign="top">
             
             
@@ -12622,9 +12712,10 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3-module.html#xyz2rtp_" class="summary-sig-name">xyz2rtp_</a>(<span class="summary-sig-arg">x_xyz</span>,
-        <span class="summary-sig-arg">*y_z</span>)</span><br />
-      Convert cartesian <code>(x, y, z)</code> to spherical <code>(r, 
-      theta, phi)</code> coordinates.</td>
+        <span class="summary-sig-arg">*y_z</span>,
+        <span class="summary-sig-arg">**name</span>)</span><br />
+      Convert cartesian <code>(x, y, z)</code> to <i>spherical, polar</i> 
+      <code>(r, theta, phi)</code> coordinates.</td>
           <td align="right" valign="top">
             
             
@@ -12720,7 +12811,7 @@ pygeodesy3'"><code class="variable-quote">'</code><code class="variable-string">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="version"></a><span class="summary-name">version</span> = <code title="'24.1.10'">'24.1.10'</code><br />
+        <a name="version"></a><span class="summary-name">version</span> = <code title="'24.3.3'">'24.3.3'</code><br />
       Normalized <code>PyGeodesy3</code> version (<code>str</code>).
     </td>
   </tr>
@@ -12763,6 +12854,8 @@ ids.WGS84, transform=Transforms.WGS84))">Conics.WRF_Lb: Conic(name='WRF_Lb', lat
     </td><td class="summary">
         <a href="pygeodesy3-module.html#Datums" class="summary-name">Datums</a> = <code title="Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipsoids.Airy1830, tra\
 nsform=Transforms.OSGB36),
+Datums.GRS80: Datum(name='GRS80', ellipsoid=Ellipsoids.GRS80, transfor\
+m=Transforms.WGS84),
 Datums.WGS84: Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transfor\
 m=Transforms.WGS84),
 Datums.Sphere: Datum(name='Sphere', ellipsoid=Ellipsoids.Sphere, trans\
@@ -12791,7 +12884,7 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="EPS0"></a><span class="summary-name">EPS0</span> = <code title="4.930380657631324e-32">4.930380657631324e-32</code><br />
-      <i class="math">EPS**2</i>    &#8776; 4.9e-32 for near-zero comparison
+      <i class="math">EPS**2</i>  &#8776; 4.9e-32 for near-zero comparison
     </td>
   </tr>
 <tr>
@@ -12799,7 +12892,7 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="EPS02"></a><span class="summary-name">EPS02</span> = <code title="2.4308653429145085e-63">2.4308653429145085e-63</code><br />
-      <i class="math">EPS**4</i>    &#8776; 2.4e-63 for near-zero squared 
+      <i class="math">EPS**4</i>  &#8776; 2.4e-63 for near-zero squared 
       comparison
     </td>
   </tr>
@@ -12808,7 +12901,7 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="EPS1"></a><span class="summary-name">EPS1</span> = <code title="0.9999999999999998">0.9999999999999998</code><br />
-      <i class="math">1 - EPS</i>   &#8776; 0.9999999999999998 
+      <i class="math">1 - EPS</i> &#8776; 0.9999999999999998 
       (<code>float</code>).
     </td>
   </tr>
@@ -12817,7 +12910,7 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="EPS2"></a><span class="summary-name">EPS2</span> = <code title="4.440892098500626e-16">4.440892098500626e-16</code><br />
-      <i class="math">EPS * 2</i>   &#8776; 4.440892098501e-16 
+      <i class="math">EPS * 2</i> &#8776; 4.440892098501e-16 
       (<code>float</code>).
     </td>
   </tr>
@@ -12826,7 +12919,7 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="EPS4"></a><span class="summary-name">EPS4</span> = <code title="8.881784197001252e-16">8.881784197001252e-16</code><br />
-      <i class="math">EPS * 4</i>   &#8776; 8.881784197001e-16 
+      <i class="math">EPS * 4</i> &#8776; 8.881784197001e-16 
       (<code>float</code>).
     </td>
   </tr>
@@ -12835,7 +12928,7 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="EPS_2"></a><span class="summary-name">EPS_2</span> = <code title="1.1102230246251565e-16">1.1102230246251565e-16</code><br />
-      <i class="math">EPS / 2</i>   &#8776; 1.110223024625e-16 
+      <i class="math">EPS / 2</i> &#8776; 1.110223024625e-16 
       (<code>float</code>).
     </td>
   </tr>
@@ -12848,9 +12941,9 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
 008.771415, L=10007557.17611675, R1=6371008.771415, R2=6371008.771415,\
  R3=6371008.771415, Rbiaxial=6371008.771415, Rtriaxial=6371008.771415)\
 ,
-Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451\
-8, f_=298.25722356, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.081\
-81919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A\
+Ellipsoids.GRS80: Ellipsoid(name='GRS80', a=6378137, b=6356752.3141403\
+5, f_=298.2572221, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.0818\
+1919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A=\
 ...">Ellipsoids.Sphere: Ellipsoid(name='Sphere', a=637<code class="variable-ellipsis">...</code></code><br />
       Registered, predefined ellipsoids (<code>enum-like</code>).
     </td>
@@ -13418,7 +13511,15 @@ Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451\
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="RefFrames"></a><span class="summary-name">RefFrames</span> = <code title=""></code><br />
+        <a href="pygeodesy3-module.html#RefFrames" class="summary-name">RefFrames</a> = <code title="RefFrames.ETRF89: RefFrame(name='ETRF89', epoch=1989, datum=Datums.GRS\
+80),
+RefFrames.NAD83cors96: RefFrame(name='NAD83cors96', epoch=1997, datum=\
+Datums.GRS80),
+RefFrames.GDA2020: RefFrame(name='GDA2020', epoch=2020, datum=Datums.G\
+RS80),
+RefFrames.ETRF92: RefFrame(name='ETRF92', epoch=1992, datum=Datums.GRS\
+80),
+...">RefFrames.ETRF89: RefFrame(name='ETRF89', epoch=19<code class="variable-ellipsis">...</code></code><br />
       Registered, predefined reference frames (<code>enum-like</code>).
     </td>
   </tr>
@@ -13486,13 +13587,13 @@ Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451\
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3-module.html#Transforms" class="summary-name">Transforms</a> = <code title="Transforms.OSGB36: Transform(name='OSGB36', tx=-446.448, ty=125.157, t\
-z=-542.06, rx=-0, ry=-0, rz=-0, s=20.4894, s1=1.00002, sx=-0.1502, sy=\
--0.247, sz=-0.8421),
-Transforms.WGS84: Transform(name='WGS84', tx=0, ty=0, tz=0, rx=0, ry=0\
-, rz=0, s=0, s1=1, sx=0, sy=0, sz=0),
-Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
-, ry=0, rz=0, s=0, s1=1, sx=0, sy=0, sz=0)">Transforms.OSGB36: Transform(name='OSGB36', tx=-4<code class="variable-ellipsis">...</code></code><br />
+        <a href="pygeodesy3-module.html#Transforms" class="summary-name">Transforms</a> = <code title="Transforms.OSGB36: Transform(name='OSGB36', tx=-446.45, ty=125.16, tz=\
+-542.06, s1=1.0, rx=-7.2819e-07, ry=-1.1975e-06, rz=-4.0826e-06, s=20.\
+489, sx=-0.1502, sy=-0.247, sz=-0.8421),
+Transforms.WGS84: Transform(name='WGS84', tx=0.0, ty=0.0, tz=0.0, s1=1\
+.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0),
+Transforms.Identity: Transform(name='Identity', tx=0.0, ty=0.0, tz=0.0\
+, s1=1.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0)">Transforms.OSGB36: Transform(name='OSGB36', tx=-4<code class="variable-ellipsis">...</code></code><br />
       Registered, predefined transforms (<code>enum-like</code>).
     </td>
   </tr>
@@ -13500,7 +13601,8 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="Triaxials"></a><span class="summary-name">Triaxials</span> = <code title=""></code>
+        <a name="Triaxials"></a><span class="summary-name">Triaxials</span> = <code title=""></code><br />
+      Registered, predefined triaxial ellipsoids (<code>enum-like</code>).
     </td>
   </tr>
 </table>
@@ -16752,7 +16854,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     </td>
   </tr></table>
   
-  <p>Return the reference frame <code>epoch</code> for a calendar day.</p>
+  <p>Return the <code>epoch</code> for a calendar day.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
@@ -20181,7 +20283,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">hartzell</span>&nbsp;(<span class="sig-arg">pov</span>,
-        <span class="sig-arg">los</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">los</span>=<span class="sig-default">True</span>,
         <span class="sig-arg">earth</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
         <span class="sig-arg">name</span>=<span class="sig-default">''</span>,
         <span class="sig-arg">**LatLon_and_kwds</span>)</span>
@@ -20196,17 +20298,19 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>pov</code></strong> - Point-Of-View outside the earth (<code>Cartesian</code>, <a 
+        <li><strong class="pname"><code>pov</code></strong> - Point-Of-View outside the earth (<code>LatLon</code>, 
+          <code>Cartesian</code>, <a 
           href="pygeodesy3.earth.ecef.Ecef9Tuple-class.html" 
-          class="link">Ecef9Tuple</a> <code>LatLon</code> or <a 
+          class="link">Ecef9Tuple</a> or <a 
           href="pygeodesy3.maths.vector3d.Vector3d-class.html" 
           class="link">Vector3d</a>).</li>
         <li><strong class="pname"><code>los</code></strong> - Line-Of-Sight, <i>direction</i> to earth (<a 
           href="pygeodesy3.projections.ltpTuples.Los-class.html" 
           class="link">Los</a>, <a 
           href="pygeodesy3.maths.vector3d.Vector3d-class.html" 
-          class="link">Vector3d</a>) or <code>None</code> to point to the 
-          earth' center.</li>
+          class="link">Vector3d</a>), <code>True</code> for the <i>normal, 
+          plumb</i> onto the surface or <code>False</code> or 
+          <code>None</code> to point to the center of the earth.</li>
         <li><strong class="pname"><code>earth</code></strong> - The earth model (<a 
           href="pygeodesy3.earth.datums.Datum-class.html" 
           class="link">Datum</a>, <a 
@@ -20215,44 +20319,40 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
           href="pygeodesy3.earth.ellipsoids.Ellipsoid2-class.html" 
           class="link">Ellipsoid2</a>, <a 
           href="pygeodesy3.earth.ellipsoids.a_f2Tuple-class.html" 
-          class="link">a_f2Tuple</a> or <code>scalar</code> radius in 
-          <code>meter</code>).</li>
+          class="link">a_f2Tuple</a> or a <code>scalar</code> earth radius 
+          in <code>meter</code>).</li>
         <li><strong class="pname"><code>name</code></strong> - Optional name (<code>str</code>).</li>
-        <li><strong class="pname"><code>LatLon_and_kwds</code></strong> - Optional <code>LatLon</code> class for the intersection point 
-          plus <code>LatLon</code> keyword arguments, include 
-          <b><code>datum</code></b> if different from 
+        <li><strong class="pname"><code>LatLon_and_kwds</code></strong> - Optional <code><b>LatLon</b>=None</code> class to return the 
+          intersection plus additional <code>LatLon</code> keyword 
+          arguments, include <b><code>datum</code></b> if different from 
           <b><code>earth</code></b>.</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd>The intersection point (<a 
+        <dd>The intersection (<a 
           href="pygeodesy3.maths.vector3d.Vector3d-class.html" 
-          class="link">Vector3d</a>, the <code>Cartesian type</code> of 
-          <b><code>pov</code></b> or the given 
-          <code><b>LatLon</b>_and_kwds</code>) with <code>.heigth</code> 
-          set to the distance to the <b><code>pov</code></b>.</dd>
+          class="link">Vector3d</a>, <b><code>pov</code></b>'s 
+          <code>cartesian type</code> or the given 
+          <a href=pygeodesy3-LatLon-attributes-table.html><b><code>LatLon</code></b></a> instance) with attribute 
+          <code>heigth</code> set to the distance to the 
+          <b><code>pov</code></b>.</dd>
     <dt>Raises:</dt>
     <dd><ul class="nomargin-top">
-        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.IntersectionError-class.html">IntersectionError</a></strong></code> - Null <b><code>pov</code></b> or <b><code>los</code></b> vector, 
-        <b><code>pov</code></b> is inside the earth or 
-        <b><code>los</code></b> points outside the earth or points in an 
-        opposite direction.</li>
-        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>pov</code></b>, <b><code>los</code></b> or 
-        <b><code>earth</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.IntersectionError-class.html">IntersectionError</a></strong></code> - Invalid <b><code>pov</code></b> or <b><code>pov</code></b> inside 
+        the earth or invalid <b><code>los</code></b> or 
+        <b><code>los</code></b> points outside or away from the earth.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>earth</code></b> or <code>datum</code>.</li>
     </ul></dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
-        Function <a href="pygeodesy3.earth.triaxials-module.html#hartzell4"
-        class="link">pygeodesy3.hartzell4</a>, <a 
+        Class <a href="pygeodesy3.projections.ltpTuples.Los-class.html" 
+        class="link">Los</a>, functions <a 
         href="pygeodesy3.projections.ltp-module.html#tyr3d" 
-        class="link">pygeodesy3.tyr3d</a> for <b><code>los</code></b>, 
-        methods <a 
+        class="link">tyr3d</a> and <a 
+        href="pygeodesy3.earth.triaxials-module.html#hartzell4" 
+        class="link">hartzell4</a> and methods <a 
         href="pygeodesy3.earth.ellipsoids.Ellipsoid-class.html#hartzell4" 
-        class="link">Ellipsoid.hartzell4</a>, 
-        <code>Cartesian.hartzell</code>, <code>LatLon.hartzell</code> and 
-        <a 
-        href="https://StephenHartzell.Medium.com/satellite-line-of-sight-intersection-with-earth-d786b4a6a9b6"
-        target="_top"><i>Satellite Line-of-Sight Intersection with 
-        Earth</i></a>.
+        class="link">Ellipsoid.hartzell4</a> and any 
+        <code>Cartesian.hartzell</code> and <code>LatLon.hartzell</code>.
       </p>
 </div></td></tr></table>
 </div>
@@ -20264,7 +20364,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">hartzell4</span>&nbsp;(<span class="sig-arg">pov</span>,
-        <span class="sig-arg">los</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">los</span>=<span class="sig-default">True</span>,
         <span class="sig-arg">tri_biax</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
         <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
   </h3>
@@ -20287,8 +20387,9 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
           href="pygeodesy3.projections.ltpTuples.Los-class.html" 
           class="link">Los</a>, <a 
           href="pygeodesy3.maths.vector3d.Vector3d-class.html" 
-          class="link">Vector3d</a>) or <code>None</code> to point to the 
-          tri-/biaxial's center.</li>
+          class="link">Vector3d</a>), <code>True</code> for the <i>normal, 
+          plumb</i> onto the surface or <code>False</code> or 
+          <code>None</code> to point to the center of the tri-/biaxial.</li>
         <li><strong class="pname"><code>tri_biax</code></strong> - A triaxial (<a 
           href="pygeodesy3.earth.triaxials.Triaxial-class.html" 
           class="link">Triaxial</a>, <a 
@@ -20318,25 +20419,26 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
           conventionally.</dd>
     <dt>Raises:</dt>
     <dd><ul class="nomargin-top">
-        <li><code><strong class='fraise'><a href="pygeodesy3.earth.triaxials.TriaxialError-class.html">TriaxialError</a></strong></code> - Null <b><code>pov</code></b> or <b><code>los</code></b>, or 
-        <b><code>pov</code></b> is inside the tri-/biaxial or 
-        <b><code>los</code></b> points outside the tri-/biaxial or points 
-        in an opposite direction.</li>
-        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>pov</code></b> or <b><code>los</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.earth.triaxials.TriaxialError-class.html">TriaxialError</a></strong></code> - Invalid <b><code>pov</code></b> or <b><code>pov</code></b> inside 
+        the tri-/biaxial or invalid <b><code>los</code></b> or 
+        <b><code>los</code></b> points outside or away from the 
+        tri-/biaxial.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>tri_biax</code></b>, <code>ellipsoid</code> or 
+        <code>datum</code>.</li>
     </ul></dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
-        Function <a href="pygeodesy3.distances.formy-module.html#hartzell" 
-        class="link">pygeodesy3.hartzell</a>, <a 
+        Class <a href="pygeodesy3.projections.ltpTuples.Los-class.html" 
+        class="link">Los</a>, functions <a 
         href="pygeodesy3.projections.ltp-module.html#tyr3d" 
-        class="link">pygeodesy3.tyr3d</a>, class <a 
-        href="pygeodesy3.projections.ltpTuples.Los-class.html" 
-        class="link">pygeodesy3.Los</a> and <a 
+        class="link">tyr3d</a> and <a 
+        href="pygeodesy3.distances.formy-module.html#hartzell" 
+        class="link">hartzell</a> and <a 
         href="https://PyPI.org/project/pymap3d" 
         target="_top">lookAtSpheroid</a> and <a 
         href="https://StephenHartzell.Medium.com/satellite-line-of-sight-intersection-with-earth-d786b4a6a9b6"
-        target="_top"><i>Satellite Line-of-Sight Intersection with 
-        Earth</i></a>.
+        target="_top">&quot;Satellite Line-of-Sight Intersection with 
+        Earth&quot;</a>.
       </p>
 </div></td></tr></table>
 </div>
@@ -20354,7 +20456,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
         <span class="sig-arg">seed</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">units</span>=<span class="sig-default">''</span>,
         <span class="sig-arg">distance</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">point</span>=<span class="sig-default">&lt;function _point at 0x7fc200493850&gt;</span>)</span>
+        <span class="sig-arg">point</span>=<span class="sig-default">&lt;function _point at 0x7fd2088b4dd0&gt;</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
@@ -21164,7 +21266,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
         Method <a 
-        href="pygeodesy3.rhumb.bases.RhumbLineBase-class.html#intersection2"
+        href="pygeodesy3.rhumb.Bases.RhumbLineBase-class.html#intersection2"
         class="link">RhumbLine.intersection2</a>.
       </p>
       <p><strong>Note:</strong>
@@ -21407,7 +21509,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">isError</span>&nbsp;(<span class="sig-arg">obj</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isError</span>&nbsp;(<span class="sig-arg">exc</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
@@ -21418,12 +21520,12 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>obj</code></strong> - The exception C({Exception}).</li>
+        <li><strong class="pname"><code>exc</code></strong> - The exception C({Exception}).</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd><code>True</code> if <b><code>obj</code></b> is a 
+        <dd><code>True</code> if <b><code>exc</code></b> is a 
           <code>pygeodesy3</code> error, <code>False</code> if 
-          <b><code>obj</code></b> is a standard Python error of 
+          <b><code>exc</code></b> is a standard Python error of 
           <code>None</code> if neither.</dd>
   </dl>
 </td></tr></table>
@@ -22040,7 +22142,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     </td>
   </tr></table>
   
-  <p>Is <b><code>ob</code></b> an intance of one of the 
+  <p>Is <b><code>ob</code></b> an instance of one of the 
   <code>classes</code>?</p>
   <dl class="fields">
     <dt>Arguments:</dt>
@@ -26281,35 +26383,52 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">rtp2xyz</span>&nbsp;(<span class="sig-arg">r</span>,
-        <span class="sig-arg">theta</span>,
-        <span class="sig-arg">phi</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">rtp2xyz</span>&nbsp;(<span class="sig-arg">r_rtp</span>,
+        <span class="sig-arg">*theta_phi</span>,
+        <span class="sig-arg">**name_Cartesian_and_kwds</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
     </td>
   </tr></table>
   
-  <p>Convert spherical <code>(r, theta, phi)</code> to cartesian <code>(x, 
-  y, z)</code> coordinates.</p>
+  <p>Convert <i>spherical, polar</i> <code>(r, theta, phi)</code> to 
+  cartesian <code>(x, y, z)</code> coordinates.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>r</code></strong> - Radial distance (<code>scalar</code>, conventially 
-          <code>meter</code>).</li>
-        <li><strong class="pname"><code>theta</code></strong> - Inclination (<code>degrees</code> with respect to the positive 
-          z-axis).</li>
-        <li><strong class="pname"><code>phi</code></strong> - Azimuthal angle (<code>degrees</code>).</li>
+        <li><strong class="pname"><code>r_rtp</code></strong> - Radial distance (<code>scalar</code>, conventially 
+          <code>meter</code>) or a previous <a 
+          href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" 
+          class="link">RadiusThetaPhi3Tuple</a> instance.</li>
+        <li><strong class="pname"><code>theta_phi</code></strong> - Inclination <b><code>theta</code></b> (<code>degrees</code> with 
+          respect to the positive z-axis) and azimuthal angle 
+          <b><code>phi</code></b> (<code>degrees</code>), ignored if 
+          <code><b>r_rtp</b></code> is a <a 
+          href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" 
+          class="link">RadiusThetaPhi3Tuple</a>.</li>
+        <li><strong class="pname"><code>name_Cartesian_and_kwds</code></strong> - Optional <code><b>name</b>=NN</code> (<code>str</code>), a 
+          <code><b>Cartesian</b>=None</code> class to return the 
+          coordinates and additional <code><b>Cartesian</b></code> keyword 
+          arguments.</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd><a href="pygeodesy3.miscs.namedTuples.Vector3Tuple-class.html" 
-          class="link">Vector3Tuple</a><code>(x, y, z)</code> in 
-          <code>meter</code>, same units as <code>r</code>.</dd>
+        <dd>A <code><b>Cartesian</b>(x, y, z)</code> instance or if no 
+          <code><b>Cartesian</b></code> keyword argument is given a <a 
+          href="pygeodesy3.miscs.namedTuples.Vector3Tuple-class.html" 
+          class="link">Vector3Tuple</a><code>(x, y, z)</code>, with 
+          <code>x</code>, <code>y</code> and <code>z</code> in the same 
+          units as radius <code>r</code>, <code>meter</code> 
+          conventionally.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>r_rtp</code></b>.</li>
+    </ul></dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
-        Functions <a href="pygeodesy3.distances.formy-module.html#rtp2xyz_"
+        Functions <a href="pygeodesy3.Base.cartesian-module.html#rtp2xyz_" 
         class="link">rtp2xyz_</a> and <a 
-        href="pygeodesy3.distances.formy-module.html#xyz2rtp" 
+        href="pygeodesy3.Base.cartesian-module.html#xyz2rtp" 
         class="link">xyz2rtp</a>.
       </p>
 </div></td></tr></table>
@@ -26321,34 +26440,51 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">rtp2xyz_</span>&nbsp;(<span class="sig-arg">r</span>,
-        <span class="sig-arg">theta</span>,
-        <span class="sig-arg">phi</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">rtp2xyz_</span>&nbsp;(<span class="sig-arg">r_rtp</span>,
+        <span class="sig-arg">*theta_phi</span>,
+        <span class="sig-arg">**name_Cartesian_and_kwds</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
     </td>
   </tr></table>
   
-  <p>Convert spherical <code>(r, theta, phi)</code> to cartesian <code>(x, 
-  y, z)</code> coordinates.</p>
+  <p>Convert <i>spherical, polar</i> <code>(r, theta, phi)</code> to 
+  cartesian <code>(x, y, z)</code> coordinates.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>r</code></strong> - Radial distance (<code>scalar</code>, conventially 
-          <code>meter</code>).</li>
-        <li><strong class="pname"><code>theta</code></strong> - Inclination (<code>radians</code> with respect to the positive 
-          z-axis).</li>
-        <li><strong class="pname"><code>phi</code></strong> - Azimuthal angle (<code>radians</code>).</li>
+        <li><strong class="pname"><code>r_rtp</code></strong> - Radial distance (<code>scalar</code>, conventially 
+          <code>meter</code>) or a previous <a 
+          href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" 
+          class="link">RadiusThetaPhi3Tuple</a> instance.</li>
+        <li><strong class="pname"><code>theta_phi</code></strong> - Inclination <b><code>theta</code></b> (<code>radians</code> with 
+          respect to the positive z-axis) and azimuthal angle 
+          <b><code>phi</code></b> (<code>degrees</code>), ignored is 
+          <code><b>r_rtp</b></code> is a <a 
+          href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" 
+          class="link">RadiusThetaPhi3Tuple</a>.</li>
+        <li><strong class="pname"><code>name_Cartesian_and_kwds</code></strong> - Optional <code><b>name</b>=NN</code> (<code>str</code>), a 
+          <code><b>Cartesian</b>=None</code> class to return the 
+          coordinates and additional <code><b>Cartesian</b></code> keyword 
+          arguments.</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd><a href="pygeodesy3.miscs.namedTuples.Vector3Tuple-class.html" 
-          class="link">Vector3Tuple</a><code>(x, y, z)</code> in 
-          <code>meter</code>, same units as <code>r</code>.</dd>
+        <dd>A <code><b>Cartesian</b>(x, y, z)</code> instance or if no 
+          <code><b>Cartesian</b></code> keyword argument is given a <a 
+          href="pygeodesy3.miscs.namedTuples.Vector3Tuple-class.html" 
+          class="link">Vector3Tuple</a><code>(x, y, z)</code>, with 
+          <code>x</code>, <code>y</code> and <code>z</code> in the same 
+          units as radius <code>r</code>, <code>meter</code> 
+          conventionally.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>r_rtp</code></b> or <b><code>theta_phi</code></b>.</li>
+    </ul></dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
         <a href="https://WikiPedia.org/wiki/Spherical_coordinate_system" 
-        target="_top">Physics</a> convention (ISO 80000-2:2019).
+        target="_top">Physics convention</a> (ISO 80000-2:2019).
       </p>
 </div></td></tr></table>
 </div>
@@ -28393,6 +28529,107 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
       </p>
 </div></td></tr></table>
 </div>
+<a name="trfTransform0"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trfTransform0</span>&nbsp;(<span class="sig-arg">reframe</span>,
+        <span class="sig-arg">reframe2</span>,
+        <span class="sig-arg">epoch</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">epoch2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">indirect</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">inverse</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">exhaust</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get a Helmert transform to convert one <code>reframe</code> observed 
+  at <code>epoch</code> to an other <code>reframe2</code> at observed at 
+  <code>epoch2 or epoch</code>.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>A <a href="pygeodesy3.earth.trf.TransformXform-class.html" 
+          class="link">TransformXform</a> instance, a <code>0-tuple</code> 
+          for <i>unity, identity</i> or <code>None</code> if no conversion 
+          exists.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a href="pygeodesy3.earth.trf-module.html#trfTransforms" 
+        class="link">trfTransforms</a> for futher details.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="trfTransforms"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trfTransforms</span>&nbsp;(<span class="sig-arg">reframe</span>,
+        <span class="sig-arg">reframe2</span>,
+        <span class="sig-arg">epoch</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">epoch2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">indirect</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">inverse</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">exhaust</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Yield all Helmert transform to convert one <code>reframe</code> 
+  observed at <code>epoch</code> to an other <code>reframe2</code> at 
+  observed at <code>epoch2 or epoch</code>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>reframe</code></strong> - The frame to convert <i>from</i> (<a 
+          href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a> or <code>str</code>).</li>
+        <li><strong class="pname"><code>reframe2</code></strong> - The frame to convert <i>to</i> (<a 
+          href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a> or <code>str</code>).</li>
+        <li><strong class="pname"><code>epoch</code></strong> - Epoch to observe <i>from</i> (<a 
+          href="pygeodesy3.miscs.units.Epoch-class.html" 
+          class="link">Epoch</a>, <code>scalar</code> or <code>str</code>),
+          otherwise <code><b>reframe</b></code>'s <code>epoch</code>.</li>
+        <li><strong class="pname"><code>epoch2</code></strong> - Optional epoch to observe to observe <i>to</i> (<a 
+          href="pygeodesy3.miscs.units.Epoch-class.html" 
+          class="link">Epoch</a>, <code>scalar</code> or <code>str</code>),
+          otherwise <b><code>epoch</code></b> or 
+          <code><b>reframe</b></code>'s <code>epoch</code>.</li>
+        <li><strong class="pname"><code>indirect</code></strong> - If <code>True</code>, include transforms via <i>one</i> 
+          intermediate reframe, otherwise only <i>direct</i> 
+          <b><code>reframe</code></b> to <b><code>reframe2</code></b> 
+          transforms (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inverse</code></strong> - If <code>True</code>, include inverse, otherwise only forward 
+          transforms (<code>bool</code>).</li>
+        <li><strong class="pname"><code>exhaust</code></strong> - If <code>True</code>, exhaustively generate all transforms, 
+          forward and inverse and via any number of intermediate reframes 
+          (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a href="pygeodesy3.earth.trf.TransformXform-class.html" 
+          class="link">TransformXform</a> instance for each available 
+          conversion, without duplicates.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>reframe</code></b>, <b><code>reframe2</code></b>, 
+        <b><code>epoch</code></b> or <b><code>epoch2</code></b>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>reframe</code></b> or 
+        <b><code>reframe2</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="trfXform"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -28404,32 +28641,53 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
         <span class="sig-arg">reframe2</span>,
         <span class="sig-arg">epoch</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">xform</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">rates</span>=<span class="sig-default">None</span>)</span>
+        <span class="sig-arg">rates</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">raiser</span>=<span class="sig-default">True</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
     </td>
   </tr></table>
   
-  <p>Define a new Terrestrial Reference Frame (TRF) conversion.</p>
+  <p>Define a new Terrestrial Reference Frame (TRF) converter or get an 
+  existing one.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>reframe1</code></strong> - Source reframe (<a 
+        <li><strong class="pname"><code>reframe1</code></strong> - Source frame (<a href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a> or <code>str</code>), converting 
+          <i>from</i>.</li>
+        <li><strong class="pname"><code>reframe2</code></strong> - Destination frame (<a 
           href="pygeodesy3.earth.trf.RefFrame-class.html" 
-          class="link">RefFrame</a>), converting <i>from</i>.</li>
-        <li><strong class="pname"><code>reframe2</code></strong> - Destination reframe (<a 
-          href="pygeodesy3.earth.trf.RefFrame-class.html" 
-          class="link">RefFrame</a>), converting <i>to</i>.</li>
-        <li><strong class="pname"><code>epoch</code></strong> - Epoch, a fractional calendar year (<code>scalar</code> or 
-          <code>str</code>) or <code>None</code> for 
-          <code><b>reframe2</b>.epoch</code>.</li>
-        <li><strong class="pname"><code>xform</code></strong> - Helmert transform parameters (<code>Helmert7Tuple</code>).</li>
-        <li><strong class="pname"><code>rates</code></strong> - Helmert rate parameters (<code>Helmert7Tuple</code>).</li>
+          class="link">RefFrame</a> or <code>str</code>), converting 
+          <i>to</i>.</li>
+        <li><strong class="pname"><code>epoch</code></strong> - Epoch, a fractional year (<a 
+          href="pygeodesy3.miscs.units.Epoch-class.html" 
+          class="link">Epoch</a>, <code>scalar</code> or <code>str</code>) 
+          or <code>None</code> for <code><b>reframe2</b></code>'s epoch.</li>
+        <li><strong class="pname"><code>xform</code></strong> - <i>Transform</i> parameters (<a 
+          href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html" 
+          class="link">TRFXform7Tuple</a>).</li>
+        <li><strong class="pname"><code>rates</code></strong> - <i>Rate</i> parameters (<a 
+          href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html" 
+          class="link">TRFXform7Tuple</a>), as <b><code>xform</code></b>, 
+          but in <code>units-per-year</code>.</li>
+        <li><strong class="pname"><code>raiser</code></strong> - If <code>False</code>, do not raise an error if the converter 
+          exists, replace it (<code>bool</code>).</li>
     </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The new TRF converter (<a 
+          href="pygeodesy3.earth.trf.TRFXform-class.html" 
+          class="link">TRFXform</a>) or if no <b><code>epoch</code></b>, 
+          <b><code>xform</code></b> and <b><code>rates</code></b> are 
+          given, return the existing one (<a 
+          href="pygeodesy3.earth.trf.TRFXform-class.html" 
+          class="link">TRFXform</a>) or <code>None</code> if not available.</dd>
     <dt>Raises:</dt>
     <dd><ul class="nomargin-top">
-        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>epoch</code></b> or TRF conversion already exists.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>reframe1</code></b>, <b><code>reframe2</code></b>,
+        <b><code>epoch</code></b>, <b><code>xform</code></b> or 
+        <b><code>rates</code></b> or the TRF converter already exists.</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -29778,29 +30036,30 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">xyz2rtp</span>&nbsp;(<span class="sig-arg">x_xyz</span>,
-        <span class="sig-arg">*y_z</span>)</span>
+        <span class="sig-arg">*y_z</span>,
+        <span class="sig-arg">**name</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
     </td>
   </tr></table>
   
-  <p>Convert cartesian <code>(x, y, z)</code> to spherical <code>(r, theta,
-  phi)</code> coordinates.</p>
+  <p>Convert cartesian <code>(x, y, z)</code> to <i>spherical, polar</i> 
+  <code>(r, theta, phi)</code> coordinates.</p>
   <dl class="fields">
     <dt>Returns:</dt>
-        <dd><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" 
-          class="link">RThetaPhi3Tuple</a><code>(r, theta, phi)</code> with
-          <code>theta</code> and <code>phi</code> both in <a 
+        <dd><a 
+          href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" 
+          class="link">RadiusThetaPhi3Tuple</a><code>(r, theta, phi)</code>
+          with <code>theta</code> and <code>phi</code>, both in <a 
           href="pygeodesy3.miscs.units.Degrees-class.html" 
           class="link">Degrees</a>.</dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
-        Function <a href="pygeodesy3.distances.formy-module.html#xyz2rtp_" 
-        class="link">xyz2rtp_</a>, class <a 
-        href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" 
-        class="link">RThetaPhi3Tuple</a> and method <code>toDegrees</code> 
-        thereof.
+        Function <a href="pygeodesy3.Base.cartesian-module.html#xyz2rtp_" 
+        class="link">xyz2rtp_</a> and class <a 
+        href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" 
+        class="link">RadiusThetaPhi3Tuple</a>.
       </p>
 </div></td></tr></table>
 </div>
@@ -29812,15 +30071,16 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">xyz2rtp_</span>&nbsp;(<span class="sig-arg">x_xyz</span>,
-        <span class="sig-arg">*y_z</span>)</span>
+        <span class="sig-arg">*y_z</span>,
+        <span class="sig-arg">**name</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
     </td>
   </tr></table>
   
-  <p>Convert cartesian <code>(x, y, z)</code> to spherical <code>(r, theta,
-  phi)</code> coordinates.</p>
+  <p>Convert cartesian <code>(x, y, z)</code> to <i>spherical, polar</i> 
+  <code>(r, theta, phi)</code> coordinates.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
@@ -29838,20 +30098,22 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
           <code>y_z</code> specified.</li>
         <li><strong class="pname"><code>y_z</code></strong> - Y and Z component (<code>scalar</code>s), ignored if 
           <code>x_xyz</code> is not a <code>scalar</code>.</li>
+        <li><strong class="pname"><code>name</code></strong> - Optional <code><b>name</b>=NN</code> (<code>str</code>).</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd><a href="pygeodesy3.distances.formy.RThetaPhi3Tuple-class.html" 
-          class="link">RThetaPhi3Tuple</a><code>(r, theta, phi)</code> with
-          radial distance <code>r</code> (<code>meter</code>, same units as
-          <code>x</code>, <code>y</code> and <code>z</code>), inclination 
-          <code>theta</code> (with respect to the positive z-axis) and 
-          azimuthal angle <code>phi</code> both in <a 
+        <dd><a 
+          href="pygeodesy3.Base.cartesian.RadiusThetaPhi3Tuple-class.html" 
+          class="link">RadiusThetaPhi3Tuple</a><code>(r, theta, phi)</code>
+          with radial distance <code>r</code> (<code>meter</code>, same 
+          units as <code>x</code>, <code>y</code> and <code>z</code>), 
+          inclination <code>theta</code> (with respect to the positive 
+          z-axis) and azimuthal angle <code>phi</code>, both in <a 
           href="pygeodesy3.miscs.units.Radians-class.html" 
           class="link">Radians</a>.</dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
         <a href="https://WikiPedia.org/wiki/Spherical_coordinate_system" 
-        target="_top">Physics</a> convention (ISO 80000-2:2019).
+        target="_top">Physics convention</a> (ISO 80000-2:2019).
       </p>
 </div></td></tr></table>
 </div>
@@ -30020,6 +30282,8 @@ ids.WGS84, transform=Transforms.WGS84))
       <dd><table><tr><td><pre class="variable">
 Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipsoids.Airy1830, tra<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 nsform=Transforms.OSGB36),
+Datums.GRS80: Datum(name='GRS80', ellipsoid=Ellipsoids.GRS80, transfor<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+m=Transforms.WGS84),
 Datums.WGS84: Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transfor<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 m=Transforms.WGS84),
 Datums.Sphere: Datum(name='Sphere', ellipsoid=Ellipsoids.Sphere, trans<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
@@ -30046,9 +30310,35 @@ Ellipsoids.Sphere: Ellipsoid(name='Sphere', a=6371008.771415, b=637100<span clas
 008.771415, L=10007557.17611675, R1=6371008.771415, R2=6371008.771415,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
  R3=6371008.771415, Rbiaxial=6371008.771415, Rtriaxial=6371008.771415)<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 ,
-Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-8, f_=298.25722356, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.081<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-81919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Ellipsoids.GRS80: Ellipsoid(name='GRS80', a=6378137, b=6356752.3141403<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+5, f_=298.2572221, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.0818<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+1919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RefFrames"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RefFrames</h3>
+  Registered, predefined reference frames (<code>enum-like</code>).
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+RefFrames.ETRF89: RefFrame(name='ETRF89', epoch=1989, datum=Datums.GRS<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+80),
+RefFrames.NAD83cors96: RefFrame(name='NAD83cors96', epoch=1997, datum=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Datums.GRS80),
+RefFrames.GDA2020: RefFrame(name='GDA2020', epoch=2020, datum=Datums.G<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+RS80),
+RefFrames.ETRF92: RefFrame(name='ETRF92', epoch=1992, datum=Datums.GRS<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+80),
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -30067,13 +30357,13 @@ Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451<span clas
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-Transforms.OSGB36: Transform(name='OSGB36', tx=-446.448, ty=125.157, t<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-z=-542.06, rx=-0, ry=-0, rz=-0, s=20.4894, s1=1.00002, sx=-0.1502, sy=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
--0.247, sz=-0.8421),
-Transforms.WGS84: Transform(name='WGS84', tx=0, ty=0, tz=0, rx=0, ry=0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-, rz=0, s=0, s1=1, sx=0, sy=0, sz=0),
-Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-, ry=0, rz=0, s=0, s1=1, sx=0, sy=0, sz=0)
+Transforms.OSGB36: Transform(name='OSGB36', tx=-446.45, ty=125.16, tz=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+-542.06, s1=1.0, rx=-7.2819e-07, ry=-1.1975e-06, rz=-4.0826e-06, s=20.<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+489, sx=-0.1502, sy=-0.247, sz=-0.8421),
+Transforms.WGS84: Transform(name='WGS84', tx=0.0, ty=0.0, tz=0.0, s1=1<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0),
+Transforms.Identity: Transform(name='Identity', tx=0.0, ty=0.0, tz=0.0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, s1=1.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0)
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -30111,7 +30401,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0<span clas
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Wed Jan 10 12:48:43 2024
+    Generated by Epydoc 3.0.1 on Mon Mar  4 16:45:43 2024
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

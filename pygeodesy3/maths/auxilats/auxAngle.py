@@ -14,7 +14,7 @@ under the MIT/X11 License.  For more information, see the U{GeographicLib
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import _xinstanceof, _xkwds_get
+from pygeodesy3.basics import _xinstanceof,  _xkwds_get
 from pygeodesy3.constants import EPS, _INF_NAN_NINF, MAX, NAN, _0_0, _0_5, _1_0, \
                                 _copysign_1_0, _over, _pos_self, isfinite, isnan
 # from pygeodesy3.interns import NN, _iadd_op_  # from .maths.fsums
@@ -24,6 +24,7 @@ from pygeodesy3.maths.fmath import hypot,  unstr
 from pygeodesy3.maths.fsums import _add_op_, _isub_op_, _sub_op_, \
                                    _iadd_op_, _Named, NN
 from pygeodesy3.maths.umath import atan2d, sincos2, sincos2d
+# from pygeodesy3.miscs.errors import _xkwds_get  # from .basics
 # from pygeodesy3.miscs.named import _Named  # from .maths.fsums
 from pygeodesy3.miscs.props import Property, Property_RO, property_RO, _update_all
 # from pygeodesy3.miscs.streprs import unstr  # from .fmath
@@ -32,7 +33,7 @@ from pygeodesy3.miscs.units import Degrees, Radians
 from math import asinh, atan2, copysign, degrees, fabs, radians, sinh
 
 __all__ = ()
-__version__ = '24.01.03'
+__version__ = '24.02.20'
 
 _0_INF_NAN_NINF = (0, _0_0) + _INF_NAN_NINF
 _MAX_2          =  MAX * _0_5  # PYCHOK used!

@@ -23,23 +23,24 @@ from pygeodesy3.earth.datums import _earth_datum, _WGS84,  _EWGS84
 from pygeodesy3.interns import NN, _DOT_, _dunder_nameof, _SPACE_, \
                               _to_, _too_,_under
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
+from pygeodesy3.maths.fsums import Fsum,  Fmt, unstr
 from pygeodesy3.maths.umath import _unrollon, _Wrap, wrap360,  fabs  # PYCHOK used!
-# from pygeodesy3.miscs.dms import F_D  # from .base.latlon
+# from pygeodesy3.miscs.dms import F_D  # from .Base.latlon
 from pygeodesy3.miscs.errors import IntersectionError, GeodesicError
 from pygeodesy3.miscs.named import callername, classname
 from pygeodesy3.miscs.namedTuples import Destination3Tuple, Distance3Tuple
 from pygeodesy3.miscs.props import Property, Property_RO, property_RO
-from pygeodesy3.miscs.streprs import Fmt, unstr
-# from pygeodesy3.miscs.units import Radius_  # from .base.latlon
+# from pygeodesy3.miscs.streprs import Fmt, unstr  # from .maths.fsums
+# from pygeodesy3.miscs.units import Radius_  # from .Base.latlon
 
 from contextlib import contextmanager
 # from math import fabs  # from .maths.umath
 
 __all__ = _ALL_LAZY.geodesic_wrap
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 _plumb_ = 'plumb'
-_TRIPS  =  129
+_TRIPS  =  65
 
 
 class _gWrapped(_kWrapped):
@@ -169,7 +170,7 @@ class _gWrapped(_kWrapped):
                 return self._Line13(t)
 
             def _Inverse(self, ll1, ll2, wrap, **outmask):
-                '''(INTERNAL) Short-cut version, see .ellipsoidal.baseDI.intersecant2.
+                '''(INTERNAL) Short-cut version, see .ellipsoidal.BaseDI.intersecant2.
                 '''
                 if wrap:
                     ll2 = _unrollon(ll1, _Wrap.point(ll2))
@@ -453,7 +454,7 @@ def Geodesic_WGS84():
     return _wrapped.Geodesic_WGS84
 
 
-class _wargs(object):  # see also .base.latlon._toCartesian3, .formy._idllmn6, .vector2d._numpy
+class _wargs(object):  # see also .Base.latlon._toCartesian3, .formy._idllmn6, .vector2d._numpy
     '''(INTERNAL) C{geographiclib} caller and exception mapper.
     '''
     @contextmanager  # <https://www.Python.org/dev/peps/pep-0343/> Examples
@@ -471,8 +472,8 @@ _wargs = _wargs()  # PYCHOK singleton
 
 
 def _Intersecant2(gl, lat0, lon0, radius, tol=_TOL, form=F_D):  # MCCABE in LatLonEllipsoidalBaseDI.intersecant2, .geodesic.exact.gxline.Intersecant2
-    # (INTERNAL) Return a 2-Tuple C{(P, Q)} with the intersections of
-    # a circle at C{lat0, lon0} and a geodesic line, each a C{GDict}.
+    # (INTERNAL) Return the intersections of a circle at C{lat0, lon0}
+    # and a geodesic line as a 2-Tuple C{(P, Q)}, each a C{GDict}.
     r  =  Radius_(radius)
     n  = _dunder_nameof(_Intersecant2)[1:]
     _P =  gl.Position
@@ -486,15 +487,17 @@ def _Intersecant2(gl, lat0, lon0, radius, tol=_TOL, form=F_D):  # MCCABE in LatL
         return _a(d.s12), P, d
 
     def _bisect2(s, c, Rc, r, tol):
-        b = c
-        while True:
-            b += s
+        _s = Fsum(c).fsumf_
+        for i in range(_TRIPS):
+            b = _s(s)
             Rb, P, d = _R3(b)
             if Rb > r:
                 break
-        # assert Rb > r > Rc
+        else:  # b >>> s and c >>> s
+            raise ValueError(Fmt.no_convergence(b, s))
+        __2 = _0_5  # Rb > r > Rc
         for i in range(_TRIPS):  # 47-48
-            s = (b + c) * _0_5
+            s = (b + c) * __2
             R, P, d = _R3(s)
             if Rb > R > r:
                 b, Rb = s, R
@@ -503,16 +506,15 @@ def _Intersecant2(gl, lat0, lon0, radius, tol=_TOL, form=F_D):  # MCCABE in LatL
             t = _a(b - c)
             if t < tol:  # or _a(R - r) < tol:
                 break
-        else:
-            # t = min(t, _a(R - r))
+        else:  # t = min(t, _a(R - r))
             raise ValueError(Fmt.no_convergence(t, tol))
         i += C.iteration  # combine iterations
         P.set_(lat0=lat0, lon0=lon0, azi0=d.azi1, iteration=i,
                a02=d.a12, s02=d.s12, at=d.azi2 - P.azi2, name=n)
         return P, s
 
-    # get the perpendicular intersection of 2
-    # geodesics, one as a pseudo-rhumb line
+    # get the perpendicular intersection of 2 geodesics,
+    # one the plumb, pseudo-rhumb line to the other
     C = _PlumbTo(gl, lat0, lon0, tol=tol)
     try:
         a = _a(C.s02)  # distance between centers
@@ -538,7 +540,7 @@ def _Intersecant2(gl, lat0, lon0, radius, tol=_TOL, form=F_D):  # MCCABE in LatL
 def _PlumbTo(gl, lat0, lon0, est=None, tol=_TOL):
     # (INTERNAL) Return the I{perpendicular} intersection of
     # a geodesic from C{(lat0, lon0)} and a geodesic (line).
-    pl = _MODS.rhumb.bases._PseudoRhumbLine(gl)
+    pl = _MODS.rhumb.Bases._PseudoRhumbLine(gl)
     return pl.PlumbTo(lat0, lon0, exact=gl.geodesic,
                                   est=est, tol=tol)
 

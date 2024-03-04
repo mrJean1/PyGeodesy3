@@ -16,7 +16,7 @@ U{Latitude/Longitude<https://www.Movable-Type.co.UK/scripts/latlong.html>}.
 from __future__ import division as _; del _  # PYCHOK semicolon
 
 # from pygeodesy3.Base.nvector import NvectorBase, sumOf  # _MODS
-from pygeodesy3.basics import copysign0, map1, signOf, _xkwds, _xkwds_pop  # _xkwds_get
+from pygeodesy3.basics import copysign0, map1, signOf
 from pygeodesy3.constants import EPS, EPS1, EPS4, PI, PI2, PI_2, PI_4, R_M, \
                                  isnear0, isnear1, isnon0, \
                                  _0_0, _0_5, _1_0, _2_0, _90_0
@@ -38,7 +38,7 @@ from pygeodesy3.maths.umath import acos1, asin1, atan1d, atan2d, degrees90, \
 from pygeodesy3.maths.vector3d import sumOf, Vector3d
 from pygeodesy3.miscs.errors import _AssertionError, CrossError, crosserrors, \
                                     _TypeError, _ValueError, IntersectionError, \
-                                    _xError
+                                    _xError, _xkwds, _xkwds_pop2  # _xkwds_get
 # from pygeodesy3.miscs.named import notImplemented  # from .points
 from pygeodesy3.miscs.namedTuples import LatLon3Tuple, NearestOn3Tuple, \
                                          Triangle7Tuple, Triangle8Tuple
@@ -47,14 +47,14 @@ from pygeodesy3.miscs.units import Bearing_, Height, _isDegrees, _isRadius, Lam_
                                    Phi_, Radius_, Scalar
 from pygeodesy3.polygonal.points import ispolar, nearestOn5 as _nearestOn5, \
                                         Fmt as _Fmt, notImplemented  # XXX shadowed
-from pygeodesy3.spherical.base import _m2radians, CartesianSphericalBase, \
+from pygeodesy3.spherical.Base import _m2radians, CartesianSphericalBase, \
                                       _intersecant2, LatLonSphericalBase, \
                                       _rads3, _radians2m, _trilaterate5
 
 from math import asin, atan2, cos, degrees, fabs, radians, sin
 
 __all__ = _ALL_LAZY.spherical_trigonometry
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _PI_EPS4 = PI - EPS4
 if _PI_EPS4 >= PI:
@@ -553,7 +553,7 @@ class LatLon(LatLonSphericalBase):
                  and method L{spherical.trigonometry.LatLon.nearestOn3}.
         '''
         # remove kwarg B{C{within}} if present
-        w = _xkwds_pop(wrap_adjust_limit, within=True)
+        w, kwds = _xkwds_pop2(wrap_adjust_limit, within=True)
         if not w:
             notImplemented(self, within=w)
 
@@ -577,7 +577,7 @@ class LatLon(LatLonSphericalBase):
 
         # without kwarg B{C{within}}, use backward compatible .nearestOn3
         return self.nearestOn3([point1, point2], closed=False, radius=radius,
-                                               **wrap_adjust_limit)[0]
+                                                             **kwds)[0]
 
     def nearestOn3(self, points, closed=False, radius=R_M, **wrap_adjust_limit):
         '''Locate the point on a polygon closest to this point.
@@ -834,7 +834,7 @@ def _destination2(a, b, r, t):
 
 def _int3d2(s, end, wrap, _i_, Vector, hs):
     # see <https://www.EdWilliams.org/intersect.htm> (5) ff
-    # and similar logic in .ellipsoidal.baseDI._intersect3
+    # and similar logic in .ellipsoidal.BaseDI._intersect3
     a1, b1 = s.philam
 
     if _isDegrees(end):  # bearing, get pseudo-end point
@@ -900,7 +900,7 @@ def intersecant2(center, circle, point, other, **radius_exact_height_wrap):
                                                      **radius_exact_height_wrap)
 
 
-def _intersect(start1, end1, start2, end2, height=None, wrap=False,  # in .ellipsoidal.baseDI._intersect3
+def _intersect(start1, end1, start2, end2, height=None, wrap=False,  # in .ellipsoidal.BaseDI._intersect3
                                            LatLon=None, **LatLon_kwds):
     # (INTERNAL) Intersect two (spherical) lines, see L{intersection}
     # above, separated to allow callers to embellish any exceptions
@@ -944,7 +944,7 @@ def _intersect(start1, end1, start2, end2, height=None, wrap=False,  # in .ellip
         r13 = atan2(sr12 * sx3,  cx2 + cx1 * cos(x3))
 
         a, b = _destination2(a1, b1, r13, t13)
-        # like .base.ellipsoidalDI,_intersect3, if this intersection
+        # like .ellipsoidal.BaseDI,_intersect3, if this intersection
         # is "before" the first point, use the antipodal intersection
         if opposing_(t13, bearing_(a1, b1, a, b, wrap=wrap)):
             a, b = antipode_(a, b)  # PYCHOK PhiLam2Tuple
@@ -1068,7 +1068,7 @@ def intersections2(center1, rad1, center2, rad2, radius=R_M, eps=_0_0,
                          center2=center2, rad2=rad2, wrap=wrap)
 
 
-def _intersects2(c1, rad1, c2, rad2, radius=R_M, eps=_0_0,  # in .ellipsoidal.baseDI._intersects2
+def _intersects2(c1, rad1, c2, rad2, radius=R_M, eps=_0_0,  # in .ellipsoidal.BaseDI._intersects2
                                      height=None, too_d=None, wrap=False,  # was=True
                                      LatLon=LatLon, **LatLon_kwds):
     # (INTERNAL) Intersect two spherical circles, see L{intersections2}
@@ -1221,10 +1221,9 @@ def nearestOn3(point, points, closed=False, radius=R_M, wrap=False, adjust=True,
     h = t.height
     n = nearestOn3.__name__
 
-    kwds = _xkwds(LatLon_and_kwds, height=h, name=n)
-    LL   = _xkwds_pop(kwds, LatLon=LatLon)
-    r    =  LatLon3Tuple(t.lat, t.lon, h, name=n) if LL is None else \
-                      LL(t.lat, t.lon, **kwds)
+    LL, kwds = _xkwds_pop2(LatLon_and_kwds, LatLon=LatLon)
+    r = LatLon3Tuple(t.lat, t.lon, h, name=n) if LL is None else \
+                  LL(t.lat, t.lon, **_xkwds(kwds, height=h, name=n))
     return NearestOn3Tuple(r, d, t.angle, name=n)
 
 

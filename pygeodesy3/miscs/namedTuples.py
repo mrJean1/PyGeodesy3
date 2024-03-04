@@ -8,7 +8,7 @@ are all instances of some C{Named...Tuple} class, all sub-classes
 of C{_NamedTuple} defined in C{pygeodesy3.miscs.named}.
 '''
 
-from pygeodesy3.basics import map1, _xattr, _xinstanceof, _xkwds_not  # _xkwds
+from pygeodesy3.basics import map1, _xinstanceof
 # from pygeodesy3.constants import INT0  # from .miscsc.units
 # from pygeodesy3.earth.datums import Datum  # _MODS
 from pygeodesy3.interns import NN, _1_, _2_, _a_, _A_, _area_, _angle_, _b_, \
@@ -19,6 +19,7 @@ from pygeodesy3.interns import NN, _1_, _2_, _a_, _A_, _area_, _angle_, _b_, \
                               _phi_, _point_, _precision_, _points_, _radius_, \
                               _scale_, _start_, _x_, _y_, _z_, _zone_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
+from pygeodesy3.miscs.errors import _xattr, _xkwds_not  # _xkwds
 from pygeodesy3.miscs.named import _NamedTuple, _Pass,  property_RO
 # from pygeodesy3.miscs.props import property_RO  # from .miscs.named
 from pygeodesy3.miscs.units import Band, Bearing, Degrees, Degrees2, Easting, \
@@ -27,7 +28,7 @@ from pygeodesy3.miscs.units import Band, Bearing, Degrees, Degrees2, Easting, \
                                    Radians, Radius, Scalar, Str,  INT0
 
 __all__ = _ALL_LAZY.miscs_namedTuples
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 # __DUNDER gets mangled in class
 _closest_     = 'closest'
@@ -44,7 +45,7 @@ class Bearing2Tuple(_NamedTuple):
     _Units_ = ( Bearing,   Bearing)
 
 
-class Bounds2Tuple(_NamedTuple):  # .base.latlon, .geohash, .points
+class Bounds2Tuple(_NamedTuple):  # .Base.latlon, .geohash, .points
     '''2-Tuple C{(latlonSW, latlonNE)} with the bounds' lower-left and
        upper-right corner as C{LatLon} instance.
     '''
@@ -142,7 +143,7 @@ class Distance4Tuple(_NamedTuple):  # .formy.py, .points.py
     _Units_ = ( Degrees2,    Degrees,     Degrees,     Degrees)
 
 
-class EasNor2Tuple(_NamedTuple):  # .base.utmups, .css, .osgr, .ups, .utm
+class EasNor2Tuple(_NamedTuple):  # .Base.utmups, .css, .osgr, .ups, .utm
     '''2-Tuple C{(easting, northing)}, both in C{meter}, conventionally.
     '''
     _Names_ = (_easting_, _northing_)
@@ -238,7 +239,7 @@ class LatLon3Tuple(_NamedTuple):
         return self._xtend(LatLon4Tuple, datum, **name)
 
 
-class LatLon4Tuple(LatLon3Tuple):  # .base.cartesian, .css, .ecef, .lcc
+class LatLon4Tuple(LatLon3Tuple):  # .Base.cartesian, .css, .ecef, .lcc
     '''4-Tuple C{(lat, lon, height, datum)} in C{degrees90},
        C{degrees180}, C{meter} and L{Datum}.
     '''
@@ -274,7 +275,7 @@ class LatLonDatum3Tuple(_NamedTuple):  # .lcc.py, .osgr.py
     _Units_ = ( Lat,   Lon,  _Pass)
 
 
-class LatLonDatum5Tuple(LatLonDatum3Tuple):  # .base.utmups, .ups, .utm
+class LatLonDatum5Tuple(LatLonDatum3Tuple):  # .Base.utmups, .ups, .utm
     '''5-Tuple C{(lat, lon, datum, gamma, scale)} in C{degrees90},
        C{degrees180}, L{Datum}, C{degrees} and C{float}.
     '''
@@ -311,7 +312,7 @@ class LatLonPrec5Tuple(LatLonPrec3Tuple):  # .wgrs.py
     _Units_ = LatLonPrec3Tuple._Units_ + ( Height,   Radius)
 
 
-class NearestOn2Tuple(_NamedTuple):  # .ellipsoidal.baseDI
+class NearestOn2Tuple(_NamedTuple):  # .ellipsoidal.BaseDI
     '''2-Tuple C{(closest, fraction)} of the C{closest} point
        on and C{fraction} along a line (segment) between two
        points.  The C{fraction} is C{0} if the closest point
@@ -348,7 +349,7 @@ class NearestOn5Tuple(_NamedTuple):
     _Units_ = ( Lat,   Lon,   Degrees,    Degrees, Meter)
 
 
-class NearestOn6Tuple(_NamedTuple):  # .base.latlon, .vector3d
+class NearestOn6Tuple(_NamedTuple):  # .Base.latlon, .Base.vector3d
     '''6-Tuple C{(closest, distance, fi, j, start, end)} with the C{closest}
        point, the C{distance} in C{meter}, conventionally and the C{start}
        and C{end} point of the path or polygon edge.  Fractional index C{fi}
@@ -364,7 +365,7 @@ class NearestOn6Tuple(_NamedTuple):  # .base.latlon, .vector3d
     _Units_ = (_Pass,      Meter,      FIx,  Number_, _Pass  , _Pass)
 
 
-class NearestOn8Tuple(_NamedTuple):  # .ellipsoidal.baseDI
+class NearestOn8Tuple(_NamedTuple):  # .ellipsoidal.BaseDI
     '''8-Tuple C{(closest, distance, fi, j, start, end, initial, final)},
        like L{NearestOn6Tuple} but extended with the C{initial} and the
        C{final} bearing at the reference respectively the C{closest}
@@ -374,7 +375,7 @@ class NearestOn8Tuple(_NamedTuple):  # .ellipsoidal.baseDI
     _Units_ = NearestOn6Tuple._Units_ + Distance3Tuple._Units_[-2:]
 
 
-class PhiLam2Tuple(_NamedTuple):  # .base.latlon, .frechet, .hausdorff, .points, .vector3d
+class PhiLam2Tuple(_NamedTuple):  # .Base.latlon, .distances.frechet, .distances.hausdorff, .polygonal.points, .Base.vector3d
     '''2-Tuple C{(phi, lam)} with latitude C{phi} in C{radians[PI_2]}
        and longitude C{lam} in C{radians[PI]}.
 
@@ -458,7 +459,7 @@ class Point3Tuple(_NamedTuple):
     _Units_ = ( Meter, Meter, _Pass)
 
 
-class Points2Tuple(_NamedTuple):  # .base.latlon, .formy
+class Points2Tuple(_NamedTuple):  # .Base.latlon, .distances.formy
     '''2-Tuple C{(number, points)} with the C{number} of points
        and -possible reduced- C{list} or C{tuple} of C{points}.
     '''
@@ -496,7 +497,7 @@ class Triangle8Tuple(_NamedTuple):
     _Units_ = ( Radians, Radians, Radians, Radians, Radians, Radians, Radians, Radians)
 
 
-class Trilaterate5Tuple(_NamedTuple):  # .base.latlon, .nvector
+class Trilaterate5Tuple(_NamedTuple):  # .Base.latlon, .Base.nvector
     '''5-Tuple C{(min, minPoint, max, maxPoint, n)} with C{min} and C{max}
        in C{meter}, the corresponding trilaterated C{minPoint} and C{maxPoint}
        as C{LatLon} and the number C{n}.  For area overlap, C{min} and C{max}

@@ -11,9 +11,9 @@ of the C{GeodSolve} executable.
 
 from pygeodesy3.Base.karney import _Azi, Caps, _Deg, GeodesicError, \
                                    _GTuple, _Pass, _Lat, _Lon, _M, _M2, \
-                                   _sincos2d,  _xinstanceof, _xkwds
+                                   _sincos2d
 from pygeodesy3.Base.solve import _SolveBase, _SolveLineBase
-# from pygeodesy3.basics import _xinstanceof, _xkwds  # from .Base.karney
+from pygeodesy3.basics import _xinstanceof
 from pygeodesy3.interns import NN, _a12_, _azi1_, _azi2_, \
                               _lat1_, _lat2_, _lon1_, _lon2_, _m12_, \
                               _M12_, _M21_, _s12_, _S12_, _UNDER_
@@ -21,12 +21,13 @@ from pygeodesy3.interns import _UNUSED_, _not_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, \
                               _PYGEODESY3_GEODSOLVE_, _getenv, printf
 from pygeodesy3.maths.umath import _unrollon, _Wrap, wrap360
+# from pygeodesy3.miscs.errors import _xkwds  # from .miscs.props
 # from pygeodesy3.miscs.named import notImplemented  # MODS
 from pygeodesy3.miscs.namedTuples import Destination3Tuple, Distance3Tuple
-from pygeodesy3.miscs.props import Property, Property_RO
+from pygeodesy3.miscs.props import Property, Property_RO,  _xkwds
 
 __all__ = _ALL_LAZY.geodesic_solve
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 
 class GeodSolve12Tuple(_GTuple):
@@ -178,7 +179,7 @@ class GeodesicSolve(_GeodesicSolveBase):
     Line = DirectLine
 
     def _Inverse(self, ll1, ll2, wrap, **outmask):  # PYCHOK no cover
-        '''(INTERNAL) Short-cut version, see .ellipsoidal.baseDI.intersecant2.
+        '''(INTERNAL) Short-cut version, see .ellipsoidal.BaseDI.intersecant2.
         '''
         if wrap:
             ll2 = _unrollon(ll1, _Wrap.point(ll2))

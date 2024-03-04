@@ -19,7 +19,7 @@
 from setuptools import setup
 
 __all__ = ()
-__version__ = '24.01.05'
+__version__ = '24.01.06'
 
 
 def _c2(*names):
@@ -92,8 +92,8 @@ _KeyWords = ('AER', 'Albers', 'altitude', 'Andoyer', 'annulus', 'antipode', 'are
              'triangle', 'triangulate', 'triaxial', 'triaxial-ellipsoid',
              'trigonometry', 'trilaterate', 'trilaterate-2d', 'trilaterate-3d',
              'umbilic-point', 'unit', 'unroll', 'UPS', 'UTM', 'UTM/UPS',
-             'variance', 'Veness', 'Vermeille', 'viewing-frustum', 'Vincenty', 'Visvalingam',
-             'Visvalingam-Whyatt', 'volume', ' volumetric',
+             'variance', 'velocities', 'Veness', 'Vermeille', 'viewing-frustum', 'Vincenty',
+             'Visvalingam', 'Visvalingam-Whyatt', 'volume', ' volumetric',
              'Web-Mercator', 'Welford', 'WGRS', 'WGS', 'Whyatt', 'Wildberger', 'Witkam', 'winding-number',
              'XYZ', 'yaw', 'You')
 

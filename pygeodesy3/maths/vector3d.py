@@ -9,7 +9,6 @@ L{trilaterate2d2} and L{trilaterate3d2}.
 
 # from pygeodesy3.Base.nvector import _nsumOf  # _MODS
 from pygeodesy3.Base.vector3d import Vector3dBase,  property_RO
-from pygeodesy3.basics import _xattr, _xkwds, _xkwds_get, _xkwds_popitem
 from pygeodesy3.constants import EPS, EPS0, EPS1, EPS4, INT0, isnear0, \
                                 _0_0, _1_0
 # from pygeodesy3.distances.formy import _radical2  # _MODS
@@ -21,19 +20,19 @@ from pygeodesy3.maths.fmath import euclid, fabs, fdot, hypot, sqrt,  fsum1_
 from pygeodesy3.maths.umath import atan2b, sincos2d
 # from pygeodesy3.maths import vector2d as _vector2d  # _MODS
 from pygeodesy3.miscs.errors import IntersectionError, _ValueError, VectorError, \
-                                   _xError
+                                   _xattr, _xError, _xkwds, _xkwds_get, _xkwds_item2
 from pygeodesy3.miscs.iters import PointsIter,  Fmt
 from pygeodesy3.miscs.named import _xnamed, _xotherError
 from pygeodesy3.miscs.namedTuples import Intersection3Tuple, NearestOn2Tuple, \
                                          NearestOn6Tuple, Vector3Tuple  # Vector4Tuple
-# from pygeodesy3.miscs.props import property_RO  # from .base.vector3d
+# from pygeodesy3.miscs.props import property_RO  # from .Base.vector3d
 # from pygeodesy3.miscs.streprs import Fmt  # from .miscs.iters
 from pygeodesy3.miscs.units import _fi_j2, _isDegrees, Radius, Radius_
 
 # from math import fabs, sqrt  # from .fmath
 
 __all__ = _ALL_LAZY.maths_vector3d
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 
 class Vector3d(Vector3dBase):
@@ -577,7 +576,7 @@ def intersections2(center1, radius1, center2, radius2, sphere=True, **Vector_and
 
 
 def _intersects2(center1, r1, center2, r2, sphere=True, too_d=None,  # in CartesianEllipsoidalBase.intersections2,
-                                         **clas_Vector_and_kwds):  # .ellipsoidal.baseDI._intersections2, .formy.intersections2
+                                         **clas_Vector_and_kwds):  # .ellipsoidal.BaseDI._intersections2, .formy.intersections2
     # (INTERNAL) Intersect two spheres or circles, see L{intersections2}
     # above, separated to allow callers to embellish any exceptions
 
@@ -767,7 +766,7 @@ def nearestOn6(point, points, closed=False, useZ=True, **Vector_and_kwds):  # ep
             c2, c, s, e, f = d2, p, p1, p2, (i + t)
         p1, i = p2, j
 
-    f, j = _fi_j2(f, len(Ps))  # like .ellipsoidal.baseDI._nearestOn2_
+    f, j = _fi_j2(f, len(Ps))  # like .ellipsoidal.BaseDI._nearestOn2_
 
     kwds = _xkwds(Vector_and_kwds, clas=point.classof, name=Ps.name)
     v = _nVc(c, **kwds)
@@ -787,17 +786,16 @@ def _nVc(v, clas=None, name=NN, Vector=None, **Vector_kwds):  # in .vector2d
 
 def _otherV3d(useZ=True, NN_OK=True, i=None, **name_v):
     # check named vector instance, return Vector3d
-    def _name_i(name, i):
-        return name if i is None else Fmt.SQUARE(name, i)
-
-    name, v = _xkwds_popitem(name_v)
+    n, v = _xkwds_item2(name_v)
     if useZ and isinstance(v, Vector3dBase):
-        return v if NN_OK or v.name else v.copy(name=_name_i(name, i))
+        return v if NN_OK or v.name else v.copy(name=Fmt.INDEX(n, i))
+
+    n = Fmt.INDEX(n, i)
     try:
-        return Vector3d(v.x, v.y, (v.z if useZ else INT0), name=_name_i(name, i))
+        return Vector3d(v.x, v.y, (v.z if useZ else INT0), name=n)
     except AttributeError:  # no .x, .y or .z attr
         pass
-    raise _xotherError(Vector3d(0, 0, 0), v, name=_name_i(name, i), up=2)
+    raise _xotherError(Vector3d(0, 0, 0), v, name=n, up=2)
 
 
 def parse3d(str3d, sep=_COMMA_, Vector=Vector3d, **Vector_kwds):
@@ -946,7 +944,7 @@ def trilaterate3d2(center1, radius1, center2, radius2, center3, radius3,
                          center3=center3, radius3=radius3)
 
 
-def _xyzhdn3(xyz, height, datum, ll):  # in .base.cartesian, .base.nvector
+def _xyzhdn3(xyz, height, datum, ll):  # in .Base.cartesian, .Base.nvector
     '''(INTERNAL) Get a C{(h, d, name)} 3-tuple.
     '''
     h = height or _xattr(xyz, height=None) \
@@ -959,7 +957,7 @@ def _xyzhdn3(xyz, height, datum, ll):  # in .base.cartesian, .base.nvector
     return h, d, _xattr(xyz, name=NN)
 
 
-__all__ += _ALL_DOCS(intersections2, sumOf, Vector3dBase)
+__all__ += _ALL_DOCS(intersections2, sumOf)
 
 # **) MIT License
 #

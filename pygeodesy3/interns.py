@@ -400,18 +400,12 @@ _start_               = 'start'              # PYCHOK OK
 _std_                 = 'std'                # PYCHOK OK
 _stdev_               = 'stdev'              # PYCHOK OK
 _supported_           = 'supported'          # PYCHOK OK
-_sx_                  = 'sx'                 # PYCHOK OK
-_sy_                  = 'sy'                 # PYCHOK OK
-_sz_                  = 'sz'                 # PYCHOK OK
 _tbd_                 = 'tbd'                # PYCHOK OK
 _TILDE_               = '~'                  # PYCHOK OK
 _to_                  = 'to'                 # PYCHOK OK
 _tolerance_   = _Prefix('tolerance')         # PYCHOK OK
 _too_         = _Prefix('too')               # PYCHOK OK
 _transform_           = 'transform'          # PYCHOK OK
-_tx_                  = 'tx'                 # PYCHOK OK
-_ty_                  = 'ty'                 # PYCHOK OK
-_tz_                  = 'tz'                 # PYCHOK OK
 _UNDER_          = Str_('_')                 # PYCHOK OK
 _units_               = 'units'              # PYCHOK OK
 _UNUSED_              = 'UNUSED'             # PYCHOK OK
@@ -470,7 +464,7 @@ def _dunder_nameof(inst, *dflt):
     return dflt[0] if dflt else inst.__class__.__name__
 
 
-def _enquote(strs, quote=_QUOTE2_):  # in .base.solve, .basics
+def _enquote(strs, quote=_QUOTE2_):  # in .Base.solve, .basics
     '''(INTERNAL) Enquote a string containing whitespace.
     '''
     if len(strs.split()) > 1:
@@ -599,7 +593,7 @@ def _tailof(name):
     return name[i:] if i > 0 else name
 
 
-def _under(name):  # PYCHOK in .base.utmups, .earth.datums, .maths.auxilats, ...
+def _under(name):  # PYCHOK in .Base.utmups, .earth.datums, .maths.auxilats, ...
     '''(INTERNAL) Prefix C{name} with I{underscore}.
     '''
     return name if name.startswith(_UNDER_) else NN(_UNDER_, name)
@@ -621,24 +615,39 @@ def _usage(file_py, *args):  # in .etm
 def _version2(version, n=2):
     '''(INTERNAL) Split C{B{version} str} into a C{1-, 2- or 3-tuple} of C{int}s.
     '''
-    def _ints(vs):
-        for v in vs:
-            if v:
-                try:
-                    yield int(v.strip())
-                except (TypeError, ValueError):
-                    pass
-
-    t = tuple(_ints(version.split(_DOT_, 2)))
+    t = _version_ints(version.split(_DOT_, 2))
     if len(t) < n:
         t += (0,) * n
-    return tuple(t[:n])
+    return t[:n]
+
+
+def _version_info(package):  # in .Base.karney, .basics
+    '''(INTERNAL) Get the C{package.__version_info__} as a 2- or
+       3-tuple C{(major, minor, revision)} if C{int}s.
+    '''
+    try:
+        return _version_ints(package.__version_info__)
+    except AttributeError:
+        return _version2(package.__version__.strip(), n=3)
+
+
+def _version_ints(vs):
+    # helper for _version2 and _version_info above
+
+    def _ints(vs):
+        for v in vs:
+            try:
+                yield int(v.strip())
+            except (TypeError, ValueError):
+                pass
+
+    return tuple(_ints(vs))
 
 
 __all__ = (_NN_,  # not MISSING!
             Str_.__name__,  # classes
             machine.__name__)  # in .lazily
-__version__ = '24.01.05'
+__version__ = '24.02.12'
 
 if __name__ == '__main__':
 

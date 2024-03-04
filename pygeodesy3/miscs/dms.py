@@ -62,7 +62,7 @@ U{Vector-based geodesy<https://www.Movable-Type.co.UK/scripts/latlong-vectors.ht
 '''
 
 from pygeodesy3.basics import copysign0, isLatLon, isodd, issequence, isstr, \
-                              map2, neg as _neg, _xkwds, _xkwds_get  # in .ups
+                              map2, neg as _neg  # in .ups
 from pygeodesy3.constants import _umod_360, _0_0, _0_5, _60_0, _360_0, _3600_0
 from pygeodesy3.interns import NN, _arg_, _COMMA_, _d_, _DASH_, _deg_, _degrees_, \
                               _DOT_, _0_, _e_, _E_, _EW_, _f_, _F_, _g_, _MINUS_, \
@@ -72,7 +72,7 @@ from pygeodesy3.interns import NN, _arg_, _COMMA_, _d_, _DASH_, _deg_, _degrees_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
 # from pygeodesy3.maths.umath import _Wrap  # _MODS
 from pygeodesy3.miscs.errors import ParseError, _parseX, RangeError, rangerrors, \
-                                   _TypeError, _ValueError
+                                   _TypeError, _ValueError, _xkwds, _xkwds_get
 from pygeodesy3.miscs.streprs import Fmt, fstr, fstrzs, _0wpF
 # from pygeodesy3.miscs.units import Precision_  # _MODS
 
@@ -83,7 +83,7 @@ except ImportError:  # Python 3+
     from string import ascii_letters as _LETTERS
 
 __all__ = _ALL_LAZY.miscs_dms
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 _beyond_      = 'beyond'
 _DDDMMSS_     = 'DDDMMSS'

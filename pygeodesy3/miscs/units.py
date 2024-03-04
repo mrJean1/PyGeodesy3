@@ -9,7 +9,7 @@ named units as L{Degrees}, L{Feet}, L{Meter}, L{Radians}, etc.
 from pygeodesy3.Base.units import _Error, Float, Int, _NamedUnit, Radius, Str, \
                                    Fmt, fstr  # PYCHOK shared .namedTuples
 from pygeodesy3.basics import isinstanceof, isscalar, isstr, issubclassof, \
-                              signOf, _xkwds, _xkwds_popitem
+                              signOf
 from pygeodesy3.constants import EPS, EPS1, PI, PI2, PI_2, \
                                 _umod_360, _0_0, _0_001, \
                                 _0_5, INT0  # PYCHOK for .mgrs, .namedTuples
@@ -25,15 +25,15 @@ from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _getenv
 from pygeodesy3.miscs.dms import F__F, F__F_, parseDMS, parseRad, \
                                  S_NUL, S_SEP, _toDMS, toDMS
 from pygeodesy3.miscs.errors import _AssertionError, _IsnotError, TRFError, \
-                                     UnitError
+                                     UnitError, _xkwds, _xkwds_item2
 from pygeodesy3.miscs.props import Property_RO
-# from pygeodesy3.miscs.streprs import Fmt, fstr  # from .base.units
+# from pygeodesy3.miscs.streprs import Fmt, fstr  # from .Base.units
 # from pygeodesy3.polygonal.points import fractional  # _MODS
 
 from math import degrees, radians
 
 __all__ = _ALL_LAZY.miscs_units
-__version__ = '24.01.10'
+__version__ = '24.02.20'
 
 _negative_falsed_ = 'negative, falsed'
 
@@ -58,7 +58,7 @@ class Float_(Float):
            @raise Error: Invalid B{C{arg}} or B{C{arg}} below B{C{low}} or above B{C{high}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         self = Float.__new__(cls, arg=arg, name=name, Error=Error)
         if (low is not None) and self < low:
             txt = Fmt.limit(below=Fmt.g(low, prec=6, ints=isinstance(self, Epoch)))
@@ -89,7 +89,7 @@ class Int_(Int):
            @raise Error: Invalid B{C{arg}} or B{C{arg}} below B{C{low}} or above B{C{high}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         self = Int.__new__(cls, arg=arg, name=name, Error=Error)
         if (low is not None) and self < low:
             txt = Fmt.limit(below=low)
@@ -122,7 +122,7 @@ class Bool(Int, _NamedUnit):
            @raise Error: Invalid B{C{arg}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         try:
             b = bool(arg)
         except Exception as x:  # XXX not ... as x:
@@ -197,7 +197,7 @@ class Degrees(Float):
                          range and L{pygeodesy3.rangerrors} set to C{True}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         try:
             d = Float.__new__(cls, parseDMS(arg, suffix=suffix, clip=clip),
                                                   Error=Error,  name=name)
@@ -265,7 +265,7 @@ class Degrees_(Degrees):
            @raise Error: Invalid B{C{arg}} or B{C{arg}} below B{C{low}} or above B{C{high}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         self = Degrees.__new__(cls, arg=arg, name=name, Error=Error, suffix=suffix, clip=0)
         if (low is not None) and self < low:
             txt = Fmt.limit(below=low)
@@ -308,7 +308,7 @@ class Radians(Float):
                          range and L{pygeodesy3.rangerrors} set to C{True}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         try:
             return Float.__new__(cls, parseRad(arg, suffix=suffix, clip=clip),
                                                      Error=Error,  name=name)
@@ -366,7 +366,7 @@ class Radians_(Radians):
            @raise Error: Invalid B{C{arg}} or B{C{arg}} below B{C{low}} or above B{C{high}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         self = Radians.__new__(cls, arg=arg, name=name, Error=Error, suffix=suffix, clip=0)
         if (low is not None) and self < low:
             txt = Fmt.limit(below=low)
@@ -396,7 +396,7 @@ class Bearing(Degrees):
         '''New L{Bearing} instance, see L{Degrees}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         d =  Degrees.__new__(cls, arg=arg, name=name, Error=Error, suffix=_N_, clip=clip)
         b = _umod_360(d)  # 0 <= b < 360
         return d if b == d else Degrees.__new__(cls, arg=b, name=name, Error=Error)
@@ -450,7 +450,7 @@ class Easting(Float):
            @raise Error: Invalid B{C{arg}}, above B{C{high}} or negative, falsed B{C{arg}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         self = Float.__new__(cls, arg=arg, name=name, Error=Error)
         if high and (self < 0 or self > high):  # like Veness
             raise _Error(cls, arg, name, Error)
@@ -459,7 +459,7 @@ class Easting(Float):
         return self
 
 
-class Epoch(Float_):  # in .base.ellipsoidal, .trf
+class Epoch(Float_):  # in .ellipsoidal.Base, .earth.trf
     '''Named C{epoch} with optional C{low} and C{high} limits representing a fractional
        calendar year.
     '''
@@ -469,11 +469,11 @@ class Epoch(Float_):  # in .base.ellipsoidal, .trf
         '''New L{Epoch} instance, see L{Float_}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         return arg if isinstance(arg, Epoch) else Float_.__new__(cls,
                arg=arg, name=name, Error=Error, low=low, high=high)
 
-    def toRepr(self, std=False, **unused):  # PYCHOK prec=3, fmt=Fmt.F, ints=True
+    def toRepr(self, prec=3, std=False, **unused):  # PYCHOK fmt=Fmt.F, ints=True
         '''Return a representation of this C{Epoch}.
 
            @kwarg std: Use the standard C{repr} or the named
@@ -481,14 +481,14 @@ class Epoch(Float_):  # in .base.ellipsoidal, .trf
 
            @see: Method L{Float.toRepr} for more documentation.
         '''
-        return Float_.toRepr(self, std=std)  # prec=-3, fmt=Fmt.F, ints=True
+        return Float_.toRepr(self, prec=prec, std=std)  # fmt=Fmt.F, ints=True
 
-    def toStr(self, **unused):  # PYCHOK prec=3, fmt=Fmt.F, ints=True
+    def toStr(self, prec=3, **unused):  # PYCHOK fmt=Fmt.F, ints=True
         '''Format this C{Epoch} as C{str}.
 
            @see: Function L{pygeodesy3.fstr} for more documentation.
         '''
-        return fstr(self, prec=-3, fmt=Fmt.F, ints=True)
+        return fstr(self, prec=prec, fmt=Fmt.F, ints=True)
 
     __str__ = toStr  # PYCHOK default '%.3F', with trailing zeros and decimal point
 
@@ -579,7 +579,7 @@ class FIx(Float_):
                                           Vector=Vector, **kwds)
 
 
-def _fi_j2(f, n):  # PYCHOK in .base.ellipsoidalDI, .vector3d
+def _fi_j2(f, n):  # PYCHOK in .ellipsoidal.BaseDI, .Base.vector3d
     # Get 2-tuple (C{fi}, C{j})
     i = int(f)  # like L{FIx}
     if not 0 <= i < n:
@@ -634,7 +634,7 @@ class Lam_(Lam):
         '''New L{Lam_} instance, see L{Lam} and L{Radians}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         d = Lam.__new__(cls, arg=arg, name=name, Error=Error, clip=clip)
         return Radians.__new__(cls, radians(d), name=name, Error=Error)
 
@@ -709,11 +709,11 @@ class Meter(Float):
 
 
 # _1Å   = Meter(     _Å= 1e-10)  # PyCHOK 1 Ångstrōm
-_1um    = Meter(   _1um= 1.e-6)  # PYCHOK 1 micrometer in .mgrs
-_10um   = Meter(  _10um= 1.e-5)  # PYCHOK 10 micrometer in .osgr
+_1um    = Meter(   _1um= 1.e-6)  # PYCHOK 1 micrometer in .grids.mgrs
+_10um   = Meter(  _10um= 1.e-5)  # PYCHOK 10 micrometer in .grids.osgr
 _1mm    = Meter(   _1mm=_0_001)  # PYCHOK 1 millimeter in .ellipsoidal...
-_100km  = Meter( _100km= 1.e+5)  # PYCHOK 100 kilometer in .base.spherical, .formy, .mgrs, .osgr
-_2000km = Meter(_2000km= 2.e+6)  # PYCHOK 2,000 kilometer in .mgrs
+_100km  = Meter( _100km= 1.e+5)  # PYCHOK 100 kilometer in .Base.spherical, .distances.formy, .grids.mgrs, .grids.osgr
+_2000km = Meter(_2000km= 2.e+6)  # PYCHOK 2,000 kilometer in .grids.mgrs
 
 
 class Meter_(Float_):
@@ -763,7 +763,7 @@ class Northing(Float):
            @raise Error: Invalid B{C{arg}}, above B{C{high}} or negative, falsed B{C{arg}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         self = Float.__new__(cls, arg=arg, name=name, Error=Error)
         if high and (self < 0 or self > high):
             raise _Error(cls, arg, name, Error)
@@ -797,7 +797,7 @@ class Phi_(Phi):
         '''New L{Phi_} instance, see L{Phi} and L{Radians}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         d = Phi.__new__(cls, arg=arg, name=name, Error=Error, clip=clip)
         return Radians.__new__(cls, arg=radians(d), name=name, Error=Error)
 

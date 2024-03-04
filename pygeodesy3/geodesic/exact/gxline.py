@@ -37,27 +37,26 @@ from __future__ import division as _; del _  # PYCHOK semicolon
 # - s and c prefixes mean sin and cos
 
 from pygeodesy3.Base.karney import _around, _atan2d, Caps, GDict, _fix90, \
-                                   _K_2_0, _norm2, _norm180, _sincos2, \
-                                   _sincos2d
-from pygeodesy3.basics import _xinstanceof, _xkwds_get
-from pygeodesy3.constants import NAN, _EPSmin, _EPSqrt as _TOL,  _xError, \
-                                _0_0, _1_0, _180_0, _2__PI, _copysign_1_0
-from pygeodesy3.geodesic.exact.gxbases import _cosSeries, _GeodesicBase, \
-                                             _sincos12, _sin1cos2
+                                   _K_2_0, _norm2, _norm180, _sincos2, _sincos2d
+# from pygeodesy3.basics import _xinstanceof  # _MODS
+from pygeodesy3.constants import NAN, _EPSmin, _EPSqrt as _TOL, _0_0, _1_0, \
+                                _180_0, _2__PI, _copysign_1_0
+from pygeodesy3.geodesic.exact.gxBases import _cosSeries, _GeodesicBase, \
+                                              _sincos12, _sin1cos2
 # from pygeodesy3.geodesic.wrap import _Intersecant2  # _MODS
 from pygeodesy3.interns import NN, _COMMASPACE_
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_MODS as _MODS
 # from pygeodesy3.maths.elliptic import Elliptic  # _MODS
 from pygeodesy3.maths.fsums import fsumf_, fsum1f_
 from pygeodesy3.maths.umath import atan2d as _atan2d_reverse, sincos2
-# from pygeodesy3.miscs.errors import _xError  # from .constants
+from pygeodesy3.miscs.errors import _xError, _xkwds_get
 from pygeodesy3.miscs.props import Property_RO, _update_all
 # from pygeodesy3.miscs.streprs import pairs  # _MODS
 
 from math import atan2, cos, degrees, fabs, floor, radians, sin
 
 __all__ = ()
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 _glXs = []  # instances of C{[_]GeodesicLineExact} to be updated
 # underflow guard, we require _TINY * EPS > 0, _TINY + EPS == EPS
@@ -70,10 +69,16 @@ def _update_glXs(gX):  # see GeodesicExact.C4order and -._ef_reset_k2
        any L{GeodesicLineExact} instances tied to the given
        L{GeodesicExact} instance B{C{gX}}.
     '''
-    _xinstanceof(_MODS.geodesic.exact.GeodesicExact, gX=gX)
+    _xGeodesicExact(gX=gX)
     for glX in _glXs:  # PYCHOK use weakref?
         if glX._gX is gX:
             _update_all(glX)
+
+
+def _xGeodesicExact(**gX):
+    '''(INTERNAL) Check a L{GeodesicExact} instance.
+    '''
+    _MODS.basics._xinstanceof(_MODS.geodesic.exact.GeodesicExact, **gX)
 
 
 class _GeodesicLineExact(_GeodesicBase):
@@ -94,7 +99,7 @@ class _GeodesicLineExact(_GeodesicBase):
     def __init__(self, gX, lat1, lon1, azi1, caps, _debug, *salp1_calp1, **name):  # name=NN
         '''(INTERNAL) New C{[_]GeodesicLineExact} instance.
         '''
-        _xinstanceof(_MODS.geodesic.exact.GeodesicExact, gX=gX)
+        _xGeodesicExact(gX=gX)
         Cs = Caps
         if _debug:  # PYCHOK no cover
             self._debug |= _debug & Cs._DEBUG_ALL
@@ -467,7 +472,7 @@ class _GeodesicLineExact(_GeodesicBase):
     def geodesic(self):
         '''Get the I{exact} geodesic (L{GeodesicExact}).
         '''
-        _xinstanceof(_MODS.geodesic.exact.GeodesicExact, geodesic=self._gX)
+        _xGeodesicExact(geodesic=self._gX)
         return self._gX
 
     def Intersecant2(self, lat0, lon0, radius, tol=_TOL):

@@ -4,7 +4,7 @@
 from pygeodesy3.lazily import _ALL_LAZY, _lazy_import_as, _unLazy0
 
 __all__ = _ALL_LAZY.spherical
-__version__ = '23.12.18'
+__version__ = '24.01.11'
 
 if _unLazy0:
     pass

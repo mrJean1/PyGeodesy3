@@ -1,14 +1,14 @@
 
 # -*- coding: utf-8 -*-
 
-u'''A pure Python implementation of geodesy tools for various ellipsoidal and spherical earth
-models using precision trigonometric, vector-based, exact, elliptic, iterative and approximate
-methods for geodetic (lat-/longitude), geocentric (U{ECEF<https://WikiPedia.org/wiki/ECEF>}
-cartesian) and certain U{triaxial ellipsoidal<https://GeographicLib.SourceForge.io/1.44/triaxial.html>}
-coordinates and supported I{only on Python 3.7 and newer}.
+u'''A pure Python implementation of geodesy tools for various ellipsoidal and spherical earth models
+using precision trigonometric, vector-based, exact, elliptic, iterative and approximate methods for
+geodetic (lat-/longitude), geocentric (U{ECEF<https://WikiPedia.org/wiki/ECEF>} cartesian) and certain
+U{triaxial ellipsoidal<https://GeographicLib.SourceForge.io/1.44/triaxial.html>} coordinates and
+supported I{only on Python 3.7 and newer}.
 
-Transcoded from U{JavaScript originals<https://GitHub.com/ChrisVeness/geodesy>} by I{Chris Veness
-(C) 2005-2022} and from several U{C++ classes<https://GeographicLib.SourceForge.io/C++/doc/annotated.html>}
+Transcoded from U{JavaScript originals<https://GitHub.com/ChrisVeness/geodesy>} by I{Chris Veness (C)
+2005-2022} and from several U{C++ classes<https://GeographicLib.SourceForge.io/C++/doc/annotated.html>}
 by I{Charles F. F. Karney (C) 2008-2023} and published under the same U{MIT License
 <https://OpenSource.org/licenses/MIT>}**.
 
@@ -56,31 +56,31 @@ U{Sutherland-Hodgman<https://WikiPedia.org/wiki/Sutherland-Hodgman_algorithm>} m
 functions to U{simplify<https://Bost.Ocks.org/mike/simplify>} or linearize a path of C{LatLon}
 points (or a U{NumPy array<https://docs.SciPy.org/doc/numpy/reference/generated/numpy.array.html>}),
 including implementations of the U{Ramer-Douglas-Peucker<https://WikiPedia.org/wiki/
-Ramer-Douglas-Peucker_algorithm>}, the U{Visvalingam-Whyatt<https://hydra.Hull.ac.UK/
-resources/hull:8338>} and the U{Reumann-Witkam<https://psimpl.SourceForge.net/reumann-witkam.html>}
-algorithms and modified versions of the former.  Other classes provide I{boolean} operations between
-(composite) polygons or U{interpolate <https://docs.SciPy.org/doc/scipy/reference/interpolate.html>}
-the L{height<pygeodesy3.elevations.heights>} of C{LatLon} points and L{Geoid<pygeodesy3.elevations.geoids>}
-models, compute various U{Fréchet<https://WikiPedia.org/wiki/Frechet_distance>} and U{Hausdorff
+Ramer-Douglas-Peucker_algorithm>}, the U{Visvalingam-Whyatt<https://hydra.Hull.ac.UK/resources/hull:8338>}
+and the U{Reumann-Witkam<https://psimpl.SourceForge.net/reumann-witkam.html>} algorithms and modified
+versions of the former.  Other classes provide I{boolean} operations between (composite) polygons or
+U{interpolate <https://docs.SciPy.org/doc/scipy/reference/interpolate.html>} the L{height
+<elevations.heights>} of C{LatLon} points and L{Geoid<elevations.geoids>} models and compute various
+U{Fréchet<https://WikiPedia.org/wiki/Frechet_distance>} and U{Hausdorff
 <https://WikiPedia.org/wiki/Hausdorff_distance>} distances.
 
 Installation
 ============
 
-To install PyGeodesy3, type C{python3 -m pip install PyGeodesy3} or C{python3 -m easy_install
-PyGeodesy3} in a terminal or command window.
+To install PyGeodesy3, type C{python3 -m pip install PyGeodesy3} or C{python3 -m easy_install PyGeodesy3}
+in a terminal or command window.
 
 If the wheel C{PyGeodesy3-yy.m.d-py3-none-any.whl} is missing in U{PyPI Download files<https://
 PyPI.org/project/PyGeodesy3/#files>}, download the file from U{GitHub/dist<https://GitHub.com/mrJean1/
 PyGeodesy3/tree/master/dist>}.  Install that with C{python3 -m pip install <path-to-downloaded-wheel>}
 and verify with C{python3 -m pygeodesy3}.
 
-Alternatively, download C{PyGeodesy3-yy.m.d.zip} from U{PyPI<https://PyPI.org/project/PyGeodesy3>}
-or U{GitHub<https://GitHub.com/mrJean1/PyGeodesy3>}, C{unzip} the downloaded file, C{cd} to
-directory C{Pygeodesy-yy.m.d} and type C{python3 setup.py install}.
+Alternatively, download C{PyGeodesy3-yy.m.d.zip} from U{PyPI<https://PyPI.org/project/PyGeodesy3>} or
+U{GitHub<https://GitHub.com/mrJean1/PyGeodesy3>}, C{unzip} the downloaded file, C{cd} to directory
+C{Pygeodesy-yy.m.d} and type C{python3 setup.py install}.
 
-To run all PyGeodesy3 tests, type C{python3 test/run.py} or type C{python3 test/unitTestSuite.py}
-before or after installation.
+To run all PyGeodesy3 tests, type C{python3 test/run.py} or type C{python3 test/unitTestSuite.py} before
+or after installation.
 
 Dependencies
 ============
@@ -90,8 +90,8 @@ is optional, but required to use modules L{ellipsoidal.karney} and L{css}, L{azi
 L{EquidistantKarney} and L{GnomonicKarney} and the L{HeightIDWkarney} interpolator.
 
 Both U{numpy<https://PyPI.org/project/numpy>} and U{scipy<https://PyPI.org/project/scipy>} must be
-installed for most L{Geoid...<pygeodesy3.elevations.geoids>} and L{Height...<pygeodesy3.elevations.heights>}
-interpolators, except L{GeoidKarney} and the L{HeightIDW...<pygeodesy3.elevations.heights>} ones.
+installed for most L{Geoid...<elevations.geoids>} and L{Height...<elevations.heights>} interpolators,
+except L{GeoidKarney} and the L{HeightIDW...<elevations.heights>} ones.
 
 Functions and C{LatLon} methods L{circin6}, L{circum3}, L{circum4_}, L{soddy4}, L{trilaterate3d2} and
 C{trilaterate5} and modules L{maths.auxilats} and L{rhumb.aux_} require U{numpy<https://PyPI.org/project/numpy>}.
@@ -121,7 +121,7 @@ C{epydoc --html --no-private --no-source --name=PyGeodesy3 --url=... -v pygeodes
 Tests
 =====
 
-The tests ran with Python 3.12 (with U{geographiclib<https://PyPI.org/project/geographiclib>} 2.0,
+The tests ran with Python 3.12.2 (with U{geographiclib<https://PyPI.org/project/geographiclib>} 2.0,
 Python 3.11.5 (with U{geographiclib<https://PyPI.org/project/geographiclib>} 2.0, U{numpy
 <https://PyPI.org/project/numpy>} 1.24.2 and U{scipy<https://PyPI.org/project/scipy>} 1.10.1), Python
 3.10.8 (with U{geographiclib <https://PyPI.org/project/geographiclib>} 2.0, U{numpy
@@ -129,7 +129,7 @@ Python 3.11.5 (with U{geographiclib<https://PyPI.org/project/geographiclib>} 2.0
 <https://GeographicLib.SourceForge.io/html/utilities.html>} 2.2, U{GeodSolve
 <https://GeographicLib.SourceForge.io/html/utilities.html>} 2.2 and U{RhumbSolve
 <https://GeographicLib.SourceForge.io/html/utilities.html>} 2.2) and Python 3.9.6, all on macOS
-14.1.2 Sonoma, Apple M1 Silicon (C{arm64}), I{natively} and in 64-bit only.
+14.3.1 Sonoma, Apple M1 Silicon (C{arm64}), I{natively} and in 64-bit only.
 
 All tests ran with and without C{lazy import} for Python 3 and with command line option C{-W default} and
 env variable C{PYGEODESY3_WARNINGS=on} for all Python versions.  The results of those tests are included in
@@ -178,7 +178,7 @@ and these to control standard or I{named} C{repr}esentations:
 
 plus during development:
 
- - C{PYGEODESY3_ALL_BACKWARD} - import all modules for backward compatibility.
+ - C{PYGEODESY3_BACKWARD} - import all modules for C{PyGeodesy} compatibility.
  - C{PYGEODESY3_FOR_DOCS} - for extended documentation by C{epydoc}.
  - C{PYGEODESY3_GEOGRAPHICLIB} - see module L{Base.karney}.
  - C{PYGEODESY3_WARNINGS} - see module L{miscs.props} and function L{DeprecationWarnings}.
@@ -193,36 +193,32 @@ and:
 License
 =======
 
-**) U{Copyright (C) 2016-2024 -- mrJean1 at Gmail -- All Rights Reserved.
-<https://OpenSource.org/licenses/MIT>}
+**) U{Copyright (C) 2016-2024 -- mrJean1 at Gmail -- All Rights Reserved.<https://OpenSource.org/licenses/MIT>}
 
-C{Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the "Software"),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following conditions:}
+C{Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+and associated documentation files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:}
 
-C{The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.}
+C{The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.}
 
-C{THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.}
+C{THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}
 
 @newfield example: Example, Examples
 
 @var EPS:    System's M{epsilon} ≈ 2.22044604925e-16 (C{float}).
-@var EPS0:   M{EPS**2}    ≈ 4.9e-32 for near-zero comparison
-@var EPS02:  M{EPS**4}    ≈ 2.4e-63 for near-zero squared comparison
-@var EPS1:   M{1 - EPS}   ≈ 0.9999999999999998 (C{float}).
-@var EPS2:   M{EPS * 2}   ≈ 4.440892098501e-16 (C{float}).
-@var EPS_2:  M{EPS / 2}   ≈ 1.110223024625e-16 (C{float}).
-@var EPS4:   M{EPS * 4}   ≈ 8.881784197001e-16 (C{float}).
+@var EPS0:   M{EPS**2}  ≈ 4.9e-32 for near-zero comparison
+@var EPS02:  M{EPS**4}  ≈ 2.4e-63 for near-zero squared comparison
+@var EPS1:   M{1 - EPS} ≈ 0.9999999999999998 (C{float}).
+@var EPS2:   M{EPS * 2} ≈ 4.440892098501e-16 (C{float}).
+@var EPS_2:  M{EPS / 2} ≈ 1.110223024625e-16 (C{float}).
+@var EPS4:   M{EPS * 4} ≈ 8.881784197001e-16 (C{float}).
 
 @var F_D:   Format degrees as unsigned "deg°" with symbol, plus compass point suffix C{N, S, E} or C{W} (C{str}).
 @var F_DM:  Format degrees as unsigned "deg°min′" with symbols, plus suffix (C{str}).
@@ -303,6 +299,7 @@ OTHER DEALINGS IN THE SOFTWARE.}
 @var Ellipsoids: Registered, predefined ellipsoids (C{enum-like}).
 @var RefFrames:  Registered, predefined reference frames (C{enum-like}).
 @var Transforms: Registered, predefined transforms (C{enum-like}).
+@var Triaxials:  Registered, predefined triaxial ellipsoids (C{enum-like}).
 
 @var isLazy: Lazy import setting (C{int} 1, 2 or 3+) from C{env} variable C{PYGEODESY3_LAZY_IMPORT}, or C{False} if initializing C{lazy import} failed.
 
@@ -316,12 +313,13 @@ import sys as _sys
 
 __all__            = ()
 # <https://PyInstaller.ReadTheDocs.io/en/stable/runtime-information.html>
-_isfrozen          = _init__all__ = getattr(_sys, 'frozen', False)  # in .lazily
+_init__all__       = _isfrozen = getattr(_sys, 'frozen', False)  # in .lazily
 pygeodesy3_abspath = _pth.dirname(_pth.abspath(__file__))  # _sys._MEIPASS + '/pygeodesy3'
 _pygeodesy3_       = __package__ or _pth.basename(pygeodesy3_abspath)
 
 if _isfrozen:  # avoid lazy import and import *
     _lazy_import2 = None
+    raise NotImplementedError('frozen')
 else:
     # setting __path__ should ...
     __path__ = [pygeodesy3_abspath]
@@ -365,18 +363,17 @@ if _init__all__ and not _lazy_import2:  # PYCHOK no cover
     import pygeodesy3.rhumb       as rhumb        # PYCHOK exported
     import pygeodesy3.spherical   as spherical    # PYCHOK exported
 
-#   import pygeodesy3.geodesic.exact as ... for make dist
-#   import pygeodesy3.maths.auxilats as ... for make dist
+#   import pygeodesy3.geodesic.exact as ... # PYCHOK make dist
+#   import pygeodesy3.maths.auxilats as ... # PYCHOK make dist
 
-# from pygeodesy3.interns import _DOT_  # from .lazily
-from pygeodesy3.lazily import _DOT_, _import_all_backward, isLazy  # PYCHOK import
+from pygeodesy3.interns import _DOT_, _version2  # PYCHOK import
+from pygeodesy3.lazily import _import_all_backward, isLazy  # PYCHOK import
 
 __all__    += _import_all_backward()
-__version__ = '24.01.10'
-# see setup.py for similar logic
-version     = _DOT_(*map(int, __version__.split(_DOT_)))
+__version__ = '24.03.03'
+version     = _DOT_(*_version2(__version__, n=3))
 
-del _DOT_, _import_all_backward, _lazy_import2, _pth, _sys
+del _DOT_, _import_all_backward, _lazy_import2, _pth, _sys, _version2
 
 # **) MIT License
 #

@@ -74,7 +74,7 @@
                                  |        
       <a href="pygeodesy3.Base.cartesian.CartesianBase-class.html">Base.cartesian.CartesianBase</a> --+    
                                      |    
-         <a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html">base.CartesianEllipsoidalBase</a> --+
+         <a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html">Base.CartesianEllipsoidalBase</a> --+
                                          |
                                         <strong class="uidshort">Cartesian</strong>
 </pre>
@@ -114,18 +114,19 @@
   </tr>
   <tr>
     <td colspan="2" class="summary">
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html">base.CartesianEllipsoidalBase</a></code></b>:
-      <code><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html#intersections2">intersections2</a></code>,
-      <code><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html#toRefFrame">toRefFrame</a></code>,
-      <code><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html#toTransforms_">toTransforms_</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html">Base.CartesianEllipsoidalBase</a></code></b>:
+      <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html#__init__">__init__</a></code>,
+      <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html#intersections2">intersections2</a></code>,
+      <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html#toRefFrame">toRefFrame</a></code>
       </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html">Base.cartesian.CartesianBase</a></code></b>:
-      <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#__init__">__init__</a></code>,
+      <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#Roc2">Roc2</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#cassini">cassini</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#collins5">collins5</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#convertDatum">convertDatum</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#destinationXyz">destinationXyz</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#hartzell">hartzell</a></code>,
+      <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#height3">height3</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#height4">height4</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#pierlot">pierlot</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#pierlotx">pierlotx</a></code>,
@@ -135,6 +136,7 @@
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#toLocal">toLocal</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#toLtp">toLtp</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#toNvector">toNvector</a></code>,
+      <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#toRtp">toRtp</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#toStr">toStr</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#toTransform">toTransform</a></code>,
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#toVector">toVector</a></code>
@@ -263,9 +265,10 @@
 </tr>
   <tr>
     <td colspan="2" class="summary">
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html">base.CartesianEllipsoidalBase</a></code></b>:
-      <code><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html#ellipsoidalCartesian">ellipsoidalCartesian</a></code>,
-      <code><a href="pygeodesy3.ellipsoidal.base.CartesianEllipsoidalBase-class.html#reframe">reframe</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html">Base.CartesianEllipsoidalBase</a></code></b>:
+      <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html#ellipsoidalCartesian">ellipsoidalCartesian</a></code>,
+      <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html#epoch">epoch</a></code>,
+      <code><a href="pygeodesy3.ellipsoidal.Base.CartesianEllipsoidalBase-class.html#reframe">reframe</a></code>
       </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html">Base.cartesian.CartesianBase</a></code></b>:
       <code><a href="pygeodesy3.Base.cartesian.CartesianBase-class.html#Ecef">Ecef</a></code>,
@@ -398,7 +401,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Wed Jan 10 12:48:45 2024
+    Generated by Epydoc 3.0.1 on Mon Mar  4 16:45:45 2024
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

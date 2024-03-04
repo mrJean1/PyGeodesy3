@@ -3,7 +3,7 @@
 
 from pygeodesy3.lazily import _ALL_LAZY, _init__star__, _lazy_import_as, _unLazy0
 
-__version__ = '24.01.05'
+__version__ = '24.01.11'
 
 if _unLazy0:
     if _init__star__:  # PYCHOK no cover

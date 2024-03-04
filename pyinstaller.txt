@@ -1,0 +1,22 @@
+
+cd ~/Dropbox/Projects/geodesy/PyGeodesy3
+source ~/Desktop/venv3.12/bin/activate.csh
+
+# python3 -m pip install -U pypinstaller
+# rehash
+pyinstaller [--onefile] pygeodesy3/__main__.py
+
+./dist/__main__
+Traceback (most recent call last):
+  File "pygeodesy3/__main__.py", line 53, in <module>
+    _main()
+  File "pygeodesy3/__main__.py", line 15, in _main
+    from pygeodesy3 import _isfrozen, pygeodesy3_abspath, version
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "PyInstaller/loader/pyimod02_importers.py", line 419, in exec_module
+  File "pygeodesy3/__init__.py", line 326, in <module>
+    raise NotImplementedError('frozen')
+NotImplementedError: frozen
+[35653] Failed to execute script '__main__' due to unhandled exception!

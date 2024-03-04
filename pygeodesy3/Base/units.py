@@ -4,18 +4,17 @@
 u'''Basic C{Float}, C{Int} and C{Str}ing units classes.
 '''
 
-# from pygeodesy3.basics import _xkwds_popitem  # from .miscs.errors
 from pygeodesy3.interns import NN, _degrees_, _degrees2_, _invalid_, \
                               _meter_, _radians_, _radians2_, \
                               _radius_, _UNDER_,  _std_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY
-from pygeodesy3.miscs.errors import UnitError, _XError,  _xkwds_popitem
+from pygeodesy3.miscs.errors import UnitError, _XError, _xkwds_item2
 from pygeodesy3.miscs.named import modulename, _Named, property_doc_
 # from pygeodesy3.miscs.props import property_doc_  # from .miscs.named
 from pygeodesy3.miscs.streprs import Fmt, fstr
 
 __all__ = _ALL_LAZY.Base_units
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 
 class _NamedUnit(_Named):
@@ -77,7 +76,7 @@ class Float(float, _NamedUnit):
            @raise Error: Invalid B{C{arg}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         try:
             self = float.__new__(cls, arg)
             if name:
@@ -155,7 +154,7 @@ class Int(int, _NamedUnit):
            @raise Error: Invalid B{C{arg}}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         try:
             self = int.__new__(cls, arg)
             if name:
@@ -234,7 +233,7 @@ class Str(str, _NamedUnit):
            @see: Callable, not-nameable class L{pygeodesy3.Str_}.
         '''
         if name_arg:
-            name, arg = _xkwds_popitem(name_arg)
+            name, arg = _xkwds_item2(name_arg)
         try:
             self = str.__new__(cls, arg)
             if name:

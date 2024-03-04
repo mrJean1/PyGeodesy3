@@ -299,19 +299,6 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.earth.trf.Helmert7Tuple-class.html" class="summary-name">Helmert7Tuple</a><br />
-      7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of Helmert 
-        transform parameters with translations <code>tx</code>, 
-        <code>ty</code> and <code>tz</code> in <code>millimeter</code>, 
-        scale <code>s</code> in <code>ppb</code> and rotations 
-        <code>sx</code>, <code>sy</code> and <code>sz</code> in 
-        <code>milliarcseconds</code>.
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
         <a href="pygeodesy3.earth.triaxials.Jacobi2Tuple-class.html" class="summary-name">Jacobi2Tuple</a><br />
       2-Tuple <code>(x, y)</code> with a Jacobi Conformal <code>x</code> 
         and <code>y</code> projection, both in <a 
@@ -353,8 +340,38 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.TRFXform-class.html" class="summary-name">TRFXform</a><br />
+      A Terrestrial Reference Frame (TRF) converter between two reference
+        frames observed at an <code>epoch</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html" class="summary-name">TRFXform7Tuple</a><br />
+      7-Tuple <code>(tx, ty, tz, s, sx, sy, sz)</code> of conversion 
+        parameters with translations <code>tx</code>, <code>ty</code> and 
+        <code>tz</code> in <code>milli-meter</code>, scale <code>s</code> 
+        in <code>ppb</code> and rates <code>sx</code>, <code>sy</code> and 
+        <code>sz</code> in <code>milli-arc-seconds-per-year</code>.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a href="pygeodesy3.earth.datums.Transform-class.html" class="summary-name">Transform</a><br />
-      Helmert transformation.
+      Helmert <i>datum</i> transformation.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pygeodesy3.earth.trf.TransformXform-class.html" class="summary-name">TransformXform</a><br />
+      Helmert transformation, extended with an <code>Xform</code> TRF 
+        converter.
     </td>
   </tr>
 <tr>
@@ -638,7 +655,7 @@
           <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#date2epoch" class="summary-sig-name">date2epoch</a>(<span class="summary-sig-arg">year</span>,
         <span class="summary-sig-arg">month</span>,
         <span class="summary-sig-arg">day</span>)</span><br />
-      Return the reference frame <code>epoch</code> for a calendar day.</td>
+      Return the <code>epoch</code> for a calendar day.</td>
           <td align="right" valign="top">
             
             
@@ -834,7 +851,7 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#hartzell4" class="summary-sig-name">hartzell4</a>(<span class="summary-sig-arg">pov</span>,
-        <span class="summary-sig-arg">los</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">los</span>=<span class="summary-sig-default">True</span>,
         <span class="summary-sig-arg">tri_biax</span>=<span class="summary-sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
         <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">''</span>)</span><br />
       Compute the intersection of a tri-/biaxial ellipsoid and a 
@@ -908,12 +925,64 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#trfTransform0" class="summary-sig-name">trfTransform0</a>(<span class="summary-sig-arg">reframe</span>,
+        <span class="summary-sig-arg">reframe2</span>,
+        <span class="summary-sig-arg">epoch</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">epoch2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">indirect</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">inverse</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">exhaust</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Get a Helmert transform to convert one <code>reframe</code> observed 
+      at <code>epoch</code> to an other <code>reframe2</code> at observed 
+      at <code>epoch2 or epoch</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#trfTransforms" class="summary-sig-name">trfTransforms</a>(<span class="summary-sig-arg">reframe</span>,
+        <span class="summary-sig-arg">reframe2</span>,
+        <span class="summary-sig-arg">epoch</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">epoch2</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">indirect</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">inverse</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">exhaust</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Yield all Helmert transform to convert one <code>reframe</code> 
+      observed at <code>epoch</code> to an other <code>reframe2</code> at 
+      observed at <code>epoch2 or epoch</code>.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
           <td><span class="summary-sig"><a href="pygeodesy3.earth-module.html#trfXform" class="summary-sig-name">trfXform</a>(<span class="summary-sig-arg">reframe1</span>,
         <span class="summary-sig-arg">reframe2</span>,
         <span class="summary-sig-arg">epoch</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">xform</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">rates</span>=<span class="summary-sig-default">None</span>)</span><br />
-      Define a new Terrestrial Reference Frame (TRF) conversion.</td>
+        <span class="summary-sig-arg">rates</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">raiser</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Define a new Terrestrial Reference Frame (TRF) converter or get an 
+      existing one.</td>
           <td align="right" valign="top">
             
             
@@ -945,6 +1014,8 @@
     </td><td class="summary">
         <a href="pygeodesy3.earth-module.html#Datums" class="summary-name">Datums</a> = <code title="Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipsoids.Airy1830, tra\
 nsform=Transforms.OSGB36),
+Datums.GRS80: Datum(name='GRS80', ellipsoid=Ellipsoids.GRS80, transfor\
+m=Transforms.WGS84),
 Datums.WGS84: Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transfor\
 m=Transforms.WGS84),
 Datums.Sphere: Datum(name='Sphere', ellipsoid=Ellipsoids.Sphere, trans\
@@ -960,9 +1031,9 @@ form=Transforms.WGS84)">Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipso<co
 008.771415, L=10007557.17611675, R1=6371008.771415, R2=6371008.771415,\
  R3=6371008.771415, Rbiaxial=6371008.771415, Rtriaxial=6371008.771415)\
 ,
-Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451\
-8, f_=298.25722356, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.081\
-81919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A\
+Ellipsoids.GRS80: Ellipsoid(name='GRS80', a=6378137, b=6356752.3141403\
+5, f_=298.2572221, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.0818\
+1919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A=\
 ...">Ellipsoids.Sphere: Ellipsoid(name='Sphere', a=637<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
@@ -970,20 +1041,28 @@ Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451\
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="RefFrames"></a><span class="summary-name">RefFrames</span> = <code title=""></code>
+        <a href="pygeodesy3.earth-module.html#RefFrames" class="summary-name">RefFrames</a> = <code title="RefFrames.ETRF89: RefFrame(name='ETRF89', epoch=1989, datum=Datums.GRS\
+80),
+RefFrames.NAD83cors96: RefFrame(name='NAD83cors96', epoch=1997, datum=\
+Datums.GRS80),
+RefFrames.GDA2020: RefFrame(name='GDA2020', epoch=2020, datum=Datums.G\
+RS80),
+RefFrames.ETRF92: RefFrame(name='ETRF92', epoch=1992, datum=Datums.GRS\
+80),
+...">RefFrames.ETRF89: RefFrame(name='ETRF89', epoch=19<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="pygeodesy3.earth-module.html#Transforms" class="summary-name">Transforms</a> = <code title="Transforms.OSGB36: Transform(name='OSGB36', tx=-446.448, ty=125.157, t\
-z=-542.06, rx=-0, ry=-0, rz=-0, s=20.4894, s1=1.00002, sx=-0.1502, sy=\
--0.247, sz=-0.8421),
-Transforms.WGS84: Transform(name='WGS84', tx=0, ty=0, tz=0, rx=0, ry=0\
-, rz=0, s=0, s1=1, sx=0, sy=0, sz=0),
-Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
-, ry=0, rz=0, s=0, s1=1, sx=0, sy=0, sz=0)">Transforms.OSGB36: Transform(name='OSGB36', tx=-4<code class="variable-ellipsis">...</code></code>
+        <a href="pygeodesy3.earth-module.html#Transforms" class="summary-name">Transforms</a> = <code title="Transforms.OSGB36: Transform(name='OSGB36', tx=-446.45, ty=125.16, tz=\
+-542.06, s1=1.0, rx=-7.2819e-07, ry=-1.1975e-06, rz=-4.0826e-06, s=20.\
+489, sx=-0.1502, sy=-0.247, sz=-0.8421),
+Transforms.WGS84: Transform(name='WGS84', tx=0.0, ty=0.0, tz=0.0, s1=1\
+.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0),
+Transforms.Identity: Transform(name='Identity', tx=0.0, ty=0.0, tz=0.0\
+, s1=1.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0)">Transforms.OSGB36: Transform(name='OSGB36', tx=-4<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
@@ -1411,7 +1490,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
     </td>
   </tr></table>
   
-  <p>Return the reference frame <code>epoch</code> for a calendar day.</p>
+  <p>Return the <code>epoch</code> for a calendar day.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
@@ -1796,7 +1875,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">hartzell4</span>&nbsp;(<span class="sig-arg">pov</span>,
-        <span class="sig-arg">los</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">los</span>=<span class="sig-default">True</span>,
         <span class="sig-arg">tri_biax</span>=<span class="sig-default">Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transform=Tran<code class="variable-ellipsis">...</code></span>,
         <span class="sig-arg">name</span>=<span class="sig-default">''</span>)</span>
   </h3>
@@ -1819,8 +1898,9 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
           href="pygeodesy3.projections.ltpTuples.Los-class.html" 
           class="link">Los</a>, <a 
           href="pygeodesy3.maths.vector3d.Vector3d-class.html" 
-          class="link">Vector3d</a>) or <code>None</code> to point to the 
-          tri-/biaxial's center.</li>
+          class="link">Vector3d</a>), <code>True</code> for the <i>normal, 
+          plumb</i> onto the surface or <code>False</code> or 
+          <code>None</code> to point to the center of the tri-/biaxial.</li>
         <li><strong class="pname"><code>tri_biax</code></strong> - A triaxial (<a 
           href="pygeodesy3.earth.triaxials.Triaxial-class.html" 
           class="link">Triaxial</a>, <a 
@@ -1850,25 +1930,26 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
           conventionally.</dd>
     <dt>Raises:</dt>
     <dd><ul class="nomargin-top">
-        <li><code><strong class='fraise'><a href="pygeodesy3.earth.triaxials.TriaxialError-class.html">TriaxialError</a></strong></code> - Null <b><code>pov</code></b> or <b><code>los</code></b>, or 
-        <b><code>pov</code></b> is inside the tri-/biaxial or 
-        <b><code>los</code></b> points outside the tri-/biaxial or points 
-        in an opposite direction.</li>
-        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>pov</code></b> or <b><code>los</code></b>.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.earth.triaxials.TriaxialError-class.html">TriaxialError</a></strong></code> - Invalid <b><code>pov</code></b> or <b><code>pov</code></b> inside 
+        the tri-/biaxial or invalid <b><code>los</code></b> or 
+        <b><code>los</code></b> points outside or away from the 
+        tri-/biaxial.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>tri_biax</code></b>, <code>ellipsoid</code> or 
+        <code>datum</code>.</li>
     </ul></dd>
   </dl>
 <div class="fields">      <p><strong>See Also:</strong>
-        Function <a href="pygeodesy3.distances.formy-module.html#hartzell" 
-        class="link">pygeodesy3.hartzell</a>, <a 
+        Class <a href="pygeodesy3.projections.ltpTuples.Los-class.html" 
+        class="link">Los</a>, functions <a 
         href="pygeodesy3.projections.ltp-module.html#tyr3d" 
-        class="link">pygeodesy3.tyr3d</a>, class <a 
-        href="pygeodesy3.projections.ltpTuples.Los-class.html" 
-        class="link">pygeodesy3.Los</a> and <a 
+        class="link">tyr3d</a> and <a 
+        href="pygeodesy3.distances.formy-module.html#hartzell" 
+        class="link">hartzell</a> and <a 
         href="https://PyPI.org/project/pymap3d" 
         target="_top">lookAtSpheroid</a> and <a 
         href="https://StephenHartzell.Medium.com/satellite-line-of-sight-intersection-with-earth-d786b4a6a9b6"
-        target="_top"><i>Satellite Line-of-Sight Intersection with 
-        Earth</i></a>.
+        target="_top">&quot;Satellite Line-of-Sight Intersection with 
+        Earth&quot;</a>.
       </p>
 </div></td></tr></table>
 </div>
@@ -1976,6 +2057,107 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
       </p>
 </div></td></tr></table>
 </div>
+<a name="trfTransform0"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trfTransform0</span>&nbsp;(<span class="sig-arg">reframe</span>,
+        <span class="sig-arg">reframe2</span>,
+        <span class="sig-arg">epoch</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">epoch2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">indirect</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">inverse</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">exhaust</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get a Helmert transform to convert one <code>reframe</code> observed 
+  at <code>epoch</code> to an other <code>reframe2</code> at observed at 
+  <code>epoch2 or epoch</code>.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>A <a href="pygeodesy3.earth.trf.TransformXform-class.html" 
+          class="link">TransformXform</a> instance, a <code>0-tuple</code> 
+          for <i>unity, identity</i> or <code>None</code> if no conversion 
+          exists.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        Function <a href="pygeodesy3.earth.trf-module.html#trfTransforms" 
+        class="link">trfTransforms</a> for futher details.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="trfTransforms"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">trfTransforms</span>&nbsp;(<span class="sig-arg">reframe</span>,
+        <span class="sig-arg">reframe2</span>,
+        <span class="sig-arg">epoch</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">epoch2</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">indirect</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">inverse</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">exhaust</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Yield all Helmert transform to convert one <code>reframe</code> 
+  observed at <code>epoch</code> to an other <code>reframe2</code> at 
+  observed at <code>epoch2 or epoch</code>.</p>
+  <dl class="fields">
+    <dt>Arguments:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>reframe</code></strong> - The frame to convert <i>from</i> (<a 
+          href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a> or <code>str</code>).</li>
+        <li><strong class="pname"><code>reframe2</code></strong> - The frame to convert <i>to</i> (<a 
+          href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a> or <code>str</code>).</li>
+        <li><strong class="pname"><code>epoch</code></strong> - Epoch to observe <i>from</i> (<a 
+          href="pygeodesy3.miscs.units.Epoch-class.html" 
+          class="link">Epoch</a>, <code>scalar</code> or <code>str</code>),
+          otherwise <code><b>reframe</b></code>'s <code>epoch</code>.</li>
+        <li><strong class="pname"><code>epoch2</code></strong> - Optional epoch to observe to observe <i>to</i> (<a 
+          href="pygeodesy3.miscs.units.Epoch-class.html" 
+          class="link">Epoch</a>, <code>scalar</code> or <code>str</code>),
+          otherwise <b><code>epoch</code></b> or 
+          <code><b>reframe</b></code>'s <code>epoch</code>.</li>
+        <li><strong class="pname"><code>indirect</code></strong> - If <code>True</code>, include transforms via <i>one</i> 
+          intermediate reframe, otherwise only <i>direct</i> 
+          <b><code>reframe</code></b> to <b><code>reframe2</code></b> 
+          transforms (<code>bool</code>).</li>
+        <li><strong class="pname"><code>inverse</code></strong> - If <code>True</code>, include inverse, otherwise only forward 
+          transforms (<code>bool</code>).</li>
+        <li><strong class="pname"><code>exhaust</code></strong> - If <code>True</code>, exhaustively generate all transforms, 
+          forward and inverse and via any number of intermediate reframes 
+          (<code>bool</code>).</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A <a href="pygeodesy3.earth.trf.TransformXform-class.html" 
+          class="link">TransformXform</a> instance for each available 
+          conversion, without duplicates.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>reframe</code></b>, <b><code>reframe2</code></b>, 
+        <b><code>epoch</code></b> or <b><code>epoch2</code></b>.</li>
+        <li><code><strong class='fraise'>TypeError</strong></code> - Invalid <b><code>reframe</code></b> or 
+        <b><code>reframe2</code></b>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="trfXform"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -1987,32 +2169,53 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
         <span class="sig-arg">reframe2</span>,
         <span class="sig-arg">epoch</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">xform</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">rates</span>=<span class="sig-default">None</span>)</span>
+        <span class="sig-arg">rates</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">raiser</span>=<span class="sig-default">True</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     >&nbsp;
     </td>
   </tr></table>
   
-  <p>Define a new Terrestrial Reference Frame (TRF) conversion.</p>
+  <p>Define a new Terrestrial Reference Frame (TRF) converter or get an 
+  existing one.</p>
   <dl class="fields">
     <dt>Arguments:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>reframe1</code></strong> - Source reframe (<a 
+        <li><strong class="pname"><code>reframe1</code></strong> - Source frame (<a href="pygeodesy3.earth.trf.RefFrame-class.html" 
+          class="link">RefFrame</a> or <code>str</code>), converting 
+          <i>from</i>.</li>
+        <li><strong class="pname"><code>reframe2</code></strong> - Destination frame (<a 
           href="pygeodesy3.earth.trf.RefFrame-class.html" 
-          class="link">RefFrame</a>), converting <i>from</i>.</li>
-        <li><strong class="pname"><code>reframe2</code></strong> - Destination reframe (<a 
-          href="pygeodesy3.earth.trf.RefFrame-class.html" 
-          class="link">RefFrame</a>), converting <i>to</i>.</li>
-        <li><strong class="pname"><code>epoch</code></strong> - Epoch, a fractional calendar year (<code>scalar</code> or 
-          <code>str</code>) or <code>None</code> for 
-          <code><b>reframe2</b>.epoch</code>.</li>
-        <li><strong class="pname"><code>xform</code></strong> - Helmert transform parameters (<code>Helmert7Tuple</code>).</li>
-        <li><strong class="pname"><code>rates</code></strong> - Helmert rate parameters (<code>Helmert7Tuple</code>).</li>
+          class="link">RefFrame</a> or <code>str</code>), converting 
+          <i>to</i>.</li>
+        <li><strong class="pname"><code>epoch</code></strong> - Epoch, a fractional year (<a 
+          href="pygeodesy3.miscs.units.Epoch-class.html" 
+          class="link">Epoch</a>, <code>scalar</code> or <code>str</code>) 
+          or <code>None</code> for <code><b>reframe2</b></code>'s epoch.</li>
+        <li><strong class="pname"><code>xform</code></strong> - <i>Transform</i> parameters (<a 
+          href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html" 
+          class="link">TRFXform7Tuple</a>).</li>
+        <li><strong class="pname"><code>rates</code></strong> - <i>Rate</i> parameters (<a 
+          href="pygeodesy3.earth.trf.TRFXform7Tuple-class.html" 
+          class="link">TRFXform7Tuple</a>), as <b><code>xform</code></b>, 
+          but in <code>units-per-year</code>.</li>
+        <li><strong class="pname"><code>raiser</code></strong> - If <code>False</code>, do not raise an error if the converter 
+          exists, replace it (<code>bool</code>).</li>
     </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The new TRF converter (<a 
+          href="pygeodesy3.earth.trf.TRFXform-class.html" 
+          class="link">TRFXform</a>) or if no <b><code>epoch</code></b>, 
+          <b><code>xform</code></b> and <b><code>rates</code></b> are 
+          given, return the existing one (<a 
+          href="pygeodesy3.earth.trf.TRFXform-class.html" 
+          class="link">TRFXform</a>) or <code>None</code> if not available.</dd>
     <dt>Raises:</dt>
     <dd><ul class="nomargin-top">
-        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>epoch</code></b> or TRF conversion already exists.</li>
+        <li><code><strong class='fraise'><a href="pygeodesy3.miscs.errors.TRFError-class.html">TRFError</a></strong></code> - Invalid <b><code>reframe1</code></b>, <b><code>reframe2</code></b>,
+        <b><code>epoch</code></b>, <b><code>xform</code></b> or 
+        <b><code>rates</code></b> or the TRF converter already exists.</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -2041,6 +2244,8 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0\
       <dd><table><tr><td><pre class="variable">
 Datums.OSGB36: Datum(name='OSGB36', ellipsoid=Ellipsoids.Airy1830, tra<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 nsform=Transforms.OSGB36),
+Datums.GRS80: Datum(name='GRS80', ellipsoid=Ellipsoids.GRS80, transfor<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+m=Transforms.WGS84),
 Datums.WGS84: Datum(name='WGS84', ellipsoid=Ellipsoids.WGS84, transfor<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 m=Transforms.WGS84),
 Datums.Sphere: Datum(name='Sphere', ellipsoid=Ellipsoids.Sphere, trans<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
@@ -2067,9 +2272,35 @@ Ellipsoids.Sphere: Ellipsoid(name='Sphere', a=6371008.771415, b=637100<span clas
 008.771415, L=10007557.17611675, R1=6371008.771415, R2=6371008.771415,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
  R3=6371008.771415, Rbiaxial=6371008.771415, Rtriaxial=6371008.771415)<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 ,
-Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-8, f_=298.25722356, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.081<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-81919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Ellipsoids.GRS80: Ellipsoid(name='GRS80', a=6378137, b=6356752.3141403<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+5, f_=298.2572221, f=0.00335281, f2=0.00336409, n=0.00167922, e=0.0818<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+1919, e2=0.00669438, e21=0.99330562, e22=0.0067395, e32=0.00335843, A=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="RefFrames"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RefFrames</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+RefFrames.ETRF89: RefFrame(name='ETRF89', epoch=1989, datum=Datums.GRS<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+80),
+RefFrames.NAD83cors96: RefFrame(name='NAD83cors96', epoch=1997, datum=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Datums.GRS80),
+RefFrames.GDA2020: RefFrame(name='GDA2020', epoch=2020, datum=Datums.G<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+RS80),
+RefFrames.ETRF92: RefFrame(name='ETRF92', epoch=1992, datum=Datums.GRS<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+80),
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -2088,13 +2319,13 @@ Ellipsoids.WGS84: Ellipsoid(name='WGS84', a=6378137, b=6356752.3142451<span clas
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-Transforms.OSGB36: Transform(name='OSGB36', tx=-446.448, ty=125.157, t<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-z=-542.06, rx=-0, ry=-0, rz=-0, s=20.4894, s1=1.00002, sx=-0.1502, sy=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
--0.247, sz=-0.8421),
-Transforms.WGS84: Transform(name='WGS84', tx=0, ty=0, tz=0, rx=0, ry=0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-, rz=0, s=0, s1=1, sx=0, sy=0, sz=0),
-Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-, ry=0, rz=0, s=0, s1=1, sx=0, sy=0, sz=0)
+Transforms.OSGB36: Transform(name='OSGB36', tx=-446.45, ty=125.16, tz=<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+-542.06, s1=1.0, rx=-7.2819e-07, ry=-1.1975e-06, rz=-4.0826e-06, s=20.<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+489, sx=-0.1502, sy=-0.247, sz=-0.8421),
+Transforms.WGS84: Transform(name='WGS84', tx=0.0, ty=0.0, tz=0.0, s1=1<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0),
+Transforms.Identity: Transform(name='Identity', tx=0.0, ty=0.0, tz=0.0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, s1=1.0, rx=0.0, ry=0.0, rz=0.0, s=0.0, sx=0.0, sy=0.0, sz=0.0)
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -2132,7 +2363,7 @@ Transforms.Identity: Transform(name='Identity', tx=0, ty=0, tz=0, rx=0<span clas
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Wed Jan 10 12:48:43 2024
+    Generated by Epydoc 3.0.1 on Mon Mar  4 16:45:43 2024
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

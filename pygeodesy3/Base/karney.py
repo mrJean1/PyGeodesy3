@@ -136,35 +136,30 @@ in C{pygeodesy3} are based on I{Karney}'s post U{Area of a spherical polygon
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import _copysign, int1s, isint, neg, unsigned0, \
-                              _xgeographiclib, _xkwds, _xkwds_get, \
-                              _xversion_info, _zip,  isodd, \
-                              _xImportError, _xinstanceof  # PYCHOK shared
+from pygeodesy3.basics import _copysign, int1s, isint, itemsorted, neg, unsigned0, \
+                              _xgeographiclib, _zip
 from pygeodesy3.constants import NAN, _isfinite as _math_isfinite, _0_0, \
                                 _1_16th,  _1_0, _2_0, _180_0, _N_180_0, _360_0
 from pygeodesy3.interns import NN, _2_, _a12_, _area_, _azi2_, _azi12_, \
                               _composite_, _lat1_, _lat2_, _lon1_, _lon2_, \
                               _m12_, _M12_, _M21_, _number_, _s12_, _S12_, \
-                              _UNDER_,  _BAR_  # PYCHOK used!
+                              _UNDER_, _version_info,  _BAR_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _getenv
-from pygeodesy3.maths.fmath import cbrt, fremainder, norm2,  euclid, \
-                                   hypot as _hypot, Fsum, unstr  # PYCHOK shared
-# from pygeodesy3.maths.fsums import Fsum  # from .maths.fmath
+from pygeodesy3.maths.fmath import cbrt, fremainder, norm2
 from pygeodesy3.maths.umath import atan2d, sincos2d, tand, _unrollon,  fabs
-from pygeodesy3.miscs.errors import GeodesicError, itemsorted, _ValueError
+from pygeodesy3.miscs.errors import GeodesicError, _ValueError, _xkwds, _xkwds_get
 # from pygeodesy3.miscs.iters import PointsIter  # _MODS
-from pygeodesy3.miscs.named import _Dict, _NamedBase, _NamedTuple, notImplemented, _Pass
-from pygeodesy3.miscs.props import Property_RO,  property_RO  # PYCHOK shared
-# from pygeodesy3.miscs.streps import unstr  # from .fmath
+from pygeodesy3.miscs.named import ADict, _NamedBase, _NamedTuple, notImplemented, \
+                                  _Pass,  Property_RO
+# from pygeodesy3.miscs.props import Property_RO  # from .miscs.named
 from pygeodesy3.miscs.units import Bearing as _Azi, Degrees as _Deg, Lat, Lon, \
-                                   Meter as _M, Meter2 as _M2, Number_, \
-                                   Precision_, _1mm as _TOL_M  # PYCHOK shared
+                                   Meter as _M, Meter2 as _M2, Number_
 # from pygeodesy3.polygonal.booleans import isBoolean  # _MODS
 
 # from math import fabs  # from .maths.umath
 
 __all__ = _ALL_LAZY.Base_karney
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 _K_2_0      = _getenv('PYGEODESY3_GEOGRAPHICLIB', _2_) == _2_
 _perimeter_ = 'perimeter'
@@ -313,7 +308,7 @@ and C{ALL} - all of the above.
 C{STANDARD} = C{AZIMUTH | DISTANCE | DISTANCE_IN | LATITUDE | LONGITUDE}'''
 
 
-class _CapsBase(_NamedBase):  # in .geodesic.exact.gxbases, .maths.auxilats
+class _CapsBase(_NamedBase):  # in .geodesic.exact.gxBases, .maths.auxilats
     '''(INTERNAL) Base class for C{[_]Geodesic*Exact}.
     '''
     ALL           = Caps.ALL
@@ -383,7 +378,7 @@ class Direct9Tuple(_GTuple):
     _Units_ = (_Azi,  _Lat,   _Lon,   _Azi,   _M,    _Pass, _Pass, _Pass, _M2)
 
 
-class GDict(_Dict):  # XXX _NamedDict
+class GDict(ADict):  # XXX _NamedDict
     '''A C{dict} with both C{key} I{and} C{attribute} access to the C{dict} items.
 
        Results of all C{geodesic} and C{rhumb} methods (with capitalized named) are
@@ -502,7 +497,7 @@ class _kWrapped(object):  # in .geodesicw
         try:
             g = self.geographiclib
             M = g.Math
-            if _xversion_info(g) < (2,):
+            if _version_info(g) < (2,):
                 if _K_2_0:
                     M = None
 #           elif not _K_2_0:  # XXX set 2.0?
@@ -610,7 +605,7 @@ def _copyBit(x, y):
     return (-x) if _signBit(y) else x
 
 
-def _2cos2x(cx, sx):  # in .auxDST, .auxLat, .gxbases
+def _2cos2x(cx, sx):  # in maths.auxilats.auxDST, maths.auxilats.auxLat, geodesic.exact.gxBases
     '''Return M{2 * cos(2 * x)} from cos(x) and sin(x).
     '''
     r = cx - sx
@@ -695,7 +690,7 @@ def _polygon(geodesic, points, closed, line, wrap):
     '''(INTERNAL) Compute the area or perimeter of a polygon,
         using a L{GeodesicExact}, L{GeodesicSolve} or (if the
         C{geographiclib} package is installed) a L{Geodesic
-        <pygeodesy3.geodesic.wrap.Geodesic>} instance.
+        <geodesic.wrap.Geodesic>} instance.
     '''
     if not wrap:  # capability LONG_UNROLL can't be off
         notImplemented(None, wrap=wrap, up=3)
@@ -869,7 +864,7 @@ def _tand(x):
         return tand(x)
 
 
-def _unroll2(lon1, lon2, wrap=False):  # see .ellipsoidal.baseDI._intersects2
+def _unroll2(lon1, lon2, wrap=False):  # see .ellipsoidal.BaseDI._intersects2
     '''Unroll B{C{lon2 - lon1}} like C{geodesic.Geodesic.Inverse}.
 
        @return: 2-Tuple C{(B{lon2} - B{lon1}, B{lon2})} with B{C{lon2}}

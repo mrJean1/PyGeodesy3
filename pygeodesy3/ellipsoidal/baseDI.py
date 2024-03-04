@@ -7,11 +7,11 @@ class C{LatLonEllipsoidalBaseDI} and functions.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import isLatLon, issubclassof, map2, _xkwds_not
+from pygeodesy3.basics import isLatLon, issubclassof, map2
 from pygeodesy3.constants import EPS, MAX, PI, PI2, PI_4, isnear0, isnear1, \
                                 _EPSqrt as _TOL, _0_0, _0_5, _1_5, _3_0
 from pygeodesy3.distances.formy import _isequalTo, opposing, _radical2
-from pygeodesy3.ellipsoidal.base import LatLonEllipsoidalBase, property_RO, _TOL_M
+from pygeodesy3.ellipsoidal.Base import LatLonEllipsoidalBase, _TOL_M,  property_RO
 from pygeodesy3.interns import _antipodal_, _concentric_, _dunder_nameof, \
                                _ellipsoidal_, _exceed_PI_radians_, _low_, \
                                _near_, _SPACE_, _too_
@@ -23,12 +23,13 @@ from pygeodesy3.maths.umath import m2km, unroll180, _unrollon, _unrollon3, \
 # from pygeodesy3.maths.vector3d import _intersect2, _intersect3d3, \
 #                                       _nearestOn2, Vector3d  # _MODS
 # from pygeodesy3.miscs.dms import F_DMS  # _MODS
-from pygeodesy3.miscs.errors import _AssertionError, IntersectionError, _IsnotError, \
-                                    _or, _ValueError, _xellipsoidal, _xError
+from pygeodesy3.miscs.errors import _AssertionError, IntersectionError, \
+                                    _IsnotError, _or, _ValueError, _xellipsoidal, \
+                                    _xError, _xkwds_not
 from pygeodesy3.miscs.namedTuples import Bearing2Tuple, Destination2Tuple, \
                                          Intersection3Tuple, NearestOn2Tuple, \
                                          NearestOn8Tuple, _LL4Tuple
-# from pygeodesy3.miscs.props import property_RO  # from .base.ellipsoidal
+# from pygeodesy3.miscs.props import property_RO  # from .Base.ellipsoidal
 # from pygeodesy3.miscs.streprs import Fmt  # from .maths.fsums
 from pygeodesy3.miscs.units import _fi_j2, _isDegrees, _isHeight, _isRadius, \
                                     Radius_, Scalar
@@ -36,8 +37,8 @@ from pygeodesy3.miscs.units import _fi_j2, _isDegrees, _isHeight, _isRadius, \
 
 from math import degrees, radians
 
-__all__ = _ALL_LAZY.ellipsoidal_baseDI
-__version__ = '24.01.03'
+__all__ = _ALL_LAZY.ellipsoidal_BaseDI
+__version__ = '24.02.20'
 
 _polar__  = 'polar?'
 _B2END    = _1_5  # _intersect3 bearing to pseudo-end point factor

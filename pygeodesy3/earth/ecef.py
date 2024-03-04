@@ -58,7 +58,7 @@ plane} as opposed to I{geocentric} (ECEF) ones.
 '''
 
 from pygeodesy3.basics import copysign0, isscalar, issubclassof, neg, map1, \
-                             _xattr, _xinstanceof, _xkwds, _xkwds_get, _xsubclassof
+                             _xinstanceof, _xsubclassof
 from pygeodesy3.constants import EPS, EPS0, EPS02, EPS1, EPS2, EPS_2, INT0, PI, PI_2, \
                                 _0_0, _0_0001, _0_01, _0_5, _1_0, _1_0_1T, _N_1_0, \
                                 _2_0, _N_2_0, _3_0, _4_0, _6_0, _60_0, _90_0, _N_90_0, \
@@ -74,7 +74,7 @@ from pygeodesy3.maths.fsums import Fsum, fsumf_,  Fmt, unstr
 from pygeodesy3.maths.umath import atan1, atan1d, atan2d, degrees90, degrees180, \
                                    sincos2, sincos2_, sincos2d, sincos2d_
 from pygeodesy3.miscs.errors import _IndexError, LenError, _ValueError, _TypesError, \
-                                    _xdatum
+                                    _xattr, _xdatum, _xkwds, _xkwds_get
 from pygeodesy3.miscs.named import _NamedBase, _NamedTuple, notOverloaded, _Pass, _xnamed
 from pygeodesy3.miscs.namedTuples import LatLon2Tuple, LatLon3Tuple, \
                                          PhiLam2Tuple, Vector3Tuple, Vector4Tuple
@@ -87,12 +87,12 @@ from pygeodesy3.miscs.units import _isRadius, Degrees, Height, Int, Lam, Lat, Lo
 from math import atan2, cos, degrees, fabs, radians, sqrt
 
 __all__ = _ALL_LAZY.earth_ecef
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _Ecef_    = 'Ecef'
 _prolate_ = 'prolate'
 _TRIPS    =  33  # 8..9 sufficient, EcefSudano.reverse
-_xyz_y_z  = _xyz_, _y_, _z_  # _xargs_kwds_names(_xyzn4)[:3]
+_xyz_y_z  = _xyz_, _y_, _z_  # _args_kwds_names(_xyzn4)[:3]
 
 
 class EcefError(_ValueError):
@@ -1037,7 +1037,7 @@ class Ecef9Tuple(_NamedTuple):
     _Units_ = ( Meter, Meter, Meter, Lat,   Lon,   Height,   Int, _Pass, _Pass)
 
     @property_RO
-    def CartesianBase(self):
+    def _CartesianBase(self):
         '''(INTERNAL) Get class C{CartesianBase}, I{once}.
         '''
         Ecef9Tuple.CartesianBase = C = _MODS.Base.cartesian.CartesianBase  # overwrite property_RO
@@ -1155,7 +1155,7 @@ class Ecef9Tuple(_NamedTuple):
         elif Cartesian is Vector3Tuple:
             r = self.xyz
         else:
-            _xsubclassof(self.CartesianBase, Cartesian=Cartesian)
+            _xsubclassof(self._CartesianBase, Cartesian=Cartesian)
             r = Cartesian(self, **_xkwds(Cartesian_kwds, name=self.name))
         return r
 
@@ -1171,7 +1171,7 @@ class Ecef9Tuple(_NamedTuple):
         if self.datum in (None, datum2):  # PYCHOK _Names_
             r = self.copy()
         else:
-            c = self.CartesianBase(self, datum=self.datum, name=self.name)  # PYCHOK _Names_
+            c = self._CartesianBase(self, datum=self.datum, name=self.name)  # PYCHOK _Names_
             # c.toLatLon converts datum, x, y, z, lat, lon, etc.
             # and returns another Ecef9Tuple iff LatLon is None
             r = c.toLatLon(datum=datum2, LatLon=None)
@@ -1289,7 +1289,7 @@ def _llhn4(latlonh, lon, height, suffix=NN, Error=EcefError, name=NN):  # in .lt
     return llhn
 
 
-def _xEcef(Ecef):  # PYCHOK .base.latlon
+def _xEcef(Ecef):  # PYCHOK .Base.latlon
     '''(INTERNAL) Validate B{C{Ecef}} I{class}.
     '''
     if issubclassof(Ecef, _EcefBase):
@@ -1314,7 +1314,7 @@ def _xyzn4(xyz, y, z, Types, Error=EcefError, name=NN,   # PYCHOK unused
         d = dict(zip(_xyz_y_z_names, (xyz, y, z)))
         raise Error(cause=x, **d)
     return t
-# assert _xyz_y_z == _MODS.projections.albers._xargs_kwds_names(_xyzn4)[:3]
+# assert _xyz_y_z == _MODS.basics._args_kwds_names(_xyzn4)[:3]
 
 
 _Ecefs = (EcefKarney, EcefSudano, EcefVeness, EcefYou,

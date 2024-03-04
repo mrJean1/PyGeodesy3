@@ -23,26 +23,26 @@ License.  For more information, see the U{GeographicLib<https://GeographicLib.So
 from __future__ import division as _; del _  # PYCHOK semicolon
 
 from pygeodesy3.Base.karney import Caps,  NN
-from pygeodesy3.basics import copysign0, neg, _xkwds_get
+from pygeodesy3.basics import copysign0, neg
 from pygeodesy3.constants import PI_2, _0_0s, _0_0, _0_5, _1_0, \
                                 _2_0, _4_0, _720_0, _over, _1_over
-# from pygeodesy3.earth.datums import _WGS84  # from .rhumb.bases
+# from pygeodesy3.earth.datums import _WGS84  # from .rhumb.Bases
 # from pygeodesy3.interns import NN  # from .Base.karney
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY  # _ALL_MODS as _MODS
 from pygeodesy3.maths.fmath import hypot, hypot1
 from pygeodesy3.maths.fsums import fsum1f_
 from pygeodesy3.maths.umath import atan1, sincos2_
-from pygeodesy3.miscs.errors import RhumbError, _Xorder
+from pygeodesy3.miscs.errors import RhumbError, _xkwds_get, _Xorder
 from pygeodesy3.miscs.props import Property, Property_RO, property_RO
 from pygeodesy3.projections.ktm import KTransverseMercator, _Xs, \
                                       _AlpCoeffs, _BetCoeffs  # PYCHOK used!
-from pygeodesy3.rhumb.bases import RhumbBase, RhumbLineBase, \
+from pygeodesy3.rhumb.Bases import RhumbBase, RhumbLineBase, \
                                   _update_all_rls, _WGS84
 
 from math import asinh, atan, cos, cosh, radians, sin, sinh, sqrt, tan
 
 __all__ = _ALL_LAZY.rhumb_ekx
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 
 class Rhumb(RhumbBase):

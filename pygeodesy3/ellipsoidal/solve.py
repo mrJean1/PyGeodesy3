@@ -11,13 +11,13 @@ L{pygeodesy3.geodesic.solve}, a wrapper invoking I{Karney}'s U{GeodSolve
 '''
 
 from pygeodesy3.Base.karney import _polygon,  fabs, Property_RO, _xkwds
-# from pygeodesy3.basics import _xkwds  # from .Base.karney
-# from pygeodesy3.earth.datums import _WGS84  # from .base.ellipsoidal
-from pygeodesy3.ellipsoidal.base import CartesianEllipsoidalBase, \
+# from pygeodesy3.earth.datums import _WGS84  # from .Base.ellipsoidal
+from pygeodesy3.ellipsoidal.Base import CartesianEllipsoidalBase, \
                                        _nearestOn, _WGS84
-from pygeodesy3.ellipsoidal.baseDI import LatLonEllipsoidalBaseDI, _TOL_M, \
+from pygeodesy3.ellipsoidal.BaseDI import LatLonEllipsoidalBaseDI, _TOL_M, \
                                          _intersection3, _intersections2
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
+# from pygeodesy3.miscs.errors import _xkwds  # from .Base.karney
 # from pygeodesy3.miscs.props import Property_RO  # from .Base.karney
 from pygeodesy3.polygonal.points import _areaError, ispolar  # PYCHOK exported
 # from pygeodesy3.projections.azimuthal import EquidistantGeodSolve  # _MODS
@@ -25,7 +25,7 @@ from pygeodesy3.polygonal.points import _areaError, ispolar  # PYCHOK exported
 # from math import fabs  # from .Base.karney
 
 __all__ = _ALL_LAZY.ellipsoidal_solve
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 
 class Cartesian(CartesianEllipsoidalBase):

@@ -4,7 +4,7 @@
 # Test the lazy import module L{lazily}.
 
 __all__ = ('Tests',)
-__version__ = '24.01.06'
+__version__ = '24.03.03'
 
 from bases import TestsBase, coverage, _env_c2, isLazy, \
                   isPython37, lazily, type2str
@@ -17,7 +17,7 @@ class Tests(TestsBase):
 
         if coverage:
             a = lazily._import_all()
-            self.test('_all', len(a), 928)
+            self.test('_all', len(a), 932)
             b = lazily._import_all_backward(True)
             self.test('_all_backward', len(b), 78, nt=1)
             _all = a + b

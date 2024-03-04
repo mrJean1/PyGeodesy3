@@ -16,16 +16,16 @@ See also U{Geohash<https://WikiPedia.org/wiki/Geohash>}, U{Geohash
 <https://GitHub.com/DaveTroy/geohash-js>}.
 '''
 
-from pygeodesy3.basics import isodd, isstr, map2, _xkwds
+from pygeodesy3.basics import isodd, isstr, map2
 from pygeodesy3.constants import EPS, R_M, _floatuple, _0_0, _0_5, _180_0, \
                                 _360_0,  _90_0, _N_90_0, _N_180_0  # PYCHOK used!
 # from pygeodesy3.distances import formy as _formy  # _MODS
 from pygeodesy3.interns import NN, _COMMA_, _DOT_, _E_, _N_, _NE_, _NW_, \
                               _S_, _SE_, _SW_, _W_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
-from pygeodesy3.maths.fmath import favg, _ValueError
-from pygeodesy3.miscs.dms import parse3llh  # parseDMS2
-# from pygeodesy3.miscs.errors import _ValueError  # from .maths.fmath
+# from pygeodesy3.maths.fmath import favg  # _MODS
+# from pygeodesy3.miscs.dms import parse3llh  # _MODS  parseDMS2
+from pygeodesy3.miscs.errors import _ValueError, _xkwds
 from pygeodesy3.miscs.named import _NamedDict, _NamedTuple, nameof, _xnamed
 from pygeodesy3.miscs.namedTuples import Bounds2Tuple, Bounds4Tuple, \
                                          LatLon2Tuple, PhiLam2Tuple
@@ -37,7 +37,7 @@ from pygeodesy3.miscs.units import Degrees_, Int, Lat, Lon, Precision_, Str, \
 from math import fabs, ldexp, log10, radians
 
 __all__ = _ALL_LAZY.grids_geohash
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 
 class _GH(object):
@@ -57,6 +57,12 @@ class _GH(object):
     def DecodedBase32(self):  # inverse GeohashBase32 map
         return dict((c, i) for i, c in enumerate(self.GeohashBase32))
 
+    @Property_RO
+    def favg(self):
+        '''Get function L{maths.fmath.favg}, I {once}.
+        '''
+        return _MODS.maths.fmath.favg
+
     # Geohash-specific base32 map
     GeohashBase32 = '0123456789bcdefghjkmnpqrstuvwxyz'  # no a, i, j and o
 
@@ -66,6 +72,12 @@ class _GH(object):
                         'bc01fg45238967deuvhjyznpkmstqrwx',
                         '14365h7k9dcfesgujnmqp0r2twvyx8zb',
                         '238967debc01fg45kmstqrwxuvhjyznp')
+
+    @Property_RO
+    def parse3llh(self):
+        '''Get function L{miscs.dms.parse3llh}, I {once}.
+        '''
+        return _MODS.miscs.dms.parse3llh
 
     @Property_RO
     def Sizes(self):  # lat-, lon and radial size (in meter)
@@ -103,8 +115,9 @@ def _2bounds(LatLon, LatLon_kwds, s, w, n, e, name=NN):
 def _2center(bounds):
     '''(INTERNAL) Return the C{bounds} center.
     '''
-    return (favg(bounds.latN, bounds.latS),
-            favg(bounds.lonE, bounds.lonW))
+    _avg = _GH.favg
+    return (_avg(bounds.latN, bounds.latS),
+            _avg(bounds.lonE, bounds.lonW))
 
 
 def _2fll(lat, lon, *unused):
@@ -164,7 +177,7 @@ class Geohash(Str):
 
         elif isstr(cll):
             if _COMMA_ in cll:
-                ll = _2fll(*parse3llh(cll))
+                ll = _2fll(*_GH.parse3llh(cll))
                 gh =  encode(*ll, precision=precision)
             else:
                 gh = _2geostr(cll)
@@ -499,7 +512,7 @@ def bounds(geohash, LatLon=None, **LatLon_kwds):
 
     s, w, n, e = _GH.Bounds4
     try:
-        d, _avg = True, favg
+        d, _avg = True, _GH.favg
         for c in gh.lower():
             i = _GH.DecodedBase32[c]
             for m in (16, 8, 4, 2, 1):
@@ -640,7 +653,7 @@ def encode(lat, lon, precision=None):
     d, gh = True, []
     s, w, n, e = _GH.Bounds4
 
-    _avg = favg
+    _avg = _GH.favg
     while p > 0:
         i += i
         if d:  # bisect longitude

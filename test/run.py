@@ -12,7 +12,7 @@ from os import access, environ, F_OK, linesep as LS, pathsep as PS
 import sys
 
 __all__ = ('run2',)
-__version__ = '23.12.31'
+__version__ = '24.01.11'
 
 NL = '\n'  # pygeodesy3.interns._NL_
 P  = None  # Popen instance
@@ -220,7 +220,7 @@ if __name__ == '__main__':  # MCCABE 19
             _failedonly = True
         elif '-prefix'.startswith(arg):
             _prefix = True
-        elif '-raiser'.startswith(arg):  # also .base.Test.__init__
+        elif '-raiser'.startswith(arg):  # also .test.bases.Test.__init__
             _raiser = True  # break on error
         elif '-results'.startswith(arg):
             _results = True

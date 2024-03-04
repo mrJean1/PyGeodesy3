@@ -66,8 +66,7 @@ C{>>> hs = hinterpolator.height(lats, lons)}
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import isscalar, len2, map1, map2, _xattr, _xkwds, _xkwds_get, \
-                             _xnumpy, _xscipy
+from pygeodesy3.basics import isscalar, len2, map1, map2, _xnumpy, _xscipy
 from pygeodesy3.constants import EPS, PI, PI2, _0_0, _90_0, _180_0
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
 from pygeodesy3.distances.formy import cosineAndoyerLambert, cosineForsytheAndoyerLambert, \
@@ -79,7 +78,8 @@ from pygeodesy3.interns import NN, _COMMASPACE_, _cubic_, _insufficient_, _knots
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _ALL_MODS as _MODS, _FOR_DOCS
 # from pygeodesy3.maths.fmath import fidw  # _MODS
 # from pygeodesy3.maths.umath import _Wrap  # from .polygonal.points
-from pygeodesy3.miscs.errors import _AssertionError, LenError, PointsError, _SciPyIssue
+from pygeodesy3.miscs.errors import _AssertionError, LenError, PointsError, _SciPyIssue, \
+                                    _xattr, _xkwds, _xkwds_get
 from pygeodesy3.miscs.named import _Named, notOverloaded
 from pygeodesy3.polygonal.points import _distanceTo, LatLon_,  Fmt, _Wrap
 from pygeodesy3.miscs.props import Property_RO, property_RO
@@ -89,7 +89,7 @@ from pygeodesy3.miscs.units import Float_, Int_, _isDegrees
 # from math import radians  # from .distances.formy
 
 __all__ = _ALL_LAZY.elevations_heights
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 _error_     = 'error'
 _llis_      = 'llis'
@@ -1054,7 +1054,7 @@ class HeightIDWkarney(_HeightIDW):
                          first B{C{knots}}' datum (L{Datum}, L{Ellipsoid},
                          L{Ellipsoid2} or L{a_f2Tuple}).
            @kwarg wrap: Optional keyword argument for method C{Inverse1} of
-                        class L{Geodesic<pygeodesy3.geodesic.wrap.Geodesic>}.
+                        class L{Geodesic<geodesic.wrap.Geodesic>}.
 
            @raise ImportError: Package U{geographiclib
                   <https://PyPI.org/project/geographiclib>} missing.

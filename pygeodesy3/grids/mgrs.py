@@ -36,14 +36,15 @@ and compare the MGRS results with those from I{Karney}'s utility U{GeoConvert
 '''
 
 # from pygeodesy3.Base.utmups import _UTM_ZONE_MAX, _UTM_ZONE_MIN  # from .utm
-from pygeodesy3.basics import halfs2, _splituple, _xinstanceof, _xkwds
+from pygeodesy3.basics import halfs2, _splituple, _xinstanceof
 # from pygeodesy3.constants import _0_5  # from .miscs.units
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
 from pygeodesy3.interns import NN, _0_, _A_, _AtoZnoIO_, _band_, _B_, \
                               _COMMASPACE_, _datum_, _easting_, _invalid_, \
                               _northing_, _not_, _SPACE_, _W_, _Y_, _Z_, _zone_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _PYGEODESY3_GEOCONVERT_
-from pygeodesy3.miscs.errors import _AssertionError, MGRSError, _parseX, _ValueError
+from pygeodesy3.miscs.errors import _AssertionError, MGRSError, _parseX, \
+                                    _ValueError, _xkwds
 from pygeodesy3.miscs.named import _NamedBase, _NamedTuple, _Pass, _xnamed
 from pygeodesy3.miscs.namedTuples import EasNor2Tuple, UtmUps5Tuple
 from pygeodesy3.miscs.props import property_RO, Property_RO
@@ -55,7 +56,7 @@ from pygeodesy3.projections.utm import toUtm8, _to3zBlat, Utm,  _UTM_ZONE_MAX, _
 # from pygeodesy3.projections.utmups import _MGRS_TILE  # _MODS
 
 __all__ = _ALL_LAZY.grids_mgrs
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _AN_    = 'AN'  # default south pole grid tile and band B
 _AtoPx_ = _AtoZnoIO_.tillP

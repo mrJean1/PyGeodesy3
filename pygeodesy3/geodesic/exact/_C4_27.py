@@ -10,10 +10,10 @@ U{GeographicLib<https://GeographicLib.SourceForge.io>} documentation.
 '''
 # See C{.geodesic.exact._C4_30.py} for a copy of comments from Karney's C{GeodesicExactC4.cpp}:
 
-from pygeodesy3.geodesic.exact.gxbases import _Gfloats, _f, _f2
+from pygeodesy3.geodesic.exact.gxBases import _Gfloats, _f, _f2
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.11'
 
 _g = _Gfloats(27)
 _coeffs_27 = _g((  # GEOGRAPHICLIB_GEODESICEXACT_ORDER == 27

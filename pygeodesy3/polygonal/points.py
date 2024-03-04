@@ -27,8 +27,7 @@ C{ilon} longitude index in each 2+tuple.
 
 from pygeodesy3.Base.latlon import LatLonBase, _latlonheight3
 from pygeodesy3.basics import isclass, isint, isscalar, issequence, issubclassof, \
-                             _Sequence, _xattr, _xcopy, _xdup, _xinstanceof, \
-                             _xkwds, _xkwds_pop
+                             _Sequence, _xcopy, _xdup, _xinstanceof
 from pygeodesy3.constants import EPS, EPS1, PI_2, R_M, isnear0, isnear1, \
                                 _umod_360, _0_0, _0_5, _1_0, _2_0, _6_0, \
                                 _90_0, _N_90_0, _180_0, _360_0
@@ -46,7 +45,8 @@ from pygeodesy3.maths.umath import atan2b, degrees90, degrees180, degrees2m, \
                                    unroll180, _unrollon, unrollPI, _Wrap, wrap180
 from pygeodesy3.miscs.dms import F_D, parseDMS
 from pygeodesy3.miscs.errors import CrossError, crosserrors, _IndexError, \
-                                   _IsnotError, _TypeError, _ValueError
+                                   _IsnotError, _TypeError, _ValueError, \
+                                   _xattr, _xkwds, _xkwds_pop2
 from pygeodesy3.miscs.iters import LatLon2PsxyIter, PointsIter, points2
 from pygeodesy3.miscs.named import classname, nameof, notImplemented, \
                                    notOverloaded, _NamedTuple
@@ -62,7 +62,7 @@ from pygeodesy3.miscs.units import Number_, Radius, Scalar, Scalar_
 from math import cos, fabs, fmod, radians, sin
 
 __all__ = _ALL_LAZY.polygonal_points
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 _ilat_  = 'ilat'
 _ilon_  = 'ilon'
@@ -173,7 +173,7 @@ class LatLon_(LatLonBase):  # XXX in heights._HeightBase.height
 
            @see: L{Base.latlon.LatLonBase.toRepr} for further details.
         '''
-        _ = _xkwds_pop(kwds, std=NotImplemented)
+        _, kwds = _xkwds_pop2(kwds, std=NotImplemented)
         return LatLonBase.toRepr(self, **kwds)
 
     def toStr(self, form=F_D, joined=_COMMASPACE_, **m_prec_sep_s_D_M_S):  # PYCHOK expected
@@ -220,7 +220,7 @@ class _Basequence(_Sequence):  # immutable, on purpose
            @kwarg deep: If C{True} make a deep, otherwise a
                         shallow copy (C{bool}).
 
-           @return: The copy (C{This class} or subclass thereof).
+           @return: The copy (C{This class}).
         '''
         return _xcopy(self, deep=deep)
 
@@ -234,7 +234,7 @@ class _Basequence(_Sequence):  # immutable, on purpose
 
            @kwarg items: No attributes (I{not allowed}).
 
-           @return: The duplicate (C{This} (sub-)class).
+           @return: The duplicate (C{This class}).
 
            @raise TypeError: Any B{C{items}} invalid.
         '''
@@ -1575,10 +1575,9 @@ def nearestOn5(point, points, closed=False, wrap=False, adjust=True,
     h = _h(c)
     n =  nameof(point) or nearestOn5.__name__
     if LatLon_and_kwds:
-        kwds = _xkwds(LatLon_and_kwds, height=h, name=n)
-        LL   = _xkwds_pop(kwds, LatLon=None)
+        LL, kwds = _xkwds_pop2(LatLon_and_kwds, LatLon=None)
         if LL is not None:
-            r = LL(c.lat, c.lon + u, **kwds)
+            r = LL(c.lat, c.lon + u, **_xkwds(kwds, height=h, name=n))
             return NearestOn3Tuple(r, d, a, name=n)
     return NearestOn5Tuple(c.lat, c.lon + u, d, a, h, name=n)  # PYCHOK expected
 

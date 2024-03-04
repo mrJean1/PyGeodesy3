@@ -23,7 +23,7 @@ from pygeodesy3.geodesic.exact.gxarea import GeodesicAreaExact, PolygonArea  # P
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY
 
 __all__ = _ALL_LAZY.geodesic_exact + _ALL_DOCS(Caps, GeodesicError)
-__version__ = '24.01.05'
+__version__ = '24.01.11'
 
 # **) MIT License
 #

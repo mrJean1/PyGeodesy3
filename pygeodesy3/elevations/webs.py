@@ -6,12 +6,11 @@ u'''Web-services-based elevations and C{CONUS} geoid heights.
 Functions to obtain elevations and geoid heights thru web services,
 for (lat, lon) locations, currently limited to the U{Conterminous
 US (CONUS)<https://WikiPedia.org/wiki/Contiguous_United_States>},
-see also modules L{geoids<pygeodesy3.elevations.geoids>} L{heights
-<pygeodesy3.elevations.heights>} and U{USGS10mElev.py
-<https://Gist.GitHub.com/pyRobShrk>}.
+see also modules L{geoids<elevations.geoids>} L{heights<elevations.heights>}
+and U{USGS10mElev.py<https://Gist.GitHub.com/pyRobShrk>}.
 
-@see: Module L{geoids<pygeodesy3.elevations.geoids>} to get geoid heights
-      from other sources and for regions other than C{CONUS}.
+@see: Module L{geoids<elevations.geoids>} to get geoid heights from
+      other sources and for regions other than C{CONUS}.
 
 @note: If on B{macOS} an C{SSLCertVerificationError} occurs, like
        I{"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed:
@@ -22,20 +21,20 @@ see also modules L{geoids<pygeodesy3.elevations.geoids>} L{heights
        C{"/Applications/Python\\ X.Y/Install\\ Certificates.command"}
 '''
 
-from pygeodesy3.basics import clips, ub2str, _xkwds_get
+from pygeodesy3.basics import clips, ub2str
 from pygeodesy3.interns import NN, _AMPERSAND_, _COLONSPACE_, \
                               _elevation_, _height_, _LCURLY_, \
                               _n_a_, _no_, _RCURLY_, _SPACE_
-# from pygeodesy3.lazily import _ALL_LAZY  # from .miscs.errors
-from pygeodesy3.miscs.errors import ParseError,  _ALL_LAZY
-from pygeodesy3.miscs.named import _NamedTuple
+# from pygeodesy3.lazily import _ALL_LAZY  # from .miscs.named
+from pygeodesy3.miscs.errors import ParseError, _xkwds_get
+from pygeodesy3.miscs.named import _NamedTuple,  _ALL_LAZY
 from pygeodesy3.miscs.streprs import Fmt, fstr, lrstrip,  fabs
 from pygeodesy3.miscs.units import Lat, Lon, Meter, Scalar, Str
 
 # from math import fabs  # from .miscs.streprs
 
 __all__ = _ALL_LAZY.elevations_webs
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 try:
     from urllib2 import urlopen  # quote, urlcleanup

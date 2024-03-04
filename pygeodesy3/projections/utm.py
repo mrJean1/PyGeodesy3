@@ -38,18 +38,19 @@ from pygeodesy3.Base.utmups import _hemi, _LLEB, _parseUTMUPS5, _to4lldn, \
                                    _UTM_LAT_MAX, _UTM_ZONE_MAX, \
                                    _UTM_LAT_MIN, _UTM_ZONE_MIN, \
                                    _UTM_ZONE_OFF_MAX, UtmUpsBase, _xnamed
-from pygeodesy3.basics import len2, map2, neg, _xkwds_get  # splice
+from pygeodesy3.basics import len2, map2, neg  # splice
 from pygeodesy3.constants import EPS, EPS0, _K0_UTM, _0_0, _0_0001
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
 from pygeodesy3.interns import MISSING, NN, _by_, _COMMASPACE_, _N_, \
                               _NS_, _outside_, _range_, _S_, _scale0_, \
                               _SPACE_, _UTM_, _V_, _X_, _zone_, _under
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS
-from pygeodesy3.maths.fmath import fdot3, hypot, hypot1
+from pygeodesy3.maths.fmath import fdot3, hypot, hypot1,  _operator
 from pygeodesy3.maths.umath import atan1, degrees90, degrees180, sincos2
 from pygeodesy3.miscs.dms import degDMS, parseDMS2
-from pygeodesy3.miscs.errors import MGRSError, RangeError, _ValueError
-# from pygeodesy3.miscs.named import _xnamed  # from .base.utmups
+from pygeodesy3.miscs.errors import MGRSError, RangeError, _ValueError, \
+                                   _xkwds_get
+# from pygeodesy3.miscs.named import _xnamed  # from .Base.utmups
 from pygeodesy3.miscs.namedTuples import EasNor2Tuple, UtmUps5Tuple, \
                                          UtmUps8Tuple, UtmUpsLatLon5Tuple
 from pygeodesy3.miscs.props import property_doc_, Property_RO
@@ -59,10 +60,10 @@ from pygeodesy3.miscs.units import Band, Int, Lat, Lon, Meter, Zone
 
 from math import asinh, atanh, atan2, cos, cosh, degrees, fabs, \
                  radians, sin, sinh, tan, tanh
-from operator import mul as _mul
+# import operator as _operator  # from .fmath
 
 __all__ = _ALL_LAZY.projections_utm
-__version__ = '24.01.05'
+__version__ = '24.02.29'
 
 _Bands = 'CDEFGHJKLMNPQRSTUVWXX'  # UTM latitude bands C..X (no
 # I|O) 8° each, covering 80°S to 84°N and X repeated for 80-84°N
@@ -93,20 +94,21 @@ class _Kseries(object):
            @arg x: Eta angle (C{radians}).
            @arg y: Ksi angle (C{radians}).
         '''
-        n, j2 = len2(range(2, len(AB) * 2 + 1, 2))
+        n,   j2 = len2(range(2, len(AB) * 2 + 1, 2))
+        _m2, _x = map2, _operator.mul
 
-        self._ab = AB
-        self._pq = map2(_mul, j2, AB)
+        self._ab =  AB
+        self._pq = _m2(_x, j2, AB)
 #       assert len(self._ab) == len(self._pq) == n
 
-        x2 = map2(_mul, j2, (x,) * n)
-        self._chx = map2(cosh, x2)
-        self._shx = map2(sinh, x2)
+        x2 = _m2(_x, j2, (x,) * n)
+        self._chx = _m2(cosh, x2)
+        self._shx = _m2(sinh, x2)
 #       assert len(x2) == len(self._chx) == len(self._shx) == n
 
-        y2 = map2(_mul, j2, (y,) * n)
-        self._cy = map2(cos, y2)
-        self._sy = map2(sin, y2)
+        y2 = _m2(_x, j2, (y,) * n)
+        self._cy = _m2(cos, y2)
+        self._sy = _m2(sin, y2)
         # self._sy, self._cy = splice(sincos2(*y2))  # PYCHOK false
 #       assert len(y2) == len(self._cy) == len(self._sy) == n
 
@@ -207,7 +209,7 @@ def _to4zBll(lat, lon, cmoff=True, strict=True, Error=RangeError):
 
        @return: 4-Tuple (zone, Band, lat, lon).
     '''
-    z, lat, lon = _to3zll(lat, lon)  # in .base.utmups
+    z, lat, lon = _to3zll(lat, lon)  # in .Base.utmups
 
     x = lon - _cmlon(z)  # z before Norway/Svalbard
     if fabs(x) > _UTM_ZONE_OFF_MAX:

@@ -4,7 +4,7 @@
 # Test L{namedTuples} module.
 
 __all__ = ('Tests',)
-__version__ = '24.01.05'
+__version__ = '24.01.11'
 
 from bases import TestsBase
 from pygeodesy3 import FIx, issubclassof
@@ -17,7 +17,7 @@ from pygeodesy3.maths.fsums import _Float_Int
 from pygeodesy3.miscs.named import _NamedTuple, _Pass
 from pygeodesy3.miscs.units import _NamedUnit
 from pygeodesy3.projections.albers import _Ks
-# from pygeodesy3.rhumb.bases import _Lat as rLat, _Lon as rLon
+# from pygeodesy3.rhumb.Bases import _Lat as rLat, _Lon as rLon
 
 _Units_ = '_Units_'
 _Xcepts = (FIx, _Float_Int, _Ks, _Pass)  # rLat, rLon

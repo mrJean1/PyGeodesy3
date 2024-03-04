@@ -6,8 +6,7 @@ u'''Utilities using precision floating point summation.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import _copysign, copysign0, isint, len2, \
-                              _xkwds_get, _xkwds_pop
+from pygeodesy3.basics import _copysign, copysign0, isint, len2
 from pygeodesy3.constants import EPS0, EPS02, EPS1, NAN, PI, PI_2, PI_4, \
                                 _0_0, _0_125, _0_25, _0_5, _1_0, _N_1_0, \
                                 _1_3rd, _1_5, _1_6th, _2_0, _2_3rd, _3_0, \
@@ -18,15 +17,15 @@ from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _sys_version_info2
 from pygeodesy3.maths.fsums import _2float, _Powers, Fsum, _fsum, fsum, fsum1_, \
                                    _pow_op_,  Fmt, unstr
 from pygeodesy3.miscs.errors import _IsnotError, LenError, _TypeError, _ValueError, \
-                                    _xError
+                                    _xError, _xkwds_get, _xkwds_pop2
 # from pygeodesy3.miscs.streprs import Fmt, unstr  # from .maths.fsums
 # from pygeodesy3.miscs.units import Int_, _isHeight, _isRadius  # _MODS circular
 
 from math import fabs, sqrt  # pow
-from operator import mul as _mul  # in .triaxials
+import operator as _operator  # in .datums, .trf, .utm
 
 __all__ = _ALL_LAZY.maths_fmath
-__version__ = '23.12.31'
+__version__ = '24.02.29'
 
 # sqrt(2) <https://WikiPedia.org/wiki/Square_root_of_2>
 _0_4142 = 0.414213562373095  # sqrt(_2_0) - _1_0
@@ -100,8 +99,8 @@ class Fhypot(Fsum):
                         C{B{RESIDUAL}=None}, see L{Fsum.__init__}.
         '''
         try:
-            p = _xkwds_pop(power_name_RESIDUAL, power=2)
-            Fsum.__init__(self, **power_name_RESIDUAL)
+            p, kwds = _xkwds_pop2(power_name_RESIDUAL, power=2)
+            Fsum.__init__(self, **kwds)
             if xs:
                 self._facc(_Powers(p, xs), up=False)  # PYCHOK yield
             self._fset(self._fpow(_1_0 / p, _pow_op_), asis=True)
@@ -602,7 +601,7 @@ except ImportError:
            @see: U{NumPy.prod<https://docs.SciPy.org/doc/
                  numpy/reference/generated/numpy.prod.html>}.
         '''
-        return freduce(_mul, xs, start)
+        return freduce(_operator.mul, xs, start)
 
 
 def frange(start, number, step=1):
@@ -816,14 +815,14 @@ def _map_mul(a, b, where):
     n = len(b)
     if len(a) != n:  # PYCHOK no cover
         raise LenError(where, a=len(a), b=n)
-    return map(_mul, a, b) if n > 3 else _map_mul1(a, b)
+    return map(_operator.mul, a, b) if n > 3 else _map_mul1(a, b)
 
 
 def _map_mul1(a, b):
     '''(INTERNAL) Yield each B{C{a * b}}, 1-primed.
     '''
     yield _1_0
-    for ab in map(_mul, a, b):
+    for ab in map(_operator.mul, a, b):
         if ab:
             yield ab
     yield _N_1_0

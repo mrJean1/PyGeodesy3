@@ -25,8 +25,7 @@ from __future__ import division as _; del _  # PYCHOK semicolon
 
 from pygeodesy3.Base.karney import _atan2d, Caps, _CapsBase, _diff182, \
                                    _fix90, _norm180, GDict
-from pygeodesy3.basics import _copysign, unsigned0, _xinstanceof, _xkwds, \
-                              _xkwds_pop
+from pygeodesy3.basics import itemsorted, _copysign, unsigned0, _xinstanceof
 from pygeodesy3.constants import EPS, EPS0, EPS1, INT0, NAN, _over, \
                                 _EPSqrt as _TOL, _0_0, _0_01, _1_0, _90_0
 # from pygeodesy3.distances.formy import opposing  # _MODS
@@ -39,8 +38,8 @@ from pygeodesy3.maths.fmath import euclid, favg, sqrt_a,  Fsum
 from pygeodesy3.maths.umath import acos1, _azireversed, _loneg, sincos2d, \
                                   sincos2d_, _unrollon, _Wrap
 from pygeodesy3.maths.vector3d import _intersect3d3, Vector3d  # in .Intersection below
-from pygeodesy3.miscs.errors import IntersectionError, itemsorted, RhumbError,\
-                                   _xdatum, _Xorder
+from pygeodesy3.miscs.errors import IntersectionError, RhumbError, _xdatum, \
+                                   _xkwds, _xkwds_pop2, _Xorder
 # from pygeodesy3.miscs.named import notOverloaded  # _MODS
 from pygeodesy3.miscs.namedTuples import Distance2Tuple, LatLon2Tuple
 from pygeodesy3.miscs.props import deprecated_method, Property, Property_RO, \
@@ -53,7 +52,7 @@ from pygeodesy3.miscs.units import Float_, Lat, Lon, Meter, Radius_,  Int  # PYC
 from math import cos, fabs
 
 __all__ = ()
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _anti_ = _Dash('anti')
 _rls   = []  # instances of C{RbumbLine...} to be updated
@@ -1021,7 +1020,8 @@ class _PseudoRhumbLine(RhumbLineBase):
 
     def PlumbTo(self, lat0, lon0, **exact_eps_est_tol):  # PYCHOK signature
         P = RhumbLineBase.PlumbTo(self, lat0, lon0, **exact_eps_est_tol)
-        P.set_(azi1=self._gl.azi1, azi2=_xkwds_pop(P, azi12=None))
+        z, P = _xkwds_pop2(P, azi12=None)
+        P.set_(azi1=self._gl.azi1, azi2=z)
         return P  # geodesic L{Position}
 
     def Position(self, s12, **unused):  # PYCHOK signature
@@ -1079,7 +1079,7 @@ if __name__ == '__main__':
         r = rh.Inverse8(40.6, -73.8, 35.8, 140.3)  # JFK to Tokyo Narita
         _ref('# JFK-NRT azi12=%.12f, s12=%.3f S12=%.1f', (r.azi12, r.s12, r.S12), NRT)
 
-# % python3 -m pygeodesy3.rhumb.bases
+# % python3 -m pygeodesy3.rhumb.Bases
 
 # Position.lon2 11.61455846901637 vs 11.61455846901637, diff 3.05885e-16
 # Position.lon2 7.58982302826842 vs 7.58982302826842, diff 2.34045e-16

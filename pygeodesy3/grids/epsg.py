@@ -28,7 +28,7 @@ from pygeodesy3.projections.ups import Ups
 from pygeodesy3.projections.utm import Utm
 
 __all__ = _ALL_LAZY.grids_epsg
-__version__ = '24.01.05'
+__version__ = '24.01.11'
 
 # _EPSG_INVALID = _UTMUPS_ZONE_INVALID
 _EPSG_N_01 = 32601  # EPSG code for UTM zone 01 N
@@ -199,7 +199,7 @@ def encode(zone, hemipole=NN, band=NN):
               <https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1UTMUPS.html>}.
     '''
     try:
-        z, B, hp = _to3zBhp(zone, band, hemipole=hemipole)  # in .base.utmups
+        z, B, hp = _to3zBhp(zone, band, hemipole=hemipole)  # in .Base.utmups
         if hp not in _NS_:
             raise ValueError
     except (TypeError, ValueError) as x:

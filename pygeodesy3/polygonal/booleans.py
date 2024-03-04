@@ -19,8 +19,7 @@ from __future__ import division as _; del _  # PYCHOK semicolon
 
 from pygeodesy3.Base.latlon import LatLonBase,  LatLon2Tuple, \
                                    Property_RO, property_RO
-from pygeodesy3.basics import isodd, isscalar, issubclassof, map2, \
-                             _xattr, _xkwds_get
+from pygeodesy3.basics import isodd, issubclassof, map2, _xisscalar
 from pygeodesy3.constants import EPS, EPS2, INT0, _0_0, _0_5, _1_0
 from pygeodesy3.interns import NN, _BANG_, _clip_, _clipid_, _COMMASPACE_, \
                               _composite_, _DOT_, _e_, _ELLIPSIS_, _few_, \
@@ -32,10 +31,10 @@ from pygeodesy3.maths.fmath import favg, hypot, hypot2
 # from pygeodesy3.maths.fsums import fsum1  # _MODS
 from pygeodesy3.maths.umath import fabs, _unrollon, _Wrap
 from pygeodesy3.miscs.errors import ClipError, _IsnotError, _TypeError, \
-                                   _ValueError
+                                   _ValueError, _xattr, _xkwds_get
 from pygeodesy3.miscs.named import _Named, _NotImplemented,  Fmt, pairs, unstr
-# from pygeodesy3.miscs.namedTuples import LatLon2Tupe  # from .base.latlon
-# from pygeodesy3.miscs.props import Property_RO, property_RO  # from .base.latlon
+# from pygeodesy3.miscs.namedTuples import LatLon2Tupe  # from .Base.latlon
+# from pygeodesy3.miscs.props import Property_RO, property_RO  # from .Base.latlon
 # from pygeodesy3.miscs.streprs import Fmt, pairs, unstr  # from .miscs.named
 from pygeodesy3.miscs.units import Height, HeightX
 # from pygeodesy3.polygonal.points import boundsOf  # _MODS
@@ -43,7 +42,7 @@ from pygeodesy3.miscs.units import Height, HeightX
 # from math import fabs  # from .maths.umath
 
 __all__ = _ALL_LAZY.polygonal_booleans
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 _0_EPS =  EPS  # near-zero, positive
 _EPS_0 = -EPS  # near-zero, negative
@@ -331,8 +330,7 @@ class LatLonFHP(_LatLonBool):
         return self.x * other.x + self.y * other.y
 
     def __rmul__(self, other):  # scalar product
-        if not isscalar(other):
-            raise _IsnotError(_scalar_, other=other)
+        _xisscalar(other=other)
         return self.__class__(self.y * other, self.x * other)
 
     def _e_x_str(self, t):  # PYCHOK no cover

@@ -12,7 +12,7 @@ L{triAngle}, L{triAngle5}, L{triSide}, L{triSide2} and L{triSide4}.
 # make sure int/int division yields float quotient
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import map1, _xkwds,  _ALL_LAZY
+from pygeodesy3.basics import map1,  _ALL_LAZY
 from pygeodesy3.constants import EPS, EPS0, EPS02, INT0, NEG0, PI, PI2, PI_2, PI_4, \
                                 _0_0, _0_5, _1_0, _N_1_0, _2_0, _N_2_0, _4_0, _16_0, \
                                 _180_0, _360_0, isnear0, _over, _umod_360
@@ -25,7 +25,7 @@ from pygeodesy3.maths.fsums import Fsum, fsumf_, fsum1, fsum1f_
 from pygeodesy3.maths.umath import acos1, asin1, sincos2, sincos2_, \
                                    sincos2d, sincos2d_
 from pygeodesy3.maths.vector3d import _otherV3d, Vector3d
-from pygeodesy3.miscs.errors import _and, _or, TriangleError, _ValueError
+from pygeodesy3.miscs.errors import _and, _or, TriangleError, _ValueError, _xkwds
 from pygeodesy3.miscs.named import _NamedTuple, _Pass,  Fmt
 # from pygeodesy3.miscs.streprs import Fmt  # from .miscs.named
 from pygeodesy3.miscs.units import Degrees, Distance, Radians

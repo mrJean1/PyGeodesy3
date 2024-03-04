@@ -32,7 +32,7 @@ from pygeodesy3.polygonal.points import areaOf, boundsOf, isconvex_, LatLon_, \
 # from math import fabs  # from .maths.fsums
 
 __all__ = _ALL_LAZY.polygonal_clipy
-__version__ = '23.12.31'
+__version__ = '24.01.11'
 
 _fj_       = 'fj'
 _original_ = 'original'
@@ -41,7 +41,7 @@ _original_ = 'original'
 def _box4(lowerleft, upperight, name):
     '''(INTERNAL) Get the clip box edges.
 
-       @see: Class C{_Box} in .ellipsoidal.baseDI.py.
+       @see: Class C{_Box} in .ellipsoidal.BaseDI.py.
     '''
     try:
         yb, yt = lowerleft.lat, upperight.lat

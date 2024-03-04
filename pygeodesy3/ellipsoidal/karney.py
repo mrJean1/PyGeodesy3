@@ -29,14 +29,14 @@ or by converting to anothor datum:
     >>> p = p.toDatum(Datums.OSGB36)
 '''
 
-from pygeodesy3.Base.karney import fabs, _polygon,  _xkwds
-# from pygeodesy3.basics import _xkwds  # from .Base.karney
+from pygeodesy3.Base.karney import _polygon,  fabs, _xkwds
 from pygeodesy3.earth.datums import _WGS84
-from pygeodesy3.ellipsoidal.base import CartesianEllipsoidalBase, _nearestOn
-from pygeodesy3.ellipsoidal.baseDI import LatLonEllipsoidalBaseDI, \
+from pygeodesy3.ellipsoidal.Base import CartesianEllipsoidalBase, _nearestOn
+from pygeodesy3.ellipsoidal.BaseDI import LatLonEllipsoidalBaseDI, \
                                          _intersection3, _intersections2, \
                                          _TOL_M, intersecant2
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _ALL_OTHER
+# from pygeodesy3.miscs.errors import _xkwds  # from .Base.karney
 # from pygeodesy3.miscs.props import Property_RO  # from .points
 from pygeodesy3.polygonal.points import _areaError, ispolar, \
                                          Property_RO  # PYCHOK exported
@@ -45,7 +45,7 @@ from pygeodesy3.polygonal.points import _areaError, ispolar, \
 # from math import fabs  # from .Base.karney
 
 __all__ = _ALL_LAZY.ellipsoidal_karney
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 
 class Cartesian(CartesianEllipsoidalBase):
@@ -372,7 +372,7 @@ def perimeterOf(points, closed=False, datum=_WGS84, wrap=True):
 
 
 __all__ += _ALL_OTHER(Cartesian, LatLon,  # classes
-                      areaOf, intersecant2,  # from .base.ellipsoidal
+                      areaOf, intersecant2,  # from .Base.ellipsoidal
                       intersection3, intersections2, isclockwise, ispolar,
                       nearestOn, perimeterOf)
 

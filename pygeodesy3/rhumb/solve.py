@@ -9,9 +9,9 @@ as an (exact) rhumb or rhumb line from I{either GeographicLib 2.0 or 2.2+}.
        path of the C{RhumbSolve} executable.
 '''
 
-from pygeodesy3.Base.karney import Caps, GDict, _norm180, _sincos2d,  _xinstanceof
+from pygeodesy3.Base.karney import Caps, GDict, _norm180, _sincos2d
 from pygeodesy3.Base.solve import _SolveBase, _SolveLineBase
-# from pygeodesy3.basics import _xinstanceof  # from .Base.karney
+from pygeodesy3.basics import _xinstanceof
 from pygeodesy3.constants import _0_0, _180_0, _N_180_0, _over,  _90_0  # PYCHOK used!
 from pygeodesy3.interns import NN, _azi12_, _lat2_, _lon2_, _s12_, _S12_, _UNDER_  # _a12_,
 from pygeodesy3.lazily import _ALL_DOCS, _ALL_LAZY, _getenv, _PYGEODESY3_RHUMBSOLVE_
@@ -21,7 +21,7 @@ from pygeodesy3.miscs.namedTuples import Destination3Tuple, Distance3Tuple
 from pygeodesy3.miscs.props import Property, Property_RO  # deprecated_method
 
 __all__ = _ALL_LAZY.rhumb_solve
-__version__ = '24.01.05'
+__version__ = '24.02.21'
 
 
 class _RhumbSolveBase(_SolveBase):

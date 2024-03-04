@@ -83,13 +83,14 @@ than the well-known C{Hausdorff} distance, see the L{hausdorff} module.
 
 from pygeodesy3.Base.units import _Str_degrees, _Str_meter, _Str_NN, \
                                   _Str_radians, _Str_radians2
-from pygeodesy3.basics import isscalar, _xattr, _xkwds, _xkwds_get
+# from pygeodesy3.basics import isscalar  # from .polygonal.points
 from pygeodesy3.constants import EPS, EPS1, INF, NINF
 # from pygeodesy3.distances import formy as _formy  # _MODS
 from pygeodesy3.earth.datums import _ellipsoidal_datum, _WGS84
 from pygeodesy3.interns import NN, _DOT_, _n_, _units_
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _FOR_DOCS
-from pygeodesy3.miscs.errors import _IsnotError, PointsError
+from pygeodesy3.miscs.errors import _IsnotError, PointsError, _xattr, \
+                                    _xkwds, _xkwds_get
 # from pygeodesy3.miscs.iters import points2 as _points2  # from .points
 from pygeodesy3.miscs.named import _Named, _NamedTuple, notOverloaded, _Pass
 # from pygeodesy3.miscs.namedTuples import PhiLam2Tuple  # from .points
@@ -97,13 +98,13 @@ from pygeodesy3.miscs.props import property_doc_, property_RO
 from pygeodesy3.miscs.units import FIx, Float, Number_, _xUnit, _xUnits
 from pygeodesy3.polygonal.points import _distanceTo, _fractional, \
                                          PhiLam2Tuple, radians, \
-                                         points2 as _points2
+                                         points2 as _points2,  isscalar
 
 from collections import defaultdict as _defaultdict
 # from math import radians  # from .points
 
 __all__ = _ALL_LAZY.distances_frechet
-__version__ = '24.01.05'
+__version__ = '24.02.20'
 
 
 def _fraction(fraction, n):
@@ -661,7 +662,7 @@ class FrechetKarney(Frechet):
                          first B{C{knots}}' datum (L{Datum}, L{Ellipsoid},
                          L{Ellipsoid2} or L{a_f2Tuple}).
            @kwarg wrap: Optional keyword argument for method C{Inverse1} of
-                        class L{Geodesic<pygeodesy3.geodesic.wrap.Geodesic>}.
+                        class L{Geodesic<geodesic.wrap.Geodesic>}.
 
            @raise ImportError: Package U{geographiclib
                   <https://PyPI.org/project/geographiclib>} missing.

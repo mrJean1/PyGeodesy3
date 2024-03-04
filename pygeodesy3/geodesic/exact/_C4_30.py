@@ -27,10 +27,10 @@ U{GeographicLib<https://GeographicLib.SourceForge.io>} documentation.
 # float coefficients will suffer double rounding; however the accuracy is already
 # lousy for floats.
 
-from pygeodesy3.geodesic.exact.gxbases import _Gfloats, _f, _f2
+from pygeodesy3.geodesic.exact.gxBases import _Gfloats, _f, _f2
 
 __all__ = ()
-__version__ = '23.12.18'
+__version__ = '24.01.11'
 
 _g = _Gfloats(30)
 _coeffs_30 = _g((  # GEOGRAPHICLIB_GEODESICEXACT_ORDER == 30

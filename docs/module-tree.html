@@ -70,8 +70,17 @@
     <ul>
     <li> <strong class="uidlink"><a href="pygeodesy3.Base-module.html">pygeodesy3.Base</a></strong>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian-module.html" onclick="show_private();">pygeodesy3.Base.cartesian</a></strong>: <em class="summary">(INTERNAL) Private base classes for elliposiodal, spherical and 
-        N-/vectorial <code>Cartesian</code>s.</em>    </li>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.cartesian-module.html" onclick="show_private();">pygeodesy3.Base.cartesian</a></strong>: <em class="summary">(INTERNAL) Private <code>CartesianBase</code> class for 
+        elliposiodal, spherical and N-/vectorial <code>Cartesian</code>s 
+        and public functions <a 
+        href="pygeodesy3.Base.cartesian-module.html#rtp2xyz" 
+        class="link">rtp2xyz</a>, <a 
+        href="pygeodesy3.Base.cartesian-module.html#rtp2xyz_" 
+        class="link">rtp2xyz_</a>, <a 
+        href="pygeodesy3.Base.cartesian-module.html#xyz2rtp" 
+        class="link">xyz2rtp</a> and <a 
+        href="pygeodesy3.Base.cartesian-module.html#xyz2rtp_" 
+        class="link">xyz2rtp_</a>.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.Base.karney-module.html" onclick="show_private();">pygeodesy3.Base.karney</a></strong>: <em class="summary">Wrapper around several <code>geomath.Math</code> functions from 
         <i>Karney</i>'s Python package <a 
         href="https://PyPI.org/project/geographiclib" 
@@ -216,10 +225,10 @@
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal-module.html">pygeodesy3.ellipsoidal</a></strong>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.base-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.base</a></strong>: <em class="summary">(INTERNAL) Private ellipsoidal base classes 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.Base-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.Base</a></strong>: <em class="summary">(INTERNAL) Private ellipsoidal base classes 
         <code>CartesianEllipsoidalBase</code> and 
         <code>LatLonEllipsoidalBase</code>.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.baseDI-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.baseDI</a></strong>: <em class="summary">(INTERNAL) Private, ellipsoidal Direct/Inverse geodesy base class 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.BaseDI-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.BaseDI</a></strong>: <em class="summary">(INTERNAL) Private, ellipsoidal Direct/Inverse geodesy base class 
         <code>LatLonEllipsoidalBaseDI</code> and functions.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.exact-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.exact</a></strong>: <em class="summary">Exact ellipsoidal geodesy using <i>Karney</i>'s Exact Geodesic.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.ellipsoidal.karney-module.html" onclick="show_private();">pygeodesy3.ellipsoidal.karney</a></strong>: <em class="summary">Ellipsoidal, <i>Karney</i>-based geodesy.</em>    </li>
@@ -259,15 +268,15 @@
     <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gx-module.html">pygeodesy3.geodesic.exact.gx</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s C++ class <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1GeodesicExact.html"
         target="_top">GeodesicExact</a>.</em>    </li>
+    <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxBases-module.html">pygeodesy3.geodesic.exact.gxBases</a></strong>: <em class="summary">(INTERNAL) Private <a href="pygeodesy3.geodesic.wrap-module.html" 
+        class="link" onclick="show_private();">geodesic.wrap</a> base 
+        class, functions and constants.</em>    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxarea-module.html">pygeodesy3.geodesic.exact.gxarea</a></strong>: <em class="summary">Slightly enhanced versions of classes <a 
         href="https://GeographicLib.SourceForge.io/1.52/python/code.html#module-geographiclib.polygonarea"
         target="_top">PolygonArea</a> and <code>Accumulator</code> from 
         <i>Karney</i>'s Python <a 
         href="https://GeographicLib.SourceForge.io/1.52/python/index.html" 
         target="_top">geographiclib</a>.</em>    </li>
-    <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxbases-module.html">pygeodesy3.geodesic.exact.gxbases</a></strong>: <em class="summary">(INTERNAL) Private <a href="pygeodesy3.geodesic.wrap-module.html" 
-        class="link" onclick="show_private();">geodesic.wrap</a> base 
-        class, functions and constants.</em>    </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.geodesic.exact.gxline-module.html">pygeodesy3.geodesic.exact.gxline</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s C++ class <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1GeodesicLineExact.html"
         target="_top">GeodesicLineExact</a>.</em>    </li>
@@ -462,6 +471,16 @@
         href="pygeodesy3.rhumb.solve-module.html" class="link" 
         onclick="show_private();">rhumb.solve</a>.</em>
     <ul>
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.Bases-module.html" onclick="show_private();">pygeodesy3.rhumb.Bases</a></strong>: <em class="summary">(INTERNAL) base classes <code>RhumbBase</code> and 
+        <code>RhumbLineBase</code>, pure Python version of <i>Karney</i>'s 
+        C++ classes <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
+        target="_top">Rhumb</a> and <a 
+        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1RhumbLine.html"
+        target="_top">RhumbLine</a> from <i>GeographicLib versions 2.0</i> 
+        and <i>2.2</i> and <i>Karney</i>'s C++ example <a 
+        href="https://SourceForge.net/p/geographiclib/discussion/1026620/thread/2ddc295e/"
+        target="_top">Rhumb intersect</a>.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.aux_-module.html" onclick="show_private();">pygeodesy3.rhumb.aux_</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s <i>Auxiliary 
         Latitudes</i>, C++ classes <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
@@ -472,16 +491,6 @@
         class="link">RhumbAux</a> respectively <a 
         href="pygeodesy3.rhumb.aux_.RhumbLineAux-class.html" 
         class="link">RhumbLineAux</a>.</em>    </li>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.bases-module.html" onclick="show_private();">pygeodesy3.rhumb.bases</a></strong>: <em class="summary">(INTERNAL) base classes <code>RhumbBase</code> and 
-        <code>RhumbLineBase</code>, pure Python version of <i>Karney</i>'s 
-        C++ classes <a 
-        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
-        target="_top">Rhumb</a> and <a 
-        href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1RhumbLine.html"
-        target="_top">RhumbLine</a> from <i>GeographicLib versions 2.0</i> 
-        and <i>2.2</i> and <i>Karney</i>'s C++ example <a 
-        href="https://SourceForge.net/p/geographiclib/discussion/1026620/thread/2ddc295e/"
-        target="_top">Rhumb intersect</a>.</em>    </li>
     <li class="private"> <strong class="uidlink"><a href="pygeodesy3.rhumb.ekx-module.html" onclick="show_private();">pygeodesy3.rhumb.ekx</a></strong>: <em class="summary">A pure Python version of <i>Karney</i>'s <i>elliptic functions</i>,
         <i>Kr&#252;ger series expansion</i>, C++ classes <a 
         href="https://GeographicLib.SourceForge.io/C++/doc/classGeographicLib_1_1Rhumb.html"
@@ -497,7 +506,7 @@
     </li>
     <li> <strong class="uidlink"><a href="pygeodesy3.spherical-module.html">pygeodesy3.spherical</a></strong>
     <ul>
-    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.spherical.base-module.html" onclick="show_private();">pygeodesy3.spherical.base</a></strong>: <em class="summary">(INTERNAL) Private spherical base classes 
+    <li class="private"> <strong class="uidlink"><a href="pygeodesy3.spherical.Base-module.html" onclick="show_private();">pygeodesy3.spherical.Base</a></strong>: <em class="summary">(INTERNAL) Private spherical base classes 
         <code>CartesianSphericalBase</code> and 
         <code>LatLonSphericalBase</code> for <code>spherical.nvector</code>
         and c{spherical.trigonometry}.</em>    </li>
@@ -539,7 +548,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Wed Jan 10 12:48:42 2024
+    Generated by Epydoc 3.0.1 on Mon Mar  4 16:45:43 2024
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

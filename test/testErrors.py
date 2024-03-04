@@ -4,7 +4,7 @@
 # Test some of the L{errors}.
 
 __all__ = ('Tests',)
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 from bases import isPython3, TestsBase
 
@@ -71,6 +71,22 @@ class Tests(TestsBase):
         self.test(exception_chaining.__name__, exception_chaining(RangeError()), None)
         self.test(exception_chaining.__name__, exception_chaining(TypeError()), None)
 
+    def testKwds(self, xkwds):
+        self.test(xkwds.__name__, xkwds({}, test='test1'), 'test1', nl=1)
+        self.test(xkwds.__name__, xkwds({'test': 'test2'}, test='test3'), 'test2')
+        try:
+            x = AssertionError.__name__
+            t = xkwds({})
+        except AssertionError as a:
+            t = x = str(a)
+        self.test(xkwds.__name__, t, x)
+        try:
+            x = AssertionError.__name__
+            t = xkwds({}, n1='d1', n2='d2')
+        except AssertionError as a:
+            t = x = str(a)
+        self.test(xkwds.__name__, t, x)
+
 
 if __name__ == '__main__':
 
@@ -82,6 +98,9 @@ if __name__ == '__main__':
                                    SciPyError, SciPyWarning, TRFError, UnitError, \
                                    UPSError, UTMError, UTMUPSError, VectorError, \
                                    VincentyError, WebMercatorError, WGRSError  # ClipError, RefFrameError
+
+    def _xkwds_pop(kwds, **name_default):
+        return errors._xkwds_pop2(kwds, **name_default)[0]
 
     t = Tests(__file__, __version__, errors)
     for E in (errors._AssertionError, errors._AttributeError, errors._IndexError,
@@ -95,5 +114,7 @@ if __name__ == '__main__':
               WebMercatorError, WGRSError):  # DEPRECATED RefFrameError
         t.testError(E)
     t.testErrors(errors._InvalidError, errors._IsnotError)
+    t.testKwds(errors._xkwds_get)
+    t.testKwds(       _xkwds_pop)
     t.results()
     t.exit()

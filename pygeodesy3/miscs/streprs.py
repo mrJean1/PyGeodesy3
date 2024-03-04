@@ -4,8 +4,8 @@
 u'''Floating point and other formatting utilities.
 '''
 
-from pygeodesy3.basics import isint, islistuple, isscalar, isstr, _zip, \
-                             _xkwds_get, _xkwds_pop,  _0_0
+from pygeodesy3.basics import isint, islistuple, isscalar, isstr, itemsorted, \
+                             _zip,  _0_0
 # from pygeodesy3.constants import _0_0  # from .basics
 from pygeodesy3.interns import NN, _0_, _0to9_, MISSING, _BAR_, _COMMASPACE_, \
                               _DOT_, _dunder_nameof, _E_, _ELLIPSIS_, _EQUAL_, \
@@ -15,14 +15,14 @@ from pygeodesy3.interns import _convergence_, _distant_, _e_, _eps_, _exceeds_, 
                                _EQUALSPACED_, _f_, _F_, _g_, _limit_, _no_, \
                                _tolerance_  # PYCHOK used!
 from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS, _getenv
-from pygeodesy3.miscs.errors import _AttributeError, _IsnotError, itemsorted, \
-                                    _or, _TypeError, _ValueError
+from pygeodesy3.miscs.errors import _AttributeError, _IsnotError, _TypeError, \
+                                    _or, _ValueError, _xkwds_get, _xkwds_pop2
 # from pygeodesy3.miscs.units import Meter  # _MODS
 
 from math import fabs, log10 as _log10
 
 __all__ = _ALL_LAZY.miscs_streprs
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 _EN_PREC    =  6           # max MGRS/OSGR precision, 1 micrometer
 _EN_WIDE    =  5           # number of MGRS/OSGR units, log10(_100km)
@@ -147,7 +147,7 @@ class Fmt(object):
     TAG           =  ANGLE
     TAGEND        = _Fmt('</%s>')
     tolerance     = _Fmt(_tolerance_(_PAREN_g))
-    zone          = _Fmt('%02d')  # .base.utmups, .epsg, .mgrs
+    zone          = _Fmt('%02d')  # .Base.utmups, .grids.epsg, .grids.mgrs
 
     def __init__(self):
         for n, a in self.__class__.__dict__.items():
@@ -159,6 +159,9 @@ class Fmt(object):
         '''
         return str(obj) if isint(obj) else next(
               _streprs(prec, (obj,), Fmt.g, False, False, repr))
+
+    def INDEX(self, name, i=None):
+        return name if i is None else self.SQUARE(name, i)
 
     def no_convergence(self, _d, *tol, **thresh):
         t = Fmt.convergence(fabs(_d))
@@ -306,7 +309,7 @@ def fstr(floats, prec=6, fmt=Fmt.F, ints=False, sep=_COMMASPACE_, strepr=None):
         return sep.join(_streprs(prec, floats, fmt, ints, True, strepr))
 
 
-def _fstrENH2(inst, prec, m):  # in .base.utmups, .css, .lcc
+def _fstrENH2(inst, prec, m):  # in .Base.utmups, .grids.css, .grids.lcc
     # (INTERNAL) For C{Css.} and C{Lcc.} C{toRepr} and C{toStr} and C{UtmUpsBase._toStr}.
     t = inst.easting, inst.northing
     t = tuple(_streprs(prec, t, Fmt.F, False, True, None))
@@ -530,7 +533,8 @@ def unstr(where, *args, **kwds):
        @return: Representation (C{str}).
     '''
     t = reprs(args, fmt=Fmt.g) if args else ()
-    if kwds and _xkwds_pop(kwds, _ELLIPSIS=False):
+    e, kwds = _xkwds_pop2(kwds, _ELLIPSIS=False)
+    if e:
         t += _ELLIPSIS_,
     if kwds:
         t += pairs(itemsorted(kwds), fmt=Fmt.g)

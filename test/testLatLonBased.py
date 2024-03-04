@@ -4,7 +4,7 @@
 # Test L{LatLonBase}-derived classes.
 
 __all__ = ('Tests',)
-__version__ = '24.01.05'
+__version__ = '24.01.12'
 
 from bases import GeodSolve, TestsBase
 
@@ -158,8 +158,8 @@ if __name__ == '__main__':
 
     try:  # (INTERNAL) modules not explicitly exported, DEPRECATED module names
         from pygeodesy3.Base import latlon as latlonBase, nvector as nvectorBase
-        from pygeodesy3.ellipsoidal import base as ellipsoidalBase, baseDI as ellipsoidalBaseDI
-        from pygeodesy3.spherical import base as sphericalBase
+        from pygeodesy3.ellipsoidal import Base as ellipsoidalBase, BaseDI as ellipsoidalBaseDI
+        from pygeodesy3.spherical import Base as sphericalBase
 
         t.testBases(ellipsoidalBase, ellipsoidalBase.LatLonEllipsoidalBase)
         t.testBases(ellipsoidalBaseDI, ellipsoidalBaseDI.LatLonEllipsoidalBaseDI)

@@ -26,8 +26,8 @@ and L{Fsum.__itruediv__}.
 # make sure int/int division yields float quotient, see .basics
 from __future__ import division as _; del _  # PYCHOK semicolon
 
-from pygeodesy3.basics import iscomplex, isint, isscalar, signOf, _signOf, \
-                             _xkwds_get, _xkwds_get_
+from pygeodesy3.basics import iscomplex, isint, isscalar, itemsorted, \
+                              signOf, _signOf, _xisscalar
 from pygeodesy3.constants import INT0, _isfinite, isinf, isnan, _pos_self, \
                                 _0_0, _1_0, _N_1_0,  Float, Int
 from pygeodesy3.interns import NN, _arg_, _COMMASPACE_, _DASH_, _EQUAL_, \
@@ -36,8 +36,8 @@ from pygeodesy3.interns import NN, _arg_, _COMMASPACE_, _DASH_, _EQUAL_, \
                               _not_scalar_, _PERCENT_, _PLUS_, _R_, _RANGLE_, \
                               _SLASH_, _SPACE_, _STAR_, _UNDER_
 from pygeodesy3.lazily import _ALL_LAZY, _getenv, _sys_version_info2
-from pygeodesy3.miscs.errors import itemsorted, _OverflowError, _TypeError, \
-                             _ValueError, _xError2, _ZeroDivisionError
+from pygeodesy3.miscs.errors import _OverflowError, _TypeError, _ValueError, \
+                                    _xError2, _xkwds_get, _ZeroDivisionError
 from pygeodesy3.miscs.named import _Named, _NamedTuple, _NotImplemented,  Fmt, unstr
 from pygeodesy3.miscs.props import _allPropertiesOf_n, Property_RO, property_RO
 # from pygeodesy3.miscs.streprs import Fmt, unstr  # from .miscs.named
@@ -46,7 +46,7 @@ from pygeodesy3.miscs.props import _allPropertiesOf_n, Property_RO, property_RO
 from math import ceil as _ceil, fabs, floor as _floor  # PYCHOK used! .ltp
 
 __all__ = _ALL_LAZY.maths_fsums
-__version__ = '23.12.31'
+__version__ = '24.02.20'
 
 _add_op_       = _PLUS_  # in .maths.auxilats.auxAngle
 _eq_op_        = _EQUAL_ * 2  # _DEQUAL_
@@ -73,7 +73,7 @@ _isub_op_      = _sub_op_ + _fset_op_  # in .maths.auxilats.auxAngle, .maths.fsu
 def _2float(index=None, **name_value):  # in .fmath, .fstats
     '''(INTERNAL) Raise C{TypeError} or C{ValueError} if not scalar or infinite.
     '''
-    n, v = name_value.popitem()  # _xkwds_popitem(name_value)
+    n, v = name_value.popitem()  # _xkwds_item2(name_value)
     try:
         v = float(v)
         if _isfinite(v):
@@ -81,9 +81,7 @@ def _2float(index=None, **name_value):  # in .fmath, .fstats
         E, t = _ValueError, _not_finite_
     except Exception as e:
         E, t = _xError2(e)
-    if index is not None:
-        n = Fmt.SQUARE(n, index)
-    raise E(n, v, txt=t)
+    raise E(Fmt.INDEX(n, index), v, txt=t)
 
 
 def _2floats(xs, origin=0, sub=False):
@@ -113,8 +111,7 @@ def _2floats(xs, origin=0, sub=False):
 def _Powers(power, xs, origin=1):  # in .fmath
     '''(INTERNAL) Yield each C{xs} as C{float(x**power)}.
     '''
-    if not isscalar(power):
-        raise _TypeError(power=power, txt=_not_scalar_)
+    _xisscalar(power=power)
     try:
         i, x  =  origin, None
         _fin  = _isfinite
@@ -224,7 +221,7 @@ def _2sum(a, b):  # by .testFmath
     return s, (b - (s - a))
 
 
-class Fsum(_Named):  # sync __methods__ with .base.vector3d.Vector3dBase
+class Fsum(_Named):  # sync __methods__ with .Base.vector3d.Vector3dBase
     '''Precision floating point I{running} summation.
 
        Unlike Python's C{math.fsum}, this class accumulates values and provides intermediate,
@@ -264,9 +261,10 @@ class Fsum(_Named):  # sync __methods__ with .base.vector3d.Vector3dBase
            @see: Methods L{Fsum.fadd} and L{Fsum.RESIDUAL}.
         '''
         if name_RESIDUAL:
-            n, r = _xkwds_get_(name_RESIDUAL, name=NN, RESIDUAL=None)
+            n = _xkwds_get(name_RESIDUAL, name=NN)
             if n:  # set name ...
                 self.name = n
+            r = _xkwds_get(name_RESIDUAL, RESIDUAL=None)
             if r is not None:
                 self.RESIDUAL(r)  # ... for ResidualError
 #       self._n  = 0
@@ -1301,6 +1299,12 @@ class Fsum(_Named):  # sync __methods__ with .base.vector3d.Vector3dBase
             return s, _fsum((s, -p, r, -t))  # ((s - p) + (r - t))
         else:  # PYCHOK no cover
             return p, _0_0
+
+    def fsumf_(self, *xs):
+        '''Like method L{Fsum.fsum_} but only for known C{float B{xs}}.
+        '''
+        f = self._facc(xs) if xs else self  # PYCHOK yield
+        return f._fprs
 
 #   ftruediv = __itruediv__   # for naming consistency
 

@@ -30,11 +30,10 @@ except ImportError:
 
     Radius = Float
 
-from pygeodesy3.basics import _0_0, _copysign, isbool, \
-                               iscomplex, isint, _xkwds_get
+from pygeodesy3.basics import _0_0, _copysign, isbool, iscomplex, isint
 from pygeodesy3.interns import _INF_, _NAN_, _UNDER_
-# from pygeodesy3.lazily import _ALL_LAZY  # from .miscs.errors
-from pygeodesy3.miscs.errors import _xError, _xError2,  _ALL_LAZY
+# from pygeodesy3.lazily import _ALL_LAZY, _ALL_MODS as _MODS  # from .miscs.errors
+from pygeodesy3.miscs.errors import _xError, _xError2, _xkwds_get,  _ALL_LAZY, _MODS
 # from pygeodesy3.miscs.streprs import Fmt
 
 from math import fabs, isinf, isnan, pi as _PI, sqrt
@@ -44,7 +43,7 @@ except ImportError:  # Python 2-
     _inf, _nan = float(_INF_), float(_NAN_)
 
 __all__ = _ALL_LAZY.constants
-__version__ = '24.01.05'
+__version__ = '24.02.27'
 
 
 def _copysign_0_0(y):
@@ -101,7 +100,7 @@ def float_(*fs, **sets):  # sets=False
             _a(_f(f, f))
     except Exception as x:
         E, t = _xError2(x)
-        fs_i = 'fs[%s]' % (i,)  # Fmt.SQUARE(fs=i)
+        fs_i = _MODS.miscs.streprs.Fmt.SQUARE(fs=i)
         raise E(fs_i, f, txt=t)
     return fl[0] if len(fl) == 1 else tuple(fl)
 
@@ -120,7 +119,7 @@ def float0_(*xs):
         yield float(x) if x else _0_0
 
 
-def _float0(f):  # in .base.vector3d, .resections, ...
+def _float0(f):  # in .Base.vector3d, .resections, ...
     '''(INTERNAL) Return C{float(B{f})} or C{INT0}.
     '''
     if f:
@@ -185,7 +184,6 @@ _0_01    = _float(   0.01)    # PYCHOK expected
 _0_1     = _float(   0.1)     # PYCHOK expected
 _0_125   = _float(   0.125)   # PYCHOK expected
 _0_25    = _float(   0.25)    # PYCHOK expected
-_0_26    = _float(   0.26)    # PYCHOK expected
 _0_5     = _float(   0.5)     # PYCHOK expected
 _1_0     = _float(   1)       # PYCHOK expected
 _1_0_1T  = _1_0,              # PYCHOK 1-tuple
@@ -220,7 +218,7 @@ _N_90_0  = _float( -_90_0)   # PYCHOK expected
 _N_180_0 = _float(-_180_0)   # PYCHOK expected
 
 _M_KM =       _1000_0     # meter per Kilo meter, see .maths.umath
-_M_NM = _float(1852.0)    # meter per Nautical Mile
+_M_NM = _float(1852.0)    # meter per Nautical Mile, exactly
 _M_SM = _float(1609.344)  # meter per Statute Mile
 
 try:
@@ -311,7 +309,7 @@ R_VM  = _Radius(R_VM=6366707.0194937)  # PYCHOK aViation/naVigation earth radius
 # R_AU=  Meter( R_AU=149597870700.0)   # PYCHOK <https://WikiPedia.org/wiki/Astronomical_unit>
 
 _INF_NAN_NINF =  INF, NAN, NINF
-_pos_self     = _1_0.__pos__() is _1_0  # PYCHOK in .base.vector3d, .maths.fsums
+_pos_self     = _1_0.__pos__() is _1_0  # PYCHOK in .Base.vector3d, .maths.fsums
 
 
 def _0_0s(n):
@@ -500,8 +498,7 @@ def _umod_PI2(rad):
 
 if __name__ == '__main__':
 
-    from pygeodesy3.lazily import printf
-    from pygeodesy3.miscs.errors import itemsorted
+    from pygeodesy3 import itemsorted, printf
 
     t = n = v = []
     for n, v in itemsorted(locals()):

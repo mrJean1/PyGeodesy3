@@ -202,7 +202,8 @@ _ALL_INIT = _i(_pygeodesy3_abspath_, _version_)
 # __all__ value for most modules, accessible as _ALL_LAZY.<module>
 _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                            Base=_i(),  # package only
-                 Base_cartesian=_i('CartesianBase',),
+                 Base_cartesian=_i('CartesianBase', 'RadiusThetaPhi3Tuple',
+                                   'rtp2xyz', 'rtp2xyz_', 'xyz2rtp', 'xyz2rtp_'),
                     Base_karney=_i('Area3Tuple', 'Caps', 'Direct9Tuple', 'GDict', 'Inverse10Tuple', 'Rhumb8Tuple'),
                     Base_latlon=_i('LatLonBase',),
                    Base_nvector=_i('LatLonNvectorBase', 'NorthPole', 'NvectorBase', 'SouthPole'),
@@ -227,7 +228,7 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                      deprecated=_i(),  # package only
 
                       distances=_i(),  # package only
-                distances_formy=_i('Radical2Tuple', 'RThetaPhi3Tuple',
+                distances_formy=_i('Radical2Tuple',
                                    'antipode', 'antipode_', 'bearing', 'bearing_',
                                    'compassAngle', 'cosineForsytheAndoyerLambert', 'cosineForsytheAndoyerLambert_',
                                    'cosineAndoyerLambert', 'cosineAndoyerLambert_', 'cosineLaw', 'cosineLaw_',
@@ -238,8 +239,8 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                                    'hartzell', 'haversine', 'haversine_', 'heightOf', 'heightOrthometric', 'horizon', 'hubeny', 'hubeny_',
                                    'intersection2', 'intersections2', 'isantipode', 'isantipode_', 'isnormal', 'isnormal_',
                                    'latlon2n_xyz', 'normal', 'normal_', 'n_xyz2latlon', 'n_xyz2philam',
-                                   'opposing', 'opposing_', 'philam2n_xyz', 'radical2', 'rtp2xyz', 'rtp2xyz_',
-                                   'thomas', 'thomas_', 'vincentys', 'vincentys_', 'xyz2rtp', 'xyz2rtp_'),
+                                   'opposing', 'opposing_', 'philam2n_xyz', 'radical2',
+                                   'thomas', 'thomas_', 'vincentys', 'vincentys_'),
               distances_frechet=_i('Frechet', 'FrechetDegrees', 'FrechetError', 'FrechetRadians',
                                    'FrechetCosineAndoyerLambert', 'FrechetCosineForsytheAndoyerLambert',
                                    'FrechetCosineLaw', 'FrechetDistanceTo', 'FrechetEquirectangular',
@@ -270,8 +271,8 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                                    'a_f2b', 'a_f_2b', 'b_f2a', 'b_f_2a',
                                    'e2f', 'e22f',
                                    'f2e2', 'f2e22', 'f2e32', 'f_2f', 'f2f_', 'f2f2', 'f2n', 'n2e2', 'n2f', 'n2f_'),
-                      earth_trf=_i('Helmert7Tuple', 'RefFrame', 'RefFrames',
-                                   'date2epoch', 'epoch2date', 'trfXform'),
+                      earth_trf=_i('RefFrame', 'RefFrames', 'TransformXform', 'TRFXform', 'TRFXform7Tuple',
+                                   'date2epoch', 'epoch2date', 'trfTransform0', 'trfTransforms', 'trfXform'),
                 earth_triaxials=_i('BetaOmega2Tuple', 'BetaOmega3Tuple', 'Jacobi2Tuple',
                                    'JacobiConformal', 'JacobiConformalSpherical',
                                    'Triaxial', 'Triaxial_', 'TriaxialError', 'Triaxials', 'hartzell4'),
@@ -289,8 +290,8 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                                    'elevation2', 'geoidHeight2'),
 
                     ellipsoidal=_i(),  # package only
-               ellipsoidal_base=_i(),  # module only
-             ellipsoidal_baseDI=_i(),  # module only
+               ellipsoidal_Base=_i(),  # module only
+             ellipsoidal_BaseDI=_i(),  # module only
               ellipsoidal_exact=_i(),  # module only
              ellipsoidal_karney=_i(),  # module only
             ellipsoidal_nvector=_i(),  # module only
@@ -306,7 +307,7 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                      grids_wgrs=_i('Georef', 'WGRSError'),
 
                        geodesic=_i(),  # package only
-                 geodesic_exact=_i('gx', 'gxarea', 'gxbases', 'gxline',  # modules
+                 geodesic_exact=_i('gx', 'gxarea', 'gxBases', 'gxline',  # modules
                                    'GeodesicAreaExact', 'GeodesicExact', 'GeodesicLineExact', 'PolygonArea'),
                  geodesic_solve=_i('GeodesicSolve', 'GeodesicLineSolve', 'GeodSolve12Tuple'),
                   geodesic_wrap=_i('Geodesic', 'GeodesicLine', 'Geodesic_WGS84'),
@@ -364,7 +365,8 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                                    'limiterrors', 'rangerrors'),
                     miscs_iters=_i('LatLon2PsxyIter', 'PointsIter', 'points2',
                                    'isNumpy2', 'isPoints2', 'isTuple2', 'iterNumpy2', 'iterNumpy2over'),
-                    miscs_named=_i('callername', 'classname', 'classnaming', 'modulename',
+                    miscs_named=_i('ADict',
+                                   'callername', 'classname', 'classnaming', 'modulename',
                                    'nameof', 'notImplemented', 'notOverloaded'),
               miscs_namedTuples=_i('Bearing2Tuple', 'Bounds2Tuple', 'Bounds4Tuple',
                                    'Destination2Tuple', 'Destination3Tuple',
@@ -435,7 +437,7 @@ _ALL_LAZY = _NamedEnum_RO(_name='_ALL_LAZY',
                     rhumb_solve=_i('RhumbSolve', 'RhumbLineSolve'),
 
                       spherical=_i(),   # package only
-                 spherical_base=_i(),   # module only
+                 spherical_Base=_i(),   # module only
               spherical_nvector=_i(),   # module only
          spherical_trigonometry=_i(),)  # module only
 
@@ -483,12 +485,17 @@ class _ALL_MODS(object):
     def __getattr__(self, name):
         '''Get a C{pygeodesy3} module or attribute by B{C{name}}.
 
-           @arg name: Qualified module or attribute name (C{str}).
+           @arg name: Un/qualified module or qualified attribute name (C{str}).
 
            @raise ImportError: Importing module B{C{name}} failed.
 
            @raise AttributeError: No attribute named B{C{name}}.
         '''
+        try:  # most likely ... module is already imported
+            return _sys.modules[_DOT_(_pygeodesy3_, name)]
+        except KeyError:
+            pass
+
         m = self.getmodule(name)
         return m if _tailof(m.__name__) == name else \
                getattr(m, _tailof(name))
@@ -497,20 +504,20 @@ class _ALL_MODS(object):
         t = _EQUALSPACED_(self._DOT_(attr), repr(value))
         raise AttributeError(_COLONSPACE_(t, _immutable_))
 
-    def getattr(self, mod, *attr_dflt):  # , parent=_pygeodesy3_
+    def getattr(self, name, *attr_dflt):  # , parent=_pygeodesy3_
         '''Get an attribute of/or a C{pygeodesy3} module.
 
-           @arg mod: Qualified module name (C{str}).
+           @arg name: Un/qualified module name (C{str}).
            @arg attr_dflt: Optional attribute name (C{str}) and
                            optional default value (any C{type}).
 
            @return: The C{pygeodesy3} module's attribute value.
 
-           @raise ImportError: Importing module B{C{mod}} failed.
+           @raise ImportError: Importing module B{C{name}} failed.
 
            @raise AttributeError: No attribute named B{C{attr}}.
         '''
-        v = self.getmodule(mod)
+        v = self.getmodule(name)
         if attr_dflt:
             v = getattr(v, *attr_dflt)
         return v
@@ -544,7 +551,7 @@ class _ALL_MODS(object):
 _ALL_MODS = _ALL_MODS()  # PYCHOK singleton
 
 __all__ = _ALL_LAZY.lazily
-__version__ = '24.01.03'
+__version__ = '24.02.22'
 
 
 def _ALL_OTHER(*objs):
@@ -666,7 +673,7 @@ def _import_all_backward(dflt=NN):  # in .__init__
        compatibility with C{PyGeodesy}.
     '''
     bw = list(_ALL_INIT)
-    if _isfrozen or _getenv('PYGEODESY3_ALL_BACKWARD', dflt):
+    if _isfrozen or _getenv('PYGEODESY3_BACKWARD', dflt):
         sm = _sys.modules
         for name, mod in _all_deprecates().items():
             if mod.endswith(_DDOT_):

@@ -12,8 +12,7 @@ u'''(INTERNAL) Base class L{LatLonBase} for all elliposiodal, spherical and N-ve
 
 # from pygeodesy3.Base.karney import Caps  # _MODS
 # from pygeodesy3.Base.nvector import _N_vector_  # _MODS
-from pygeodesy3.basics import isstr, map1, _xattr, _xinstanceof, \
-                             _xkwds, _xkwds_not
+from pygeodesy3.basics import isstr, map1, _xinstanceof
 from pygeodesy3.constants import EPS, EPS0, EPS1, EPS4, INT0, R_M, \
                                 _EPSqrt as _TOL, _0_0, _0_5, _1_0, \
                                 _360_0, _umod_360
@@ -31,8 +30,9 @@ from pygeodesy3.maths.vector3d import nearestOn6, Vector3d,  PointsIter
 from pygeodesy3.maths.umath import _unrollon, _unrollon3, _Wrap
 from pygeodesy3.miscs.dms import F_D, F_DMS, latDMS, lonDMS, parse3llh
 from pygeodesy3.miscs.errors import _AttributeError, _incompatible, \
-                                    _IsnotError, IntersectionError, \
-                                    _ValueError, _xdatum, _xError
+                                    _IsnotError, IntersectionError, _TypeError, \
+                                    _ValueError, _xattr, _xdatum, _xError, \
+                                    _xkwds, _xkwds_not
 # from pygeodesy3.miscs.iters import PointsIter, points2  # from .maths.vector3d, _MODS
 from pygeodesy3.miscs.named import _NamedBase, notImplemented, notOverloaded,  Fmt
 from pygeodesy3.miscs.namedTuples import Bounds2Tuple, LatLon2Tuple, PhiLam2Tuple, \
@@ -47,7 +47,7 @@ from contextlib import contextmanager
 from math import asin, cos, degrees, fabs, radians
 
 __all__ = _ALL_LAZY.Base_latlon
-__version__ = '24.01.05'
+__version__ = '24.01.20'
 
 
 class LatLonBase(_NamedBase):
@@ -98,7 +98,7 @@ class LatLonBase(_NamedBase):
         self._lon = Lon(lon)  # PYCHOK LatLon2Tuple
         if height:  # elevation
             self._height = Height(height)
-        if datum:
+        if datum is not None:
             self._datum = _spherical_datum(datum, name=self.name)
 
     def __eq__(self, other):
@@ -434,7 +434,7 @@ class LatLonBase(_NamedBase):
         return func(self.lat, self.lon, p.lat, p.lon, radius=r, **kwds)
 
     def _distanceTo_(self, func_, other, wrap=False, radius=None):
-        '''(INTERNAL) Helper for (ellipsoidal) methods C{<func>To}.
+        '''(INTERNAL) Helper for (ellipsoidal) distance methods C{<func>To}.
         '''
         p = self.others(other, up=2)
         D = self.datum
@@ -575,26 +575,27 @@ class LatLonBase(_NamedBase):
         LatLonBase._formy = f = _MODS.distances.formy  # overwrite property_RO
         return f
 
-    def hartzell(self, los=None, earth=None):
-        '''Compute the intersection of a Line-Of-Sight (los) from this Point-Of-View
+    def hartzell(self, los=True, earth=None):
+        '''Compute the intersection of a Line-Of-Sight from this (geodetic) Point-Of-View
            (pov) with this point's ellipsoid surface.
 
-           @kwarg los: Line-Of-Sight, I{direction} to earth (L{Los}, L{Vector3d})
-                       or C{None} to point to the ellipsoid's center.
-           @kwarg earth: The earth model (L{Datum}, L{Ellipsoid}, L{Ellipsoid2},
-                         L{a_f2Tuple} or C{scalar} radius in C{meter}) overriding
-                         this point's C{datum} ellipsoid.
+           @kwarg los: Line-Of-Sight, I{direction} to the ellipsoid (L{Los}, L{Vector3d}),
+                       C{True} for the I{normal, plumb} onto the surface or I{False} or
+                       C{None} to point to the center of the ellipsoid.
+           @kwarg earth: The earth model (L{Datum}, L{Ellipsoid}, L{Ellipsoid2}, L{a_f2Tuple}
+                         or C{scalar} radius in C{meter}), overriding this point's C{datum}
+                         ellipsoid.
 
-           @return: The ellipsoid intersection (C{LatLon}) with C{.height} set
-                    to the distance to this C{pov}.
+           @return: The intersection (C{LatLon}) with C{.height} set to the distance to
+                    this C{pov}.
 
-           @raise IntersectionError: Null or bad C{pov} or B{C{los}}, this C{pov}
-                                     is inside the ellipsoid or B{C{los}} points
-                                     outside or away from the ellipsoid.
+           @raise IntersectionError: Null or bad C{pov} or B{C{los}}, this C{pov} is inside
+                                     the ellipsoid or B{C{los}} points outside or away from
+                                     the ellipsoid.
 
-           @raise TypeError: Invalid B{C{los}}.
+           @raise TypeError: Invalid B{C{los}} or invalid or undefined B{C{earth}} or C{datum}.
 
-           @see: Function C{hartzell} for further details.
+           @see: Function L{hartzell<pygeodesy3.hartzell>} for further details.
         '''
         return self._formy._hartzell(self, los, earth, LatLon=self.classof)
 
@@ -628,7 +629,7 @@ class LatLonBase(_NamedBase):
            @kwarg h: Overriding height (C{meter}).
 
            @return: Average, fractional height (C{float}) or
-                    the overriding B{C{height}} (C{Height}).
+                    the overriding height B{C{h}} (C{Height}).
         '''
         return Height(h) if h is not None else \
               _MODS.maths.fmath.favg(self.height, other.height, f=f)
@@ -658,40 +659,43 @@ class LatLonBase(_NamedBase):
         return self.height if height is None else Height(height)
 
     def height4(self, earth=None, normal=True, LatLon=None, **LatLon_kwds):
-        '''Compute the height above or below and the projection of this point
-           on this datum's or on an other earth's ellipsoid surface.
+        '''Compute the projection of this point on and the height above or below
+           this datum's ellipsoid surface.
 
-           @kwarg earth: A datum, ellipsoid, triaxial ellipsoid or earth radius
+           @kwarg earth: A datum, ellipsoid, triaxial ellipsoid or earth radius,
                          I{overriding} this datum (L{Datum}, L{Ellipsoid},
                          L{Ellipsoid2}, L{a_f2Tuple}, L{Triaxial}, L{Triaxial_},
                          L{JacobiConformal} or C{meter}, conventionally).
-           @kwarg normal: If C{True} the projection is the nearest point on the
+           @kwarg normal: If C{True} the projection is the normal to this
                           ellipsoid's surface, otherwise the intersection of the
-                          radial line to the center and the ellipsoid's surface.
-           @kwarg LatLon: Optional class to return the  height and projection
-                          (C{LatLon}) or C{None}.
+                          I{radial} line to this ellipsoid's center (C{bool}).
+           @kwarg LatLon: Optional class to return the projection, height and
+                          datum (C{LatLon}) or C{None}.
            @kwarg LatLon_kwds: Optional, additional B{C{LatLon}} keyword arguments,
                                ignored if C{B{LatLon} is None}.
 
            @note: Use keyword argument C{height=0} to override C{B{LatLon}.height}
                   to {0} or any other C{scalar}, conventionally in C{meter}.
 
-           @return: An instance of B{C{LatLon}} or if C{B{LatLon} is None}, a
+           @return: An instance of class B{C{LatLon}} or if C{B{LatLon} is None}, a
                     L{Vector4Tuple}C{(x, y, z, h)} with the I{projection} C{x}, C{y}
                     and C{z} coordinates and height C{h} in C{meter}, conventionally.
 
            @raise TriaxialError: No convergence in triaxial root finding.
 
-           @raise TypeError: Invalid B{C{earth}}.
+           @raise TypeError: Invalid B{C{earth}} or triaxial B{C{earth}} couldn't be
+                             converted to biaxial B{C{LatLon}} datum.
 
-           @see: L{Ellipsoid.height4} and L{Triaxial_.height4} for more information.
+           @see: Methods L{Ellipsoid.height4} and L{Triaxial_.height4} for more information.
         '''
         c = self.toCartesian()
         if LatLon is None:
             r = c.height4(earth=earth, normal=normal)
         else:
-            r = c.height4(earth=earth, normal=normal, Cartesian=c.classof, height=0)
-            r = r.toLatLon(LatLon=LatLon, **_xkwds(LatLon_kwds, height=r.height))
+            c = c.height4(earth=earth, normal=normal, Cartesian=c.classof, height=0)
+            r = c.toLatLon(LatLon=LatLon, **_xkwds(LatLon_kwds, datum=c.datum, height=c.height))
+            if r.datum != c.datum:
+                raise _TypeError(earth=earth, datum=r.datum)
         return r
 
     def heightStr(self, prec=-2, m=_m_):
@@ -778,12 +782,12 @@ class LatLonBase(_NamedBase):
            @arg other: The other point (C{LatLon}).
            @kwarg eps: Tolerance for equality (C{degrees}).
 
-           @return: C{True} if both points are identical
-                    I{including} height, C{False} otherwise.
+           @return: C{True} if both points are identical I{including}
+                    height, C{False} otherwise.
 
            @raise TypeError: The B{C{other}} point is not C{LatLon}
-                             or mismatch of the B{C{other}} and
-                             this C{class} or C{type}.
+                             or mismatch of the B{C{other}} and this
+                             C{class} or C{type}.
 
            @see: Method L{isequalTo}.
         '''
@@ -888,8 +892,8 @@ class LatLonBase(_NamedBase):
     @latlonheight.setter  # PYCHOK setter!
     def latlonheight(self, latlonh):
         '''Set the lat- and longitude and optionally the height
-           (2- or 3-tuple or comma- or space-separated C{str}
-           of C{degrees90}, C{degrees180} and C{meter}).
+           (2- or 3-tuple or comma- or space-separated C{str} of
+           C{degrees90}, C{degrees180} and C{meter}).
 
            @see: Property L{latlon} for more details.
         '''
@@ -1096,7 +1100,7 @@ class LatLonBase(_NamedBase):
         with _toCartesian3(self, point2, point3, wrap) as cs:
             return _radii11ABC(*cs, useZ=True)[0]
 
-    def _rhumb3(self, exact, radius):  # != .base.spherical._rhumbs3
+    def _rhumb3(self, exact, radius):  # != .Base.spherical._rhumbs3
         '''(INTERNAL) Get the C{rhumb} for this point's datum or for
            the B{C{radius}}' earth model iff non-C{None}.
         '''
@@ -1498,7 +1502,7 @@ class LatLonBase(_NamedBase):
 
     def toVector(self, Vector=None, **Vector_kwds):
         '''Convert this point to a C{Vector} with the I{geocentric} C{(x,
-           y, z)} coordinates, I{ignoring height}.
+           y, z)} (ECEF) coordinates, I{ignoring height}.
 
            @kwarg Vector: Optional class to return the I{geocentric}
                           components (L{Vector3d}) or C{None}.
@@ -1516,7 +1520,7 @@ class LatLonBase(_NamedBase):
 
     def toVector3d(self, norm=True, **Vector3d_kwds):
         '''Convert this point to a L{Vector3d} with the I{geocentric} C{(x,
-           y, z)} I{unit} coordinates, I{ignoring height}.
+           y, z)} (ECEF) I{unit} coordinates, I{ignoring height}.
 
            @kwarg norm: Normalize the 3-D vector (C{bool}).
            @kwarg Vector3d_kwds: Optional L{Vector3d} keyword arguments.
@@ -1622,8 +1626,8 @@ def _trilaterate5(p1, d1, p2, d2, p3, d3, area=True, eps=EPS1,  # MCCABE 13
     '''(INTERNAL) Trilaterate three points by I{area overlap} or by
        I{perimeter intersection} of three circles.
 
-       @note: The B{C{radius}} is only needed for both the n-vectorial
-              and C{spherical.trigonometry.LatLon.distanceTo} methods and
+       @note: The B{C{radius}} is only needed for the n-vectorial and
+              C{spherical.trigonometry.LatLon.distanceTo} methods and
               silently ignored by the C{ellipsoidal.exact}, C{-.karney},
               C{-.solve} and C{-.vincenty.LatLon.distanceTo} methods.
     '''

@@ -268,9 +268,9 @@ if __name__ == '__main__':  # MCCABE 13
 
     if isPython3:
         from pygeodesy3.ellipsoidal import nvector as ellipsoidalNvector, \
-                                          vincenty as ellipsoidalVincenty
+                                           vincenty as ellipsoidalVincenty
         from pygeodesy3.spherical import nvector as sphericalNvector, \
-                                        trigonometry as sphericalTrigonometry
+                                         trigonometry as sphericalTrigonometry
 
         ms = (ellipsoidalVincenty,)
         if geographiclib:

@@ -15,7 +15,7 @@ from __future__ import division as _; del _  # PYCHOK semicolon
 from pygeodesy3.Base.cartesian import CartesianBase,  Bearing2Tuple
 from pygeodesy3.Base.latlon import LatLonBase,  _trilaterate5  # PYCHOK passed
 from pygeodesy3.Base.nvector import NvectorBase,  Fmt, _xattrs
-from pygeodesy3.basics import _copysign, isbool, isinstanceof, map1, _xattr
+from pygeodesy3.basics import _copysign, isbool, isinstanceof, map1
 from pygeodesy3.constants import EPS, EPS0, PI, PI2, PI_2, R_M, \
                                 _0_0, _0_5, _1_0, _180_0, _360_0, \
                                 _over, isnear0, isnon0
@@ -27,17 +27,17 @@ from pygeodesy3.maths.fmath import favg, fdot, hypot, sqrt_a
 from pygeodesy3.maths.umath import acos1, asin1, atan2b, atan2d, degrees90, \
                                    degrees180, sincos2, sincos2d, _unrollon, \
                                    tanPI_2_2, wrapPI
-from pygeodesy3.miscs.errors import IntersectionError, _ValueError, _xError
-# from pygeodesy3.miscs.namedTuples import Bearing2Tuple  # from .base.cartesian
+from pygeodesy3.miscs.errors import IntersectionError, _ValueError, _xattr, _xError
+# from pygeodesy3.miscs.namedTuples import Bearing2Tuple  # from .Base.cartesian
 from pygeodesy3.miscs.props import property_doc_, property_RO, _update_all
-# from pygeodesy3.miscs.streprs import Fmt, _xattrs  # from .base.nvector
+# from pygeodesy3.miscs.streprs import Fmt, _xattrs  # from .Base.nvector
 from pygeodesy3.miscs.units import Bearing, Bearing_, _isRadius, Radians_, \
                                    Radius, Radius_, Scalar_, _100km
 
 from math import cos, fabs, log, sin, sqrt
 
-__all__ = _ALL_LAZY.spherical_base
-__version__ = '24.01.05'
+__all__ = _ALL_LAZY.spherical_Base
+__version__ = '24.02.20'
 
 
 class CartesianSphericalBase(CartesianBase):
@@ -326,7 +326,7 @@ class LatLonSphericalBase(LatLonBase):
         '''
         return self.datum.ellipsoid.equatoradius
 
-    def _rhumbs3(self, other, wrap, r=False):  # != .base.latlon._rhumbx3
+    def _rhumbs3(self, other, wrap, r=False):  # != .Base.latlon._rhumbx3
         '''(INTERNAL) Rhumb_ helper function.
 
            @arg other: The other point (spherical C{LatLon}).
